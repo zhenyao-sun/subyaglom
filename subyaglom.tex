@@ -1119,7 +1119,16 @@ In particular, we write
   \quad t > 0, x\in E.
 \]
 % ***** Lemma about the asymptotic behavior of <\mu, v_t>
-
+\begin{iss}[OPEN]~
+  \begin{itemize}
+  \item[ZS:]
+I'm confident with the proof of the following Lemma now. 
+I would like to ask Rongli to double check the proof of this key Lemma.
+There are some new features I want to mention for this Lemma:
+a. The testing function $f$ now can take extended value $\infty$. So this Lemma also covers $v_t$ which can be considered as $V_t(\infty)$.
+b. Instead of finding the upper bound and the lower bound separately, we proof the uniform convergence of this Lemma in one stroke.
+  \end{itemize}
+\end{iss}
 \begin{lem}
 \label{lem:asmptotic_of_Vtf}
   Suppose that Assumptions \ref{asp:1}, \ref{asp:IU} and \ref{asp:3} hold. 
@@ -1410,7 +1419,14 @@ Therefore, we have
 \begin{align}
 \frac{V_{t} f(x)}{\left\langle v_{t},\nu \right\rangle} - \phi(x) 
 = o(\limsup_{t\to \infty} \sup_{x\in E}).
-\end{align} 
+\end{align}
+\begin{iss}[TODO]~
+  \begin{itemize}
+  \item[ZS:]
+It seems that I forget to discuss $V_{t+s}f(x)$.
+It won't be a problem. I will do it shortly.
+  \end{itemize}
+\end{iss} 
 \end{proof}
 
 
@@ -1683,7 +1699,6 @@ Therefore, we have
 I'm now revising the rest of the paper.
   \end{itemize}
 \end{iss}
-In the arguments of the proof of the above lemma, we did not use the fact that $v(t,x)$ is related to the extinction probability.  We only use the existence of the solution \eqref{eq: diff equ} and it is integrable with respect to $\widehat\phi(x)m(dx)$ after some time $t_1>0$.  If $f\in\mathcal B_b(E,[0,\infty))$, then the problem \eqref{eq: diff equ} has unique bounded solution $V_tf(x)$.  Thus the limit result \eqref{eq:ont_point_ratio_limit} holds for these solutions.  Meanwhile, the main point in the proof above is the uniform convergence of the expectation semigroup $P^{\beta}_t$ which is independent of the initial value.   Thus the limit result can be generalized as follows. We will give the result directly without proof.
 
 \begin{cor}\label{cor:general_rate}
 	For any $\mu\in\mathcal M(E)\backslash\{0\}$,
