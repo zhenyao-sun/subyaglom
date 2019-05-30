@@ -517,7 +517,7 @@ Define the process
 \]
 It is well known that the process  $(M_t)_{t\geq 0}$ is a martingale with respect to the natural filtration $(\mathscr F_t)_{t\geq 0}$ of the superprocess $X$.
 % For each $\mu \in \mathcal M(E)$, define probability $\widetilde{\mathbb P}_\mu$ as Doob's $h-$transform of $\mathbb P_\mu$
-iFor each $\mu \in \mathcal M(E)$, let probability $\widetilde{\mathbb P}_\mu$ be Doob's $h-$transform of $\mathbb P_\mu$ such that
+For each $\mu \in \mathcal M(E)$, let probability $\widetilde{\mathbb P}_\mu$ be Doob's $h-$transform of $\mathbb P_\mu$ such that
 \begin{equation} \label{eq:martingale_transformation}
 	\frac{d\widetilde{\mathbb P}_\mu|_{\mathscr F_t}}{d\mathbb P_\mu|_{\mathscr F_t}}
 	=\frac{M_t}{\langle\phi,\mu\rangle },
@@ -529,7 +529,7 @@ It is well known that the process $\{(X_t)_{t\geq 0}; \widetilde{\mathbb P}_{\mu
 We will recall this decomposition in details for our model in section $2$.
 
 % ****** Statement of the result
-iOur third theorem says that $\{(X_t)_{t\geq 0}; \widetilde{\mathbb P}_{\mu}\}$ can be considered as the Q-processs of $X$, i.e. the process $\{(X_t)_{t\geq 0}; \mathbb P_{\mu}\}$ conditioned to be never extinct:
+Our third theorem says that $\{(X_t)_{t\geq 0}; \widetilde{\mathbb P}_{\mu}\}$ can be considered as the Q-processs of $X$, i.e. the process $\{(X_t)_{t\geq 0}; \mathbb P_{\mu}\}$ conditioned to be never extinct:
 \begin{thm}\label{thm:Q_process}
 	Under the assumptions \ref{asp:1},\ref{asp:IU} and \ref{asp:3}, for each  $\mu \in \mathcal M(E), t\geq 0$ and $A\in\mathscr F_t$, we have $\lim_{s\rightarrow\infty}\mathbb P_\mu(A |\zeta>s)=\widetilde{\mathbb P}_\mu(A). $
 \end{thm}
@@ -572,12 +572,16 @@ Our fourth result is the following:
   \begin{itemize}
   \item[ZS:]
     Which notation for the random variable in the above theorem is better? $\widetilde M$ or $M$? There is a notation inconsistency in the above theorem, we should fix it. I recommend using ``widetilde'' for ``size-biased-related'' stuff.
+    
+    [Ren:] Agree.
   \end{itemize}
 \end{iss}
 \begin{iss}[open]~
   \begin{itemize}
   \item[ZS:]
 I have a question about the terminology. Why we call that probability in the above theorem the ``equilibrium probability''? Why not call it ``invariant probability'' or ``invariant measure''?
+
+[Ren:] Prefer "invariant probability"
   \end{itemize}
 \end{iss}
 \begin{iss}[open]~
@@ -589,7 +593,9 @@ Why we only considered the existence of that equilibrium probability in the abov
 \begin{iss}[open]~
   \begin{itemize}
   \item[ZS:]
-Can I have this conjecture: Under $\mathbf P \widetilde{\mathbb P}$, $(X_t)_{t\geq 0}$ is a stationary (or even better, an ergodic) measure-valued process? 
+Can I have this conjecture: Under $\mathbf P \widetilde{\mathbb P}$, $(X_t)_{t\geq 0}$ is a stationary (or even better, an ergodic) measure-valued process?
+
+[Ren:]  It is safe to say stationary because we have not prove uniqueness.
   \end{itemize}
 \end{iss}
 
@@ -598,6 +604,8 @@ Can I have this conjecture: Under $\mathbf P \widetilde{\mathbb P}$, $(X_t)_{t\g
   \begin{itemize}
   \item[ZS:]
 Should we extend the following paragraph into a new subsection with maybe more details about the spine-decomposition?
+
+[Ren:] Yes, we should introduce more on it .
   \end{itemize}
 \end{iss}
 One important technique used to prove the above theorems is a ``spine-decomposition'' for the super-diffusion $X$ under a martingale change of measure.
@@ -728,6 +736,8 @@ It is easy to check that $(\widehat Y_t)_{t\geq 0}$ has the unique invariant mea
   \begin{itemize}
   \item[ZS:]
     In the above proof and several places below, a new set of notation $\widehat p_t$ and $\widetilde p_t$ is used to replace $\widehat p(t,\cdot,\cdot)$ and $\widetilde p(t,\cdot, \cdot)$. This is a notation inconsistency which needs to be fixed. Similar notation inconsistency happens for $v(t,\cdot)$ and $v_t$ below. I recommend using notations like $p_t, \widehat p_t,\widetilde p_t, v_t$. It makes more sense by always putting the time variable $t$ as a subscript, just like $X_t$ and $P_t$.
+    
+    [Ren:] These notations are OK. We may just say that $\widehat p_t$ is some time written as $\widehat p(t,\cdot,\cdot)$. Similarly for others.
   \end{itemize}
 \end{iss}
 
@@ -957,6 +967,8 @@ The proofs will be omitted.
   \begin{itemize}
   \item[ZS:]
 The original Lemma in \cite{LiuRenSong2009Log} holds with $\epsilon = -\lambda$. I'm wondering why the following lemma hold for all $\epsilon>0$. I have read the original proof in \cite{LiuRenSong2009Log}, it seems hold with any positive $\epsilon$. But I can't be 100\% sure. 
+
+[Ren:] It should only holds with $\epsilon = -\lambda$, for for any $\epsilon>0.$
   \end{itemize}
 \end{iss}
 \begin{lem}\label{lem:import_lemma}
@@ -1036,6 +1048,8 @@ Then the following sequence of random variables
   \begin{itemize}
   \item[ZS:]
 At several places, we assume the reader know that $\nu$ is a finite measure. This is a consequence of IU property. But it is not obvious for people who are new to the IU settings. Maybe We should mention that $\nu$ is a finite measure here.
+
+[Ren:] So, we should assume  $\nu$ is finite, right?
   \end{itemize}
 \end{iss}
 
@@ -1123,9 +1137,10 @@ In particular, we write
   \item[ZS:]
 I'm confident with the proof of the following Lemma now. 
 I would like to ask Rongli to double check the proof of this key Lemma.
-There are some new features I want to mention for this Lemma:
+\item[ZS:]
+There are some new features I want to mention here:
 a. The testing function $f$ now can take extended value $\infty$. So this Lemma also covers $v_t$ which can be considered as $V_t(\infty)$.
-b. Instead of finding the upper bound and the lower bound separately, we proof the uniform convergence of this Lemma in one stroke.
+b. Instead of finding the upper bound and the lower bound separately, we proof the assertion (3) of this Lemma in one stroke with the help of the Big-O notations.
   \end{itemize}
 \end{iss}
 \begin{lem}
