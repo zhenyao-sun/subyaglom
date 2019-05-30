@@ -349,7 +349,8 @@ $(P_t^\beta)_{t\geq 0}$ in addition:
 \begin{enumerate}
 \item The superprocess $X$ is subcritical, i.e. $\lambda < 0$.
 \item The eigenfunctions $\phi$ and $\widehat\phi$ are bounded on $E$.
-\item The mean semigroup $(P_t^\beta)_{t\geq 0}$ is \emph{intrinsically ultracontractive}, that is, for each $t>0$, there is a constant $c_t >0$ such that for each $x,y\in E$, $p^\beta_t(x,y) \leq c_t \phi(x) \widehat\phi(y)$.
+\item \label{subasp:IU} 
+  The mean semigroup $(P_t^\beta)_{t\geq 0}$ is \emph{intrinsically ultracontractive}, that is, for each $t>0$, there is a constant $c_t >0$ such that for each $x,y\in E$, $p^\beta_t(x,y) \leq c_t \phi(x) \widehat\phi(y)$.
 \end{enumerate}
 \end{asp}
 % ***** Assumption of non-persistent
@@ -371,7 +372,19 @@ If the branching mechanism $\psi$ is independent of the location $x$, then
 \eqref{eq:p1extinc} holds provided condition \eqref{eq:_extinc_assump_for_continuous}
 is true. 
 \end{comment}
+
 % ****** Statement
+
+It follows from \cite[Proposition 2.5]{KimSong2008Intrinsic} that, under Assumption \ref{asp:IU}.\eqref{subasp:IU}, for each $t>0$, there exists $c'_t > 0$ such that 
+\begin{align}
+	p^\beta_t (x,y) 
+  \geq c_t' \phi(x) \widehat \phi(y),
+  x,y \in E.
+\end{align}
+Define $\nu(dy):= \widehat \phi(y) m(dy)$. 
+Then from above $\nu(dy)$ is a finite measure on $E$.
+Therefore we can consider the superprocess $X$ with initial configuration $\nu$.
+  
 Let $\zeta=\inf\{t>0: \langle \mathbf 1_E,X_t\rangle=0\}$ be the extinction time of the superprocess $X$.
 Similar to \cite{RenSongSun2019Spine,RenSongZhang2018Williams}, we add the following assumption to assure the process will be extinct in finite time almost surely.
 \begin{asp} 
@@ -383,7 +396,7 @@ Similar to \cite{RenSongSun2019Spine,RenSongZhang2018Williams}, we add the follo
     $\mathbb P_{x}(\zeta \leq t)>0$ for each $x\in E$ and $t>0$.
   \item \label{subasp:measure_non_presistence}
     % $\mathbb P_{\nu}(\zeta< t)>0$ for some $t>0$ with $\nu(dx):=\widehat\phi(x)m(dx)$.
-    $\mathbb P_{\nu}(\zeta\leq t)>0$ for some $t>0$ with $\nu(dx):=\widehat\phi(x)m(dx)$.
+    $\mathbb P_{\nu}(\zeta\leq t)>0$ for some $t>0$.
   \end{enumerate}
 \end{asp}
 % **** Results in this paper
@@ -568,20 +581,22 @@ Our fourth result is the following:
     If $\int_E\widehat\phi(x)l(x)m(dx)=\infty$, then for each $\mu \in \mathcal M(E)$, we have $\lim_{t\rightarrow\infty}\langle \phi, X_t\rangle =\infty$ in probability with respect to $\widetilde{\mathbb P}_\mu$.
   \end{enumerate}
 \end{thm}
-\begin{iss}[open]~
+\begin{iss}[TODO]~
   \begin{itemize}
   \item[ZS:]
     Which notation for the random variable in the above theorem is better? $\widetilde M$ or $M$? There is a notation inconsistency in the above theorem, we should fix it. I recommend using ``widetilde'' for ``size-biased-related'' stuff.
-    
-    [Ren:] Agree.
+  \item[Ren:] 
+Agree.
+\item[ZS:]
+We will use  $M$ instead of $\widetilde M$
   \end{itemize}
 \end{iss}
-\begin{iss}[open]~
+\begin{iss}[TODO]~
   \begin{itemize}
   \item[ZS:]
 I have a question about the terminology. Why we call that probability in the above theorem the ``equilibrium probability''? Why not call it ``invariant probability'' or ``invariant measure''?
-
-[Ren:] Prefer "invariant probability"
+\item[Ren:] Prefer "invariant probability"
+\item[ZS:] We will use ``equilibrium probability'' instead of ``invariant measure''.
   \end{itemize}
 \end{iss}
 \begin{iss}[open]~
@@ -593,20 +608,21 @@ Why we only considered the existence of that equilibrium probability in the abov
 \begin{iss}[open]~
   \begin{itemize}
   \item[ZS:]
-Can I have this conjecture: Under $\mathbf P \widetilde{\mathbb P}$, $(X_t)_{t\geq 0}$ is a stationary (or even better, an ergodic) measure-valued process?
-
-[Ren:]  It is safe to say stationary because we have not prove uniqueness.
+    Can I have this conjecture: Under $\mathbf P \widetilde{\mathbb P}$, $(X_t)_{t\geq 0}$ is a stationary (or even better, an ergodic) measure-valued process?
+\item[Ren:]
+  It is safe to say stationary because we have not prove uniqueness.
   \end{itemize}
 \end{iss}
 
 % **** Some comment about all the results
-\begin{iss}[Open]~
+\begin{iss}[TODO]~
   \begin{itemize}
   \item[ZS:]
 Should we extend the following paragraph into a new subsection with maybe more details about the spine-decomposition?
 
-[Ren:] Yes, we should introduce more on it .
-  \end{itemize}
+\item[Ren:] 
+  Yes, we should introduce more on it .  
+\end{itemize}
 \end{iss}
 One important technique used to prove the above theorems is a ``spine-decomposition'' for the super-diffusion $X$ under a martingale change of measure.
 This decomposition was used by Englander and Kyprianou in \cite{EnglanderKyprianou2004Local} to investigate the local extinction of super-diffusions, in which the branching mechanism is $\psi(x,z)-\beta(x)z=\alpha(x)^2z^2-\beta(x)z$.
@@ -693,7 +709,7 @@ Let $\{(\widehat{Y}_t)_{t\geq 0}; (\widehat{\Pi}_x)_{x\in E}\}$ be an $E$-valued
 \]
 It is easy to check that $(\widehat Y_t)_{t\geq 0}$ has the unique invariant measure $\phi(x)\widehat\phi(x)m(dx)$, and is exponentially ergodic in the sense that there exists $c, \rho > 0$ such that
 \begin{equation}\label{eq:IU'}
-	\sup_{x,y\in E}\left|\frac{\widehat{p}(t, x,y)}{\phi(y) \widehat\phi(y)}- 1\right|\le c\,\mbox{e}^{-\rho t}, \quad t\geq 1.
+	\sup_{x,y\in E}\left|\frac{\widehat{p}(t, x,y)}{\phi(y) \widehat\phi(y)}- 1\right|\le ce^{-\rho t}, \quad t\geq 1.
 \end{equation}
 % ***** Proof of the time reverse property.
 \begin{lem}
@@ -737,7 +753,8 @@ It is easy to check that $(\widehat Y_t)_{t\geq 0}$ has the unique invariant mea
   \item[ZS:]
     In the above proof and several places below, a new set of notation $\widehat p_t$ and $\widetilde p_t$ is used to replace $\widehat p(t,\cdot,\cdot)$ and $\widetilde p(t,\cdot, \cdot)$. This is a notation inconsistency which needs to be fixed. Similar notation inconsistency happens for $v(t,\cdot)$ and $v_t$ below. I recommend using notations like $p_t, \widehat p_t,\widetilde p_t, v_t$. It makes more sense by always putting the time variable $t$ as a subscript, just like $X_t$ and $P_t$.
     
-    [Ren:] These notations are OK. We may just say that $\widehat p_t$ is some time written as $\widehat p(t,\cdot,\cdot)$. Similarly for others.
+   \item[Ren:] 
+These notations are OK. We may just say that $\widehat p_t$ is some time written as $\widehat p(t,\cdot,\cdot)$. Similarly for others.
   \end{itemize}
 \end{iss}
 
@@ -963,12 +980,16 @@ The transition probability of these two processes both have uniform convergence 
 Therefore we can repeat the arguments for Lemma $3.2$ in \cite{LiuRenSong2009Log} and obtain the following results.
 The proofs will be omitted.
 
-\begin{iss}[open]~
+\begin{iss}[Open]~
   \begin{itemize}
   \item[ZS:]
 The original Lemma in \cite{LiuRenSong2009Log} holds with $\epsilon = -\lambda$. I'm wondering why the following lemma hold for all $\epsilon>0$. I have read the original proof in \cite{LiuRenSong2009Log}, it seems hold with any positive $\epsilon$. But I can't be 100\% sure. 
 
-[Ren:] It should only holds with $\epsilon = -\lambda$, for for any $\epsilon>0.$
+\item[Ren:] 
+It should only holds with $\epsilon = -\lambda$, for for any $\epsilon>0.$
+
+\item[ZS:]
+ In the Lemma below, we should change $\epsilon$ to $\lambda$, and mention that $\lambda$ is the largest eigenvalue of the mean semigroup.
   \end{itemize}
 \end{iss}
 \begin{lem}\label{lem:import_lemma}
@@ -1044,12 +1065,21 @@ Then the following sequence of random variables
 % ***** Definition of v(t,x)
 \section{The proofs of main results}
 \subsection{Some properties of the solutions of partial differential equations}
-\begin{iss}[open]~
+\begin{iss}[Closed]~
   \begin{itemize}
   \item[ZS:]
 At several places, we assume the reader know that $\nu$ is a finite measure. This is a consequence of IU property. But it is not obvious for people who are new to the IU settings. Maybe We should mention that $\nu$ is a finite measure here.
 
-[Ren:] So, we should assume  $\nu$ is finite, right?
+\item[Ren:] 
+So, we should assume  $\nu$ is finite, right?
+\item[ZS:]
+No, we don't need to assume this. 
+This can be proved using Assumption \ref{asp:IU}.
+\item[ZS:]
+I added a paragraph after Assumption \ref{asp:IU} to show this.
+I put it there instead of here, because we need to mention $\nu$ is a finite measure before we can safely talk about $\mathbb P_\nu$.
+\item[ZS:]
+This Issue is now closed.
   \end{itemize}
 \end{iss}
 
