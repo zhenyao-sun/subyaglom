@@ -1300,7 +1300,8 @@ Another fact can be derived from \eqref{eq:psi0'vtx_is_Big_O} is that
 \end{align}
 
 Now,  integrating the both sides of \eqref{eq:equation_for_Vtf} with respect to measure $\nu$, we get
-\begin{equation}\label{eq:equation_for_nuvt}
+\begin{equation}
+\label{eq:equation_for_nuvt}
 \langle V_{t+s}f, \nu\rangle + e^{\lambda s}\int_0^s e^{-\lambda u}\left\langle \Psi_0 V_{t+u} f,\nu\right\rangle~du
 = e^{\lambda s}\left\langle V_tf,\nu \right\rangle,
 \quad t,s > 0.
@@ -1760,13 +1761,14 @@ I'm now revising the rest of the paper.
 \end{lem}
 
 \begin{proof}
-	Thanks to \eqref{ext con} and \eqref{eq:ratio_limits}, we only need to prove
+	Thanks to Corollaray \ref{cor:general_rate} we only need to prove
   \begin{equation}\label{eq:spec_ratio}
     \lim_{t\rightarrow\infty}\frac{\langle V_tf,\nu\rangle }{\langle v_t,\nu\rangle }=e^{\lambda G(f)}.
   \end{equation}
-	Note that $\nu$ is an eigenfunction of {\color{red}$(\widehat P^\beta_t)$}, thus for any $t,s>0$,
+  According to \eqref{eq:equation_for_nuvt}, we have
   \begin{equation}\label{eq:monotone}
-    e^{-\lambda(t+s)}\langle v(t+s,\cdot),\nu\rangle =e^{-\lambda t}\langle v_t,\nu\rangle -\int_0^se^{-\lambda(t+u)}\langle (\psi+\beta)(v(t+u,\cdot)),\nu\rangle du.
+    e^{-\lambda(t+s)}\langle v_{t+s},\nu\rangle + \int_0^se^{-\lambda(t+u)}\langle \Psi_0 v_{t+u},\nu\rangle du. 
+= e^{-\lambda t} \langle v_t,\nu\rangle 
   \end{equation}
  	Therefore, $\langle v_t,nu\rangle $ is a strictly decreasing continuous function of $t$.  Moreover it has limits
   \[
