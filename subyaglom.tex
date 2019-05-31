@@ -1745,18 +1745,15 @@ I'm now revising the rest of the paper.
 \end{iss}
 
 \begin{cor}\label{cor:general_rate}
-	For any $\mu\in\mathcal M(E)\backslash\{0\}$,
-  \begin{equation}\label{eq:ext_con}
-    \lim_{t\rightarrow\infty}\frac{\langle v(t+s,\cdot),\mu\rangle }{\langle v_t,\nu\rangle }=\langle \phi,\mu\rangle e^{\lambda s}.
-  \end{equation}
-	For any $f\in\mathcal B_b(E,[0,\infty))$, $V_tf(\cdot)$ is the solution to \eqref{eq: diff equ} with initial condition $f$. Then for any $s>0$,
+	For each $\mu\in\mathcal M(E)\setminus\{0\}$, $f\in\mathcal B_b(E,[0,\infty])$ and $s>0$, it holds that
   \begin{equation}\label{eq:ratio_limits}
-    \lim_{t\rightarrow\infty}\frac{\langle V_{t+s}f,\mu\rangle }{\langle V_{t}f,\nu\rangle }=\langle \phi,\mu\rangle e^{\lambda s}.
+\lim_{t\rightarrow\infty}\frac{\langle V_{t+s}f,\mu\rangle }{\langle V_{t}f,\nu\rangle }
+=\langle \phi,\mu\rangle e^{\lambda s}.
   \end{equation}
 \end{cor}
 
 \begin{lem}\label{eq:ratio_limits_2}
-	For any $f\in\mathcal B_b(E,[0,\infty))$, let $V_tf(x)$ is the solution to \eqref{eq: diff equ}.  Then there is a nonnegative function $G(f)$ such that $G(v_t)=t$ and such that for any $\mu\in\mathcal M(E)\backslash\{0\}$,
+	For any $f\in\mathcal B_b(E,[0,\infty))$, let $V_tf(x)$ is the solution to \eqref{eq: diff equ}.  Then there is a nonnegative function $G(f)$ such that $G(v_t)=t$ and such that for any $\mu\in\mathcal M(E)\setminus\{0\}$,
   \begin{equation}\label{eq:app_of_G}
     \lim_{t\rightarrow\infty}\frac{\langle V_tf,\mu\rangle }{\langle v_t,\mu\rangle }=e^{\lambda G(f)}.
   \end{equation}
@@ -1807,7 +1804,7 @@ I'm now revising the rest of the paper.
     \lim_{t\rightarrow\infty}\frac{\langle V_tf,\nu\rangle }{\langle v_t,\nu\rangle }=
     \lim_{t\rightarrow\infty}\frac{\langle v(t+G(f),\cdot),\nu\rangle }{\langle v_t,\nu\rangle }=e^{\lambda G(f)},
   \]
-	from \eqref{ext con}.  As a result, for any $\mu\in\mathcal M(E)\backslash\{0\}$,
+	from \eqref{ext con}.  As a result, for any $\mu\in\mathcal M(E)\setminus\{0\}$,
   \[
     \lim_{t\rightarrow\infty}\frac{\langle V_tf,\mu\rangle }{\langle v_t,\mu\rangle }
     =\lim_{t\rightarrow\infty}\frac{\langle V_tf,\mu\rangle }{\langle V_tf,\nu\rangle }
@@ -1822,7 +1819,7 @@ I'm now revising the rest of the paper.
     \mathbb P_\mu(\zeta=\infty)=\lim_{t\rightarrow\infty}\mathbb P_\mu(\zeta>t)=1-e^{-\lim_{t\rightarrow\infty}\langle v_t,\mu\rangle }=0,
   \]
 	follows from Lemma\ref{lem:extinct}.
-	Meanwhile, thanks to \eqref{ext con}, for any $\mu,\widetilde\mu\in \mathcal M(E)\backslash\{0\}$ and $s\in\mathbb R$,
+	Meanwhile, thanks to \eqref{ext con}, for any $\mu,\widetilde\mu\in \mathcal M(E)\setminus\{0\}$ and $s\in\mathbb R$,
   \[
     \lim_{t\rightarrow\infty}\frac{\mathbb P_{\mu}(\zeta>t+s)}{\mathbb P_{\widetilde\mu}(\zeta>t)}=\lim_{t\rightarrow\infty}\frac{1-e^{-\langle v(t+s,\cdot),\mu\rangle }}{1-e^{-\langle v_t,\widetilde\mu\rangle }}
     =\lim_{t\rightarrow\infty}\frac{\langle v(t+s,\cdot),\mu\rangle }{\langle v_t,\widetilde\mu\rangle }=\frac{\langle \phi,\mu\rangle }{\langle \phi,\widetilde\mu\rangle }e^{\lambda s}.
@@ -2035,7 +2032,7 @@ I'm now revising the rest of the paper.
                                                                           &=&1-e^{-\gamma t}\left(1-\int_{\mathcal M(E)}e^{-\langle V_tf,\omega\rangle }\mathbf P(d\omega)\right)\\
                                                                           &=&\int_{\mathcal M(E)}e^{-\langle f,\omega\rangle }\mathbf P(d\omega).
   \end{eqnarray*}
-  Recall that $\lim_{t\rightarrow\infty}\dfrac{\langle v(t+s,\cdot),\omega\rangle }{\langle v_t,\nu\rangle }=\langle \phi,\omega\rangle e^{\lambda s} $ and that $\lim_{t\rightarrow\infty}\dfrac{\langle V_{t+s}f,\omega\rangle }{\langle V_tf,\nu\rangle }=\langle \phi,\omega\rangle e^{\lambda s}$ uniformly for all $\omega\in \mathcal M(E)\backslash\{0\}$.  For any $\varepsilon>0$, there is $T>0$, such that when $t>T$,
+  Recall that $\lim_{t\rightarrow\infty}\dfrac{\langle v(t+s,\cdot),\omega\rangle }{\langle v_t,\nu\rangle }=\langle \phi,\omega\rangle e^{\lambda s} $ and that $\lim_{t\rightarrow\infty}\dfrac{\langle V_{t+s}f,\omega\rangle }{\langle V_tf,\nu\rangle }=\langle \phi,\omega\rangle e^{\lambda s}$ uniformly for all $\omega\in \mathcal M(E)\setminus\{0\}$.  For any $\varepsilon>0$, there is $T>0$, such that when $t>T$,
   \[
     (1-\varepsilon)\langle v_t,\nu\rangle \langle \phi,\omega\rangle\leq \langle v_t,\omega\rangle\leq (1+\varepsilon)\langle v_t,\nu\rangle \langle \phi,\omega\rangle,\qquad \omega\in\mathcal M(E).
   \]
@@ -2346,7 +2343,7 @@ I'm now revising the rest of the paper.
     =\lim_{t\rightarrow\infty}\widetilde{\mathbb P}_{\nu}\left(e^{-\langle f, X_t\rangle }\right)
     =\widehat{\mathbb Q}_{\nu}\left(e^{-\langle f, X_{\infty}\rangle }\right).
   \end{equation*}
-  Therefore for any $\mu\in\mathcal M(E)\backslash\{0\}$, and $f\in\mathcal B_b(E,[0,\infty))$,
+  Therefore for any $\mu\in\mathcal M(E)\setminus\{0\}$, and $f\in\mathcal B_b(E,[0,\infty))$,
   \begin{eqnarray*}
     \lim_{t\rightarrow\infty}\widetilde{\mathbb P}_\mu\left(e^{-\langle f, X_t\rangle}\right)&=&\lim_{t\rightarrow\infty}\mathbb P_\mu\left(e^{-\langle f, X_t\rangle}\right)
                                                                                                  \lim_{t\to\infty}\dfrac{1}{\mu(\phi)}\int_E\phi(x)H(x, t)\mu(dx)=q(f)\\
@@ -2423,7 +2420,7 @@ I'm now revising the rest of the paper.
   \[
     \langle \phi, X_{\infty}\rangle =\infty,\qquad \mathbf P-{\mathrm a.s.}
   \]
-  In this case, the $Q$ process does not have equilibrium probability. And $\langle \phi, X_t\rangle $ converges to $\infty$ as $t\to\infty$ in probability with respect to $\widetilde{\mathbb P}_\mu$ for any $\mu\in \mathcal M(E)\backslash\{0\}$.
+  In this case, the $Q$ process does not have equilibrium probability. And $\langle \phi, X_t\rangle $ converges to $\infty$ as $t\to\infty$ in probability with respect to $\widetilde{\mathbb P}_\mu$ for any $\mu\in \mathcal M(E)\setminus\{0\}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% ----------------------------------------------------------------------------------------------------------------
 \begin{proof}[Proof of Proposition \ref{eq:exp_prop}]
