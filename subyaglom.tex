@@ -7,13 +7,13 @@
 % ! 2019.01.31 subSuper0131.tex by R. Liu
 % ! 2019.02.20 subSuper0220.tex by Z. Sun: there is a problem in Section 3. 
 % * The preamble
-% ! This TeX file use 'amsart' for its document class. 
+% ! This TeX file uses 'amsart' for its document class. 
 \documentclass[12pt,a4paper]{amsart}
 \setlength{\textwidth}{\paperwidth}
 \addtolength{\textwidth}{-2in}
 \calclayout
 % ! 'amsmath', 'amsthm', 'amsfonts' package is automatically loaded by 'amsart' class.
-% ! Below is the configuration about 'amsmath' package.
+% ! Below is the configuration of 'amsmath' package.
 \numberwithin{equation}{section}
 \allowdisplaybreaks
 % ! Below is the configuration of 'amsthm' package.
@@ -40,37 +40,44 @@
 \mathtoolsset{showonlyrefs}
 \usepackage{mathrsfs}
 % ! 'hyperref' package is used to handle cross-referencing in the generated pdf file.
+\usepackage[backref]{hyperref}
 % ! Other packages
 \usepackage{xcolor}
 \usepackage{comment}
-%\usepackage{hyperref}
 % * Top matter
 \begin{document}
-\title
-[Subcritical super-diffusions]
-{\large The extinction probability for a class of subcritical super-diffusions}
-\author
-[R. Liu, Y.-X. Ren and Z. Sun]
-{ Rongli Liu, Yan-Xia Ren and Zhenyao Sun}
-\address
-{Yan-Xia Ren\\
+\title[
+  Subcritical super-diffusions]
+{\large 
+  The extinction probability for a class of subcritical super-diffusions}
+\author[
+  R. Liu, Y.-X. Ren and Z. Sun]
+{
+  Rongli Liu, Yan-Xia Ren and Zhenyao Sun}
+\address{
+  Yan-Xia Ren\\
   School of Mathematical Sciences\\
   Peking University\\
   Beijing, P. R. China, 100871}
-\email{yxren@math.pku.edu.cn}
-\thanks{The research of Yan-Xia Ren is supported in part by NSFC (Grant Nos. 11671017  and 11731009).}
-\address
-{Rongli Liu\\
+\email{
+  yxren@math.pku.edu.cn}
+\thanks{
+  The research of Yan-Xia Ren is supported in part by NSFC (Grant Nos. 11671017  and 11731009).}
+\address{
+  Rongli Liu\\
   {\bf Information about Rongli Liu}}
-\email{rlliu@bjtu.edu.cn }
-\thanks{ The research of Rongli Liu is supported in part by NSFC
+\email{
+  rlliu@bjtu.edu.cn }
+\thanks{
+  The research of Rongli Liu is supported in part by NSFC
   (Grant No. 11301261), and the Fundamental Research Funds for the Central Universities (Grant No.  2017RC007)}
-\address
-{Zhenyao Sun\\
+\address{
+  Zhenyao Sun\\
   School of Mathematical Sciences\\
   Peking University\\
   Beijing, P. R. China, 100871}
-\email{zhenyao.sun@pku.edu.cn}
+\email{
+  zhenyao.sun@pku.edu.cn}
 \begin{abstract}
 	In this paper, we discussed the decay rate of the extinction probability of a class of superdiffusions.
   Two different conditional limits, the Yaglom probability and the Q process, are considered.
@@ -86,28 +93,32 @@
 % *** Backgroud
 \section{Introduction}
 \subsection{Backgroud}
-Suppose $(Z_n, n\ge 1)$ is a Galton-Watson branching process with offspring distribution $\{p_n\}$.
-Let $m:=\sum^{\infty}_{n=1}np_n$ be the mean number of children per particle.
-It is well known that when $m<1$ the extinction probability $q:=\lim_{n\rightarrow\infty}P\left(Z_n=0\right)$ is equal to $1$.
-That is to say the process $(Z_n)$ is extinct in finite time almost surely.
-In this case, the non-extinction probability $P(Z_n>0)$ decays to $0$.
-A natural question is what the right decay rate of the probability is.
-In 1967, Heathcot,Seneta and Vere-Jone \cite{HeathcoteSenetaVere-Jones1967Refinement}
-answered the question, giving an LlogL criteria.
-Let $L$ stand for a random variable with distribution $\{p_n\}$.
+  % Suppose $(Z_n, n\ge 1)$ is a Galton-Watson branching process with offspring distribution $\{p_n\}$. 
+  Suppose that $(Z_n)_{n \in \mathbb Z_+}$ is a Galton-Watson process with offspring distribution $(p_n)_{n\in \mathbb Z_+}$. 
+  % Let $m:=\sum^{\infty}_{n=1}np_n$ be the mean number of children per particle.
+  Let $m:=\sum^{\infty}_{n=0}np_n$ be the mean number of children per particle.
+  % It is well known that when $m<1$ the extinction probability $q:=\lim_{n\rightarrow\infty}P\left(Z_n=0\right)$ is equal to $1$.
+  % That is to say the process $(Z_n)$ is extinct in finite time almost surely.
+  % A natural question is what the right decay rate of the probability is.
+  A natural question is what the right decay rate of those non-extinction probability $P(Z_n >0)$ is.
+  % In 1967, Heathcot, Seneta and Vere-Jone \cite{HeathcoteSenetaVere-Jones1967Refinement} answered the question, giving an LlogL criteria.
+  In 1967, Heathcot, Seneta and Vere-Jone \cite{HeathcoteSenetaVere-Jones1967Refinement} answered this question with an LlogL criteria.
+  % Let $L$ stand for a random variable with distribution $\{p_n\}$.
+  Let $L$ stands for a random variable with distribution $(p_n)_{n \in \mathbb Z_+}$.
+  \begin{thm}[\cite{HeathcoteSenetaVere-Jones1967Refinement}]
+    The sequence $\{ P(Z_n>0)/m^n\}$ is decreasing. 
+    If $m<1$, then the following are equivalent:
+    \begin{enumerate}
+    \item $\lim_{n\rightarrow\infty}P(Z_n>0)/m^n>0$,
+    \item $\sup E[Z_n|Z_n>0]<\infty$,
+    \item $E\left[L\log^+ L\right]<\infty$.
+    \end{enumerate}
+  \end{thm}
+  % In 1995, Lyons, Pemantle and Peres developed a martingale change of measure method in \cite{LyonsPemantlePeres1995Conceptual} to give a new proof for this $L\log L$ theorem.
+  In 1995, Lyons, Pemantle and Peres developed a martingale change of measure method in \cite{LyonsPemantlePeres1995Conceptual} to give a new proof for this $L\log L$ theorem.
 
-\begin{thm}[Heathcote, Seneta and Vere-Jones (1967)]
-  The sequence $\{ P(Z_n>0)/m^n\}$ is decreasing. If $m<1$, then the following are equivalent:
-  \begin{itemize}
-  \item[$(i).$] $\lim_{n\rightarrow\infty}P(Z_n>0)/m^n>0$,
-  \item[$(ii).$] $\sup E[Z_n|Z_n>0]<\infty$,
-  \item[$(iii).$] $E\left[L\log^+ L\right]<\infty$.
-  \end{itemize}
-\end{thm}
-In 1995, Lyons, Pemantle and Peres developed a martingale change of measure method in \cite{LyonsPemantlePeres1995Conceptual} to give a new proof for this $L\log L$ theorem. $1+1 = \gamma$
-
-In \cite{Lambert2001Arbres,Lambert2003Coalescence}, Lambert discusses the similar equivalencies for continuous time continuous state branching process $(Z_t)$.
-Its branching mechanism function $\psi$ is specified by the L\'evy-Khinchin formula
+  In \cite{Lambert2001Arbres,Lambert2003Coalescence}, Lambert discusses the similar equivalencies for continuous time continuous state branching process $(Z_t)$.
+  Its branching mechanism function $\psi$ is specified by the L\'evy-Khinchin formula
 \[
 	\psi(\lambda)=-\beta\lambda+\sigma^2\lambda^2+\int_0^\infty \left(e^{-\lambda r}-1+\lambda r\right)n(dr),
 \]
@@ -220,28 +231,26 @@ introduce the setup we are going to work with first.
 % ***** Notations before the definition of superprocesses
 \subsection{Main results}
 \label{sec:main-results}
-Let $E$ be a locally compact separable metric space. Let \emph{spatial motion}
-$Y=\{(Y_t)_{t\geq 0};(\Pi_x)_{x\in E}\}$ be an $E$-valued Hunt process with its
-lifetime denoted by $\tau$ and its transition semigroup denoted by $(P_t)_{t\geq
+Let $E$ be a locally compact separable metric space. 
+Denote by $\mathcal B_b(E,\mathbb R)$ the collection of all bounded measurable function on
+$E$. 
+Denote by $\mathcal B_b(E, [0,\infty))$ the collection of all non-negative bounded measurable functions on $E$. 
+Denote by $\mathcal M(E)$ the space of all finite measures on $E$ equipped with the weak topology. 
+Write $\langle f,\mu\rangle$ or$\mu(f)$ for the integral $\int_E f(x)\mu(dx)$ for the function $f$ and measure $\mu$ whenever it make sense.
+
+Let the \emph{spatial motion} $Y=\{(Y_t)_{t\geq 0};(\Pi_x)_{x\in E}\}$ be an $E$-valued Hunt process with its lifetime denoted by $\tau$ and its transition semigroup denoted by $(P_t)_{t\geq
   0}$. 
-Let the \emph{branching mechanism} $\psi$ be a function on
-$E\times[0,\infty)$ given by
+Let the \emph{branching mechanism} $\psi$ be a function on $E\times[0,\infty)$ given by
 \[
 	\psi(x,z)
 	=-\beta(x)z + \alpha(x)^2 z^2+ \int_{(0,\infty)} (e^{-rz}-1+zr )n(x, dr),\qquad x\in E, z\geq0,
 \]
-where $\beta, \alpha\in \mathcal B_b(E,\mathbb R)$ and $n$ is a $\sigma$-finite kernel
-from $E$ to $(0,\infty)$ with
+where $\beta, \alpha\in \mathcal B_b(E,\mathbb R)$ and $n$ is a $\sigma$-finite kernel from $E$ to $(0,\infty)$ with
 \[
 	\sup_{x\in E}\int_0^\infty (r\wedge r^2)n(x,dr)
 	<\infty.
 \]
-Denote by $\mathcal B_b(E,\mathbb R)$ the collection of all bounded measurable function on
-$E$. Denote by $\mathcal B_b(E, [0,\infty))$ the collection of all non-negative bounded
-measurable functions on $E$. Denote by $\mathcal M(E)$ the space of all finite
-measures on $E$ equipped with the weak topology. Write $\langle f,\mu\rangle$ or
-$\mu(f)$ for the integral $\int_E f(x)\mu(dx)$ for the function $f$ and
-measure $\mu$ whenever it make sense.
+
 % ***** Definition of superprocesses
 \par
 In this paper, we consider a \emph{$(Y,\psi)$-superprocess} $X$ which is defined as an $\mathcal M(E)$-valued Hunt process $X=\{(X_t)_{t\geq 0}; (\mathbb
@@ -265,8 +274,7 @@ See \cite[Theorem 5.11]{Li2011Measurevalued} for the existence of such processes
 % ****** Notations
 \par
 To simplify the notation, we also write $\mathbb P_x$ for $\mathbb P_{\delta_x}$.
-Define the \emph{Feynman-Kac semigroup} $(P^\beta_t)_{t\geq 0}$
-such that for any $ f\in \mathcal B_b(E,\mathbb R)$,
+Define the \emph{Feynman-Kac semigroup} $(P^\beta_t)_{t\geq 0}$ such that for any $ f\in \mathcal B_b(E,\mathbb R)$,
 \begin{align}
 	P^\beta_tf(x)
 	:= \Pi_x \big[e^{\int_0^{t} \beta(Y_r)dr} f(Y_t)\mathbf 1_{\{t<\tau\}}\big],
@@ -277,9 +285,9 @@ It is known, see \cite[Proposition 2.27]{Li2011Measurevalued} for example, $(P^\
 \mathbb P_\mu [\langle f,X_t\rangle] = \mu(P^\beta_t f), \quad t \geq 0.
 \end{align}
 % ****** Statements
+\par
 For the spatial motion $Y$, we always assume the following:
-\begin{asp}
-  \label{asp:1}
+\begin{asp}\label{asp:1}
   There exist a $\sigma$-finite measure $m$ with full support on $E$ and a family
   of strictly positive, bounded continuous functions $\{ p_t(\cdot,\cdot): t > 0
   \}$ on $E \times E$ such that
@@ -292,13 +300,12 @@ For the spatial motion $Y$, we always assume the following:
   	<\infty,
   	&\quad t> 0;
   \end{align}
-  and the functions $x \mapsto \int_E p_t(x,y)^2 m(dy)$ and $y \mapsto \int_E
+  and that the functions $x \mapsto \int_E p_t(x,y)^2 m(dy)$ and $y \mapsto \int_E
   p_t(x,y)^2 m(dx)$ are both continuous.
 \end{asp}
 % ****** Remarks
 \par
-Under Assumption \ref{asp:1}, it is proved in
-\cite{RenSongZhang2015Limit,RenSongZhang2017Central} that there exists a family
+Under Assumption \ref{asp:1}, it is proved in \cite{RenSongZhang2015Limit,RenSongZhang2017Central} that there exists a family
 of strictly positive, bounded continuous functions $\{ p^\beta_t(\cdot,\cdot): t
 > 0 \}$ on $E \times E$ such that
 \begin{align}
@@ -313,19 +320,16 @@ Its corresponding dual semigroup $(\widehat P^{\beta}_t)_{t \geq 0}$ is given by
 	:= \int_E p^\beta_t (x,y) f(x) m(dx),
 	\quad t>0, y\in E, f\in \mathcal B_b(E,\mathbb R).
 \end{align}
-It is shown in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that both
-$(P^\beta_t)_{t \geq 0}$ and $(\widehat P_t^{\beta})_{t\geq 0}$ are strongly
-continuous semigroups of compact operators on $L^2(E,m)$. Let $A$ and $\widehat
+It is shown in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that both $(P^\beta_t)_{t \geq 0}$ and $(\widehat P_t^{\beta})_{t\geq 0}$ are strongly continuous semigroups of compact operators on $L^2(E,m)$. 
+Let $A$ and $\widehat
 A$ be the generators of the semigroups $(P^\beta_t)_{t \geq 0}$ and $(\widehat
-P^\beta_t)_{t \geq 0}$, respectively. Denote by $\sigma(A)$ and $\sigma(\widehat
-A)$ the spectra of $A$ and $\widehat A$, respectively. According to
-\cite[Theorem V.6.6]{Schaefer1974Banach}, $\lambda := \sup \text{Re}(\sigma(A))
-= \sup \text{Re}(\sigma(\widehat A))$ is a common eigenvalue of multiplicity $1$
-for both $A$ and $\widehat A$. It is also proved in
-\cite{RenSongZhang2015Limit,RenSongZhang2017Central} that the eigenfunctions
-$\phi$ of $A$ and $\widehat\phi$ of $\widehat A$ associated with the common
-eigenvalue $\lambda$ can be chosen to be strictly positive and continuous
-everywhere on $E$. Normalize $\phi$ and $\widehat\phi$ by
+P^\beta_t)_{t \geq 0}$, respectively. 
+Denote by $\sigma(A)$ and $\sigma(\widehat
+A)$ the spectra of $A$ and $\widehat A$, respectively. 
+According to \cite[Theorem V.6.6]{Schaefer1974Banach}, $\lambda := \sup \text{Re}(\sigma(A))
+= \sup \text{Re}(\sigma(\widehat A))$ is a common eigenvalue of multiplicity $1$ for both $A$ and $\widehat A$. 
+It is also proved in \cite{RenSongZhang2015Limit,RenSongZhang2017Central} that the eigenfunctions $\phi$ of $A$ and $\widehat\phi$ of $\widehat A$ associated with the common eigenvalue $\lambda$ can be chosen to be strictly positive and continuous everywhere on $E$. 
+Normalize $\phi$ and $\widehat\phi$ by
 \[	
 	\int_E \phi(x)^2 m(dx) = \int_E \phi(x) \widehat \phi(x) m(dx) = 1
 \]
@@ -334,17 +338,17 @@ so that they are unique.
 % ****** Notations
 \par
 Notice that, for each $t \geq 0$ and $\mu \in \mathcal M(E)$, we have $ \mathbb
-P_\mu[X_t(\phi)] = \mu(P^\beta_t \phi) = e^{\lambda t} \mu(\phi). $ If $\lambda
-> 0$, the mean of $X_t(\phi)$ will increase exponentially; if $\lambda < 0$, the
-mean of $X_t(\phi)$ will decrease exponentially; and if $\lambda = 0$, the mean
-of $X_t(\phi)$ will be a constant. Therefore, we say $X$ is \emph{supercritical,
-  critical} or \emph{subcritical}, according to $\lambda > 0$, $\lambda = 0$ or
+P_\mu[X_t(\phi)] = \mu(P^\beta_t \phi) = e^{\lambda t} \mu(\phi). $ 
+If $\lambda
+> 0$, the mean of $X_t(\phi)$ will increase exponentially; 
+if $\lambda < 0$, the mean of $X_t(\phi)$ will decrease exponentially; 
+and if $\lambda = 0$, the mean of $X_t(\phi)$ will be a constant. 
+Therefore, we say $X$ is \emph{supercritical, critical} or \emph{subcritical}, according to $\lambda > 0$, $\lambda = 0$ or
 $\lambda < 0$, respectively.
 % ****** Statements
 \par
-Throughout this paper, we assume the following for the mean semigroup
-$(P_t^\beta)_{t\geq 0}$ in addition:
-\begin{asp} ~
+Throughout this paper, we assume the following for the mean semigroup $(P_t^\beta)_{t\geq 0}$ in addition:
+\begin{asp}~
 \label{asp:IU}
 \begin{enumerate}
 \item The superprocess $X$ is subcritical, i.e. $\lambda < 0$.
@@ -354,27 +358,8 @@ $(P_t^\beta)_{t\geq 0}$ in addition:
 \end{enumerate}
 \end{asp}
 % ***** Assumption of non-persistent
-% ****** some words before the statement
-\begin{comment}
-In the cases of $\lambda\leq 0,$ it is proved by \cite{EnglanderKyprianou2004Local} that $\lim_{t\rightarrow\infty} \langle
-\mathbf 1_E,X_t\rangle=0 $ in probability.
-({\bf ZS: Do we necessarily have to cite \cite{EnglanderKyprianou2004Local} here? I think
-  \cite{EnglanderKyprianou2004Local} only considered the homogenious branching
-  superdifussions, and it focused on the local extinction. It is hard to see
-  where it proved this statement. If in our prove we don't use the result that
-  $\langle \mathbf 1_E,X_t\rangle=0$, then we don't have to cite this paper
-  here.}) {\color{red} I prefer to keeping this result here.} But this is not
-equivalent to
-\begin{equation}\label{eq:p1extinc}
-	\mathbb P_\mu(\zeta<\infty)=1.
-\end{equation}
-If the branching mechanism $\psi$ is independent of the location $x$, then
-\eqref{eq:p1extinc} holds provided condition \eqref{eq:_extinc_assump_for_continuous}
-is true. 
-\end{comment}
-
 % ****** Statement
-
+\par
 It follows from \cite[Proposition 2.5]{KimSong2008Intrinsic} that, under Assumption \ref{asp:IU}.\eqref{subasp:IU}, for each $t>0$, there exists $c'_t > 0$ such that 
 \begin{align}
 	p^\beta_t (x,y) 
@@ -382,23 +367,27 @@ It follows from \cite[Proposition 2.5]{KimSong2008Intrinsic} that, under Assumpt
   x,y \in E.
 \end{align}
 Define $\nu(dy):= \widehat \phi(y) m(dy)$. 
-Then from above $\nu(dy)$ is a finite measure on $E$.
+Then from above $\nu$ is a finite measure on $E$.
 Therefore we can consider the superprocess $X$ with initial configuration $\nu$.
   
-Let $\zeta=\inf\{t>0: \langle \mathbf 1_E,X_t\rangle=0\}$ be the extinction time of the superprocess $X$.
-Similar to \cite{RenSongSun2019Spine,RenSongZhang2018Williams}, we add the following assumption to assure the process will be extinct in finite time almost surely.
-\begin{asp} 
-\label{asp:3}
-~
+For each measure $\mu$ on $E$, we write $\|\mu\|:= \left\langle \mathbf 1_E,\mu \right\rangle$.
+% Let $\zeta=\inf\{t>0: \langle \mathbf 1_E,X_t\rangle=0\}$ be the extinction time of the superprocess $X$.
+% Similar to \cite{RenSongSun2019Spine,RenSongZhang2018Williams}, we add the following assumption to assure the process will be extinct in finite time almost surely.
+Similar to \cite{RenSongSun2019Spine,RenSongZhang2018Williams}, we add the following non-persistent assumption:
+\begin{asp}~ 
+  \label{asp:3}
   \begin{enumerate}
   \item \label{subsup:point_non_presistence}
     % $\mathbb P_{x}(\zeta < t)>0$ for each $x\in E$ and $t>0$.
-    $\mathbb P_{x}(\zeta \leq t)>0$ for each $x\in E$ and $t>0$.
+    $\mathbb P_{x}(\|X_t\| = 0)>0$ for each $x\in E$ and $t>0$.
   \item \label{subasp:measure_non_presistence}
     % $\mathbb P_{\nu}(\zeta< t)>0$ for some $t>0$ with $\nu(dx):=\widehat\phi(x)m(dx)$.
-    $\mathbb P_{\nu}(\zeta\leq t)>0$ for some $t>0$.
+    $\mathbb P_{\nu}(\|X_t\| = 0)>0$ for some $t>0$.
   \end{enumerate}
 \end{asp}
+ Let $\zeta=\inf\{t>0: \|X_t\| = 0\}$ be the extinction time of the superprocess $X$.
+ The above assumption says that, with a positive probability, the process will extinct in finite time, provided the initial configuration is $\nu$ or $\delta_x$ with $x\in E$.
+
 % **** Results in this paper
 % ***** Results about extinction time zeta
 % ****** Notation: definition of the n-phi kernel
@@ -684,16 +673,16 @@ It can be verified (see \cite{KimSong2008Intrinsic} for example) that process $\
 Its transition density with respect to measure $m$ is given by
 \begin{equation}
   \label{eq:tilde_p}
-  \widetilde p(t, x, y)
-  :=\frac{\mbox{e}^{-\lambda t}}{\phi(x)}\ p^\beta(t, x, y)\phi(y),
+  \widetilde p_t(x, y)
+  :=\frac{\mbox{e}^{-\lambda t}}{\phi(x)}\ p^\beta_t(x, y)\phi(y),
   \quad x,y \in E,t>0.
 \end{equation}
 It can also be verified that $\phi(y)\widehat{\phi}(y)m(dy)$ is the unique invariant measure of $\{(Y_t)_{t\geq 0}; (\widetilde\Pi_x)_{x\in E}\}$.
 It follows from \cite[Theorem 2.7]{KimSong2008Intrinsic} that for each $\epsilon > 0$, there exists $c, \rho > 0$ such that 
 \begin{align}
 \label{eq:IU}
-	\sup_{x,y\in E}\Big|\frac{\widetilde p(t,x,y)}{\phi(y) \widehat\phi(y)}- 1\Big|
-	=\sup_{x,y\in E}\Big|\frac{e^{-\lambda t}p^\beta(t,x,y)}{\phi(x) \widehat\phi(y)}- 1\Big|
+	\sup_{x,y\in E}\Big|\frac{\widetilde p_t(x,y)}{\phi(y) \widehat\phi(y)}- 1\Big|
+	=\sup_{x,y\in E}\Big|\frac{e^{-\lambda t}p^\beta_t(x,y)}{\phi(x) \widehat\phi(y)}- 1\Big|
 	\leq c\,e^{-\rho t},
 	\quad t\geq \epsilon.
 \end{align}
@@ -1174,7 +1163,7 @@ b. Instead of finding the upper bound and the lower bound separately, we proof t
   \end{itemize}
 \end{iss}
 \begin{lem}
-\label{lem:asmptotic_of_Vtf}
+\label{lem:asmptotic_of_vtf}
   Suppose that Assumptions \ref{asp:1}, \ref{asp:IU} and \ref{asp:3} hold. 
   Let $f\in \mathcal B(E, [0,\infty])$.
   Then, the followings are hold:
@@ -1480,18 +1469,18 @@ Taking $f \equiv \infty$ in the above Lemma, we get
   Suppose that Assumptions \ref{asp:1}, \ref{asp:IU} and \ref{asp:3} hold.
   Then we have the followings:
   \begin{enumerate}
-  \item \label{lem:extinct_2}
+  \item \label{sublem:extinct_2}
     For each $\mu \in \mathcal M(E)$, we have
     \[
       \lim_{t\rightarrow\infty}\langle v_t,\mu\rangle=0.
     \]
-   \item \label{lem:extinct_2_1}
-For each $s>0$, we have
+   \item \label{sublem:extinct_2_1}
+For each $s\geq 0$, we have
      \begin{align}
        \lim_{t\to \infty} \frac{\left\langle v_{t+s},\nu\right\rangle}{\left\langle v_t,\nu\right\rangle} 
 = e^{\lambda s}.
      \end{align}
-  \item \label{lem:extinct:3}
+  \item \label{sublem:extinct:3}
     For each $s\geq 0$, we have
     \begin{equation} \label{eq:ont_point_ratio_limit}
       \lim_{t\to \infty} \sup_{x\in E}\Big|\frac{v_{t+s}(x)}{\langle v_t,\nu\rangle } - \phi(x)e^{\lambda s} \Big|
@@ -1761,6 +1750,90 @@ I'm now revising the rest of the paper.
 \end{lem}
 
 \begin{proof}
+  \begin{iss}[Open]~
+    \begin{itemize}
+    \item[ZS:]
+There is a lot of fraction in this proof.
+We want to check that each denominators are not zero.
+    \end{itemize}
+  \end{iss}
+	Thanks to Corollaray \ref{cor:general_rate} we only need to prove
+  \begin{equation}\label{eq:spec_ratio}
+    \lim_{t\rightarrow\infty}\frac{\langle V_tf,\nu\rangle }{\langle v_t,\nu\rangle }=e^{\lambda G(f)}.
+  \end{equation}
+  According to \eqref{eq:equation_for_nuvt}, we have $\langle v_t,\nu\rangle$ is a strictly decreasing continuous function of $t$, since
+  \begin{align}\label{eq:monotone}
+    \left\langle v_{t+s},\nu \right\rangle 
+\leq e^{\lambda s} \left\langle v_{t},\nu \right\rangle
+< \left\langle v_t,\nu \right\rangle.  
+\end{align}
+Moreover, Lemma \ref{lem:asmptotic_of_vtf}.\eqref{sublem:Vtf_vanish} says that
+  \[
+\lim_{t\rightarrow\infty}\langle v_t,\nu\rangle =0,
+  \]
+and from the right continuity of the path of the superprocess, we have
+\begin{align}
+  \lim_{t\to 0+} \left\langle v_t,\nu \right\rangle 
+  = - \log \lim_{t\to 0+} \mathbb P_\nu\left( \|X_t\| = 0 \right)
+= +\infty.
+\end{align}
+Therefore, $t \mapsto \left\langle v_t,\nu \right\rangle$ is an 1-1 map from $(0,\infty)$ to $(0,\infty)$. 
+Denote by $\theta \mapsto B(\theta)$ the inverse of this map.
+Then, we always have
+\begin{align}
+  \left\langle v_{B(\theta)},\nu \right\rangle 
+  = \theta,
+\quad \theta \in (0,\infty);
+\qquad 
+  B\left( \left\langle v_t,\nu \right\rangle \right) 
+= t
+\quad t\in (0,\infty).
+\end{align}
+
+\begin{lem}
+  Suppose that $f,g\in L^1(\nu)$ satisfy that $\left\langle f,\nu \right\rangle = \left\langle g,\nu \right\rangle$. 
+Then, for each $t\geq 0$, we have $ \left\langle V_tf,\nu \right\rangle = \left\langle V_tg,\nu \right\rangle $.
+\end{lem}
+\begin{proof}
+  Write $w_t =\left\langle V_tf,\nu \right\rangle - \left\langle V_t g, \nu \right\rangle $. 
+  Then from \eqref{eq:equation_for_Vtf} we have....
+  \begin{iss}[TODO]~
+    \begin{itemize}
+    \item[ZS:]
+It seems that we need to use the equation above \eqref{eq:equation_for_Vtf} to proof this Lemma. 
+We want to integrate that equation with measure $\nu$. Especially when $t = 0$. 
+\item[ZS:]
+  It is better to introduce that equation in the above proof.
+\item[ZS:]
+  After that equation is ready, We should finish the proof of this Lemma.
+    \end{itemize}
+  \end{iss} 
+\end{proof}
+  Now from the fact that 
+  \begin{align}
+    \left\langle f, \nu \right\rangle
+    = \left\langle v_{B(\langle  f,\nu\rangle)},\nu \right\rangle;
+\quad 
+    V_t v_{B(\langle f,\nu \rangle)} = v_{t+ B(\langle f,\nu\rangle)};
+  \end{align}
+  and the above Lemma we have that
+  \begin{align}
+\label{eq:Vfnu_and_vnu}
+    \left\langle V_tf,\nu \right\rangle 
+    = \left\langle v_{t+B(\left\langle f,\nu \right\rangle)}, \nu \right\rangle,
+\quad t\geq 0.
+  \end{align}
+As a result, for any $\mu\in\mathcal M(E)\setminus\{0\}$,
+
+\begin{align}
+  &\lim_{t\to \infty}\frac{\left\langle V_tf, \mu \right\rangle}{\left\langle v_t,\mu \right\rangle}
+  = \lim_{t\to \infty} \frac{\left\langle V_tf,\mu \right\rangle}{\left\langle V_tf,\nu \right\rangle} \cdot \frac{\left\langle V_tf,\nu \right\rangle}{\left\langle v_t,\nu \right\rangle} \cdot \frac{\left\langle v_t,\nu \right\rangle}{\left\langle v_t,\mu \right\rangle}
+  \\&= \left\langle \phi,\mu \right\rangle \cdot \left(\lim_{t\to \infty}\frac{\left\langle v_{t+B(\left\langle f,\nu \right\rangle)}, \nu \right\rangle}{ \left\langle v_t,\nu \right\rangle}\right) \cdot \left\langle \phi,\mu \right\rangle^{-1},\quad\text{by~Corollaray \ref{cor:general_rate} and \eqref{eq:Vfnu_and_vnu}}
+  \\& = e^{\lambda B(\left\langle f, \nu \right\rangle)},\quad\text{by~Corollaray \ref{lem:extinct}.\eqref{sublem:extinct_2_1}}
+\end{align}
+\end{proof}
+
+\begin{proof}[Proof. Version B.]
 	Thanks to Corollaray \ref{cor:general_rate} we only need to prove
   \begin{equation}\label{eq:spec_ratio}
     \lim_{t\rightarrow\infty}\frac{\langle V_tf,\nu\rangle }{\langle v_t,\nu\rangle }=e^{\lambda G(f)}.
@@ -1813,6 +1886,7 @@ I'm now revising the rest of the paper.
     \lim_{t\rightarrow\infty}\frac{\langle v(t+G(f),\cdot),\nu\rangle }{\langle v_t,\mu\rangle }=e^{\lambda G(f)}.
   \]
 \end{proof}
+
 
 \subsection{Proof of main theorems}
 \begin{proof}[{\bf Proof of Theorem \ref{thm:distribution_of_zeta}}]
