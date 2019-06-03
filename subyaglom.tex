@@ -236,7 +236,7 @@ Denote by $\mathcal B_b(E,\mathbb R)$ the collection of all bounded measurable f
 $E$. 
 Denote by $\mathcal B_b(E, [0,\infty))$ the collection of all non-negative bounded measurable functions on $E$. 
 Denote by $\mathcal M(E)$ the space of all finite measures on $E$ equipped with the weak topology. 
-Write $\langle f,\mu\rangle$ or$\mu(f)$ for the integral $\int_E f(x)\mu(dx)$ for the function $f$ and measure $\mu$ whenever it make sense.
+Write $\langle f,\mu\rangle$ or $\mu(f)$ for the integral $\int_E f(x)\mu(dx)$ whenever it makes sense.
 
 Let the \emph{spatial motion} $Y=\{(Y_t)_{t\geq 0};(\Pi_x)_{x\in E}\}$ be an $E$-valued Hunt process with its lifetime denoted by $\tau$ and its transition semigroup denoted by $(P_t)_{t\geq
   0}$. 
@@ -267,7 +267,7 @@ equation
 	= P_t f(x),
 	\quad x \in E,\,\, t \geq 0.
 \end{equation}
-Here, we say a function $(t,x)\mapsto u(t,x)$ is locally bounded on $[0,\infty) \times E$ if for each $T\geq 0$ we have $\sup_{x\in [0,T],x\in E} |u(t,x)| < \infty$. 
+Here, we say a function $(t,x)\mapsto u(t,x)$ is \emph{locally bounded} on $[0,\infty) \times E$ if for each $T\geq 0$ we have $\sup_{x\in [0,T],x\in E} |u(t,x)| < \infty$. 
 See \cite[Theorem 5.11]{Li2011Measurevalued} for the existence of such processes.
 % **** Assumptions
 % ***** Assumption of spatial motion
@@ -280,7 +280,7 @@ Define the \emph{Feynman-Kac semigroup} $(P^\beta_t)_{t\geq 0}$ such that for an
 	:= \Pi_x \big[e^{\int_0^{t} \beta(Y_r)dr} f(Y_t)\mathbf 1_{\{t<\tau\}}\big],
 	\quad t\geq 0, x\in E.
 \end{align}
-It is known, see \cite[Proposition 2.27]{Li2011Measurevalued} for example, $(P^\beta_t)$ is \emph{the mean semigroup} of the superprocess $X$, in the sense that for any $\mu \in \mathcal M(E),f \in \mathcal B_b(E,\mathbb R)$,
+It is known, see \cite[Proposition 2.27]{Li2011Measurevalued} for example, $(P^\beta_t)$ is \emph{the mean semigroup} of the superprocess $X$, in the sense that for any $\mu \in \mathcal M(E)$, and $f \in \mathcal B_b(E,\mathbb R)$,
 \begin{align} \label{eq:Yaglom_type_result_without_2rd} 
 \mathbb P_\mu [\langle f,X_t\rangle] = \mu(P^\beta_t f), \quad t \geq 0.
 \end{align}
@@ -364,10 +364,10 @@ It follows from \cite[Proposition 2.5]{KimSong2008Intrinsic} that, under Assumpt
 \begin{align}
 	p^\beta_t (x,y) 
   \geq c_t' \phi(x) \widehat \phi(y),
-  x,y \in E.
+  \quad x,y \in E.
 \end{align}
 Define $\nu(dy):= \widehat \phi(y) m(dy)$. 
-Then from above $\nu$ is a finite measure on $E$.
+Then from above, $\nu$ is a finite measure on $E$.
 Therefore we can consider the superprocess $X$ with initial configuration $\nu$.
   
 For each measure $\mu$ on $E$, we write $\|\mu\|:= \left\langle \mathbf 1_E,\mu \right\rangle$.
@@ -386,7 +386,7 @@ Similar to \cite{RenSongSun2019Spine,RenSongZhang2018Williams}, we add the follo
   \end{enumerate}
 \end{asp}
  Let $\zeta=\inf\{t>0: \|X_t\| = 0\}$ be the extinction time of the superprocess $X$.
- The above assumption says that, with a positive probability, the process will extinct in finite time, provided the initial configuration is $\nu$ or $\delta_x$ with $x\in E$.
+ The above assumption says that the process will extinct in finite time with a positive probability provided the initial configuration is $\nu$ or $\delta_x$ with $x\in E$.
 
 % **** Results in this paper
 % ***** Results about extinction time zeta
@@ -537,12 +537,12 @@ Our third theorem says that $\{(X_t)_{t\geq 0}; \widetilde{\mathbb P}_{\mu}\}$ c
 \end{thm}
 
 % ***** Result: Asymptotic behavior of Q-process
-% ****** Concept: equilibrium probability of Q-process 
+% ****** Concept: invariant probability of Q-process 
 It would be interesting to study the asymptotic behavior of this Q-process $\{(X_t)_{t\geq 0}; (\widetilde{\mathbb P}_\mu)_{\mu \in \mathcal M(E)}\}$.
 Samilar to the definition of $\mathbf P\mathbb P$, for each probability $\mathbf
 P$ on $\mathcal M(E)$, we define probability $\mathbf P\widetilde{\mathbb P}$.
 Then $\{(X_t)_{t\geq 0}; (\mathbf P\widetilde{\mathbb P})\}$ can be considered as the Q-process with a random initial value $X_0$ whose distribution is $\mathbf P$.
-We say a probability $\mathbf P$ on $\mathcal M(E)$ is an \emph{equilibrium probability} of the Q-process $\{(X_t)_{t\geq 0}; (\widetilde{\mathbb P}_\mu)_{\mu\in\mathcal M(E)}\}$ if
+We say a probability $\mathbf P$ on $\mathcal M(E)$ is an \emph{invariant probability} of the Q-process $\{(X_t)_{t\geq 0}; (\widetilde{\mathbb P}_\mu)_{\mu\in\mathcal M(E)}\}$ if
 \[
 	(\mathbf P\widetilde{\mathbb P})(X_t \in \cdot ) =\mathbf P(\cdot),	\quad t\geq 0.
 \]
@@ -552,12 +552,13 @@ Our fourth result is the following:
 	Under the assumptions \ref{asp:1},\ref{asp:IU} and \ref{asp:3}:
   \begin{enumerate}
   \item
-    If $\int_E\widehat\phi(x)l(x)m(dx)<\infty$, then $\{(X_t)_{t\geq 0};(\widetilde{\mathbb P}_\mu)_{\mu\in\mathcal M(E)}\}$ has an equilibrium probability ${\mathbf P}$.
+    If $\int_E\widehat\phi(x)l(x)m(dx)<\infty$, then $\{(X_t)_{t\geq 0};(\widetilde{\mathbb P}_\mu)_{\mu\in\mathcal M(E)}\}$ has an invariant probability ${\mathbf P}$.
     For any $\mu\in\mathcal M(E)$, we have
-    \[
-      \widetilde{\mathbb P}_\mu(X_t \in \cdot ) \xrightarrow[t\to \infty]{w} {\mathbf P}(\cdot).
-    \]
-    The equilibrium probability $\mathbf P$ is the distribution of the random measure $M\widehat\phi(x)m(dx)$, where the non-negative random variable $M$ has Laplace transform
+\begin{align}
+\label{eq:uniqueness_of_invariant_probability}
+\widetilde{\mathbb P}_\mu(X_t \in \cdot ) \xrightarrow[t\to \infty]{w} {\mathbf P}(\cdot).
+\end{align}
+    The invariant probability $\mathbf P$ is the distribution of the random measure $M\widehat\phi(x)m(dx)$, where the non-negative random variable $M$ has Laplace transform
     \[
       E[e^{-\theta  M}] = \dfrac{E[M^{(\lambda)}e^{-\theta M^{(\lambda)}}]}{E[M^{(\lambda)}]},\quad \theta > 0.
     \]
@@ -585,7 +586,7 @@ We will use  $M$ instead of $\widetilde M$
   \item[ZS:]
 I have a question about the terminology. Why we call that probability in the above theorem the ``equilibrium probability''? Why not call it ``invariant probability'' or ``invariant measure''?
 \item[Ren:] Prefer "invariant probability"
-\item[ZS:] We will use ``equilibrium probability'' instead of ``invariant measure''.
+\item[ZS:] We will use ``invariant probability'' instead of ``equilibrium probability''.
   \end{itemize}
 \end{iss}
 \begin{iss}[open]~
@@ -670,7 +671,7 @@ For each function $f \in \mathcal B_b(E,[0,\infty))$ and measure $\mu \in \mathc
 
 % ***** Fact: this process is exponential-ergodic
 It can be verified (see \cite{KimSong2008Intrinsic} for example) that process $\{(Y_t)_{t\geq 0}; (\widetilde\Pi_x)_{x\in E}\}$ is a time homogeneous Markov process.
-Its transition density with respect to measure $m$ is given by
+Its' transition density with respect to measure $m$ is given by
 \begin{equation}
   \label{eq:tilde_p}
   \widetilde p_t(x, y)
@@ -691,19 +692,17 @@ It follows from \cite[Theorem 2.7]{KimSong2008Intrinsic} that for each $\epsilon
 \par
 Let $\{(\widehat{Y}_t)_{t\geq 0}; (\widehat{\Pi}_x)_{x\in E}\}$ be an $E$-valued Hunt process whose transition density with respect to measure $m$ is given by
 \[
-  \widehat{p}(t,x,y)
-  =e^{-\lambda t}p^\beta(t,y,x)\frac{{\widehat\phi}(y)}{{\widehat\phi}(x)}
-  =\widetilde p(t,y,x)\frac{\phi(y){\widehat\phi}(y)}{\phi(x){\widehat\phi}(x)},
+  \widehat{p}_t(x,y)
+  =e^{-\lambda t}p^\beta_t(y,x)\frac{{\widehat\phi}(y)}{{\widehat\phi}(x)}
+  =\widetilde p_t(y,x)\frac{\phi(y){\widehat\phi}(y)}{\phi(x){\widehat\phi}(x)},
   \quad x,y \in E,\,\, t> 0.
 \]
-It is easy to check that $(\widehat Y_t)_{t\geq 0}$ has the unique invariant measure $\phi(x)\widehat\phi(x)m(dx)$, and is exponentially ergodic in the sense that there exists $c, \rho > 0$ such that
-\begin{equation}\label{eq:IU'}
-	\sup_{x,y\in E}\left|\frac{\widehat{p}(t, x,y)}{\phi(y) \widehat\phi(y)}- 1\right|\le ce^{-\rho t}, \quad t\geq 1.
-\end{equation}
+It is easy to check that $(\widehat Y_t)_{t\geq 0}$ has the unique invariant measure $\phi(x)\widehat\phi(x)m(dx)$.
 % ***** Proof of the time reverse property.
+\par
+Recall that $\nu(dx):=\widehat\phi(x)m(dx)$.
 \begin{lem}
   \label{lem:reverse of the spine}
-	Let $\nu(dx):=\widehat\phi(x)m(dx)$.
 	For each $T > 0$, we have
   \[
     \{(Y_{T-t})_{0\leq t\leq T}; \widetilde \Pi_{\phi \cdot \nu}\}
@@ -721,22 +720,22 @@ It is easy to check that $(\widehat Y_t)_{t\geq 0}$ has the unique invariant mea
 	In fact, on one hand, we have
   \begin{align}
     &\widetilde \Pi_{\phi \cdot \nu}\{Y_{T-t_i}\in B_i,\forall i=1,\dots, n\}
-    \\&= \int_{y_n\in B_n} \phi(y_n)\widehat\phi(y_n) m(dy_n)\int_{y_{n-1}\in B_{n-1}} \widetilde p_{t_n - t_{n-1}}(y_n,y_{n-1})m(dy_{n-1})
-    \\& \qquad \dots \int_{y_1\in B_1} \widetilde p_{t_2 - t_1}(y_2,y_1)m(dy_1)
+    \\&\begin{multlined} =\int_{y_n\in B_n} \phi(y_n)\widehat\phi(y_n) m(dy_n)\int_{y_{n-1}\in B_{n-1}} \widetilde p_{t_n - t_{n-1}}(y_n,y_{n-1})m(dy_{n-1})
+    \\ \dots \int_{y_1\in B_1} \widetilde p_{t_2 - t_1}(y_2,y_1)m(dy_1) \end{multlined}
     \\&= \int_{E^n} \Big(\prod_{i=1}^n \mathbf 1_{\{y_i\in B_i\}}\Big)\cdot\Big(\prod_{i=1}^{n-1} \widetilde p_{t_{i+1}-t_i}(y_{i+1},y_i)\Big)\cdot\phi(y_n)\widehat\phi(y_n)\cdot \Big(\prod_{i=1}^nm(dy_i)\Big).
   \end{align}
 	On the other hand, we have
   \begin{align}
     &\widehat \Pi_{\phi\cdot\nu}\{Y_{t_i}\in B_i, \forall i = 1,\dots, n\}
-    \\&= \int_{y_1\in B_1} \phi(y_1)\widehat \phi(y_1)m(dy_1) \int_{y_2\in B_2} \widehat p_{t_2-t_1}(y_1,y_2)m(dy_2)
-    \\&\qquad \dots\int_{y_n\in B_n}\widehat p_{t_n-t_{n-1}}(y_{n-1},y_n)m(dy_n)
-    \\&= \int_{y_1\in  B_1} \phi(y_1)\widehat \phi(y_1)m(dy_1) \int_{y_2\in B_2} \widetilde p_{t_2-t_1}(y_2,y_1)\frac{\phi(y_2)\widehat \phi(y_2)}{\phi(y_1)\widehat \phi(y_1)}m(dy_2)
-    \\&\qquad \dots\int_{y_n\in B_n}\widetilde p_{t_n-t_{n-1}}(y_n,y_{n-1})\frac{\phi(y_n)\widehat\phi(y_n)}{\phi(y_{n-1})\widehat\phi(y_{n-1})}m(dy_n)
+    \\&\begin{multlined} = \int_{y_1\in B_1} \phi(y_1)\widehat \phi(y_1)m(dy_1) \int_{y_2\in B_2} \widehat p_{t_2-t_1}(y_1,y_2)m(dy_2)
+    \\ \dots\int_{y_n\in B_n}\widehat p_{t_n-t_{n-1}}(y_{n-1},y_n)m(dy_n) \end{multlined}
+    \\&\begin{multlined} = \int_{y_1\in  B_1} \phi(y_1)\widehat \phi(y_1)m(dy_1) \int_{y_2\in B_2} \widetilde p_{t_2-t_1}(y_2,y_1)\frac{\phi(y_2)\widehat \phi(y_2)}{\phi(y_1)\widehat \phi(y_1)}m(dy_2)
+    \\ \dots\int_{y_n\in B_n}\widetilde p_{t_n-t_{n-1}}(y_n,y_{n-1})\frac{\phi(y_n)\widehat\phi(y_n)}{\phi(y_{n-1})\widehat\phi(y_{n-1})}m(dy_n) \end{multlined}
     \\&= \int_{E^n} \Big(\prod_{i=1}^n \mathbf 1_{\{y_i\in B_i\}}\Big)\cdot\Big(\prod_{i=1}^{n-1} \widetilde p_{t_{i+1}-t_i}(y_{i+1},y_i)\Big)\cdot\phi(y_n)\widehat\phi(y_n)\cdot \Big(\prod_{i=1}^n m(dy_i)\Big).
     \qedhere
   \end{align}
 \end{proof}
-\begin{iss}[open]~
+\begin{iss}[closed]~
 \label{iss:notation_for_pt}
   \begin{itemize}
   \item[ZS:]
@@ -749,21 +748,30 @@ These notations are OK. We may just say that $\widehat p_t$ is some time written
 
 % *** Subsection: Kuznestuv Measure
 \subsection{Kuznestuv measure}
-Suppose that $X$ is the superprocess introduced in Section \ref{sec:main-results} which satisfies that $\mathbb P_{x}(\zeta < t)>0$ for each $x\in E$ and $t>0$. Denote by
-\begin{align}
-	\mathbb D &:=\{ w= (w_t)_{t\geq 0}: w \text{ is an $\mathcal M(E)$-valued c\`{a}dl\`{a}g function on $[0,\infty)$ }
-	\\ &\qquad \text{ with the null measure as a trap} \}
+Suppose that $X$ is the superprocess introduced in Section \ref{sec:main-results} which satisfies that $\mathbb P_{x}(\|X_t\| = 0)>0$ for each $x\in E$ and $t>0$. Denote by
+\begin{align} 
+\begin{multlined} \mathbb D:=\{ w= (w_t)_{t\geq 0}: w \text{ is an $\mathcal M(E)$-valued c\`{a}dl\`{a}g function on $[0,\infty)$ }
+	\\ \text{ with the null measure as a trap} \} \end{multlined}
 \end{align}
 the Skorokhod space of measure-valued excursion paths.
+\begin{iss}[Open]~
+  \begin{itemize}
+  \item[ZS:]
+It might be better to say a little more about the topology of this spaces.
+\item[ZS:]
+There might be  a tiny problem. In Li's book, he focuses on the right-continuous paths. 
+But we always uses the Cadlag paths. 
+  \end{itemize}
+\end{iss}
 
 According to \cite[Section 8.4]{Li2011Measurevalued}, there is a unique family of $\sigma$-finite measures $(\mathbb N_x)_{x\in E}$ on $\mathbb D$ such that
 \begin{itemize}
 \item
-  $\mathbb N_x \{\forall t > 0, w_t(\mathbf 1_E)=0\} =0$ for each $x\in E$;
+  $\mathbb N_x \{\forall t > 0, \|w_t\| =0\} =0$ for each $x\in E$;
 \item
-  $\mathbb N_x \{ w_0(\mathbf 1_E) > 0\} = 0$ for each $x\in E$;
+  $\mathbb N_x \{ \|w_0\| > 0\} = 0$ for each $x\in E$;
 \item
-  For each $\mu \in \mathcal M(E)$, if $\mathcal N$ is a Poisson random measure on $\mathbb D$ with intensity
+  for each $\mu \in \mathcal M(E)$, if $\mathcal N$ is a Poisson random measure on $\mathbb D$ with intensity
   \[
     \mathbb N_\mu(dw):= \int_E \mathbb N_x(dw)\mu(dx), \quad w\in \mathbb D.
   \]
@@ -794,10 +802,12 @@ For each $f\in \mathcal B_b(\mathbb D, [0,\infty))$, from Campbell's formula it 
     = \mu(V_t f),
  	\\ \mathbb N_\mu[w_t(f)]
  	&=\mu(P_t^{\beta}f),
- 	\\\mathbb N_\mu\{w_t(\mathbf 1_E) \neq 0\}
- 	&=-\log\mathbb P_\mu\{X_t(\mathbf 1_E) = 0\}.
 \end{align}
-
+and
+\begin{align}
+ 	\mathbb N_\mu( \|w_t\| > 0)
+ 	=-\log\mathbb P_\mu( \| X_t\|= 0).
+\end{align}
 % *** section: Spine decomposition
 \subsection{Spine decomposition}
 Suppose that $X$ is the superprocess introduced in Section \ref{sec:main-results} which satisfies Assumption \ref{asp:1} and \ref{asp:3} \eqref{subsup:point_non_presistence}.
@@ -978,7 +988,7 @@ The original Lemma in \cite{LiuRenSong2009Log} holds with $\epsilon = -\lambda$.
 It should only holds with $\epsilon = -\lambda$, for for any $\epsilon>0.$
 
 \item[ZS:]
- In the Lemma below, we should change $\epsilon$ to $\lambda$, and mention that $\lambda$ is the largest eigenvalue of the mean semigroup.
+ Rongli, in the Lemma below, we should change $\epsilon$ to $\lambda$, right?
   \end{itemize}
 \end{iss}
 \begin{lem}\label{lem:import_lemma}
@@ -1134,22 +1144,39 @@ For each $\epsilon > 0$, we have
 \end{proof}
 
 Recall the operator $(V_t)_{t\geq 0}$ defined in~\eqref{eq:_def_of_vtf}.
-For each $f\in \mathcal B(E, [0,\infty]),t> 0$ and $x\in E$, using the monotone convergence theorem we can define
+For each $f\in \mathcal B(E, [0,\infty]),t\geq 0$ and $x\in E$, using the monotone convergence theorem we can define
 \begin{align}
 \label{eq:Vtf_is_finite}
   V_tf(x)
   := \lim_{n\to \infty}V_t(f\wedge n)(x)
-  = - \log \mathbb P_x[e^{-\left\langle f, X_t \right\rangle}] 
-  \leq - \log \mathbb P_x(X_t \equiv 0),
+  = - \log \mathbb P_x[e^{-\left\langle f, X_t \right\rangle}]
+  \leq -\log \mathbb P_x(\|X_t\| = 0).
 \end{align}
-which is finite thanks to Assumption \ref{asp:3}.
-We call $(V_t)_{t> 0}$ the cumulant semigroup of the superprocess $X$, because it holds that $V_tV_sf(x) = V_{t+s}f(x)$ for all $f\in \mathcal B(E,[0,\infty])$, $t,s > 0$ and $x\in E$. 
+Then $V_0$ is the identity map from $\mathcal B(E,[0,\infty])$ to $\mathcal B(E,[0,\infty])$; and if $t > 0$, $V_t$ is a map from $\mathcal B(E,[0,\infty])$ to $\mathcal B(E, [0,\infty))$, since according to Assumption \ref{asp:3},
+\begin{align}
+V_tf(x) \leq - \log \mathbb P_x(\|X_t\| = 0 ) < \infty, 
+\quad t >0, x\in E.
+\end{align}
+We call $(V_t)_{t\geq 0}$ the cumulant semigroup of the superprocess $X$, because it holds that $V_tV_sf(x) = V_{t+s}f(x)$ for all $f\in \mathcal B(E,[0,\infty])$, $t,s \geq 0$ and $x\in E$. 
 In particular, we write
 \[
-	v_t(x):= V_t(\infty)(x)= -\log \mathbb P_x(X_t \equiv 0) < \infty,
+	v_t(x):= V_t(\infty)(x)= -\log \mathbb P_x(\| X_t\| = 0) < \infty,
 	% \quad t > 0, x\in \mathbb R^d.
   \quad t > 0, x\in E.
 \]
+\begin{iss}[TODO]~
+  \begin{itemize}
+  \item[ZS:]
+Latter, it will be used that $-\log \mathbb P_\mu(\|X_t\| = 0)$ is linear in measure $\mu$ at several places.
+I think it is better to reasoning this here.
+  \end{itemize}
+\end{iss}
+\begin{iss}[TODO]~
+  \begin{itemize}
+  \item[ZS:]
+It would be better to mention Li's book as a good reference on this cumulant semigroups
+  \end{itemize}
+\end{iss}
 % ***** Lemma about the asymptotic behavior of <\mu, v_t>
 \begin{iss}[OPEN]~
   \begin{itemize}
@@ -1159,11 +1186,11 @@ I would like to ask Rongli to double check the proof of this key Lemma.
 \item[ZS:]
 There are some new features I want to mention here:
 a. The testing function $f$ now can take extended value $\infty$. So this Lemma also covers $v_t$ which can be considered as $V_t(\infty)$.
-b. Instead of finding the upper bound and the lower bound separately, we proof the assertion (3) of this Lemma in one stroke with the help of the Big-O notations.
+b. Instead of finding the upper bound and the lower bound separately, we proof the assertion (3) of this Lemma in one stroke with the help of the Big-O notations. 
   \end{itemize}
 \end{iss}
 \begin{lem}
-\label{lem:asmptotic_of_vtf}
+\label{lem:asmptotic_of_Vtf}
   Suppose that Assumptions \ref{asp:1}, \ref{asp:IU} and \ref{asp:3} hold. 
   Let $f\in \mathcal B(E, [0,\infty])$.
   Then, the followings are hold:
@@ -1188,7 +1215,7 @@ For each $s>0$, we have
   \end{enumerate}
 \end{lem}
 % ***** Proof of assertion (1) 
-\begin{proof}[Proof of Lemma~\ref{lem:asmptotic_of_Vtf}.\eqref{sublem:Vtf_vanish}]
+\begin{proof}[Proof of Lemma~\ref{lem:asmptotic_of_Vtf}.(\ref{sublem:Vtf_vanish})]
 Define function $\psi_0$ by
 \[
   \psi_0(x,\lambda) = \psi(x,\lambda)+ \beta(x) \lambda,
@@ -1203,19 +1230,33 @@ It is known from \cite[Theorem 2.23]{Li2011Measurevalued} and monotonicity that 
   V_sg + \int_0^s P_{s-u}^\beta \Psi_0V_u g~du = P_s^\beta g,
   \quad s\geq 0.
 \]
-In particular, taking $g=V_tf$ we have for each $t,s>0$,
+\begin{iss}[Open]~
+  \begin{itemize}
+  \item[ZS:]
+Note that in the above $g$ is not assumed to be bounded. So the both sides might taking the extended value $+\infty$.
+\item[ZS:]
+Because of this, it is allowed to write
+\begin{align}
+V_s g + \int_0^s P_{s-u}^\beta \Psi_0 V_u g~du = P_s^\beta g
+\end{align}
+but is not allowed to write
+\begin{align}
+  V_s g  = P_s^\beta g - \int_0^s P_{s-u}^\beta \Psi_0 V_u g~du
+\end{align}
+since the right side of the latter equation might be of the form $\infty - \infty$.
+  \end{itemize}
+\end{iss}
+In particular, taking $g=V_tf$ we have for each $t,s \geq 0$,
 \begin{equation}
   \label{eq:equation_for_Vtf}
   V_{t+s}f + \int_0^s P^\beta_{s-u}\Psi_0V_{t+u}f~du
-  =P^\beta_s V_t f,
-  \quad t,s > 0.
+  =P^\beta_s V_t f.
 \end{equation}
 
 According to Assumption \ref{asp:3}.\eqref{subasp:measure_non_presistence} and \eqref{eq:Vtf_is_finite}, for large $t$, we have that $V_tf \in L^+_1(\nu)$.
 Therefore, there exists a $\rho > 0$ such that
 \begin{align}
-  &P_s^\beta V_t f(x) = \int p^\beta_s(x,y) V_t f (y) m(dy)
-  \\ &= e^{\lambda s} \phi(x) \left\langle V_tf, \nu \right\rangle \left (1+e^{-\rho s}O(\limsup_{t\to \infty}\sup_{s\geq 1,x\in E})\right),\quad\text{by~\eqref{eq:IU_for_Ptf}} \label{eq:asmptotic_for_PsVtf}
+  &P_s^\beta V_t f(x) = e^{\lambda s} \phi(x) \left\langle V_tf, \nu \right\rangle \left (1+e^{-\rho s}O(\limsup_{t\to \infty}\sup_{s\geq 1,x\in E})\right),\quad\text{by~\eqref{eq:IU_for_Ptf}} \label{eq:asmptotic_for_PsVtf}
   \\&= O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) \cdot e^{\lambda s} \langle V_tf,\nu \rangle \label{eq:Pv_and_vnu}
   \\&\leq O(\limsup_{t\to \infty} \sup_{s\geq 1, x\in E}) \cdot e^{\lambda s} \langle v_t,\nu\rangle,\quad\text{by~\eqref{eq:Vtf_is_finite}}
   \\&= O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) e^{\lambda s},\quad\text{by~monotonicity}. \label{eq:Pv_convergence_exponentially}
@@ -1267,6 +1308,8 @@ For each $x\in E$, from \eqref{eq:Vtf_convergence_to_zero}, we have $\lim_{t\to 
   \begin{itemize}
   \item[ZS:]
 Here is a tiny problem about the above argument. $V_t f(x)$ may not be monotone in $t$. In the old proof, we only considered $v_t(x) = V_t(\infty)(x)$ which is monotone in $t$. 
+  \item[ZS:]
+It seems that what really been used here is the continuity of $\psi_0'(x,z)$.
   \end{itemize}
 \end{iss}
 
@@ -1298,6 +1341,17 @@ Now,  integrating the both sides of \eqref{eq:equation_for_Vtf} with respect to 
 \begin{rem}
 \label{rem:Vtfnu_is_finite_when_t_is_large}
 Note we already know from \eqref{eq:Vtf_convergence_to_zero} that $\left\langle V_tf,\nu \right\rangle$ is finite for $t$ large enough.
+\begin{iss}[TODO]~
+  \begin{itemize}
+  \item[ZS:]
+The above remark is not entirely honest. 
+Actually, in order to obtain \eqref{eq:Vtf_convergence_to_zero}, we already used the fact that $V_tf\in L^1(\nu)$.
+See the line above \eqref{eq:asmptotic_for_PsVtf}.
+\item[ZS:]
+This remark is also used below.
+So maybe a better practice would be isolating the result of this remark as a preliminary Lemma.
+  \end{itemize}
+\end{iss}
 \end{rem}
 Therefore, $H(t):=e^{-\lambda t}\left\langle V_tf,\nu \right\rangle<\infty$ for $t$ large enough.
 From \eqref{eq:equation_for_nuvt}, for large $t$ and each $s\geq 0$, we have 
@@ -2441,7 +2495,7 @@ As a result, for any $\mu\in\mathcal M(E)\setminus\{0\}$,
   \end{eqnarray*}
   $\mathbb Q_{\nu}-{\mathrm a.s.}$ when $\int_E\widehat\phi(x)l(x)m(dx)<\infty$ by Lemma \ref{lem:import_lemma}.
   Thus in this case, the limit measure $X_\infty\in \mathcal M(E)$.  Denote the distribution of $X_\infty$ by $\mathbf P$.  Then $\mathbf P$
-  is the equilibrium probability of the $Q$-process.
+  is the invariant probability of the $Q$-process.
   %% ----------------------------------------------------------------------------------------------------------------------------
 
 
@@ -2487,7 +2541,7 @@ As a result, for any $\mu\in\mathcal M(E)\setminus\{0\}$,
   \]
   %% ------------------------------------------------------------------------------------------------------------------------------
   %% ----------------------------------------------------------------------------------------------------------------------------
-  This says the equilibrium probability of the $Q$ process is a size-biased distribution of the Yaglom probability with weight function
+  This says the invariant probability of the $Q$ process is a size-biased distribution of the Yaglom probability with weight function
   $\dfrac{M^{(\lambda)}}{EM^{(\lambda)}}$.
 
 
@@ -2496,7 +2550,7 @@ As a result, for any $\mu\in\mathcal M(E)\setminus\{0\}$,
   \[
     \langle \phi, X_{\infty}\rangle =\infty,\qquad \mathbf P-{\mathrm a.s.}
   \]
-  In this case, the $Q$ process does not have equilibrium probability. And $\langle \phi, X_t\rangle $ converges to $\infty$ as $t\to\infty$ in probability with respect to $\widetilde{\mathbb P}_\mu$ for any $\mu\in \mathcal M(E)\setminus\{0\}$.
+  In this case, the $Q$ process does not have invariant probability. And $\langle \phi, X_t\rangle $ converges to $\infty$ as $t\to\infty$ in probability with respect to $\widetilde{\mathbb P}_\mu$ for any $\mu\in \mathcal M(E)\setminus\{0\}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% ----------------------------------------------------------------------------------------------------------------
 \begin{proof}[Proof of Proposition \ref{eq:exp_prop}]
