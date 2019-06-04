@@ -1309,14 +1309,14 @@ For each $x\in E$, from \eqref{eq:Vtf_convergence_to_zero}, we have $\lim_{t\to 
   \item[ZS:]
 Here is a tiny problem about the above argument. $V_t f(x)$ may not be monotone in $t$. In the old proof, we only considered $v_t(x) = V_t(\infty)(x)$ which is monotone in $t$. 
   \item[ZS:]
-It seems that what really been used here is the continuity of $\psi_0'(x,z)$.
+It seems that what really should be used here is the continuity of $\psi_0'(x,z)$.
   \end{itemize}
 \end{iss}
 
 It can also be verified from \eqref{eq:definition_of_psi'0} and \eqref{eq:Vtf_convergence_to_zero} that
 \begin{align}
 &\Psi_0'V_tf(x) \leq 2\alpha(x)^2 V_tf(x)+ \left(\int_0^1 r^2~n(x, dr)\right) V_tf(x) + 2 \int_1^\infty r~n(x,dr)
-\\&= O(\sup_{x\in E,t>0})V_tf(x)+ O(\sup_{x\in E,t>0})
+\\&= O(\sup_{x\in E,t\geq 0})V_tf(x)+ O(\sup_{x\in E,t\geq 0})
 \\&=  O(\limsup_{t\to \infty} \sup_{x\in E}). \label{eq:psi0'vtx_is_Big_O}
 \end{align}
 So by dominated convergece theorem, \eqref{eq:psi0'vt_converges_to_0} and \eqref{eq:psi0'vtx_is_Big_O} we have
@@ -1336,7 +1336,7 @@ Now,  integrating the both sides of \eqref{eq:equation_for_Vtf} with respect to 
 \label{eq:equation_for_nuvt}
 \langle V_{t+s}f, \nu\rangle + e^{\lambda s}\int_0^s e^{-\lambda u}\left\langle \Psi_0 V_{t+u} f,\nu\right\rangle~du
 = e^{\lambda s}\left\langle V_tf,\nu \right\rangle,
-\quad t,s > 0.
+\quad t,s \geq 0.
 \end{equation}  
 \begin{rem}
 \label{rem:Vtfnu_is_finite_when_t_is_large}
@@ -1383,7 +1383,7 @@ This and \eqref{eq:Psi0_Vtf_leq_Vtf} imply that
 \begin{iss}[open]~
   \begin{itemize}
   \item[ZS:]
-Do we have $V_tf(x)>0$ for any possible $t,f,x$? If not, the fraction below is not well-defined.
+    Do we have $V_tf(x)>0$ for any possible $t,f,x$? If not, the fraction $\frac{1}{\left\langle V_tf,\mu \right\rangle}$ is not well-defined.
 \item[ZS:]
 It seems that we need to show that $\mathbf P_x (\|X_t\| = 0) \not\equiv 1 $.
   \end{itemize}
@@ -1402,8 +1402,8 @@ Put this back into \eqref{eq:Ht}, we get
 \begin{align}
 &\frac{\langle V_tf,\nu\rangle}{\langle V_{t+s}f,\nu\rangle}
                 = \exp \left\{-\lambda s+  \int_t^{t+s} \frac{\left\langle \Psi_0 V_u f,\nu \right\rangle}{ \left\langle V_uf, \nu \right\rangle } ~du \right\},\quad\text{by~\eqref{eq:Ht}}
-  \\&=\exp\left\{-s\left(\lambda+o(\limsup_{t\to \infty} \sup_{s > 0})\right)\right\},\quad\text{by~\eqref{eq:Psi0Vtfnu_lleq_Vtfnu}}
-\\ &= e^{-s\lambda} \left( 1+o(\sup_{s>0}\limsup_{t\to \infty}) \right). 
+  \\&=\exp\left\{-s\left(\lambda+o(\limsup_{t\to \infty} \sup_{s \geq  0})\right)\right\},\quad\text{by~\eqref{eq:Psi0Vtfnu_lleq_Vtfnu}}
+\\ &= e^{-s\lambda} \left( 1+o(\sup_{s \geq 0}\limsup_{t\to \infty}) \right). 
      \label{eq:compare_with_Vtfnu_and_VtPlussfnu}
 \end{align}
 This implies the desired result.
@@ -1429,7 +1429,7 @@ Now we can verify that
   &\frac{ P_s^\beta V_tf(x)}{\left\langle V_{t+s} f,\nu \right\rangle } - \phi(x)
 \\& \begin{multlined}= e^{\lambda s} \phi(x)\frac{  \left\langle V_tf,\nu \right\rangle   }{\left\langle V_{t+s}f,\nu \right\rangle } \left( 1+ e^{-\rho s} O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) \right)- \phi(x),
 \\ \text{by~\eqref{eq:asmptotic_for_PsVtf}} \end{multlined}
-  \\ &\begin{multlined} = \phi(x) \left( 1+o(\sup_{s>0} \limsup_{t\to \infty} \sup_{x\in E}) \right)  \left( 1+ e^{-\rho s} O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) \right)- \phi(x),
+  \\ &\begin{multlined} = \phi(x) \left( 1+o(\sup_{s \geq 0} \limsup_{t\to \infty} \sup_{x\in E}) \right)  \left( 1+ e^{-\rho s} O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) \right)- \phi(x),
 \\ \text{by~\eqref{eq:compare_with_Vtfnu_and_VtPlussfnu}} \end{multlined}
 \\&= o(\limsup_{s\to \infty}\limsup_{t\to \infty} \sup_{x\in E}). 
 \label{eq:9}
@@ -1455,10 +1455,10 @@ We can also verify that, for each $\epsilon > 0$,
 \\& = \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle} O(\limsup_{t\to \infty}\sup_{s > \epsilon, x\in E}) \int_0^{s-\epsilon} e^{\lambda (s- u)}  \left\langle \Psi_0 V_{t+u}f,\nu \right\rangle ~du
 \\& \leq \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle} O(\limsup_{t\to \infty}\sup_{s > \epsilon, x\in E}) \int_0^{s} e^{\lambda (s- u)}  \left\langle \Psi_0 V_{t+u}f,\nu \right\rangle ~ du 
 \\& \begin{multlined}
-= \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle} O(\limsup_{t\to \infty}\sup_{s\geq \epsilon, x\in E}) \left( e^{\lambda s} \left\langle V_tf,\nu \right\rangle - \left\langle V_{t+s}f,\nu \right\rangle \right),\\\quad\text{by~\eqref{eq:equation_for_nuvt} and Remark \ref{rem:Vtfnu_is_finite_when_t_is_large}}
+= \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle} O(\limsup_{t\to \infty}\sup_{s > \epsilon, x\in E}) \left( e^{\lambda s} \left\langle V_tf,\nu \right\rangle - \left\langle V_{t+s}f,\nu \right\rangle \right),\\\quad\text{by~\eqref{eq:equation_for_nuvt} and Remark \ref{rem:Vtfnu_is_finite_when_t_is_large}}
 \end{multlined}
-\\& =O(\limsup_{t\to \infty}\sup_{s\geq \epsilon, x\in E}) \left( e^{\lambda s}\frac{ \left\langle V_tf,\nu \right\rangle }{\left \langle V_{t+s}f,\nu \right\rangle}- 1 \right) 
-  \\& = O(\limsup_{t\to \infty}\sup_{s\geq \epsilon,x\in E}) o(\sup_{s>0}\limsup_{t\to \infty} \sup_{x\in E}),
+\\& =O(\limsup_{t\to \infty}\sup_{s > \epsilon, x\in E}) \left( e^{\lambda s}\frac{ \left\langle V_tf,\nu \right\rangle }{\left \langle V_{t+s}f,\nu \right\rangle}- 1 \right) 
+  \\& = O(\limsup_{t\to \infty}\sup_{s > \epsilon,x\in E}) o(\sup_{s>0}\limsup_{t\to \infty} \sup_{x\in E}),
 \quad\text{by~\eqref{eq:compare_with_Vtfnu_and_VtPlussfnu},}
 \\&= o(\sup_{s>\epsilon}\limsup_{t\to \infty} \sup_{x\in E}) .
 \end{align}
@@ -1821,7 +1821,7 @@ We want to check that each denominators are not zero.
 \leq e^{\lambda s} \left\langle v_{t},\nu \right\rangle
 < \left\langle v_t,\nu \right\rangle.  
 \end{align}
-Moreover, Lemma \ref{lem:asmptotic_of_vtf}.\eqref{sublem:Vtf_vanish} says that
+Moreover, Lemma \ref{lem:asmptotic_of_Vtf}.\eqref{sublem:Vtf_vanish} says that
   \[
 \lim_{t\rightarrow\infty}\langle v_t,\nu\rangle =0,
   \]
@@ -1850,7 +1850,20 @@ Then, for each $t\geq 0$, we have $ \left\langle V_tf,\nu \right\rangle = \left\
 \end{lem}
 \begin{proof}
   Write $w_t =\left\langle V_tf,\nu \right\rangle - \left\langle V_t g, \nu \right\rangle $. 
-  Then from \eqref{eq:equation_for_Vtf} we have....
+  Then from \eqref{eq:equation_for_nuvt} we have....
+  \begin{align}
+    \langle V_tf,\nu\rangle + \int_0^te^{\lambda(t-s)}\langle \Psi_0V_sf,\nu\rangle ds
+=e^{\lambda t}\langle f,\nu\rangle,
+  \end{align}
+and
+  \begin{align}
+    \langle V_tg,\nu\rangle + \int_0^te^{\lambda(t-s)}\langle \Psi_0V_sg,\nu\rangle ds
+    =e^{\lambda t}\langle g,\nu\rangle .
+  \end{align}
+Therefore, 
+\begin{align}
+  w_t \leq \int_0^t e^{\lambda (t-s)} \left | \left\langle \Psi_0 V_s f - \Psi_0 V_s g, \nu \right\rangle \right| ~ds 
+\end{align}
   \begin{iss}[TODO]~
     \begin{itemize}
     \item[ZS:]
