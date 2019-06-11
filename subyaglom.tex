@@ -405,7 +405,7 @@ Our first result is about the asymptotic behavior of the extinction time $\zeta$
   \ref{asp:IU}, and \ref{asp:3}. Then,
   \begin{enumerate}
   \item
-    \label{subtem:extinct_as_sure}
+    \label{subthm:extinct_almost_sure}
     for each $\mu \in \mathcal M(E)$, we have  $\mathbb P_\mu(\zeta<\infty)=1$;
   \item
     for each $\mu,\widetilde\mu\in \mathcal M(E)\setminus\{0\}$ and $s>0$, we have
@@ -413,6 +413,7 @@ Our first result is about the asymptotic behavior of the extinction time $\zeta$
       \lim_{t\rightarrow\infty}\dfrac{\mathbb P_{\mu}(\zeta>t+s)}{\mathbb P_{\widetilde\mu}(\zeta>t)}=\frac{\langle \phi,\mu\rangle }{\langle \phi,\widetilde\mu\rangle }e^{\lambda s};
     \]
   \item
+  \label{subthm:LlogL}
     there exists a constant $k\in [0,\infty)$, such that for any $x\in E$,
     \begin{equation}\label{eq:decay_rate}
       \lim_{t\rightarrow\infty} e^{-\lambda t}\mathbb P_x(\zeta>t)=k\phi(x).
@@ -1195,7 +1196,7 @@ b. Instead of finding the upper bound and the lower bound separately, we proof t
   Let $f\in \mathcal B(E, [0,\infty])$.
   Then, the followings are hold:
   \begin{enumerate}
-  \item \label{sublem:Vtf_vanish}
+  \item \label{subVtf_vanish}
     For each $\mu \in \mathcal M(E)$, we have
     \[
       \lim_{t\rightarrow\infty}\langle V_tf,\mu\rangle=0.
@@ -1215,7 +1216,7 @@ For each $s>0$, we have
   \end{enumerate}
 \end{lem}
 % ***** Proof of assertion (1) 
-\begin{proof}[Proof of Lemma~\ref{lem:asmptotic_of_Vtf}.(\ref{sublem:Vtf_vanish})]
+\begin{proof}[Proof of Lemma~\ref{lem:asmptotic_of_Vtf}.(\ref{subVtf_vanish})]
 Define function $\psi_0$ by
 \[
   \psi_0(x,\lambda) = \psi(x,\lambda)+ \beta(x) \lambda,
@@ -1279,7 +1280,7 @@ This implies the desired result.
 \end{proof}
 
 % ***** Proof of assertion (3) version B 
-\begin{proof}[Proof of Lemma \ref{lem:extinct}.\eqref{lem:extinct_2_1}]
+\begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct_2_1}]
 
 For each $x\in E$, define 
 \begin{align}
@@ -1334,8 +1335,8 @@ Another fact can be derived from \eqref{eq:psi0'vtx_is_Big_O} is that
 Now,  integrating the both sides of \eqref{eq:equation_for_Vtf} with respect to measure $\nu$, we get
 \begin{equation}
 \label{eq:equation_for_nuvt}
-\langle V_{t+s}f, \nu\rangle + e^{\lambda s}\int_0^s e^{-\lambda u}\left\langle \Psi_0 V_{t+u} f,\nu\right\rangle~du
-= e^{\lambda s}\left\langle V_tf,\nu \right\rangle,
+    \langle V_{t+s}f, \nu\rangle + e^{\lambda s}\int_0^s e^{-\lambda u}\left\langle \Psi_0 V_{t+u} f,\nu\right\rangle~du
+    = e^{\lambda s}\left\langle V_tf,\nu \right\rangle,
 \quad t,s \geq 0.
 \end{equation}  
 \begin{rem}
@@ -1409,7 +1410,7 @@ Put this back into \eqref{eq:Ht}, we get
 This implies the desired result.
 \end{proof}
 % ***** Proof of assertion (3.2) version C
-\begin{proof}[Proof of Lemma \ref{lem:extinct}.\eqref{lem:extinct:3}]
+\begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct:3}]
 From~\eqref{eq:equation_for_Vtf}, for each $t>0$, $s>0$ and $\epsilon \in (0,s)$, we have
 \begin{align}
 \label{eq:Vf_plus_I_plus_J_equals_PF}
@@ -1519,33 +1520,36 @@ It won't be a problem. I will do it shortly.
 
 Taking $f \equiv \infty$ in the above Lemma, we get
 \begin{cor}
-\label{lem:extinct}
-  Suppose that Assumptions \ref{asp:1}, \ref{asp:IU} and \ref{asp:3} hold.
-  Then we have the followings:
-  \begin{enumerate}
-  \item \label{sublem:extinct_2}
+\label{cor:extinct}
+    Suppose that Assumptions \ref{asp:1}, \ref{asp:IU} and \ref{asp:3} hold.
+    Then we have the followings:
+\begin{enumerate}
+\item 
+\label{sub:extinct_2}
     For each $\mu \in \mathcal M(E)$, we have
     \[
       \lim_{t\rightarrow\infty}\langle v_t,\mu\rangle=0.
     \]
-   \item \label{sublem:extinct_2_1}
-For each $s\geq 0$, we have
+\item 
+\label{sub:extinct_2_1}
+    For each $s\geq 0$, we have
      \begin{align}
        \lim_{t\to \infty} \frac{\left\langle v_{t+s},\nu\right\rangle}{\left\langle v_t,\nu\right\rangle} 
 = e^{\lambda s}.
      \end{align}
-  \item \label{sublem:extinct:3}
+\item 
+\label{sub:extinct_3}
     For each $s\geq 0$, we have
-    \begin{equation} \label{eq:ont_point_ratio_limit}
-      \lim_{t\to \infty} \sup_{x\in E}\Big|\frac{v_{t+s}(x)}{\langle v_t,\nu\rangle } - \phi(x)e^{\lambda s} \Big|
-      =0.
-    \end{equation}
-  \end{enumerate}
+\begin{equation} 
+    \lim_{t\to \infty} \sup_{x\in E}\Big|\frac{v_{t+s}(x)}{\langle v_t,\nu\rangle } - \phi(x)e^{\lambda s} \Big|
+    =0.
+\end{equation}
+\end{enumerate}
 \end{cor}
 % ***** Proof of assertion (1) and (2)
 % ****** Concept of cumulant semigroup
 \begin{comment}
-\begin{proof}[Proof of Lemma~\ref{lem:extinct}.\eqref{lem:extinct_2}]
+\begin{proof}[Proof of Lemma~\ref{cor:extinct}.\eqref{lem:extinct_2}]
 Recall the operator $(V_t)_{t\geq 0}$ defined in~\eqref{eq:_def_of_vtf}.
 Using the monotone convergence theorem we can define
 \begin{align}
@@ -1608,7 +1612,7 @@ This implies the desired result.
 \end{proof}
 
 % ***** Proof of assertion (3) version B 
-\begin{proof}[Proof of Lemma \ref{lem:extinct}.\eqref{lem:extinct_2_1}]
+\begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct_2_1}]
 
 For each $x\in E$, define 
 \begin{align}
@@ -1703,7 +1707,7 @@ Put this back into \eqref{eq:ratio_of_nuvt_and_nuvtplus1}, we get
 This implies the desired result.
 \end{proof}
 % ***** Proof of assertion (3.2) version C
-\begin{proof}[Proof of Lemma \ref{lem:extinct}.\eqref{lem:extinct:3} ]
+\begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct:3} ]
 From~\eqref{eq:equation_for_vt}, for each $t>0$, $s>0$ and $\epsilon \in (0,s)$, we have
 \begin{align}
   v_{t+s} + I_{t,s,\epsilon} + J_{t,s,\epsilon}= P_s^\beta v_t,
@@ -1821,7 +1825,7 @@ We want to check that each denominators are not zero.
 \leq e^{\lambda s} \left\langle v_{t},\nu \right\rangle
 < \left\langle v_t,\nu \right\rangle.  
 \end{align}
-Moreover, Lemma \ref{lem:asmptotic_of_Vtf}.\eqref{sublem:Vtf_vanish} says that
+Moreover, Lemma \ref{lem:asmptotic_of_Vtf}.\eqref{subVtf_vanish} says that
   \[
 \lim_{t\rightarrow\infty}\langle v_t,\nu\rangle =0,
   \]
@@ -1850,7 +1854,7 @@ Then, for each $t\geq 0$, we have $ \left\langle V_tf,\nu \right\rangle = \left\
 \end{lem}
 \begin{proof}
   Write $w_t =\left\langle V_tf,\nu \right\rangle - \left\langle V_t g, \nu \right\rangle $. 
-  Then from \eqref{eq:equation_for_nuvt} we have....
+  Then from \eqref{eq:equation_for_nuvt} we have
   \begin{align}
     \langle V_tf,\nu\rangle + \int_0^te^{\lambda(t-s)}\langle \Psi_0V_sf,\nu\rangle ds
 =e^{\lambda t}\langle f,\nu\rangle,
@@ -1864,7 +1868,19 @@ Therefore,
 \begin{align}
   w_t \leq \int_0^t e^{\lambda (t-s)} \left | \left\langle \Psi_0 V_s f - \Psi_0 V_s g, \nu \right\rangle \right| ~ds 
 \end{align}
-  \begin{iss}[TODO]~
+.......
+\begin{iss}[Open]~
+  \begin{itemize}
+  \item[ZS:]
+It seems that this lemma is not right.
+\item[ZS:]
+It might be reasonable to change the conclusion to 
+\begin{align}
+  \left\langle V_tf,\nu \right\rangle = \left\langle V_t g,\nu \right\rangle \left( 1+o(\limsup_{t\to \infty}) \right)
+\end{align}
+  \end{itemize}
+\end{iss}
+  \begin{iss}[closed]~
     \begin{itemize}
     \item[ZS:]
 It seems that we need to use the equation above \eqref{eq:equation_for_Vtf} to proof this Lemma. 
@@ -1873,6 +1889,8 @@ We want to integrate that equation with measure $\nu$. Especially when $t = 0$.
   It is better to introduce that equation in the above proof.
 \item[ZS:]
   After that equation is ready, We should finish the proof of this Lemma.
+\item[ZS:]
+That equation is ok now.
     \end{itemize}
   \end{iss} 
 \end{proof}
@@ -1896,64 +1914,9 @@ As a result, for any $\mu\in\mathcal M(E)\setminus\{0\}$,
   &\lim_{t\to \infty}\frac{\left\langle V_tf, \mu \right\rangle}{\left\langle v_t,\mu \right\rangle}
   = \lim_{t\to \infty} \frac{\left\langle V_tf,\mu \right\rangle}{\left\langle V_tf,\nu \right\rangle} \cdot \frac{\left\langle V_tf,\nu \right\rangle}{\left\langle v_t,\nu \right\rangle} \cdot \frac{\left\langle v_t,\nu \right\rangle}{\left\langle v_t,\mu \right\rangle}
   \\&= \left\langle \phi,\mu \right\rangle \cdot \left(\lim_{t\to \infty}\frac{\left\langle v_{t+B(\left\langle f,\nu \right\rangle)}, \nu \right\rangle}{ \left\langle v_t,\nu \right\rangle}\right) \cdot \left\langle \phi,\mu \right\rangle^{-1},\quad\text{by~Corollaray \ref{cor:general_rate} and \eqref{eq:Vfnu_and_vnu}}
-  \\& = e^{\lambda B(\left\langle f, \nu \right\rangle)},\quad\text{by~Corollaray \ref{lem:extinct}.\eqref{sublem:extinct_2_1}}
+  \\& = e^{\lambda B(\left\langle f, \nu \right\rangle)},\quad\text{by~Corollaray \ref{cor:extinct}.\eqref{subextinct_2_1}}
 \end{align}
 \end{proof}
-
-\begin{proof}[Proof. Version B.]
-	Thanks to Corollaray \ref{cor:general_rate} we only need to prove
-  \begin{equation}\label{eq:spec_ratio}
-    \lim_{t\rightarrow\infty}\frac{\langle V_tf,\nu\rangle }{\langle v_t,\nu\rangle }=e^{\lambda G(f)}.
-  \end{equation}
-  According to \eqref{eq:equation_for_nuvt}, we have
-  \begin{equation}\label{eq:monotone}
-    e^{-\lambda(t+s)}\langle v_{t+s},\nu\rangle + \int_0^se^{-\lambda(t+u)}\langle \Psi_0 v_{t+u},\nu\rangle du. 
-= e^{-\lambda t} \langle v_t,\nu\rangle 
-  \end{equation}
- 	Therefore, $\langle v_t,nu\rangle $ is a strictly decreasing continuous function of $t$.  Moreover it has limits
-  \[
-    \lim_{t\rightarrow 0+}\langle v_t,\nu\rangle =\infty,\qquad\quad \lim_{t\rightarrow\infty}\langle v_t,\nu\rangle =0.
-  \]
-	Therefore for any nonnegative Borel measurable function $f$ on $E$, there is a real number $G(f)$ such that
-  \begin{equation}\label{eq:def_of_G}
-    \langle v(G(f),\cdot),\nu\rangle =\langle f,\nu\rangle .
-  \end{equation}
-	Specially, taking $f(\cdot)=v_t$ for some $t>0$, then $\langle v(G(v(t)),\cdot),\nu\rangle =\langle v_t,\nu\rangle $.
-	Since  $\langle v_t,\nu\rangle $ is strictly decreasing, so $G(v_t)=t$.\\
-	Define the solution $V_tf(x)$ to equation \eqref{eq: diff equ} with initial condition $f$ and consider the function $v(t+G(f),x)$ on $E$. Then
-  \[
-    \langle V_tf,\nu\rangle =e^{\lambda t}\langle f,\nu\rangle -\int_0^te^{\lambda(t-s)}\langle (\psi+\beta)(V_sf)),\nu\rangle ds.
-  \]
-	And
-  \begin{eqnarray*}
-    \langle v(t+G(f),\cdot),\nu\rangle &=&e^{\lambda t}\langle v(G(f),\cdot),\nu\rangle -\int_0^te^{\lambda(t-s)}\langle (\psi+\beta)(v(s+G(f),\cdot)),\nu\rangle ds\\
-                                       &=&e^{\lambda t}\langle f,\nu\rangle -\int_0^te^{\lambda (t-s)}\langle (\psi+\beta)(v(s+G(f),\cdot)),\nu\rangle ds
-  \end{eqnarray*}
-	Let $w(t,x)=V_tf(x)-v(t+G(f),x)$. Then
-  \[
-    \langle w(t,\cdot),\nu\rangle =\int_0^te^{\lambda(t-s)}\langle (\psi+\beta)(v(s+G(f),\cdot))-(\psi+\beta)(V_sf,\cdot),\nu\rangle ds
-  \]
-	Using mean value theorem, for any $x\in E$ and $s\in [0,t]$, there is $\xi_s(x)$ between $v(s+G(f),x)$ and $V_sf(x)$ such that
-  \[
-    (\psi+\beta)(v(s+G(f),x))-(\psi+\beta)(V_sf(x))=-(\psi+\beta)'(x, \xi_s)w(s,x).
-  \]
-	Since $v(s+G(f),x)$ and $V_sf(x)$ are both bounded on $[0,t]\times E$, writing $C'>0$ is their one upper bound, and $\psi'(x, \lambda)$ is increasing with respect to $\lambda$ and bounded on $D$, so for any $t>0$,
-  \begin{eqnarray*}
-    |\langle w(t,\cdot),\nu\rangle |=|\int_0^te^{\lambda(t-s)}\langle -(\psi+\beta)'(\cdot, \xi_s)w(s,\cdot),\nu\rangle ds|\leq \|\psi'(\cdot,C')\|_\infty\int_0^te^{\lambda(t-s)}|\langle w(s,\cdot),\nu\rangle |ds.
-  \end{eqnarray*}
-	From Gronwell inequality, $\langle w(t,\cdot),\nu\rangle =0$.  Replacing $\langle V_tf,\nu\rangle $ in \eqref{eq:spec_ratio} by $\langle v(t+G(f),\cdot),\nu\rangle $, then
-  \[
-    \lim_{t\rightarrow\infty}\frac{\langle V_tf,\nu\rangle }{\langle v_t,\nu\rangle }=
-    \lim_{t\rightarrow\infty}\frac{\langle v(t+G(f),\cdot),\nu\rangle }{\langle v_t,\nu\rangle }=e^{\lambda G(f)},
-  \]
-	from \eqref{ext con}.  As a result, for any $\mu\in\mathcal M(E)\setminus\{0\}$,
-  \[
-    \lim_{t\rightarrow\infty}\frac{\langle V_tf,\mu\rangle }{\langle v_t,\mu\rangle }
-    =\lim_{t\rightarrow\infty}\frac{\langle V_tf,\mu\rangle }{\langle V_tf,\nu\rangle }
-    \lim_{t\rightarrow\infty}\frac{\langle v(t+G(f),\cdot),\nu\rangle }{\langle v_t,\mu\rangle }=e^{\lambda G(f)}.
-  \]
-\end{proof}
-
 
 \subsection{Proof of main theorems}
 \begin{proof}[{\bf Proof of Theorem \ref{thm:distribution_of_zeta}}]
@@ -1961,22 +1924,28 @@ As a result, for any $\mu\in\mathcal M(E)\setminus\{0\}$,
   \[
     \mathbb P_\mu(\zeta=\infty)=\lim_{t\rightarrow\infty}\mathbb P_\mu(\zeta>t)=1-e^{-\lim_{t\rightarrow\infty}\langle v_t,\mu\rangle }=0,
   \]
-	follows from Lemma\ref{lem:extinct}.
+	follows from Lemma\ref{cor:extinct}.
 	Meanwhile, thanks to \eqref{ext con}, for any $\mu,\widetilde\mu\in \mathcal M(E)\setminus\{0\}$ and $s\in\mathbb R$,
   \[
     \lim_{t\rightarrow\infty}\frac{\mathbb P_{\mu}(\zeta>t+s)}{\mathbb P_{\widetilde\mu}(\zeta>t)}=\lim_{t\rightarrow\infty}\frac{1-e^{-\langle v(t+s,\cdot),\mu\rangle }}{1-e^{-\langle v_t,\widetilde\mu\rangle }}
     =\lim_{t\rightarrow\infty}\frac{\langle v(t+s,\cdot),\mu\rangle }{\langle v_t,\widetilde\mu\rangle }=\frac{\langle \phi,\mu\rangle }{\langle \phi,\widetilde\mu\rangle }e^{\lambda s}.
   \]
+\end{proof}
 
-	We are left to prove the item $3$.  Integrating the both sides of \eqref{eq:equation_for_vt} with respect to $\mu\in\mathcal M(E)$, then multiplying the both sides with  $e^{-\lambda(s+t)}$, it follows that
+\begin{proof}[Proof of Theorem \ref{thm:distribution_of_zeta}.(\ref{subthm:LlogL})]
+    From \eqref{eq:equation_for_nuvt} we know that
   \begin{equation}\label{eq:ext_equ_int}
-    e^{-\lambda(s+t)}\langle v(t+s,\cdot), \mu\rangle =e^{-\lambda t}\langle v_t,\mu\rangle -e^{-\lambda t}\int_0^s e^{-\lambda u}\langle (\psi+\beta)(\cdot, v(t+u)),\mu\rangle du.
+    e^{-\lambda(s+t)}\langle v_{t+s}, \mu\rangle + e^{-\lambda t}\int_0^s e^{-\lambda u}\langle \Psi_0v_{t+u},\mu\rangle du
+=e^{-\lambda t}\langle v_t,\mu\rangle,
+\quad t,s\geq 0. 
   \end{equation}
-	Thus $e^{-\lambda t}\langle v_t, \mu\rangle$ is an decreasing function of $t$. Let
-  \begin{equation}\label{eq:def_of_k}
-    \lim_{t\to\infty}e^{-\lambda t}\langle v_t, \nu\rangle=k,
-  \end{equation}
- 	then $k\in[0,\infty)$. Moreover, for any $x\in E$, \eqref{eq:ont_point_ratio_limit} can yield
+	Thus $e^{-\lambda t}\langle v_t, \mu\rangle$ is decreasing in $t$. 
+  Let
+\begin{equation}\label{eq:def_of_k}
+    k:=
+    \lim_{t\to\infty}e^{-\lambda t}\langle v_t, \nu\rangle
+\end{equation}
+then $k\in[0,\infty)$. Moreover, for any $x\in E$, Corollary \ref{cor:extinct}.(\ref{sub:extinct_3}) yields
   \[
     \lim_{t\rightarrow\infty}e^{-\lambda t}v(t,x)=\lim_{t\to\infty}e^{-\lambda t}\langle v_t,\nu\rangle \lim_{t\to\infty}\dfrac{v(t,x)}{\langle v_t,\nu\rangle }=k\phi(x).
   \]
