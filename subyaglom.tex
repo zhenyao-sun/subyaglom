@@ -46,14 +46,16 @@
 \usepackage{comment}
 % * Top matter
 \begin{document}
-\title[
-  Subcritical super-diffusions]
-{\large 
-  The extinction probability for a class of subcritical super-diffusions}
-\author[
-  R. Liu, Y.-X. Ren and Z. Sun]
+\title
+% ! [Subcritical super-diffusions]
 {
-  Rongli Liu, Yan-Xia Ren and Zhenyao Sun}
+% ! \large The extinction probability for a class of subcritical super-diffusions
+Subcritical Superprocesses
+}
+\author
+% ! [R. Liu, Y.-X. Ren, and Z. Sun]
+{
+  Rongli Liu, Yan-Xia Ren, Renming Song and Zhenyao Sun}
 \address{
   Yan-Xia Ren\\
   School of Mathematical Sciences\\
@@ -79,6 +81,7 @@
 \email{
   zhenyao.sun@pku.edu.cn}
 \begin{abstract}
+\begin{comment}
 	In this paper, we discussed the decay rate of the extinction probability of a class of superdiffusions.
   Two different conditional limits, the Yaglom probability and the Q process, are considered.
   We characterize the Yaglom distribution by some function $G(f)$, which satisfies $G(v^t(0,\cdot))=t$ for each $t>0$ and where $v^t(0,x)=-\log(\mathbb P_x(\zeta<t))$.
@@ -86,6 +89,8 @@
   As for the Q process, we show that under finite LlogL moment assumptions, the Q process has the equilibrium distribution.
   And it is a size-biased Yaglom distribution.
   Moreover, we point out that under some conditional distribution the equilibrium  distribution is an infinitely divisible distribution.
+\end{comment}
+TBD
 \end{abstract}
 \maketitle
 % * Document body
@@ -93,6 +98,7 @@
 % *** Backgroud
 \section{Introduction}
 \subsection{Backgroud}
+\begin{comment}
   % Suppose $(Z_n, n\ge 1)$ is a Galton-Watson branching process with offspring distribution $\{p_n\}$. 
   Suppose that $(Z_n)_{n \in \mathbb Z_+}$ is a Galton-Watson process with offspring distribution $(p_n)_{n\in \mathbb Z_+}$. 
   % Let $m:=\sum^{\infty}_{n=1}np_n$ be the mean number of children per particle.
@@ -226,6 +232,7 @@ in finite time. We establish an $L\log L$ criterion taking use of the spine
 method and investigate the Yaglom distributions and $Q$ processes. Moreover, we
 study the QSD for our model as well. To state our main results, we need to
 introduce the setup we are going to work with first.
+\end{comment}
 % *** Main results
 % **** Definition of Models
 % ***** Notations before the definition of superprocesses
@@ -263,7 +270,7 @@ P_\mu)_{\mu \in \mathcal M(E)}\}$ satisfying that for any $\mu \in \mathcal M(E)
 where, for each $f\in\mathcal B_b(E, [0,\infty))$, function $(t,x) \mapsto V_tf(x)$ on $[0,\infty) \times E$ is the unique locally bounded positive solution to the
 equation
 \begin{equation}\label{eq:FKPP_in_definition}
-  V_t f(x) +   \Pi_x\Big[\int_0^{t\wedge \tau} \psi \big(\xi_s,V_{t-s} f(\xi_s)\big) ds\Big]
+  V_t f(x) +   \Pi_x\left[\int_0^{t\wedge \tau} \psi \big(\xi_s,V_{t-s} f(\xi_s)\big) ds\right]
 	= P_t f(x),
 	\quad x \in E,\,\, t \geq 0.
 \end{equation}
@@ -320,7 +327,6 @@ Its corresponding dual semigroup $(\widehat P^{\beta}_t)_{t \geq 0}$ is given by
 	:= \int_E p^\beta_t (x,y) f(x) m(dx),
 	\quad t>0, y\in E, f\in \mathcal B_b(E,\mathbb R).
 \end{align}
-\textbf{HERE}
 It is shown in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that both $(P^\beta_t)_{t \geq 0}$ and $(\widehat P_t^{\beta})_{t\geq 0}$ are strongly continuous semigroups of compact operators on $L^2(E,m)$. 
 Let $A$ and $\widehat
 A$ be the generators of the semigroups $(P^\beta_t)_{t \geq 0}$ and $(\widehat
@@ -434,7 +440,7 @@ In particular, for any $x,y\in E$ and $s\geq 0$, the second result in the above 
 \end{equation}
 So we can see that the effect of the position of the initial mass on the decay of the mass is a ratio of $\phi(\cdot)$ generally.
 \end{comment}
-
+\begin{comment}
 % ***** Result about QSD and Yaglom theorem
 % ****** Concept of QSD
 For each probability ${\mathbf P}$ on $\mathcal M(E)$, we define
@@ -509,9 +515,7 @@ The following Proposition \ref{eq:exp_prop} is an analog to Theorem \ref{thm:equ
   \end{enumerate}
   Moreover, if $\int_E \widehat\phi(y)l(y)m(dy)<\infty$ then the constant $k$ in \eqref{eq:decay_rate} is equal to $E[M^{(\lambda)}]^{-1}$.
 \end{prop}
-\begin{comment}
-Recall the LlogL criteria of Theorem \ref{thm:equivalent_for_cbp}, we can say the above equivalency in proposition \ref{eq:exp_prop} is the same to that between items $(i)$ and $(iii)$ there.
-\end{comment}
+% Recall the LlogL criteria of Theorem \ref{thm:equivalent_for_cbp}, we can say the above equivalency in proposition \ref{eq:exp_prop} is the same to that between items $(i)$ and $(iii)$ there.
 % ***** Result: Q-process of the superprocess
 % ****** Notations: a martingale change of measure 
 \par
@@ -605,22 +609,20 @@ Why we only considered the existence of that equilibrium probability in the abov
   It is safe to say stationary because we have not prove uniqueness.
   \end{itemize}
 \end{iss}
-
 % **** Some comment about all the results
 \begin{iss}[TODO]~
   \begin{itemize}
   \item[ZS:]
 Should we extend the following paragraph into a new subsection with maybe more details about the spine-decomposition?
-
-\item[Ren:] 
+ \item[Ren:] 
   Yes, we should introduce more on it .  
 \end{itemize}
-\end{iss}
+ \end{iss}
 One important technique used to prove the above theorems is a ``spine-decomposition'' for the super-diffusion $X$ under a martingale change of measure.
 This decomposition was used by Englander and Kyprianou in \cite{EnglanderKyprianou2004Local} to investigate the local extinction of super-diffusions, in which the branching mechanism is $\psi(x,z)-\beta(x)z=\alpha(x)^2z^2-\beta(x)z$.
 This technique is usually used to investigate the properties of supercritical superdiffusions ($\lambda>0$).
 Here we use it to analyze the subcritical case.
-
+\end{comment}
 % ** Section: Preliminaries
 % *** Spine process and its time reverse
 % **** Spine as the FK-transform of the spatial motion
@@ -643,10 +645,10 @@ and
 \[
 	\widetilde\Pi_{\mu}(\cdot):= \mu(E)^{-1} \int_E\widetilde\Pi_x(\cdot)\mu(dx).
 \]
-For each function $f \in \mathcal B_b(E,[0,\infty))$ and measure $\mu \in \mathcal M(E)$, define measure $(\phi \cdot\mu)$ such that
+For each function $f \in \mathcal B_b(E,[0,\infty))$ and measure $\mu \in \mathcal M(E)$, define measure $( f \cdot\mu)$ such that
 \[
-  (\phi \cdot \mu)(dx)
-  := \phi(x)\mu(dx),
+  (f \cdot \mu)(dx)
+  := f(x)\mu(dx),
   \quad x\in E.
 \]
 % ***** Lemma: FK-transform will influence the initial configuration.
@@ -654,7 +656,7 @@ For each function $f \in \mathcal B_b(E,[0,\infty))$ and measure $\mu \in \mathc
 	For each $\mu\in \mathcal M(E)$, we have
  \[
     \dfrac{\widetilde \Pi_{\phi\cdot\mu}|_{\mathscr F_t^Y}}{\Pi_{\mu}|_{\mathscr F_t^Y}}
-  	= \frac{e^{\int_0^t \beta(Y_s)ds}\phi(Y_t) \mathbf 1_{\{t<\tau\}}}{\mu(E)^{-1}e^{\lambda t}\langle \phi,\mu\rangle},
+  	= \frac{e^{\int_0^t \beta(Y_s)ds}\phi(Y_t) \mathbf 1_{\{t<\tau\}}}{\mu(E)^{-1}e^{\lambda t} \mu(\phi)},
   	\quad t\geq 0.
   \]
 \end{lem}
@@ -663,10 +665,10 @@ For each function $f \in \mathcal B_b(E,[0,\infty))$ and measure $\mu \in \mathc
   F_t^Y$. Then we have
   \begin{align}
     &\widetilde{\Pi}_{\phi\cdot\mu}(A)
-      = \langle\phi, \mu\rangle^{-1} \int_E \widetilde \Pi_x(A)\phi(x)\mu(dx)
-    \\&=\langle\phi, \mu\rangle^{-1} \int_E  \Pi_x\Big[\frac{e^{\int_0^t \beta(Y_s)ds}\phi(Y_t) \mathbf 1_{\{t<\tau\}}}{e^{\lambda t}\phi(x)} \mathbf 1_A\Big]\phi(x)\mu(dx)
-    \\&= \mu(E)^{-1}\int_E  \Pi_x\Big[\frac{e^{\int_0^t \beta(Y_s)ds}\phi(Y_t) \mathbf 1_{\{t<\tau\}}}{\mu(E)^{-1}e^{\lambda t}\langle \phi,\mu\rangle} \mathbf 1_A\Big]\mu(dx)
-    \\&= \Pi_{\mu}\Big[\frac{e^{\int_0^t \beta(Y_s)ds}\phi(Y_t) \mathbf 1_{\{t<\tau\}}}{\mu(E)^{-1} e^{\lambda t}\langle \phi,\bar\mu\rangle} \mathbf 1_A\Big].
+      = \mu(\phi)^{-1} \int_E \widetilde \Pi_x(A)\phi(x)\mu(dx)
+    \\&= \mu(\phi)^{-1} \int_E  \Pi_x\left[\frac{e^{\int_0^t \beta(Y_s)ds}\phi(Y_t) \mathbf 1_{\{t<\tau\}}}{e^{\lambda t}\phi(x)} \mathbf 1_A\right]\phi(x)\mu(dx)
+    \\&= \mu(E)^{-1}\int_E  \Pi_x\left[\frac{e^{\int_0^t \beta(Y_s)ds}\phi(Y_t) \mathbf 1_{\{t<\tau\}}}{\mu(E)^{-1}e^{\lambda t} \mu(\phi)} \mathbf 1_A\right]\mu(dx)
+    \\&= \Pi_{\mu}\left[ \frac{e^{\int_0^t \beta(Y_s)ds}\phi(Y_t) \mathbf 1_{\{t<\tau\}}}{\mu(E)^{-1} e^{\lambda t}\mu(\phi)} \mathbf 1_A \right].
     \qedhere
   \end{align}
 \end{proof}
@@ -684,8 +686,8 @@ It can also be verified that $\phi(y)\widehat{\phi}(y)m(dy)$ is the unique invar
 It follows from \cite[Theorem 2.7]{KimSong2008Intrinsic} that for each $\epsilon > 0$, there exists $c, \rho > 0$ such that 
 \begin{align}
 \label{eq:IU}
-	\sup_{x,y\in E}\Big|\frac{\widetilde p_t(x,y)}{\phi(y) \widehat\phi(y)}- 1\Big|
-	=\sup_{x,y\in E}\Big|\frac{e^{-\lambda t}p^\beta_t(x,y)}{\phi(x) \widehat\phi(y)}- 1\Big|
+	\sup_{x,y\in E}\left|\frac{\widetilde p_t(x,y)}{\phi(y) \widehat\phi(y)}- 1\right|
+	=\sup_{x,y\in E}\left|\frac{e^{-\lambda t}p^\beta_t(x,y)}{\phi(x) \widehat\phi(y)}- 1\right|
 	\leq c\,e^{-\rho t},
 	\quad t\geq \epsilon.
 \end{align}
@@ -700,6 +702,7 @@ Let $\{(\widehat{Y}_t)_{t\geq 0}; (\widehat{\Pi}_x)_{x\in E}\}$ be an $E$-valued
   \quad x,y \in E,\,\, t> 0.
 \]
 It is easy to check that $(\widehat Y_t)_{t\geq 0}$ has the unique invariant measure $\phi(x)\widehat\phi(x)m(dx)$.
+({\bf Sun: We should verify that $\widetilde Y$ is a well defined Hunt process.})
 % ***** Proof of the time reverse property.
 \par
 Recall that $\nu(dx):=\widehat\phi(x)m(dx)$.
@@ -707,8 +710,8 @@ Recall that $\nu(dx):=\widehat\phi(x)m(dx)$.
   \label{lem:referse_of_the_spine}
 	For each $T > 0$, we have
   \[
-    \{(Y_{T-t})_{0\leq t\leq T}; \widetilde \Pi_{\phi \cdot \nu}\}
-    \overset{d}{=} \{(\widehat Y_{t})_{0\leq t\leq T}; \widehat \Pi_{\phi \cdot \nu}\}
+    \left \{(Y_{T-t})_{0\leq t\leq T}; \widetilde \Pi_{\phi \cdot \nu} \right\}
+    \overset{d}{=} \left\{ ( \widehat Y_{t} )_{0\leq t\leq T}; \widehat \Pi_{\phi \cdot \nu} \right\}
   \]
 \end{lem}
 \begin{proof}
@@ -716,15 +719,15 @@ Recall that $\nu(dx):=\widehat\phi(x)m(dx)$.
 	For each $i=1,\dots, n$, choose an arbitrary $B_i \in \mathscr B(E)$.
 	We only need to show that
   \[
-    \widetilde \Pi_{\phi \cdot \nu}\{Y_{T-t_i}\in B_i,\forall i=1,\dots, n\}
-    \overset{d}{=}\widehat \Pi_{\phi \cdot \nu}\{\widehat Y_{t_i}\in B_i,\forall i=1,\dots, n\}
+    \widetilde \Pi_{\phi \cdot \nu} \left(Y_{T-t_i}\in B_i,\forall i=1,\dots, n \right)
+    =\widehat \Pi_{\phi \cdot \nu} \left( \widehat Y_{t_i}\in B_i,\forall i=1,\dots, n \right)
   \]
 	In fact, on one hand, we have
   \begin{align}
-    &\widetilde \Pi_{\phi \cdot \nu}\{Y_{T-t_i}\in B_i,\forall i=1,\dots, n\}
+    &\widetilde \Pi_{\phi \cdot \nu} \left( Y_{T-t_i}\in B_i,\forall i=1,\dots, n \right)
     \\&\begin{multlined} =\int_{y_n\in B_n} \phi(y_n)\widehat\phi(y_n) m(dy_n)\int_{y_{n-1}\in B_{n-1}} \widetilde p_{t_n - t_{n-1}}(y_n,y_{n-1})m(dy_{n-1})
     \\ \dots \int_{y_1\in B_1} \widetilde p_{t_2 - t_1}(y_2,y_1)m(dy_1) \end{multlined}
-    \\&= \int_{E^n} \Big(\prod_{i=1}^n \mathbf 1_{\{y_i\in B_i\}}\Big)\cdot\Big(\prod_{i=1}^{n-1} \widetilde p_{t_{i+1}-t_i}(y_{i+1},y_i)\Big)\cdot\phi(y_n)\widehat\phi(y_n)\cdot \Big(\prod_{i=1}^nm(dy_i)\Big).
+    \\&= \int_{E^n} \left(\prod_{i=1}^n \mathbf 1_{\{y_i\in B_i\}}\right) \cdot \left( \prod_{i=1}^{n-1} \widetilde p_{t_{i+1}-t_i}(y_{i+1},y_i) \right) \cdot \phi(y_n) \widehat \phi(y_n) \cdot \left( \prod_{i=1}^nm(dy_i) \right).
   \end{align}
 	On the other hand, we have
   \begin{align}
@@ -733,20 +736,10 @@ Recall that $\nu(dx):=\widehat\phi(x)m(dx)$.
     \\ \dots\int_{y_n\in B_n}\widehat p_{t_n-t_{n-1}}(y_{n-1},y_n)m(dy_n) \end{multlined}
     \\&\begin{multlined} = \int_{y_1\in  B_1} \phi(y_1)\widehat \phi(y_1)m(dy_1) \int_{y_2\in B_2} \widetilde p_{t_2-t_1}(y_2,y_1)\frac{\phi(y_2)\widehat \phi(y_2)}{\phi(y_1)\widehat \phi(y_1)}m(dy_2)
     \\ \dots\int_{y_n\in B_n}\widetilde p_{t_n-t_{n-1}}(y_n,y_{n-1})\frac{\phi(y_n)\widehat\phi(y_n)}{\phi(y_{n-1})\widehat\phi(y_{n-1})}m(dy_n) \end{multlined}
-    \\&= \int_{E^n} \Big(\prod_{i=1}^n \mathbf 1_{\{y_i\in B_i\}}\Big)\cdot\Big(\prod_{i=1}^{n-1} \widetilde p_{t_{i+1}-t_i}(y_{i+1},y_i)\Big)\cdot\phi(y_n)\widehat\phi(y_n)\cdot \Big(\prod_{i=1}^n m(dy_i)\Big).
+    \\&= \int_{E^n} \left( \prod_{i=1}^n \mathbf 1_{\{y_i\in B_i\}}\right) \cdot \left(\prod_{i=1}^{n-1} \widetilde p_{t_{i+1}-t_i}(y_{i+1},y_i) \right) \cdot \phi(y_n) \widehat \phi(y_n) \cdot \left( \prod_{i=1}^n m(dy_i)\right).
     \qedhere
   \end{align}
 \end{proof}
-\begin{iss}[closed]~
-\label{iss:notation_for_pt}
-  \begin{itemize}
-  \item[ZS:]
-    In the above proof and several places below, a new set of notation $\widehat p_t$ and $\widetilde p_t$ is used to replace $\widehat p(t,\cdot,\cdot)$ and $\widetilde p(t,\cdot, \cdot)$. This is a notation inconsistency which needs to be fixed. Similar notation inconsistency happens for $v(t,\cdot)$ and $v_t$ below. I recommend using notations like $p_t, \widehat p_t,\widetilde p_t, v_t$. It makes more sense by always putting the time variable $t$ as a subscript, just like $X_t$ and $P_t$.
-    
-   \item[Ren:] 
-These notations are OK. We may just say that $\widehat p_t$ is some time written as $\widehat p(t,\cdot,\cdot)$. Similarly for others.
-  \end{itemize}
-\end{iss}
 
 % *** Subsection: Kuznestuv Measure
 \subsection{Kuznestuv measure}
@@ -756,15 +749,8 @@ Suppose that $X$ is the superprocess introduced in Section \ref{sec:main-results
 	\\ \text{ with the null measure as a trap} \} \end{multlined}
 \end{align}
 the Skorokhod space of measure-valued excursion paths.
-\begin{iss}[Open]~
-  \begin{itemize}
-  \item[ZS:]
-It might be better to say a little more about the topology of this spaces.
-\item[ZS:]
-There might be  a tiny problem. In Li's book, he focuses on the right-continuous paths. 
-But we always uses the Cadlag paths. 
-  \end{itemize}
-\end{iss}
+({\bf Sun: There might be  a tiny problem. In Li's book, he focuses on the right-continuous paths. 
+But we always uses the Cadlag paths.}) 
 
 According to \cite[Section 8.4]{Li2011Measurevalued}, there is a unique family of $\sigma$-finite measures $(\mathbb N_x)_{x\in E}$ on $\mathbb D$ such that
 \begin{itemize}
@@ -779,9 +765,9 @@ According to \cite[Section 8.4]{Li2011Measurevalued}, there is a unique family o
   \]
 	then
   \[
-    \{(X_t)_{t> 0};\mathbb P_\mu\}
-    \overset{f.d.d.}{=} \left(\int_{\mathbb D} w_t~\mathcal N(dw)\right)_{t> 0}.
-  \]
+    \left(\int_{\mathbb D} w_t~\mathcal N(dw)\right)_{t> 0}
+    \overset{f.d.d.}{=} \{(X_t)_{t> 0};\mathbb P_\mu\}.
+\]
 \end{itemize}
 This family of measure $(\mathbb N_x)_{x\in E}$ is known as the \emph{Kuznetsov measures} of $X$.
 
@@ -799,11 +785,12 @@ This family of measure $(\mathbb N_x)_{x\in E}$ is known as the \emph{Kuznetsov 
 In the remainder of this paper, we will always use $w = (w_t)_{t\geq 0}$ to denote a generic element in $\mathbb D$.
 For each $f\in \mathcal B_b(\mathbb D, [0,\infty))$, from Campbell's formula it can be verified that for each $\mu\in \mathcal M(E)$ and $t>0$, we have
 \begin{align}\label{eq: kuznetsov Laplace}
- 	\mathbb N_\mu[1-e^{-w_t(f) }]
- 	&=-\log \mathbb P_\mu[e^{-X_t(f)}] 
+ 	\mathbb N_\mu \left[1-e^{-w_t(f) }\right]
+ 	&=-\log \mathbb P_\mu \left[ e^{-X_t(f)} \right] 
     = \mu(V_t f),
- 	\\ \mathbb N_\mu[w_t(f)]
- 	&=\mu(P_t^{\beta}f),
+ 	\\ \mathbb N_\mu [w_t(f)]
+ 	&= \mathbf P_\mu [X_t(f)]
+    =\mu(P_t^{\beta}f),
 \end{align}
 and
 \begin{align}
@@ -817,12 +804,7 @@ Suppose that $X$ is the superprocess introduced in Section \ref{sec:main-results
 Fix an arbitrary $\mu\in \mathcal M(E)$.
 Define the probability $\widetilde {\mathbb P}_\mu$ using \eqref{eq:martingale_transformation}.
 
-\begin{iss}[Open]~
-  \begin{itemize}
-  \item[ZS:]
-I need to introduce the generalized spine decomposition in my paper here. Because the size-biased transform of the Kuznetsov measure will be used in the proof.
-  \end{itemize}
-\end{iss}
+{\bf (Sun: I need to introduce the generalized spine decomposition in my paper here. Because the size-biased transform of the Kuznetsov measure will be used in the proof.)}
 
 For each $\mu \in \mathcal M(E)$, we say $\{(Y)_{t\geq 0}, (X^{\mathrm n,
   \sigma})_{\sigma\in \mathcal D^\mathrm n}, (X^{\mathrm m, \sigma})_{\sigma \in
@@ -837,7 +819,7 @@ For each $\mu \in \mathcal M(E)$, we say $\{(Y)_{t\geq 0}, (X^{\mathrm n,
   \[
     \mathrm n(ds,dw) := \sum_{\sigma\in \mathcal D^{\mathrm n}} \delta_{(\sigma, X^{\mathrm n,\sigma})}(ds,dw)
   \]
-  is a Poission random measure on $[0,T]\times \mathbb D$ with intensity
+  is a Poission random measure on $[0,\infty)\times \mathbb D$ with intensity
   \[
     \mathbf n(ds,dw):= 2 \alpha(Y_s) ds \cdot \mathbb N_{Y_s}(dw).
   \]
@@ -845,7 +827,7 @@ For each $\mu \in \mathcal M(E)$, we say $\{(Y)_{t\geq 0}, (X^{\mathrm n,
   Given $\{(Y_t)_{t\geq 0}; \mathbb Q_\mu\}$, \emph{the discrete immigration} $\{(X^{\mathrm m,\sigma})_{\sigma\in \mathcal D^{\mathrm m}};
   \mathbb Q_\mu(\cdot |Y)\}$ is a $\mathbb D$-valued point process such that
   \[
-    \mathrm m(ds,dw) := \sum_{\sigma\in \mathcal D^{\mathrm n}} \delta_{(\sigma, X^{\mathrm n,\sigma})}(ds,dw)
+    \mathrm m(ds,dw) := \sum_{\sigma\in \mathcal D^{\mathrm m}} \delta_{(\sigma, X^{\mathrm m,\sigma})}(ds,dw)
   \]
   is a Poisson random measure on $[0,\infty ) \times \mathbb D$ with intensity
   \begin{align}\label{eq:meanMeasImmigr}
@@ -877,6 +859,8 @@ the following random measures:
    = \sum_{\sigma \in \mathcal D^\mathrm m \cap B} X^{\mathrm m,\sigma}_{t-\sigma}.
 \end{align}
 
+({\bf Sun: Measurability issue?})
+
 The spine decomposition theorem (see \cite{RenSongSun2019Spine} for the general
 cases) says that
 \begin{lem}\label{lem:spine_structure}
@@ -885,9 +869,9 @@ cases) says that
   (X_t)_{t\geq 0}; \mathbb Q_{\mu}\}$ is a spine representation of
   $\{(X_t)_{t\geq 0}; \widetilde {\mathbb P}_\mu\}$. Then
   \begin{align}
-    \{(X_t)_{t\geq 0}; \widetilde{\mathbb P}_\mu\}
+    \left\{(X_t)_{t\geq 0}; \widetilde{\mathbb P}_\mu\right\}
     \overset{f.d.d.}{=}
-    \{(X_t + Z^{\mathrm n, [0,t)}_{t} + Z^{\mathrm m, [0,t)}_{t} )_{t\geq 0}; \mathbb Q_\mu\}.
+    \left\{ \left(X_t + Z^{\mathrm n, [0,t)}_{t} + Z^{\mathrm m, [0,t)}_{t} \right)_{t\geq 0}; \mathbb Q_\mu \right\}.
   \end{align}
 \end{lem}
 
@@ -984,23 +968,12 @@ To simplyfy the notations, for each $t\geq 0$, with respect to probability $\wid
 % *** subsection: Llog L critierion
 \subsection{LlogL criterion.}
 
+{\bf (Sun: Settings of this subsection.)}
 Both of the processes $\{(Y)_{t\geq 0}, \widetilde\Pi_x\}$ and $\{(Y)_{t\geq 0}, \widehat{\Pi}_x\}$ are ergodic and have the same invariant probability $\phi(x)\widehat\phi(x)m(dx)$.
 The transition probability of these two processes both have uniform convergence properties \eqref{eq:IU} and \eqref{eq:IU'}.
 Therefore we can repeat the arguments for Lemma $3.2$ in \cite{LiuRenSong2009Log} and obtain the following results.
 The proofs will be omitted.
 
-\begin{iss}[Open]~
-  \begin{itemize}
-  \item[ZS:]
-The original Lemma in \cite{LiuRenSong2009Log} holds with $\epsilon = -\lambda$. I'm wondering why the following lemma hold for all $\epsilon>0$. I have read the original proof in \cite{LiuRenSong2009Log}, it seems hold with any positive $\epsilon$. But I can't be 100\% sure. 
-
-\item[Ren:] 
-It should only holds with $\epsilon = -\lambda$, for for any $\epsilon>0.$
-
-\item[ZS:]
- Rongli, in the Lemma below, we should change $\epsilon$ to $\lambda$, right?
-  \end{itemize}
-\end{iss}
 \begin{lem}\label{lem:import_lemma}
 	Let $\mu \in \mathcal M(E)\setminus \{0\}$.
 	Suppose that \[\{(Y)_{t\geq 0}, (X^{\mathrm n, \sigma})_{\sigma\in \mathcal D^\mathrm n}, (X^{\mathrm m, \sigma})_{\sigma \in \mathcal D^\mathrm m}, (X_t)_{t\geq 0}; \mathbb Q_{\mu}\}\] is a spine representation of $\{(X_t)_{t\geq 0}; \widetilde {\mathbb P}_\mu\}$.
@@ -1014,24 +987,26 @@ It should only holds with $\epsilon = -\lambda$, for for any $\epsilon>0.$
     \sigma_0=0,\quad \sigma_i=\inf\{s\in\mathcal D^{\mathrm m}:\ s>\sigma_{i-1},\ m_s\phi(Y_s)>1\}, \quad\eta_i=m_{\sigma_i},\quad i=1,2,\cdots.
   \]
 	are well defined with respect to probability $\mathbb Q_\mu$.
-	Furthermore, for any $\varepsilon>0$:
+	Furthermore, 
   \begin{itemize}
   \item
     if $\int_E\widehat{\phi}(y)l(y)m(dy)<\infty$ then
   \[
-    \sum_{s\in\mathcal D^{\mathrm m}}\mbox{e}^{-\varepsilon s}m_s\phi(Y_s) < \infty, \quad
+    \sum_{s\in\mathcal D^{\mathrm m}}\mbox{e}^{\lambda s}m_s\phi(Y_s) < \infty, \quad
     % \mathbb Q_{\mu}-\mbox{a.s.}
     \mathbb Q_{\mu}\text{-a.s.};
   \]
 \item
   if $ \int_E\widehat{\phi}(y)l(y)m(dy)=\infty$, then
   \[
-    \limsup_{i\rightarrow\infty}e^{-\varepsilon \sigma_i}\eta_i
+    \limsup_{i\rightarrow\infty}e^{\lambda \sigma_i}\eta_i
     \phi(Y_{\sigma_i})=\infty,
     \quad \mathbb Q_{\mu}\text{-a.s.}.
   \]
 \end{itemize}
 \end{lem}
+
+{\bf (Sun: I'm not so sure about this Lemma.)}
 \begin{lem}\label{lem:import_lemma}
 Let $\nu := \widehat \phi \cdot m$.
 Suppose that
@@ -1045,23 +1020,22 @@ With respect to probability $\widehat{\mathbb Q}_\nu$, let $(m_\sigma)_{\sigma\i
   \]
 Then the following sequence of random variables
   \[
-    \sigma_0=0,\quad \sigma_i=\inf\{s\in\mathcal D^{\mathrm m}:\ s>\sigma_{i-1},\ m_s\phi(Y_s)>1\}, \quad\eta_i=m_{\sigma_i},\quad i=1,2,\cdots.
+    \sigma_0=0,\quad \sigma_i=\inf\{s\in\mathcal D^{\mathrm m}:\ s>\sigma_{i-1},\ m_s\phi(Y_s)>1\}, \quad\eta_i=m_{\sigma_i},\quad i=1,2,\cdots
   \]
-  Furthermore, for each $\varepsilon>0$:
+  are well defined.
+  Furthermore, 
   \begin{itemize}
   \item
     if $\int_E\widehat{\phi}(y)l(y)m(dy)<\infty$ then
   \[
-    % \sum_{s\in\mathcal D^{\mathrm m}} \mbox{e}^{-\varepsilon s}m_s\phi(Y_s) 
-    \sum_{s\in\mathcal D^{\mathrm m}} e^{-\varepsilon s}m_s\phi(Y_s)
+    \sum_{s\in\mathcal D^{\mathrm m}} e^{\lambda s}m_s\phi(Y_s)
     < \infty,
-    % \quad \widehat{\mathbb Q}_{\mu}-\mbox{a.s.}
     \quad \widehat{\mathbb Q}_{\mu}\text{-a.s.};
   \]
 \item
   if $ \int_E\widehat{\phi}(y)l(y)m(dy)=\infty$, then
   \[
-    \limsup_{i\rightarrow\infty} e^{-\varepsilon\sigma_i}\eta_i \phi(Y_{\sigma_i})
+    \limsup_{i\rightarrow\infty} e^{\lambda \sigma_i}\eta_i \phi(Y_{\sigma_i})
     =\infty,
     \quad \widehat{\mathbb Q}_{\mu}\text{-a.s.}.
   \]
