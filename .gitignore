@@ -23,6 +23,11 @@ auto/
 
 _region_\.tex
 
-_region_\.prv/tmpL6aVjT/
+_region_\.prv/
 
 *.fmt
+
+\.DS_Store
+
+subyaglom\.prv/
+
