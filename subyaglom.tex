@@ -94,9 +94,9 @@ TBD
 \end{abstract}
 \maketitle
 % * Document body
-% ** Section: Introduction
-% *** Backgroud
+% ** Introduction
 \section{Introduction}
+% *** Backgroud
 \subsection{Backgroud}
 % ! NEEDED LATER
 \begin{comment}
@@ -236,8 +236,6 @@ introduce the setup we are going to work with first.
 \end{comment}
 % END NEEDED LATER
 % *** Main results
-% **** Definition of Models
-% ***** Notations before the definition of superprocesses
 \subsection{Main results}
 \label{sec:main-results}
 Let $E$ be a locally compact separable metric space. 
@@ -590,11 +588,9 @@ This decomposition was used by Englander and Kyprianou in \cite{EnglanderKyprian
 This technique is usually used to investigate the properties of supercritical superdiffusions ($\lambda>0$).
 Here we use it to analyze the subcritical case.
 \end{comment}
-% ** Section: Preliminaries
-% *** Spine process and its time reverse
-% **** Spine as the FK-transform of the spatial motion
-% ***** Dfinition of FK-transform
+% ** Preliminaries
 \section{Preliminaries}
+% *** Spine process and its time reverse
 \subsection{Spine process and its time reverse}
 Let $\{(Y_t)_{t\geq 0}; (\Pi_x)_{x\in E}\}$ be the spatial motion introduced in Section 1 with assumption \ref{asp:1} and \ref{asp:IU}.
 For each $x\in E$, let the probability $\widetilde \Pi_{x}$ be Doob's $h$-transform of $\Pi_x$ such that
@@ -708,7 +704,7 @@ Recall that $\nu(dx):=\widehat\phi(x)m(dx)$.
   \end{align}
 \end{proof}
 
-% *** Subsection: Kuznestuv Measure
+% *** Kuznestuv Measure
 \subsection{Kuznestuv measure}
 Suppose that $X$ is the superprocess introduced in Section \ref{sec:main-results} which satisfies that $\mathbb P_{x}(\|X_t\| = 0)>0$ for each $x\in E$ and $t>0$. Denote by
 \begin{align} 
@@ -771,7 +767,7 @@ where
   v_t(x) := \lim_{\theta \to \infty} V_t(\theta  \mathbf 1_E)(x),
   \quad t>0, x\in E.
 \end{align}
-% *** section: Spine decomposition
+% *** Spine decomposition
 \subsection{Spine decomposition}
 Suppose that $X$ is the superprocess introduced in Section \ref{sec:main-results} which satisfies Assumption \ref{asp:1} and \ref{asp:3} \eqref{subsup:point_non_presistence}.
 Fix an arbitrary $\mu\in \mathcal M(E)$.
@@ -942,7 +938,7 @@ To simplyfy the notations, for each $t\geq 0$, with respect to probability $\wid
   \end{align}
 \end{proof}
 
-% *** subsection: Llog L critierion
+% *** Llog L critierion
 \subsection{LlogL criterion.}
 
 {\bf (Sun: Settings of this subsection.)}
@@ -1021,10 +1017,8 @@ Then the following sequence of random variables
 \end{lem}
 
 % ** Section: The proofs of main results
-% *** Subsection about a Partial differential equation
-% **** Determine the asymptotic behavior of <v(t,*),\mu>
-% ***** Definition of v(t,x)
 \section{The proofs of main results}
+% *** Subsection about a Partial differential equation
 \subsection{Some properties of the solutions of partial differential equations}
 In this subsection, let $E$ be a measurable space, $\mathcal E$ the collection of all the measurable functions on $E$ and $\mathcal E^+$ the collection of all the non-negative measurable functions on $E$.
 Suppose that $A$ is a $[0,\infty]$-valued functional on some subset $\mathcal F \subset \mathcal E^+$. 
@@ -1071,7 +1065,6 @@ In particular, we write
 	% \quad t > 0, x\in \mathbb R^d.
   \quad t > 0, x\in E.
 \]
-% ***** Lemma about the asymptotic behavior of <\mu, v_t>
 \begin{lem}
 \label{lem:asmptotic_of_Vtf}
   Suppose that Assumptions \ref{asp:1}, \ref{asp:IU} and \ref{asp:3} hold. 
@@ -1105,7 +1098,6 @@ For each $s>0$, we have
 
 {\bf (Sun: If $f \equiv 0$, then $V_tf \equiv  0$, then $\frac{1}{\nu(V_tf)}$ is not well-defined. In general, we need a criterion for $\nu(V_tf) \neq 0$.)}
 
-% ***** Proof of assertion (1) 
 \begin{proof}[Proof of Lemma~\ref{lem:asmptotic_of_Vtf}.(\ref{subVtf_vanish})]
 Define function $\psi_0$ by
 \[
@@ -1156,7 +1148,6 @@ V_{2t}f(x)
 This implies the desired result.
 \end{proof}
 
-% ***** Proof of assertion (3) version B 
 \begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct_2_1}]
 
 For each $x\in E$, define 
@@ -1257,7 +1248,7 @@ Put this back into \eqref{eq:Ht}, we get
 \end{align}
 This implies the desired result.
 \end{proof}
-% ***** Proof of assertion (3.2) version C
+
 \begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct:3}]
 From~\eqref{eq:equation_for_Vtf}, for each $t>0$, $s>0$ and $\epsilon \in (0,s)$, we have
 \begin{align}
@@ -1380,8 +1371,8 @@ Taking $f \equiv \infty$ in the above Lemma, we get
 \end{equation}
 \end{enumerate}
 \end{cor}
-% ***** Proof of assertion (1) and (2)
-% ****** Concept of cumulant semigroup
+
+
 \begin{comment}
 \begin{proof}[Proof of Lemma~\ref{cor:extinct}.\eqref{lem:extinct_2}]
 Recall the operator $(V_t)_{t\geq 0}$ defined in~\eqref{eq:_def_of_vtf}.
@@ -1396,7 +1387,7 @@ Using the monotone convergence theorem we can define
 for each $f\in \mathcal B(E, [0,\infty]),t> 0$ and $x\in E$.
 We call $(V_t)_{t> 0}$ the cumulant semigroup of the superprocess $X$, because it holds that $V_tV_sf(x) = V_{t+s}f(x)$ for all $f\in \mathcal B(E,[0,\infty])$, $t,s > 0$ and $x\in E$. 
 In particular, we have $V_t(\infty) (x)= v_t(x)$ holds for each $t,x>0$ and $x\in E$.
-% ****** An equation about the cumulant semigroup  
+
 Define function $\psi_0$ by
 \[
   \psi_0(x,\lambda) = \psi(x,\lambda)+ \beta(x) \lambda,
@@ -1445,7 +1436,6 @@ v_{2t}(x)
 This implies the desired result.
 \end{proof}
 
-% ***** Proof of assertion (3) version B 
 \begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct_2_1}]
 
 For each $x\in E$, define 
@@ -1512,7 +1502,8 @@ g(t)
 =g(t_0)\exp\left\{-\int_{t_0}^t\frac{\langle\Psi_0 v_u,\nu\rangle}{\langle v_u,\nu\rangle}du\right\},
 \end{align}
 for both $t$ and $t_0$ large enough.  
-% ******* This expression says that vt can be controlled by v_{t+1} 
+
+
 In particular we have, for large $t$,
 \begin{align}
 \label{eq:the_magic_formula}
@@ -1540,7 +1531,7 @@ Put this back into \eqref{eq:ratio_of_nuvt_and_nuvtplus1}, we get
 \end{align}
 This implies the desired result.
 \end{proof}
-% ***** Proof of assertion (3.2) version C
+
 \begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct:3} ]
 From~\eqref{eq:equation_for_vt}, for each $t>0$, $s>0$ and $\epsilon \in (0,s)$, we have
 \begin{align}
@@ -1614,11 +1605,7 @@ Therefore, we have
 \end{align} 
 
 \end{proof}
-
 \end{comment}
-% ***** Lemma about the asymptotic behavior of vtf
-
-% * end
 
 \begin{cor}\label{cor:general_rate}
 	For each $\mu\in\mathcal M(E)\setminus\{0\}$, $f\in\mathcal B_b(E,[0,\infty])$ and $s>0$, it holds that
@@ -1718,6 +1705,7 @@ As a result, for any $\mu\in\mathcal M(E)\setminus\{0\}$,
 \end{align}
 \end{proof}
 
+% ** Proof of main theorems
 \subsection{Proof of main theorems}
 \begin{proof}[{\bf Proof of Theorem \ref{thm:distribution_of_zeta}}]
 	For any finite measure $\mu\in \mathcal M(E)$,
@@ -2073,9 +2061,8 @@ Therefore, by dominated convergence theory,
 }
 
 
-%% --------------------------------------------------------------------------------------------------------------------------------------------------
-%% ----------------------------------------------------------------------------------------------------------------------------
-\begin{proof}[Proof of Theorem \ref{thm:Q_process}]
+\begin{proof}
+  [Proof of Theorem \ref{thm:Q_process}]
   Assume $s>t$.  For any $A\in\mathscr F_t$, by the Markov property of $X$,
   \[
     \mathbb P_\mu(A|\zeta>s)=\dfrac{\mathbb P_\mu(A, \zeta>s)}{\mathbb P_\mu(\zeta>s)}=\dfrac{\mathbb P_\mu\big(\mathbb P_{X_t}(\zeta>s-t);A\big)}{\mathbb P_\mu(\zeta>s)},
@@ -2390,326 +2377,8 @@ Therefore, by dominated convergence theory,
   \end{eqnarray*}
   Then our conclusions follows from \cite[Theorem 3.4.1]{Dawson1992Infinitely} for instance.\qed
 \end{proof}
-% ----- Bibliographic references-------------
+
+% * Bibliography
 \bibliographystyle{amsplain}
 \bibliography{../bib/bib.bib}
-\begin{comment}
-\begin{thebibliography}{10}
-
-\bibitem{AthreyaNey1972Branching}
-  K.~B. Athreya and P.~E. Ney, \emph{Branching processes}, Springer-Verlag, New
-  York-Heidelberg, 1972.
-
-\bibitem{ChampagnatRoelly2008Limit}
-  N.~Champagnat and S.~R{\oe}lly, \emph{Limit theorems for conditioned multitype
-    {D}awson-{W}atanabe processes and {F}eller diffusions}, Electron. J. Probab.
-  \textbf{13} (2008), no.~25, 777--810.
-
-\bibitem{ChampagnatVillemonais2018Convergence}
-  N.~Champagnat and D.~Villemonais, \emph{Convergence of the {F}leming-{V}iot
-    process toward the minimal quasi-stationary distribution}, arXiv:1810.06849,
-  2018.
-
-\bibitem{Dawson1992Infinitely}
-  D.~A. Dawson, \emph{Infinitely divisible random measures and superprocesses},
-  Stochastic analysis and related topics ({S}ilivri, 1990), Progr. Probab.,
-  vol.~31, Birkh\"{a}user Boston, Boston, MA, 1992, pp.~1--129.
-
-\bibitem{Dynkin1993Superprocesses}
-  E.~B. Dynkin, \emph{Superprocesses and partial differential equations}, Ann.
-  Probab. \textbf{21} (1993), no.~3, 1185--1262.
-
-\bibitem{EnglanderKyprianou2004Local}
-  J.~Engl\"{a}nder and A.~E. Kyprianou, \emph{Local extinction versus local
-    exponential growth for spatial branching processes}, Ann. Probab. \textbf{32}
-  (2004), no.~1A, 78--99.
-
-\bibitem{Evans1993Two}
-  S.~N. Evans, \emph{Two representations of a conditioned superprocess}, Proc.
-  Roy. Soc. Edinburgh Sect. A \textbf{123} (1993), no.~5, 959--971.
-
-\bibitem{Grey1974Asymptotic}
-  D.~R. Grey, \emph{Asymptotic behaviour of continuous time, continuous
-    state-space branching processes}, J. Appl. Probability \textbf{11} (1974),
-  669--677.
-
-\bibitem{HeathcoteSenetaVere-Jones1967Refinement}
-  C.~R. Heathcote, E.~Seneta, and D.~Vere-Jones, \emph{A refinement of two
-    theorems in the theory of branching processes}, Teor. Verojatnost. i
-  Primenen. \textbf{12} (1967), 341--346.
-
-\bibitem{KimSong2008Intrinsic}
-  P.~Kim and R.~Song, \emph{Intrinsic ultracontractivity of non-symmetric
-    diffusion semigroups in bounded domains}, Tohoku Math. J. (2) \textbf{60}
-  (2008), no.~4, 527--547.
-
-\bibitem{Lambert2001Arbres}
-  A.~Lambert, \emph{Arbres, excursions et processus de {L}\'{e}vy completement
-    asym\'{e}triques}, Ph.D. thesis, Universit\'{e} Pierre et Marie Curie-Paris
-  VI, 2001.
-
-\bibitem{Lambert2003Coalescence}
-  \bysame, \emph{Coalescence times for the branching process}, Adv. in Appl.
-  Probab. \textbf{35} (2003), no.~4, 1071--1089.
-
-\bibitem{Lambert2007Quasistationary}
-  \bysame, \emph{Quasi-stationary distributions and the continuous-state
-    branching process conditioned to be never extinct}, Electron. J. Probab.
-  \textbf{12} (2007), no.~14, 420--446.
-
-\bibitem{Li2000Asymptotic}
-  Z.~Li, \emph{Asymptotic behaviour of continuous time and state branching
-    processes}, J. Austral. Math. Soc. Ser. A \textbf{68} (2000), no.~1, 68--84.
-
-\bibitem{Li2011Measurevalued}
-  \bysame, \emph{Measure-valued branching {eq:m}arkov processes}, Probability and
-  its Applications (New York), Springer, Heidelberg, 2011.
-
-\bibitem{LiuRenSong2009Log}
-  R.~Liu, Y.-X. Ren, and R.~Song, \emph{{$L\log L$} criterion for a class of
-    superdiffusions}, J. Appl. Probab. \textbf{46} (2009), no.~2, 479--496.
-
-\bibitem{LyonsPemantlePeres1995Conceptual}
-  R.~Lyons, R.~Pemantle, and Y.~Peres, \emph{Conceptual proofs of {$L\log L$}
-    criteria for mean behavior of branching processes}, Ann. Probab. \textbf{23}
-  (1995), no.~3, 1125--1138.
-
-\bibitem{MeleardVillemonais2012Quasistationary}
-  S.~M\'{e}l\'{e}ard and D.~Villemonais, \emph{Quasi-stationary distributions and
-    population processes}, Probab. Surv. \textbf{9} (2012), 340--410.
-
-\bibitem{Penisson2010Conditional}
-  S.~P\'{e}nisson, \emph{Conditional limit theorems for multitype branching
-    processes and illustration in epidemiological risk analysis}, Ph.D. thesis,
-  Universit\"{a}t Potsdam; Universit\'{e} Paris Sud-Paris XI, 2010.
-
-\bibitem{RenSongSun2019Spine}
-  Y.-X. Ren, R.~Song, and Z.~Sun, \emph{Spine decompositions and limit theorems
-    for a class of critical superprocesses}, arXiv:1711.09188, 2017.
-
-\bibitem{RenSongZhang2015Limit}
-  Y.-X. Ren, R.~Song, and R.~Zhang, \emph{Limit theorems for some critical
-    superprocesses}, Illinois J. Math. \textbf{59} (2015), no.~1, 235--276.
-
-\bibitem{RenSongZhang2017Central}
-  \bysame, \emph{Central limit theorems for supercritical branching nonsymmetric
-    {M}arkov processes}, Ann. Probab. \textbf{45} (2017), no.~1, 564--623.
-
-\bibitem{RenSongZhang2018Williams}
-  \bysame, \emph{Williams decomposition for superprocesses}, Electron. J. Probab.
-  \textbf{23} (2018), no.~23, 33 pp.
-
-\bibitem{RoellyRouault1989Processus}
-  S.~Roelly and A.~Rouault, \emph{Processus de {D}awson-{W}atanabe
-    conditionn\'{e} par le futur lointain}, C. R. Acad. Sci. Paris S\'{e}r. I
-  Math. \textbf{309} (1989), no.~14, 867--872.
-
-\bibitem{Schaefer1974Banach}
-  H.~H. Schaefer, \emph{Banach lattices and positive operators}, Springer-Verlag,
-  New York-Heidelberg, 1974.
-
-\end{thebibliography}
-\end{comment}
-
-% ! Below are some references which I'm not sure if is needed or not.
-\begin{comment}
-  \begin{thebibliography} {10}
-
-  \bibitem{AthreyaNey1972Branching}
-    Athreya, K. B. and Ney, P. E.:
-    \emph{Branching processes.}
-    Die Grundlehren der mathematischen Wissenschaften, Band 196. Springer-Verlag, New York-Heidelberg, 1972. xi+287 pp.
-    \MR{0373040}
-
-  \bibitem{BigginsKyprianou2004Measure}
-    Biggins, J. D. and Kyprianou, A. E.:
-    \emph{Measure change in multitype branching.}
-    Adv. in Appl. Probab. \textbf{36} (2004), no. 2, 544--581.
-    \MR{2058149}
-
-  \bibitem{ChampagnatRoelly2008Limit}
-    Champagnat, N. and Roelly, S.:
-    \emph{Limit theorems for conditioned multitype Dawson-Watanabe processes and Feller diffusions.}
-    Electron. J. Probab. \textbf{13} (2008), no. 25, 777–810.
-    \MR{2399296}
-
-  \bibitem{ChampagnatVillemonais2018Convergence}
-    {\color{blue}Champagnat, N. and Villemonais, D.:
-      \emph{Convergence of the Fleming-Viot process toward
-        theminimal quasi-stationary distribution.}
-      https://arxiv.org/pdf/1810.06849.pdf}
-
-  \bibitem{ChenRenYang2017Skeleton}
-    Chen, Z.-Q., Ren, Y.-X. and Yang, T.:
-    \emph{Skeleton decomposition and law of large numbers for supercritical superprocesses.}
-    Acta Appl. Math. (2017), 1--61.
-    \ARXIV{1709.00847}
-
-  \bibitem{Dawson1992Infinitely}
-    Dawson, D. A.:
-    \emph{Infinitely divisible random measures and superprocesses.}Stochastic analysis and related topics (Silivri, 1990), 1--129,
-    Progr. Probab., 31, Birkh{\"a}user Boston, Boston, MA, 1992.
-    \MR{1203373}
-
-  \bibitem{DelmasHenard2013A-Williams}
-    Delmas, J.-F. and H\'enard, O.:
-    \emph{A Williams decomposition for spatially dependent super-processes. }
-    Electron. J. Probab. \textbf{18} (2013), no. 37, 43 pp.
-    \MR{3035765}
-
-  \bibitem{Dynkin1993Superprocesses}
-    Dynkin, E. B.:
-    \emph{Superprocesses and partial differential equations.}
-    Ann. Probab. \textbf{21} (1993), no. 3, 1185--1262.
-    \MR{1235414}
-
-  \bibitem{EnglanderKyprianou2004Local}
-    Engl\"ander, J. and Kyprianou, A. E.:
-    \emph{Local extinction versus local exponential growth for spatial branching processes.}
-    Ann. Probab. \textbf{32} (2004), no. 1A, 78--99.
-    \MR{2040776}
-
-  \bibitem{Evans1993Two}
-    Evans, S. N.:
-    \emph{Two representations of a conditioned superprocess.}
-    Proc. Roy. Soc. Edinburgh Sect. A \textbf{123} (1993), no. 5, 959--971.
-    \MR{1249698}
-
-  \bibitem{Grey1974Asymptotic}
-    Grey, D. R.:
-    \emph{Asymptotic behaviour of continuous time, continuous state-space branching processes.}
-    J. Appl. Probability \textbf{11} (1974), 669--677.
-    \MR{0408016}
-
-  \bibitem{HeathcoteSenetaVere-Jones1967Refinement}
-    Heathcote, C. R., Seneta, E. and Vere-Jones, D.:
-    \emph{A refinement of two theorems in the theory of branching processes.} (Russian summary)
-    Teor. Verojatnost. i Primenen. \textbf{12} 1967 341--346.
-    \MR{0217889}
-
-  \bibitem{KimSong2008Intrinsic}
-    Kim, P. and Song, R.:
-    \emph{Intrinsic ultracontractivity of non-symmetric diffusion semigroups in bounded domains.}
-    Tohoku Math. J. (2) \textbf{60} (2008), no. 4, 527--547.
-    \MR{2487824}
-
-  \bibitem{KimSong2008Intrinsic2}
-    Kim, P. and Song, R.:
-    \emph{Intrinsic ultracontractivity of nonsymmetric diffusions with measure-valued drifts and potentials.}
-    Ann. Probab. \textbf{36} (2008), no. 5, 1904–1945.
-    \MR{2440927}
-
-  \bibitem{KimSong2009Intrinsic}
-    Kim, P. and Song, R.:
-    \emph{Intrinsic ultracontractivity for non-symmetric Lévy processes.}
-    Forum Math. \textbf{21} (2009), no. 1, 43–66.
-    \MR{2494884}
-
-  \bibitem{Lambert2001Arbres}
-    Lambert, A.:
-    \emph{Arbres, excursions et processus de L\'evy completement asym\'etriques.}
-    Diss. Université Pierre et Marie Curie-Paris VI, 2001.
-
-  \bibitem{Lambert2003Coalescence}
-    Lambert, A.:
-    \emph{Coalescence times for the branching process.}
-    Adv. in Appl. Probab. \textbf{35} (2003), no. 4, 1071--1089.
-    \MR{2014270}
-
-  \bibitem{Lambert2007Quasistationary}
-    Lambert, A.:
-    \emph{Quasi-stationary distributions and the continuous-state branching process conditioned to be never extinct.}
-    Electron. J. Probab. \textbf{12} (2007), no. 14, 420--446.
-    \MR{2299923}
-
-  \bibitem{Li2000Asymptotic}
-    Li, Z.-H.:
-    \emph{Asymptotic behaviour of continuous time and state branching processes.}
-    J. Austral. Math. Soc. Ser. A \textbf{68} (2000), no. 1, 68--84.
-    \MR{1727226}
-
-  \bibitem{Li2011Measurevalued}
-    Li, Z.:
-    \emph{Measure-valued branching Markov processes.}
-    Probability and its Applications (New York). Springer, Heidelberg, 2011. xii+350 pp. ISBN: 978-3-642-15003-6
-    \MR{2760602}
-
-  \bibitem{LiuRenSong2009Log}
-    Liu, R.-L., Ren, Y.-X. and Song, R.:
-    \emph{{$L \log L$} criterion for a class of superdiffusions.}
-    J. Appl. Probab. \textbf{46} (2009), no. 2, 479–496.
-    \MR{2535827}
-
-  \bibitem{LyonsPemantlePeres1995Conceptual}
-    Lyons, R., Pemantle, R. and Peres, Y.:
-    \emph{Conceptual proofs of $L\log L$ criteria for mean behavior of branching processes.}
-    Ann. Probab. \textbf{23} (1995), no. 3, 1125--1138.
-    \MR{1349164}
-
-  \bibitem{MeleardVillemonais2012Quasistationary}
-    M\'el\'eard, S. and Villemonais, D.:
-    \emph{Quasi-stationary distributions and population processes.}
-    Probab. Surv. \textbf{9} (2012), 340–410.
-    \MR{2994898}
-
-  \bibitem{Nagasawa1964Time}
-    Nagasawa, M.:
-    \emph{Time reversions of Markov processes.}
-    Nagoya Math. J. \textbf{24} (1964), 177--204.
-    \MR{0169290}
-
-  \bibitem{RenSongSun2019Spine}
-    Ren, Y.-X., Song, R. and Sun, Z.:
-    \emph{Spine decompositions and limit theorems for a class of critical superprocesses.}
-    Preprint.
-    \ARXIV{1711.09188}
-
-  \bibitem{RenSongYang2016Spine}
-    Ren, Y.-X., Song, R. and Yang, T.:
-    \emph{Spine decomposition and {$ L\log L $} criterion for superprocesses with non-local branching mechanisms.}
-    Preprint.
-    \ARXIV{1609.02257}
-
-  \bibitem{RenSongZhang2015Limit}
-    Ren, Y.-X., Song, R. and Zhang, R.:
-    \emph{Limit theorems for some critical superprocesses.}
-    Illinois J. Math. \textbf{59} (2015), no. 1, 235–276.
-    \MR{3459635}
-
-  \bibitem{RenSongZhang2017Central}
-    Ren, Y.-X., Song, R. and Zhang, R.:
-    \emph{Central limit theorems for supercritical branching nonsymmetric Markov processes.}
-    Ann. Probab. \textbf{45} (2017), no. 1, 564–623.
-    \MR{3601657}
-
-  \bibitem{RenSongZhang2018Williams}
-    Ren, Y.-X., Song, R. and Zhang, R.:
-    \emph{Williams decomposition for superprocesses.}
-    Electron. J. Probab. \textbf{23} (2018), Paper No. 23, 33 pp.
-    \MR{3771760}
-
-  \bibitem{RoellyRouault1989Processus}
-    Roelly, S. and Rouault, A.:
-    \emph{Processus de Dawson-Watanabe conditionn\'e par le futur lointain.} (French. English summary) [A Dawson-Watanabe process conditioned by the remote future]
-    C. R. Acad. Sci. Paris Sér. I Math. \textbf{309} (1989), no. 14, 867--872.
-    \MR{1055211}
-
-  \bibitem{Penisson2010Conditional}
-    P\'enisson, S.:
-    \emph{Conditional limit theorems for multitype branching processes and illustration in epidemiological risk analysis.}Diss. Universit?t Potsdam, Université Paris Sud-Paris XI, 2010.
-
-  \bibitem{Schaefer1974Banach}
-    Schaefer, H. H.:
-    \emph{Banach lattices and positive operators.}
-    Die Grundlehren der mathematischen Wissenschaften, Band 215. Springer-Verlag, New York-Heidelberg, 1974.
-    \MR{0423039}
-
-  \bibitem{Yaglom1947Certain}
-    Yaglom, A. M.:
-    \emph{Certain limit theorems of the theory of branching random processes.} (Russian)
-    Doklady Akad. Nauk SSSR (N.S.) \textbf{56} (1947), 795--798.
-    \MR{0022045}
-
-  \end{thebibliography}
-\end{comment}
 \end{document}
