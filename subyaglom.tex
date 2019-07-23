@@ -1,11 +1,3 @@
-% * Commits
-% ! 2018.12.24 the extinction rate of subcritical superprocesses - 3.tex by R. Liu: Original ideas and proofs.
-% ! 2019.01.01 subSuper0101.tex by Z. Sun: changed the tex file into amsart style.
-% ! 2019.01.07 subSuper0107.tex by Z. Sun: recommended some more general settings.
-% ! 2019.01.21 subSuper0121.tex by R. Liu
-% ! 2019.01.28 subSuper0128.tex by Z. Sun: gave more details about the reverse spine decomposition.
-% ! 2019.01.31 subSuper0131.tex by R. Liu
-% ! 2019.02.20 subSuper0220.tex by Z. Sun: there is a problem in Section 3. 
 % * The preamble
 % ! This TeX file uses 'amsart' for its document class. 
 \documentclass[12pt,a4paper]{amsart}
@@ -43,17 +35,13 @@
 \usepackage[backref]{hyperref}
 % ! Other packages
 \usepackage{xcolor}
+\usepackage[inline]{showlabels}
 \usepackage{comment}
 % * Top matter
 \begin{document}
-\title
-% ! [Subcritical super-diffusions]
-{
-% ! \large The extinction probability for a class of subcritical super-diffusions
-Subcritical Superprocesses
-}
+\title {Subcritical Superprocesses }
 \author
-% ! [R. Liu, Y.-X. Ren, and Z. Sun]
+[R. Liu, Y.-X. Ren, R. Song and Z. Sun]
 {
   Rongli Liu, Yan-Xia Ren, Renming Song and Zhenyao Sun}
 \address{
@@ -64,12 +52,11 @@ Subcritical Superprocesses
 \email{
   yxren@math.pku.edu.cn}
 \thanks{
-  The research of Yan-Xia Ren is supported in part by NSFC (Grant Nos. 11671017  and 11731009).}
+  The research of Yan-Xia Ren is supported in part by NSFC (Grant Nos. 11671017 and 11731009).}
 \address{
   Rongli Liu\\
-  {\bf Information about Rongli Liu}}
-\email{
-  rlliu@bjtu.edu.cn }
+  Information about Rongli Liu}
+\email{rlliu@bjtu.edu.cn }
 \thanks{
   The research of Rongli Liu is supported in part by NSFC
   (Grant No. 11301261), and the Fundamental Research Funds for the Central Universities (Grant No.  2017RC007)}
@@ -96,10 +83,9 @@ TBD
 % * Document body
 % ** Introduction
 \section{Introduction}
-% *** Backgroud
-\subsection{Backgroud}
-% ! NEEDED LATER
+% *** (Backgroud)
 \begin{comment}
+  \subsection{Backgroud}
   % Suppose $(Z_n, n\ge 1)$ is a Galton-Watson branching process with offspring distribution $\{p_n\}$. 
   Suppose that $(Z_n)_{n \in \mathbb Z_+}$ is a Galton-Watson process with offspring distribution $(p_n)_{n\in \mathbb Z_+}$. 
   % Let $m:=\sum^{\infty}_{n=1}np_n$ be the mean number of children per particle.
@@ -234,8 +220,9 @@ method and investigate the Yaglom distributions and $Q$ processes. Moreover, we
 study the QSD for our model as well. To state our main results, we need to
 introduce the setup we are going to work with first.
 \end{comment}
-% END NEEDED LATER
-% *** Main results
+
+% *** (Main results)
+\begin{comment}
 \subsection{Main results}
 \label{sec:main-results}
 Let $E$ be a locally compact separable metric space. 
@@ -260,8 +247,6 @@ where $\beta, \alpha\in \mathcal B_b(E,\mathbb R)$ and $n$ is a $\sigma$-finite 
 
 ({\bf Sun: I think it is better to use $\pi$ for the Levy measure.})
 
-% ***** Definition of superprocesses
-\par
 In this paper, we consider a \emph{$(Y,\psi)$-superprocess} $X$ which is defined as an $\mathcal M(E)$-valued Hunt process $X=\{(X_t)_{t\geq 0}; (\mathbb
 P_\mu)_{\mu \in \mathcal M(E)}\}$ satisfying that for any $\mu \in \mathcal M(E), f\in \mathcal B_b(E, [0,\infty))$,
 \begin{equation}
@@ -278,10 +263,8 @@ equation
 \end{equation}
 Here, we say a function $(t,x)\mapsto u(t,x)$ is \emph{locally bounded} on $[0,\infty) \times E$ if for each $T\geq 0$ we have $\sup_{t\in [0,T],x\in E} |u(t,x)| < \infty$. 
 See \cite[Theorem 5.11]{Li2011Measurevalued} for the existence of such processes.
-% **** Assumptions
-% ***** Assumption of spatial motion
-% ****** Notations
-\par
+
+
 To simplify the notation, we also write $\mathbb P_x$ for $\mathbb P_{\delta_x}$.
 Define the \emph{Feynman-Kac semigroup} $(P^\beta_t)_{t\geq 0}$ such that for any $ f\in \mathcal B_b(E,\mathbb R)$,
 \begin{align}
@@ -293,8 +276,8 @@ It is known, see \cite[Proposition 2.27]{Li2011Measurevalued} for example, $(P^\
 \begin{align} \label{eq:Yaglom_type_result_without_2rd} 
 \mathbb P_\mu [\langle f,X_t\rangle] = \mu(P^\beta_t f), \quad t \geq 0.
 \end{align}
-% ****** Statements
-\par
+
+
 For the spatial motion $Y$, we always assume the following:
 \begin{asp}\label{asp:1}
   There exist a $\sigma$-finite measure $m$ with full support on $E$ and a family
@@ -312,8 +295,7 @@ For the spatial motion $Y$, we always assume the following:
   and that the functions $x \mapsto \int_E p_t(x,y)^2 m(dy)$ and $y \mapsto \int_E
   p_t(x,y)^2 m(dx)$ are both continuous.
 \end{asp}
-% ****** Remarks
-\par
+
 Under Assumption \ref{asp:1}, it is proved in \cite{RenSongZhang2015Limit,RenSongZhang2017Central} that there exists a family
 of strictly positive, bounded continuous functions $\{ p^\beta_t(\cdot,\cdot): t
 > 0 \}$ on $E \times E$ such that
@@ -343,9 +325,7 @@ Normalize $\phi$ and $\widehat\phi$ by
 	\int_E \phi(x)^2 m(dx) = \int_E \phi(x) \widehat \phi(x) m(dx) = 1
 \]
 so that they are unique.
-% ***** Assumtion of mean behavior
-% ****** Notations
-\par
+
 Notice that, for each $t \geq 0$ and $\mu \in \mathcal M(E)$, we have $ \mathbb
 P_\mu[X_t(\phi)] = \mu(P^\beta_t \phi) = e^{\lambda t} \mu(\phi). $ 
 If $\lambda
@@ -354,8 +334,7 @@ if $\lambda < 0$, the mean of $X_t(\phi)$ will decrease exponentially;
 and if $\lambda = 0$, the mean of $X_t(\phi)$ will be a constant. 
 Therefore, we say $X$ is \emph{supercritical, critical} or \emph{subcritical}, according to $\lambda > 0$, $\lambda = 0$ or
 $\lambda < 0$, respectively.
-% ****** Statements
-\par
+
 Throughout this paper, we assume the following for the mean semigroup $(P_t^\beta)_{t\geq 0}$ in addition:
 \begin{asp}~
 \label{asp:IU}
@@ -366,9 +345,8 @@ Throughout this paper, we assume the following for the mean semigroup $(P_t^\bet
   The mean semigroup $(P_t^\beta)_{t\geq 0}$ is \emph{intrinsically ultracontractive}, that is, for each $t>0$, there is a constant $c_t >0$ such that for each $x,y\in E$, $p^\beta_t(x,y) \leq c_t \phi(x) \widehat\phi(y)$.
 \end{enumerate}
 \end{asp}
-% ***** Assumption of non-persistent
-% ****** Statement
-\par
+
+
 It follows from \cite[Proposition 2.5]{KimSong2008Intrinsic} that, under Assumption \ref{asp:IU}.\eqref{subasp:IU}, for each $t>0$, there exists $c'_t > 0$ such that 
 \begin{align}
 	p^\beta_t (x,y) 
@@ -397,10 +375,6 @@ Similar to \cite{RenSongSun2019Spine,RenSongZhang2018Williams}, we add the follo
  Let $\zeta=\inf\{t>0: \|X_t\| = 0\}$ be the extinction time of the superprocess $X$.
  The above assumption says that the process will extinct in finite time with a positive probability provided the initial configuration is $\nu$ or $\delta_x$ with $x\in E$.
 
-% **** Results in this paper
-% ***** Results about extinction time zeta
-% ****** Notation: definition of the n-phi kernel
-\par
 Define a new kernel $n^\phi(x, dr)$ from $E$ to $(0,\infty)$ such that
 \begin{equation} \label{eq:phi_change}
 	\int_0^\infty f(r)n^\phi(x,dr)=\int_0^\infty f(r\phi(x))n(x, dr),
@@ -408,7 +382,6 @@ Define a new kernel $n^\phi(x, dr)$ from $E$ to $(0,\infty)$ such that
 \end{equation}
 Our first result is about the asymptotic behavior of the extinction time $\zeta$:
 
-% ****** statement of the result
 \begin{thm}\label{thm:distribution_of_zeta}
 	Suppose that the superprocess $X$ satisfies Assumptions \ref{asp:1},
   \ref{asp:IU}, and \ref{asp:3}. Then,
@@ -434,16 +407,11 @@ Our first result is about the asymptotic behavior of the extinction time $\zeta$
   \end{enumerate}
 \end{thm}
 
-% ****** some explanation
-\begin{comment}
 In particular, for any $x,y\in E$ and $s\geq 0$, the second result in the above theorem can be written as
 \begin{equation}\label{eq:ratio_result}
  	\lim_{t\rightarrow\infty}\frac{\mathbb P_x(\zeta>t+s)}{\mathbb P_y(\zeta>t)}=\frac{\phi(x)}{\phi(y)}e^{\lambda s}.
 \end{equation}
 So we can see that the effect of the position of the initial mass on the decay of the mass is a ratio of $\phi(\cdot)$ generally.
-\end{comment}
-% ***** Result about QSD and Yaglom theorem
-% ****** Concept of QSD
 For each probability ${\mathbf P}$ on $\mathcal M(E)$, we define
 \[
 	( {\mathbf P} \mathbb P)(\cdot) := \int_{\mathcal M(E)} \mathbb P_\mu(\cdot) {\mathbf P}(d\mu).
@@ -459,14 +427,12 @@ According to the standard theory of QSD (see \cite{MeleardVillemonais2012Quasist
 \]
 We refer to $r$ the \emph{rate of mass decay} associated to the QSD $\mathbf P$.
 
-% ****** Concept of Yaglom distribution
 We say a probability ${\mathbf P}$ on $\mathcal M(E)$ is the \emph{Yaglom distribution} of the superprocess $X$ if for any $\mu\in \mathcal M(E)\setminus\{0\}$ we have
 \[
 	\mathbb P_\mu(X_t \in \cdot | \zeta > t) \xrightarrow[t\to \infty]{w} {\mathbf P}(\cdot).
 \]
 If the Yaglom distribution ${\mathbf P}$ of the superprocess $X$ exists, then it must be a QSD of $X$ (see \cite{MeleardVillemonais2012Quasistationary}).
 
-% ****** Statement of the result
 Our second theorem is about the QSD and the Yaglom distribution of the superpocess $X$:
 {\bf (The following theorem is not correct. But we want to get something similar.)}
 \begin{thm}\label{thm:qsd_thm}
@@ -502,7 +468,6 @@ Our second theorem is about the QSD and the Yaglom distribution of the superpoce
   \end{enumerate}
 \end{thm}
 
-% ***** Result: QSD has infinite mean, and Yaglom law has finite mean iff the llogl condition is satisfied
 {\bf (The following proposition is not correct. But we still want something similar and we want to call it the LlogL criteria for the subcritical superprocesses.)}
 \begin{prop}\label{eq:exp_prop}
 	Suppose that the superprocess $X$ satisfies Assumptions \ref{asp:1},
@@ -518,9 +483,7 @@ Our second theorem is about the QSD and the Yaglom distribution of the superpoce
   Moreover, if $\int_E \widehat\phi(y)l(y)m(dy)<\infty$ then the constant $k$ in \eqref{eq:decay_rate} is equal to $E[M^{(\lambda)}]^{-1}$.
 \end{prop}
 % Recall the LlogL criteria of Theorem \ref{thm:equivalent_for_cbp}, we can say the above equivalency in proposition \ref{eq:exp_prop} is the same to that between items $(i)$ and $(iii)$ there.
-% ***** Result: Q-process of the superprocess
-% ****** Notations: a martingale change of measure 
-\par
+
 Define the process
 \[
 	M_t=e^{-\lambda t}  \langle \phi, X_t\rangle, \quad t\geq 0.
@@ -538,14 +501,11 @@ We refer to the early papers \cite{EnglanderKyprianou2004Local,Evans1993Two,Roel
 It is well known that the process $\{(X_t)_{t\geq 0}; \widetilde{\mathbb P}_{\mu}\}$ can be characterized by the so called spine decomposition theorem.
 We will recall this decomposition in details for our model in section $2$.
 
-% ****** Statement of the result
 Our third theorem says that $\{(X_t)_{t\geq 0}; \widetilde{\mathbb P}_{\mu}\}$ can be considered as the Q-processs of $X$, i.e. the process $\{(X_t)_{t\geq 0}; \mathbb P_{\mu}\}$ conditioned to be never extinct:
 \begin{thm}\label{thm:Q_process}
 	Under the assumptions \ref{asp:1},\ref{asp:IU} and \ref{asp:3}, for each  $\mu \in \mathcal M(E), t\geq 0$ and $A\in\mathscr F_t$, we have $\lim_{s\rightarrow\infty}\mathbb P_\mu(A |\zeta>s)=\widetilde{\mathbb P}_\mu(A). $
 \end{thm}
 
-% ***** Result: Asymptotic behavior of Q-process
-% ****** Concept: invariant probability of Q-process 
 It would be interesting to study the asymptotic behavior of this Q-process $\{(X_t)_{t\geq 0}; (\widetilde{\mathbb P}_\mu)_{\mu \in \mathcal M(E)}\}$.
 Samilar to the definition of $\mathbf P\mathbb P$, for each probability $\mathbf
 P$ on $\mathcal M(E)$, we define probability $\mathbf P\widetilde{\mathbb P}$.
@@ -554,7 +514,7 @@ We say a probability $\mathbf P$ on $\mathcal M(E)$ is an \emph{invariant probab
 \[
 	(\mathbf P\widetilde{\mathbb P})(X_t \in \cdot ) =\mathbf P(\cdot),	\quad t\geq 0.
 \]
-% ****** Statement of the main result
+
 Our fourth result is the following:
 {\bf (The following theorem is not entirely correct.)}
 \begin{thm}\label{thm:structure_of_Qprocess}
@@ -581,25 +541,208 @@ Our fourth result is the following:
   \end{enumerate}
 \end{thm}
 {\bf (Why we only considered the existence of that equilibrium probability in the above theorem? Is it unique? Also, can I have this conjecture: Under $\mathbf P \widetilde{\mathbb P}$, $(X_t)_{t\geq 0}$ is a stationary (or even better, an ergodic) measure-valued process?)}
-% **** Some comment about all the results
-\begin{comment}
+
 One important technique used to prove the above theorems is a ``spine-decomposition'' for the super-diffusion $X$ under a martingale change of measure.
 This decomposition was used by Englander and Kyprianou in \cite{EnglanderKyprianou2004Local} to investigate the local extinction of super-diffusions, in which the branching mechanism is $\psi(x,z)-\beta(x)z=\alpha(x)^2z^2-\beta(x)z$.
 This technique is usually used to investigate the properties of supercritical superdiffusions ($\lambda>0$).
 Here we use it to analyze the subcritical case.
 \end{comment}
+
+% *** Main results
+\subsection{Main results}
+\label{sec:MR}
+% **** Notations
+Denote by $\mathcal B(E,B)$ the collection of all measurable maps from a Borel space $E$ to a Borel space $B$.
+Denote by $\mathcal B_b(E,B)$ the collection of all bounded measurable maps from a Borel space $E$ to a metric space $B$.
+Denote by $\mathcal M(E)$ the space of all Borel measures on a Borel space $E$. 
+Denote by $\mathcal M_f(E)$ the space of all finite Borel measures on a Borel space $E$. 
+
+% **** Definition of (S)uper(P)rocesses
+\begin{defi}
+\label{def:SP}
+Let $E$ be a locally compact separable metric space. 
+We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb P_\mu)_{\mu\in \mathcal M_f(E)}\}$ is a \emph{$(Y,\psi)$-superprocess} if
+\begin{enumerate}
+\item
+\label{def:SP:1}
+  the \emph{spatial motion} $Y=\{(Y_t)_{t\geq 0};(\Pi_x)_{x\in E}\}$ is an $E$-valued Hunt process with life time $\tau$;
+\item
+  \label{def:SP:2}
+  the \emph{branching mechanism} $\psi$ is a map from $E\times[0,\infty)$ to $[0,\infty)$ given by
+  \[
+    \psi(x,z)
+    =-\beta(x)z + \sigma(x)^2 z^2+ \int_{(0,\infty)} (e^{-rz}-1+zr ) \pi(x, dr),\qquad x\in E, z\geq0,
+  \]
+  where $\beta, \sigma\in \mathcal B_b(E,\mathbb R)$ and $\pi$ is a kernel from $E$ to $(0,\infty)$ with
+  \[
+    \sup_{x\in E}\int_0^\infty (r\wedge r^2)n(x,dr)
+    <\infty.
+  \]
+\item
+  \label{def:SP:3}
+  for each $f\in \mathcal B_b(E,[0,\infty))$, it holds that
+  \begin{align}
+    \mathbb P_\mu [e^{- X_t(f)}] = e^{-\mu(V_tf)},
+    \quad \mu \in \mathcal M_f(E),t\geq 0,
+  \end{align}
+  where the map $(t,x) \mapsto V_tf(x)$ on $[0,\infty) \times E$ is the unique locally bounded positive solution to the equation
+  \begin{align}
+    V_t f(x) +   \Pi_x\Big[\int_0^{t\wedge \tau} \psi \big(\xi_s,V_{t-s} f(\xi_s)\big) ds\Big]
+    = \Pi_x[f(\xi_t) \mathbf 1_{t < \tau}],
+    \quad x \in E, t \geq 0.
+  \end{align}
+\end{enumerate}
+\end{defi}
+
+% **** Theorem (Y)glom
+\begin{thm}
+  \label{thm:Y}
+	Let $X$ be the superprocess given by Definition \ref{def:SP}. 
+  We say a probability ${\mathbf P}$ on $\mathcal M(E)$ is the \emph{Yaglom distribution} of the superprocess $X$ if for each $\mu\in \mathcal M_f(E)\setminus\{0\}$ we have
+  \begin{align}
+    \mathbb P_\mu(X_t \in \cdot | \|X_t\|>0) 
+    \xrightarrow[t\to \infty]{w} {\mathbf P}(\cdot).
+  \end{align}
+  {\bf Under some conditions,} it holds that the Yaglom distribution $\mathbf P$ of $X$ exists.
+\end{thm}
+% **** Proof of Theorem (Y)aglom-a
+% ***** 
+\begin{proof}[Proof of Theorem \ref{thm:Y}]
+
+% ***** Lemma (Y)aglom: definition of (Ga)mma
+\begin{lem}
+  \label{lem:Y:Ga}
+  {\bf Under some conditions,} there exists a family of $[0,\infty)$-valued functionals $(\Gamma_t)_{t\geq 0}$ on $\mathcal B_b(E, [0,\infty))$ such that
+  \begin{align}
+    e^{-\Gamma_t f}:= \mathbf P_{\nu}\big[e^{- X_t(f)}\big| \|X_t\| > 0\big], 
+    \quad f\in \mathcal B_b(E,[0,\infty)), t \geq 0.
+  \end{align}
+\end{lem}
+
+% ***** Lemma (Y)aglom: definition of (Gt) 
+\begin{lem}
+  \label{lem:Y:Gt}
+  {\bf Under some conditions}, for each increasing time sequence $\mathbf t:= (t_n)_{n\in \mathbb N}$ with $ t_n \xrightarrow[n\to \infty]{} \infty$, we have that
+  \begin{align}
+    1 - e^{- G^{\mathbf t}V_sf} 
+    = e^{s\lambda} \big(1- e^{- G^{\mathbf t} f}\big),
+    \quad s \geq 0, f \in \mathcal B_b(E, [0,\infty))
+  \end{align}
+  where $G^{\mathbf t}$ is a $[0,\infty)$-valued functional on $\mathcal B_b(E,[0,\infty))$ given by
+  \begin{align}
+    G^{\mathbf t}f 
+    := \limsup_{n\to \infty} \Gamma_{(t_n)}f,
+    \quad f\in \mathcal B_b(E, [0,\infty)).
+  \end{align}
+\end{lem}
+
+% ***** Lemma (Y)aglom: are G^t are (G*)
+\begin{lem}
+  \label{lem:Y:G*}
+  Suppose that $G^*$ is a $[0,\infty)$-valued functional on $\mathcal B_b(E,[0,\infty))$ satisfies that
+  \begin{align}
+    1 - e^{- G^* V_sf} = e^{s\lambda} \big(1- e^{- G^* f}\big),
+    \quad s \geq 0, f \in \mathcal B_b(E, [0,\infty)).
+  \end{align}
+  {\bf Under some conditions,} for each increasing time sequence $\mathbf t:= (t_n)_{n\in \mathbb N}$ with $ t_n \xrightarrow[n\to \infty]{} \infty$, we have $G^* = G^{\mathbf t}$.
+\end{lem}
+
+% ***** Lemma (Y)aglom: the unique solution (G)
+\begin{lem}
+  \label{lem:Y:G}
+  {\bf Under some conditions,} there exists a unique $[0,\infty)$-valued functional $G$ on $\mathcal B_b(E, [0,\infty))$ satisfying that
+  \begin{align}
+    1 - e^{- G V_sf} = e^{s\lambda} \big(1- e^{- G f}\big),
+    \quad s \geq 0, f \in \mathcal B_b(E, [0,\infty)).
+  \end{align}
+  Moreover, there exists a probability $\mathbf P$ on $\mathcal M_f(E)$ such that
+  \begin{align}
+    e^{-Gf}=\mathbf P[e^{-X(f)}],\quad f\in \mathcal B_b(E,[0,\infty)).
+  \end{align}
+\end{lem}
+
+% ***** 
+Denote by $G$ the functional given by Lemma \ref{lem:Y:G}. 
+Then from Lemma \ref{lem:Y:G*} we have that for each increasing time sequence $\mathbf t=(t_n)_{n\in \mathbb N}$ with $t_n \xrightarrow[n\to\infty]{} \infty$, we have
+\begin{align}
+\limsup_{n\to \infty}\Gamma_{(t_n)} f = Gf,\quad f\in \mathcal B_b(E,[0,\infty)).
+\end{align}
+Notice that the limit is independent of the choice of the sequence $\mathbf t$, so we must have
+\begin{align}
+  \lim_{t \to \infty}\Gamma_{t} f = Gf,\quad f\in \mathcal B_b(E,[0,\infty)).
+\end{align}
+Using Lemma \ref{lem:Y:G} again, we get the desired result.
+\end{proof}
+% **** Proof of Lem:Y:Ga
+% ***** 
+\begin{proof}[Proof of Lemma \ref{lem:Y:Ga}]
+% ***** Lemma (Mean)  
+  \begin{lem}
+    \label{lem:M}
+    Let $X$ be a superprocess given by Definition \ref{def:SP}. 
+    It holds that
+    \begin{align} 
+      \mathbb P_\mu [\langle f,X_t\rangle] = \mu(P^\beta_t f), 
+      \quad t \geq 0, f\in \mathcal B_b(E, \mathbb R),
+    \end{align} 
+    where \emph{the mean semigroup} $(P_t^\beta)_{t\geq 0}$ is a family of operators on $\mathcal B_b(E, \mathbb R)$ given by
+    \begin{align}
+      P^\beta_tf(x)
+      := \Pi_x \big[e^{\int_0^{t} \beta(Y_r)dr} f(Y_t)\mathbf 1_{\{t<\tau\}}\big],
+      \quad f \in \mathcal B_b(E, \mathbb R),t\geq 0, x\in E.
+    \end{align}
+  \end{lem}
+
+% ***** Lemma (E)igenvalue
+  \begin{lem}
+    \label{lem:S}
+    Let $X$ be the superprocess given by Definition \ref{def:SP}. 
+    Let $(P^\beta_t)_{t\geq 0}$ be the mean semigroup of $X$.
+    {\bf Suppose that it satisfies some conditions.}
+    Then there exist a number $\lambda \in \mathbb R$, a function $\phi \in \mathcal B(E, [0,\infty))$ and a measure $\nu \in \mathcal M_f(E)$ satisfying that
+    \begin{align}
+      & P_t^\beta \phi(x) 
+        = e^{\lambda t} \phi(x),
+        \quad x\in E, t\geq 0;
+      \\ & \int_{x\in E} \nu(dx) P_t^\beta(x,\cdot) 
+           = e^{\lambda t} \nu(\cdot),
+           \quad t\geq 0;
+      \\ & \nu(\phi) 
+           = 1.   
+    \end{align}
+    We refer to $\lambda$ as the \emph{principle eigenvalue}, $\phi$ as the \emph{principle eigenfunction}, and $\nu$ as the \emph{principle eigenmeasure} of the mean semigroup of $X$, respectively. 
+  \end{lem}
+% ***** 
+  For each $t\geq 0$, since $P_\nu[X_t(\phi)] = \nu(P_t^\beta \phi) = e^{\lambda t} > 0$, we have that $\mathbf P_\nu(\|X_t\| > 0) > 0$.
+  Therefore, the conditional expectation $\mathbf P_\nu (\cdot \big|\|X_t\|>0)$ is well-defined for each $t\geq 0$.
+  We only need to proof that for each $t\geq 0$ and $f\in \mathcal B_b(E,[0,\infty))$, the following hold
+  \begin{align}
+    \mathbf P_\nu\big[e^{-X_t(f)}\big|\|X_t\|>0\big] > 0.
+  \end{align}
+  In fact, if we have a time $t_0 \geq 0$ and a function $f_0 \in \mathcal B_b(E,[0,\infty))$ such that 
+  \begin{align}
+    \mathbf P_\nu \big[e^{- X_{t_0}(f_0)} \big|  \|X_{t_0}\| > 0\big] =0,
+  \end{align}
+  then we must have that $\{\|X_{t_0}\| > 0\} \subset \{X_{t_0}(f_0) = \infty\}$ in the sense of $\mathbf P_\nu$-almost surely.
+  From the fact that $\mathbf P_\nu\big( X_{t_0} > 0 \big) > 0$, we have that $\mathbf P_\nu ( X_{t_0}(f_0) = \infty) > 0$.
+  This, however, contradicts the fact that $\mathbf P_\nu [X_{t_0}(f_0)] = \nu(\mathbf P_{t_0}^\beta f_0) \leq \|\nu\| \cdot e^{\|\beta\|t_0} \cdot \|f_0\|_\infty < \infty$.
+\end{proof}
+% **** Proof of Lem:Y:Gt
+% **** Proof of Lem:Y:G*
+% **** Proof of Lem:Y:G
 % ** Preliminaries
 \section{Preliminaries}
-% *** Spine process and its time reverse
+% *** (Spine process and its time reverse)
+\begin{comment}
 \subsection{Spine process and its time reverse}
 Let $\{(Y_t)_{t\geq 0}; (\Pi_x)_{x\in E}\}$ be the spatial motion introduced in Section 1 with assumption \ref{asp:1} and \ref{asp:IU}.
-For each $x\in E$, let the probability $\widetilde \Pi_{x}$ be Doob's $h$-transform of $\Pi_x$ such that
+For each $x\in E$, let the probability $(\widetilde \Pi_{x})_{x\in E}$ be Doob's $h$-transform of $\Pi_x$ such that
 \begin{align}
 	\dfrac{d\widetilde{\Pi}_x|_{\mathscr F^Y_t}}{d\Pi_x|_{\mathscr F^Y_t}}= \frac{e^{\int_0^t \beta(Y_s)ds}\phi(Y_t) \mathbf 1_{\{t<\tau\}}}{e^{\lambda t}\phi(x)},
 	\quad t\geq 0,
 \end{align}
 where $(\mathscr F_t^Y)_{t\geq 0}$ is the natural filtration of process $(Y_t)_{t\geq 0}$.
-For each $\mu \in \mathcal M(E)$, define
+For each $\mu \in \mathcal M_f(E)$, define
 \[
 	\Pi_{\mu}(\cdot)
 	:= \mu(E)^{-1}\int_{E} \Pi_x(\cdot)\mu(dx),
@@ -608,15 +751,15 @@ and
 \[
 	\widetilde\Pi_{\mu}(\cdot):= \mu(E)^{-1} \int_E\widetilde\Pi_x(\cdot)\mu(dx).
 \]
-For each function $f \in \mathcal B_b(E,[0,\infty))$ and measure $\mu \in \mathcal M(E)$, define measure $( f \cdot\mu)$ such that
+For each function $f \in \mathcal B_b(E,[0,\infty))$ and measure $\mu \in \mathcal M_f(E)$, define measure $( f \cdot\mu)$ such that
 \[
   (f \cdot \mu)(dx)
   := f(x)\mu(dx),
   \quad x\in E.
 \]
-% ***** Lemma: FK-transform will influence the initial configuration.
+
 \begin{lem}
-	For each $\mu\in \mathcal M(E)$, we have
+	For each $\mu\in \mathcal M_f(E)$, we have
  \[
     \dfrac{\widetilde \Pi_{\phi\cdot\mu}|_{\mathscr F_t^Y}}{\Pi_{\mu}|_{\mathscr F_t^Y}}
   	= \frac{e^{\int_0^t \beta(Y_s)ds}\phi(Y_t) \mathbf 1_{\{t<\tau\}}}{\mu(E)^{-1}e^{\lambda t} \mu(\phi)},
@@ -636,7 +779,6 @@ For each function $f \in \mathcal B_b(E,[0,\infty))$ and measure $\mu \in \mathc
   \end{align}
 \end{proof}
 
-% ***** Fact: this process is exponential-ergodic
 It can be verified (see \cite{KimSong2008Intrinsic} for example) that process $\{(Y_t)_{t\geq 0}; (\widetilde\Pi_x)_{x\in E}\}$ is a time homogeneous Markov process.
 Its' transition density with respect to measure $m$ is given by
 \begin{equation}
@@ -654,9 +796,7 @@ It follows from \cite[Theorem 2.7]{KimSong2008Intrinsic} that for each $\epsilon
 	\leq c\,e^{-\rho t},
 	\quad t\geq \epsilon.
 \end{align}
-% **** Reverse of the Spine process
-% ***** Construction
-\par
+
 Let $\{(\widehat{Y}_t)_{t\geq 0}; (\widehat{\Pi}_x)_{x\in E}\}$ be an $E$-valued Hunt process whose transition density with respect to measure $m$ is given by
 \[
   \widehat{p}_t(x,y)
@@ -666,8 +806,7 @@ Let $\{(\widehat{Y}_t)_{t\geq 0}; (\widehat{\Pi}_x)_{x\in E}\}$ be an $E$-valued
 \]
 It is easy to check that $(\widehat Y_t)_{t\geq 0}$ has the unique invariant measure $\phi(x)\widehat\phi(x)m(dx)$.
 ({\bf Sun: $\widetilde Y$ is a well defined Hunt process, Right?})
-% ***** Proof of the time reverse property.
-\par
+
 Recall that $\nu(dx):=\widehat\phi(x)m(dx)$.
 \begin{lem}
   \label{lem:referse_of_the_spine}
@@ -703,12 +842,14 @@ Recall that $\nu(dx):=\widehat\phi(x)m(dx)$.
     \qedhere
   \end{align}
 \end{proof}
+\end{comment}
 
-% *** Kuznestuv Measure
+% *** (Kuznestuv Measure)
+\begin{comment}
 \subsection{Kuznestuv measure}
 Suppose that $X$ is the superprocess introduced in Section \ref{sec:main-results} which satisfies that $\mathbb P_{x}(\|X_t\| = 0)>0$ for each $x\in E$ and $t>0$. Denote by
 \begin{align} 
-\begin{multlined} \mathbb D:=\{ w= (w_t)_{t\geq 0}: w \text{ is an $\mathcal M(E)$-valued c\`{a}dl\`{a}g function on $[0,\infty)$ }
+\begin{multlined} \mathbb D:=\{ w= (w_t)_{t\geq 0}: w \text{ is an $\mathcal M_f(E)$-valued c\`{a}dl\`{a}g function on $[0,\infty)$ }
 	\\ \text{ with the null measure as a trap} \} \end{multlined}
 \end{align}
 the Skorokhod space of measure-valued excursion paths.
@@ -722,7 +863,7 @@ According to \cite[Section 8.4]{Li2011Measurevalued}, there is a unique family o
 \item
   $\mathbb N_x \{ \|w_0\| > 0\} = 0$ for each $x\in E$;
 \item
-  for each $\mu \in \mathcal M(E)$, if $\mathcal N$ is a Poisson random measure on $\mathbb D$ with intensity
+  for each $\mu \in \mathcal M_f(E)$, if $\mathcal N$ is a Poisson random measure on $\mathbb D$ with intensity
   \[
     \mathbb N_\mu(dw):= \int_E \mathbb N_x(dw)\mu(dx), \quad w\in \mathbb D.
   \]
@@ -746,7 +887,7 @@ This family of measure $(\mathbb N_x)_{x\in E}$ is known as the \emph{Kuznetsov 
 % \end{align}
 
 In the remainder of this paper, we will always use $w = (w_t)_{t\geq 0}$ to denote a generic element in $\mathbb D$.
-For each $f\in \mathcal B_b(\mathbb D, [0,\infty))$, from Campbell's formula it can be verified that for each $\mu\in \mathcal M(E)$ and $t>0$, we have
+For each $f\in \mathcal B_b(\mathbb D, [0,\infty))$, from Campbell's formula it can be verified that for each $\mu\in \mathcal M_f(E)$ and $t>0$, we have
 \begin{align}\label{eq: kuznetsov Laplace}
  	\mathbb N_\mu \left[1-e^{-w_t(f) }\right]
  	&=-\log \mathbb P_\mu \left[ e^{-X_t(f)} \right] 
@@ -767,10 +908,13 @@ where
   v_t(x) := \lim_{\theta \to \infty} V_t(\theta  \mathbf 1_E)(x),
   \quad t>0, x\in E.
 \end{align}
-% *** Spine decomposition
+\end{comment}
+
+% *** (Spine decomposition)
+\begin{comment}
 \subsection{Spine decomposition}
 Suppose that $X$ is the superprocess introduced in Section \ref{sec:main-results} which satisfies Assumption \ref{asp:1} and \ref{asp:3} \eqref{subsup:point_non_presistence}.
-Fix an arbitrary $\mu\in \mathcal M(E)$.
+Fix an arbitrary $\mu\in \mathcal M_f(E)$.
 Define the probability $\widetilde {\mathbb P}_\mu$ using
 \begin{equation} \label{eq:martingale_transformation}
 	\frac{d\widetilde{\mathbb P}_\mu|_{\mathscr F_t}}{d\mathbb P_\mu|_{\mathscr F_t}}
@@ -847,10 +991,11 @@ cases) says that
     \left\{ \left(X_t + Z^{\mathrm n, [0,t)}_{t} + Z^{\mathrm m, [0,t)}_{t} \right)_{t\geq 0}; \mathbb Q_\mu \right\}.
   \end{align}
 \end{lem}
+\end{comment}
 
-% *** Reverse spine representation
+% *** (Reverse spine representation)
+\begin{comment}
 \subsection{Reverse spine representation}
-
 Suppose that $X$ is the superprocess introduced in Section \ref{sec:main-results} which satisfies Assumption \ref{asp:1} and \ref{asp:3} \eqref{subsup:point_non_presistence}.
 
 Recall that $\nu := \widehat \phi \cdot m \in \mathcal M(E)$.
@@ -937,8 +1082,10 @@ To simplyfy the notations, for each $t\geq 0$, with respect to probability $\wid
   	\qedhere
   \end{align}
 \end{proof}
+\end{comment}
 
-% *** Llog L critierion
+% *** (Llog L critierion)
+\begin{comment}
 \subsection{LlogL criterion.}
 
 {\bf (Sun: Settings of this subsection.)}
@@ -1015,10 +1162,726 @@ Then the following sequence of random variables
   \]
 \end{itemize}
 \end{lem}
+\end{comment}
 
-% ** Section: The proofs of main results
+% ** The proofs of main results
 \section{The proofs of main results}
-% *** Subsection about a Partial differential equation
+% **** (Lemma about the mean semigroup)
+\begin{comment}
+\begin{lem}
+\label{lem:Pf_and_fnu}
+  Denote by $L_1^+(\nu)$ the class of non-negative measurable functions on $E$ which are integrable with respect to measure $\nu:= \widehat\phi \cdot m$.
+For each $\epsilon > 0$, we have
+  \begin{align}
+    P^\beta_t f(x) = e^{\lambda t} \phi(x) \nu(f)\left( 1 + o(\limsup_{t\to \infty}\sup_{ x\in E, f\in L_1^+(\nu)})\right).  
+  \end{align}
+\end{lem}
+\begin{proof}
+  It can be verified that, for each $\epsilon > 0$, there exists $\rho > 0$, such that
+  \begin{align}
+    & P^\beta_t f(x) = \int_{y\in E} p^\beta_t (x,y)f(y) m(dy)
+    \\&  = \int_{y\in E}  e^{\lambda t}\left (1+ e^{-\rho t} O(\sup_{t \geq \epsilon, x,y\in E, f\in L_1^+(\nu)})\right)\phi(x) \widehat \phi(y) f(y) m(dy) ,\quad\text{by~\eqref{eq:IU}}
+    \\&  =   e^{\lambda t}\left(1+ e^{-\rho t} O(\sup_{t \geq \epsilon, x\in E, f\in L_1^+(\nu)})\right)\phi(x) \nu(f) \label{eq:IU_for_Ptf} 
+    \\&= e^{\lambda t} O(\sup_{t\geq \epsilon, x\in E, f\in L_1^+(\nu)}) \nu(f). 
+\qedhere 
+  \end{align}
+\end{proof}
+\end{comment}
+% **** Key Lemma
+
+\begin{lem}
+  \label{lem:K}
+  Let $X$ be the superprocess given by Definition \ref{def:SP}.
+  Suppose that it satisfies the condition of Lemma \ref{lem:S} {\bf and some other conditions}.
+  Further suppose that 
+  \begin{align}
+    \lambda 
+    & < 0, \\
+    \label{eq:CK}
+    P_t^\beta f(x) 
+    & = e^{\lambda t} \phi(x) \nu(f) \Big( 1+ o\big(\limsup_{t\to \infty} \sup_{x\in E, f\in L^1(\nu)}\big)\Big), \\
+    P_t^\beta f(x) 
+    & = \phi(x) \nu(f) O\big(\sup_{x\in E, f\in L^1(\nu)}\big), 
+      \quad t >0.
+  \end{align}
+  Then for each $f\in \mathcal B(E, [0,\infty])$ the followings hold:
+  \begin{enumerate}
+  \item 
+    \label{lem:K:1}
+    for each $\mu \in \mathcal M_f(E)$, we have
+    \[
+      \lim_{t\rightarrow\infty} \mu( V_tf)=0.
+    \]
+  \item \label{lem:K:2}
+    for each $s>0$, we have
+     \begin{align}
+       \lim_{t\to \infty} \frac{ \nu( V_{t+s}f) }{ \nu(V_t f) } 
+= e^{\lambda s}.
+     \end{align}
+   \item 
+     \label{lem:K:3}
+    We have
+    \begin{align}
+      (\phi^{-1} \cdot V_tf)(x) = \nu(V_tf) \left( 1+ o(\limsup_{t\to \infty} \sup_{x\in E}) \right)
+    \end{align} 
+  \end{enumerate}
+\end{lem}
+
+% **** Proof of Lemma K 1
+
+\begin{proof}[Proof of Lemma \ref{lem:K}.(\ref{lem:K:1})]
+In this proof we write $f$ for a fixed function chosen abitrary in $\mathcal B(E,[0,\infty])$.
+Define a function $\psi_0$ on $E\times [0,\infty)$ by
+\begin{align}
+  \psi_0(x,z) 
+  := \psi(x,z)+ \beta(x) z,
+  \quad x\in E, z \geq 0,
+\end{align}
+and an operator $\Psi_0$ on $B(E,[0,\infty))$ by
+\begin{align}
+\Psi_0 g(x):=\psi_0(x, g(x)), \quad g\in \mathcal B(E,[0,\infty)).
+\end{align}
+
+\begin{lem}
+Let $X$ be the superprocess given in Definition \ref{def:SP}. 
+Then we have
+\begin{align}
+  V_sg + \int_0^s P_{s-u}^\beta \Psi_0V_u g~du = P_s^\beta g,
+  \quad s\geq 0, g\in \mathcal B_b(E, [0,\infty)).
+\end{align}
+\end{lem}
+
+\begin{lem}
+\label{lem:VfS}
+For each $f\in \mathcal B(E, [0,\infty])$ and $t>0$, we have $V_tf \in \mathcal B_b(E, [0,\infty))$.
+\end{lem}
+In particular, taking $g=V_tf$ we have,
+\begin{equation}
+  \label{eq:EVf}
+  V_{t+s}f + \int_0^s P^\beta_{s-u}\Psi_0V_{t+u}f~du
+  =P^\beta_s V_t f, 
+\quad s\geq 0, t>0.
+\end{equation}
+
+
+\begin{lem}
+  We have that
+  \begin{align}
+    \nu(V_t g) = O(\limsup_{t\to \infty} \sup_{g\in \mathcal B(E,[0,\infty])})
+  \end{align}
+\end{lem}
+
+For the rest of the proof, denote by $t_0>0$ a large enough number such that
+\begin{align}
+\sup_{t\geq t_0, g \in \mathcal B(E,[0,\infty])} \nu(V_tg) < \infty.
+\end{align} 
+
+Therefore from \eqref{eq:CK} we have 
+\begin{align}
+  &P_s^\beta V_t f(x) = e^{\lambda s} \phi(x) \nu(V_tf) \left (1+o(\limsup_{s\to \infty}\sup_{t\geq t_0,x\in E})\right), \label{eq:asmptotic_for_PsVtf}
+\end{align}
+
+Taking $s = t$, we have
+\begin{align}
+\label{eq:Vtf_convergence_to_zero}
+&V_{2t}f(x) 
+\leq P_t^\beta V_tf(x)
+\\&= e^{\lambda t} \phi(x) \nu(V_tf) \left( 1+ o(\limsup_{t\to \infty} \sup_{x\in E})\right)
+ \\& \leq e^{\lambda t} \phi(x) O(\limsup_{t\to \infty} \sup_{x\in E})
+\end{align}
+This implies the desired result.
+\end{proof}
+
+\begin{proof}[Proof of Lemma \ref{lem:K}.\eqref{lem:K:2}]
+
+For each $x\in E$, define 
+\begin{align}
+\label{eq:definition_of_psi'0}
+ \psi_0'(x,z):=\frac{\partial}{\partial z}\psi_0(x,z)
+    =2\alpha(x)^2 z + \int_0^{\infty}\left(1-e^{-r z}\right)rn(x,dr), 
+    \quad z \geq 0,
+\end{align}
+which is a nonnegative and increasing function of $z$. 
+Therefore, for each $x\in E$, $\psi_0(x,z)$ is a convex function in $z$, and thus from $\psi_0(x,0) = 0$, it holds that
+\begin{align}
+\psi_0(x,z) \leq z \psi_0'(x,z),
+\quad z \geq 0.
+\label{eq:6}
+\end{align}
+
+Define an operator $\Psi'_0$ on $\mathcal B(E,[0,\infty))$ such that
+\begin{align}
+\Psi'_0 f(x) := \psi_0(x,f(x)), \quad x\in E.
+\end{align}
+
+From the monotonic convergence we have
+\begin{align}
+\label{eq:psi0'vt_converges_to_0}
+\Psi_0' V_tf(x) 
+\leq \Psi_0' v_t(x) 
+\xrightarrow[t\to \infty]{} 0,
+\quad x\in E.
+\end{align}
+
+It can also be verified from \eqref{eq:definition_of_psi'0} and \eqref{eq:Vtf_convergence_to_zero} that
+\begin{align}
+&\Psi_0'V_tf(x) \leq 2\alpha(x)^2 V_tf(x)+ \left(\int_0^1 r^2~n(x, dr)\right) V_tf(x) + 2 \int_1^\infty r~n(x,dr)
+\\&=  O(\limsup_{t\to \infty} \sup_{x\in E}). \label{eq:psi0'vtx_is_Big_O}
+\end{align}
+So by dominated convergece theorem, \eqref{eq:psi0'vt_converges_to_0} and \eqref{eq:psi0'vtx_is_Big_O} we have
+\begin{align}
+\label{eq:Psi0'Vtfnu_is_smallo}
+\left\langle \Psi_0' V_tf, \nu \right\rangle = o(\limsup_{t\to \infty}).
+\end{align}
+Another fact can be derived from \eqref{eq:psi0'vtx_is_Big_O} is that
+\begin{align}
+&\Psi_0 V_tf(x) 
+\leq V_tf(x) \cdot (\Psi'_0 V_tf)(x) ,\quad\text{by~\eqref{eq:6}}
+  \\&= V_tf(x)\cdot O(\limsup_{t\to \infty} \sup_{x\in E}),\quad\text{by~\eqref{eq:psi0'vtx_is_Big_O}}.\label{eq:Psi0_Vtf_leq_Vtf}
+\end{align}
+\begin{lem}
+\label{lem:TTE}
+There exists a $t_0>0$ such that for each $f\in \mathcal B_b(E,[0,\infty])$ and each $t > s > t_0$, we have
+\begin{align}
+e^{-\lambda t} \nu(V_tf) 
+= e^{\lambda s} \nu(V_sf) \exp\Big\{- \int_s^t \frac{\nu(\Psi_0 V_u f)}{\nu(V_uf)} du\Big\}.
+\end{align}
+\end{lem}
+
+% **** ?
+
+In particular we have, for large $t$,
+\begin{align}
+\label{eq:the_magic_formula}
+\frac{\langle V_tf,\nu\rangle}{\langle V_{t+1}f,\nu\rangle}
+=\exp\Big\{-\lambda+\int_{t}^{t+1}\frac{\langle \Psi_0V_sf,\nu\rangle}{\langle V_sf,\nu\rangle}ds\Big\}.
+\end{align}
+This and \eqref{eq:Psi0_Vtf_leq_Vtf} imply that
+\begin{align}
+\label{eq:Vtfnu_leq_Vt1fnu}
+\langle V_tf,\nu\rangle = O(\limsup_{t\to \infty}) \langle V_{t+1} f,\nu \rangle.
+\end{align}
+\begin{lem}
+  \begin{align}
+    P_1^\beta f(x) = O(\sup_{f \in L_1^+(\nu), x\in E}) \phi(x) \nu(f). 
+  \end{align}
+\end{lem}
+Therefore, we have
+\begin{align}
+  \label{eq:VtPlusOnef_leq_Vtfnu}
+  V_{t+1}f(x) \leq P_1^\beta V_t f(x) = O(\limsup_{t
+  \to \infty}\sup_{x\in E}) \phi(x) \nu(V_tf),\quad\text{by~\eqref{eq:Pv_and_vnu}} 
+\end{align}
+
+Therefore, we can verify that
+\begin{align}
+\label{eq:Psi0vt_is_integrable}
+&\left\langle \Psi_0 V_tf, \nu \right\rangle 
+\leq \langle (V_tf) \cdot (\Psi'_0 V_tf), \nu \rangle,\quad\text{by~\eqref{eq:6}}
+\\& \leq \langle \Psi'_0 V_tf,\nu\rangle  \cdot \sup_{x\in E} V_tf(x)
+\\&= o(\limsup_{t\to \infty}) \cdot O(\limsup_{t\to \infty}) \langle V_{t-1}f,\nu\rangle,\quad\text{by~\eqref{eq:Psi0'Vtfnu_is_smallo} and \eqref{eq:VtPlusOnef_leq_Vtfnu}}
+  \\&= o(\limsup_{t\to \infty}) \frac{\langle V_{t-1}f,\nu \rangle}{\langle V_{t}f ,\nu \rangle} \langle V_tf,\nu \rangle 
+  \\& = o(\limsup_{t\to \infty})\langle V_tf,\nu \rangle,\quad\text{by~\eqref{eq:Vtfnu_leq_Vt1fnu}}. \label{eq:Psi0Vtfnu_lleq_Vtfnu}
+\end{align}
+Put this back into \eqref{eq:Ht}, we get
+\begin{align}
+&\frac{\langle V_tf,\nu\rangle}{\langle V_{t+s}f,\nu\rangle}
+                = \exp \left\{-\lambda s+  \int_t^{t+s} \frac{\left\langle \Psi_0 V_u f,\nu \right\rangle}{ \left\langle V_uf, \nu \right\rangle } ~du \right\},\quad\text{by~\eqref{eq:Ht}}
+  \\&=\exp\left\{-s\left(\lambda+o(\limsup_{t\to \infty} \sup_{s \geq  0})\right)\right\},\quad\text{by~\eqref{eq:Psi0Vtfnu_lleq_Vtfnu}}
+\\ &= e^{-s\lambda} \left( 1+o(\sup_{s \geq 0}\limsup_{t\to \infty}) \right). 
+     \label{eq:compare_with_Vtfnu_and_VtPlussfnu}
+\end{align}
+This implies the desired result.
+\end{proof}
+
+% **** Proof of lemma TTE
+\begin{proof}[Proof of Lemma \ref{lem:TTE}]
+Now,  integrating the both sides of \eqref{eq:equation_for_Vtf} with respect to measure $\nu$, we get
+\begin{equation}
+\label{eq:equation_for_nuvt}
+    \langle V_{t+s}f, \nu\rangle + e^{\lambda s}\int_0^s e^{-\lambda u}\left\langle \Psi_0 V_{t+u} f,\nu\right\rangle~du
+    = e^{\lambda s}\left\langle V_tf,\nu \right\rangle,
+\quad t,s \geq 0.
+\end{equation}  
+Note we already know that $\left\langle V_tf,\nu \right\rangle$ is finite for $t$ large enough.
+Therefore, $H(t):=e^{-\lambda t}\left\langle V_tf,\nu \right\rangle<\infty$ for $t$ large enough.
+From \eqref{eq:equation_for_nuvt}, for large $t$ and each $s\geq 0$, we have 
+\begin{align}
+H(t)
+&= H(t+s) + e^{-\lambda t}\int_0^{s} e^{-\lambda u} \left\langle\Psi_0 V_{t+u}f,\nu\right\rangle~du
+\\&=H(t+s) + \int_0^{s}  \frac{\left\langle\Psi_0 V_{t+u} f,\nu\right\rangle}{ \left\langle V_{t+u} f,\nu \right\rangle } H(t+u)~du   
+\\&=H(t+s) + \int_t^{t+s}\frac{\langle\Psi_0 V_uf,\nu\rangle}{\langle V_uf,\nu\rangle}H(u)~du. 
+\end{align}
+This implies that 
+\begin{align}
+\label{eq:Ht}
+H(t)
+=H(t_0) \exp\left\{-\int_{t_0}^t\frac{\langle\Psi_0 V_uf,\nu\rangle}{\langle V_uf,\nu\rangle}du\right\},
+\end{align}
+for both $t$ and $t_0$ large enough.  
+\end{proof}
+
+% **** ?
+
+\begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct:3}]
+From~\eqref{eq:equation_for_Vtf}, for each $t>0$, $s>0$ and $\epsilon \in (0,s)$, we have
+\begin{align}
+\label{eq:Vf_plus_I_plus_J_equals_PF}
+  V_{t+s} f + I_{t,s,\epsilon} + J_{t,s,\epsilon}= P_s^\beta V_tf,
+\end{align}
+where
+\begin{align}
+I_{t,s,\epsilon}
+&:= \int_0^{s-\epsilon} P_{s-u}^\beta \Psi_0 V_{t+u}f du,
+\label{eq:definition_of_Its_epsilon}
+\\ J_{t,s,\epsilon}
+&:= \int_{s-\epsilon}^s P_{s-u}^\beta \Psi_0 V_{t+u}f du.
+\label{eq:definition_of_Jtsepsilon}
+\end{align}
+Now we can verify that 
+\begin{align}
+  &\frac{ P_s^\beta V_tf(x)}{\left\langle V_{t+s} f,\nu \right\rangle } - \phi(x)
+\\& \begin{multlined}= e^{\lambda s} \phi(x)\frac{  \left\langle V_tf,\nu \right\rangle   }{\left\langle V_{t+s}f,\nu \right\rangle } \left( 1+ e^{-\rho s} O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) \right)- \phi(x),
+\\ \text{by~\eqref{eq:asmptotic_for_PsVtf}} \end{multlined}
+  \\ &\begin{multlined} = \phi(x) \left( 1+o(\sup_{s \geq 0} \limsup_{t\to \infty} \sup_{x\in E}) \right)  \left( 1+ e^{-\rho s} O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) \right)- \phi(x),
+\\ \text{by~\eqref{eq:compare_with_Vtfnu_and_VtPlussfnu}} \end{multlined}
+\\&= o(\limsup_{s\to \infty}\limsup_{t\to \infty} \sup_{x\in E}). 
+\label{eq:9}
+\end{align}
+
+{\bf (Sun: We need to show that $\Psi_0 V_tf(x) \in L_1^+(\nu)$ for $t$ large enough in order to make the following arguments valid.)}
+
+We can also verify that, for each $\epsilon > 0$,
+\begin{align}
+&\frac{I_{t,s,\epsilon}(x)}{\left\langle V_{t+s}f,\nu \right\rangle} 
+= \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle }  \int_0^{s-\epsilon} P_{s-u}^\beta \Psi_0 V_{t+u}f(x) du,\quad\text{by~\eqref{eq:definition_of_Its_epsilon}} 
+\\& \begin{multlined}
+= \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle}  \int_0^{s-\epsilon} du \cdot e^{\lambda (s- u)} O(\limsup_{t\to \infty}\sup_{s > \epsilon, u\in (0, s-\epsilon), x\in E}) \left\langle \Psi_0 V_{t+u}f,\nu \right\rangle ,
+\\\quad\text{by~Lemma \ref{lem:Pf_and_fnu}} 
+\end{multlined}
+\\& = \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle} O(\limsup_{t\to \infty}\sup_{s > \epsilon, x\in E}) \int_0^{s-\epsilon} e^{\lambda (s- u)}  \left\langle \Psi_0 V_{t+u}f,\nu \right\rangle ~du
+\\& \leq \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle} O(\limsup_{t\to \infty}\sup_{s > \epsilon, x\in E}) \int_0^{s} e^{\lambda (s- u)}  \left\langle \Psi_0 V_{t+u}f,\nu \right\rangle ~ du 
+\\& \begin{multlined}
+= \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle} O(\limsup_{t\to \infty}\sup_{s > \epsilon, x\in E}) \left( e^{\lambda s} \left\langle V_tf,\nu \right\rangle - \left\langle V_{t+s}f,\nu \right\rangle \right),\\\quad\text{by~\eqref{eq:equation_for_nuvt}}
+\end{multlined}
+\\& =O(\limsup_{t\to \infty}\sup_{s > \epsilon, x\in E}) \left( e^{\lambda s}\frac{ \left\langle V_tf,\nu \right\rangle }{\left \langle V_{t+s}f,\nu \right\rangle}- 1 \right) 
+  \\& = O(\limsup_{t\to \infty}\sup_{s > \epsilon,x\in E}) o(\sup_{s>0}\limsup_{t\to \infty} \sup_{x\in E}),
+\quad\text{by~\eqref{eq:compare_with_Vtfnu_and_VtPlussfnu},}
+\\&= o(\sup_{s>\epsilon}\limsup_{t\to \infty} \sup_{x\in E}) .
+\end{align}
+Therefore, we have
+\begin{align}
+  \frac{I_{t,s,\epsilon}(x)}{\left\langle V_{t+s}f,\nu \right\rangle} 
+= o(\sup_{s, \epsilon >0} \limsup_{t\to \infty}\sup_{x\in E}).
+  \label{eq:10}
+\end{align}
+On the other hand, we have
+\begin{align}
+& \frac{J_{t,s,\epsilon}(x)}{\left\langle V_{t+s}f,\nu \right\rangle} 
+= \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle}\int_{s-\epsilon}^s P_{s-u}^\beta \Psi_0 V_{t+u}f (x)~du ,\quad\text{by~\eqref{eq:definition_of_Jtsepsilon}}
+\\&= \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle} \int_0^\epsilon P_u^\beta \Psi_0 V_{t+s-u}f(x)~du
+  \\ & \leq  \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle} \int_0^\epsilon \left(P_u^\beta \mathbf 1_E\right)(x) \cdot \left( \sup_{y\in E} \Psi_0 V_{t+s - u} f(y) \right) du
+  \\ & \leq  \frac{1}{\left\langle V_{t+s}f,\nu \right\rangle}\cdot \left( \sup_{y \in E, u \in (0, \epsilon)}\Psi_0 V_{t+s - u} f(y) \right) \cdot \int_0^\epsilon e^{\|\beta\|u}du 
+\end{align}
+From \eqref{eq:Psi0_Vtf_leq_Vtf}, we have
+\begin{align}
+  \sup_{u \in (0,\epsilon),y\in E}\Psi_0 V_{t+s-u}f(y) = \left(\sup_{u \in (0,\epsilon), y\in E} V_{t+s-u}f(y) \right)\cdot O(\sup_{\epsilon > 0}\limsup_{t+s\to \infty} ).
+\end{align}
+
+Therefore, we have
+\begin{align}
+&\frac{J_{t,s,\epsilon}(x)}{\left \langle V_{t+s}f,\nu\right\rangle}
+  \\ & =\left(\sup_{u\in (0,\epsilon), y \in E}\frac{V_{t+s-u}f(y)}{\left\langle V_{t+s}f,\nu \right\rangle}\right)\cdot O(\sup_{\epsilon>0}\limsup_{t+s\to \infty} \sup_{x\in E})\cdot o(\limsup_{\epsilon \to 0}\sup_{t,s>0,x\in E})
+  \\ & = \left(\sup_{u\in (0,\epsilon), y \in E}\frac{V_{t+s-u}f(y)}{\left\langle V_{t+s}f,\nu \right\rangle}\right)\cdot o(\limsup_{\epsilon \to 0}\limsup_{t+s\to \infty}\sup_{x\in E})
+  \\ & \begin{multlined} = \left(\sup_{u\in (0,\epsilon)}\frac{\left\langle V_{t+s - u - 1} f, \nu \right\rangle}{\left\langle V_{t+s}f,\nu \right\rangle} \right) \cdot O(\sup_{\epsilon >  0}\limsup_{t+s \to \infty}\sup_{x\in E}) \cdot o(\limsup_{\epsilon \to 0}\limsup_{t+s\to \infty}\sup_{x\in E}),
+\\\quad\text{by~\eqref{eq:VtPlusOnef_leq_Vtfnu}} \end{multlined}
+  \\ & \begin{multlined}
+= \left(\sup_{u\in (0,\epsilon)}e^{-(1+u) \lambda} \right) O(\sup_{\epsilon > 0} \limsup_{t+s\to \infty}\sup_{x\in E}) o(\limsup_{\epsilon \to 0}\limsup_{t+s\to \infty}\sup_{x\in E}),
+\\ \quad\text{by~\eqref{eq:compare_with_Vtfnu_and_VtPlussfnu}}
+\end{multlined}
+\\ & = o(\limsup_{\epsilon \to 0}\limsup_{t+s\to \infty}\sup_{x\in E}). \label{eq:8}
+\end{align}
+
+To summarize, we have
+\begin{align}
+& \frac{V_{t+s}f(x)}{\left\langle V_{t+s}f,\nu \right\rangle} - \phi(x) 
+  \\&= \left(\frac{P_s^\beta V_t f (x)}{\left\langle V_{t+s} f,\nu \right\rangle} - \phi(x)\right) - \frac{I_{t,s,\epsilon}(x)}{\left\langle V_{t+s} f,\nu \right\rangle} -\frac{ J_{t,s,\epsilon}(x)}{\left\langle V_{t+s}f,\nu \right\rangle},\quad\text{by~\eqref{eq:Vf_plus_I_plus_J_equals_PF}}
+  \\& \begin{multlined} = o(\limsup_{s\to \infty} \limsup_{t\to \infty} \sup_{x\in E, \epsilon > 0}) + o(\sup_{s,\epsilon>0} \limsup_{t\to \infty} \sup_{x\in E}) + o(\limsup_{\epsilon \to 0} \limsup_{t+s \to \infty} \sup_{x\in E}),
+\\ \text{by~\eqref{eq:9}, \eqref{eq:10} and \eqref{eq:8}} \end{multlined}
+\\& = o(\limsup_{\epsilon \to 0} \limsup_{s\to \infty}\limsup_{t\to \infty} \sup_{x\in E}). 
+\end{align}
+Therefore, we have
+\begin{align}
+\frac{V_{t} f(x)}{\left\langle V_t f,\nu \right\rangle} - \phi(x) 
+= o(\limsup_{t\to \infty} \sup_{x\in E}).
+\end{align}
+\end{proof}
+
+Taking $f \equiv \infty$ in the above Lemma, we get
+\begin{cor}
+\label{cor:extinct}
+    Suppose that Assumptions \ref{asp:1}, \ref{asp:IU} and \ref{asp:3} hold.
+    Then we have the followings:
+\begin{enumerate}
+\item 
+\label{sub:extinct_2}
+    For each $\mu \in \mathcal M_f(E)$, we have
+    \[
+      \lim_{t\rightarrow\infty}\langle v_t,\mu\rangle=0.
+    \]
+\item 
+\label{sub:extinct_2_1}
+    For each $s\geq 0$, we have
+     \begin{align}
+       \lim_{t\to \infty} \frac{\left\langle v_{t+s},\nu\right\rangle}{\left\langle v_t,\nu\right\rangle} 
+= e^{\lambda s}.
+     \end{align}
+\item 
+\label{sub:extinct_3}
+    For each $s\geq 0$, we have
+\begin{equation} 
+    \lim_{t\to \infty} \sup_{x\in E}\Big|\frac{v_{t+s}(x)}{\langle v_t,\nu\rangle } - \phi(x)e^{\lambda s} \Big|
+    =0.
+\end{equation}
+\end{enumerate}
+\end{cor}
+
+
+\begin{comment}
+\begin{proof}[Proof of Lemma~\ref{cor:extinct}.\eqref{lem:extinct_2}]
+Recall the operator $(V_t)_{t\geq 0}$ defined in~\eqref{eq:_def_of_vtf}.
+Using the monotone convergence theorem we can define
+\begin{align}
+  V_tf(x)
+  := \lim_{n\to \infty}V_t(f\wedge n)(x)
+  = - \log \mathbb P_x[e^{-\left\langle f, X_t \right\rangle}] 
+  \leq - \log \mathbb P_x(X_t \equiv 0)
+  < \infty,
+\end{align}
+for each $f\in \mathcal B(E, [0,\infty]),t> 0$ and $x\in E$.
+We call $(V_t)_{t> 0}$ the cumulant semigroup of the superprocess $X$, because it holds that $V_tV_sf(x) = V_{t+s}f(x)$ for all $f\in \mathcal B(E,[0,\infty])$, $t,s > 0$ and $x\in E$. 
+In particular, we have $V_t(\infty) (x)= v_t(x)$ holds for each $t,x>0$ and $x\in E$.
+
+Define function $\psi_0$ by
+\[
+  \psi_0(x,\lambda) = \psi(x,\lambda)+ \beta(x) \lambda,
+  \quad x\in E, \lambda \geq 0,
+\]
+and operator $\Psi_0$ by
+\begin{align}
+\Psi_0f(x):=\psi_0(x,f(x)), \quad f\in \mathcal B(E,[0,\infty)).
+\end{align}
+It is known from \cite[Theorem 2.23]{Li2011Measurevalued} and monotonicity that for each $f \in \mathcal B(E,[0,\infty])$, $(s,x)\mapsto V_sf(x)$ satisfies the following equation
+\[
+  V_sf + \int_0^s P_{s-u}^\beta \Psi_0V_u f~du = P_s^\beta f,
+  \quad s\geq 0.
+\]
+In particular, taking $f=v_t$ we have for each $t,s>0$,
+\begin{equation}
+  \label{eq:equation_for_vt}
+  % v_{t+s}(x) + \int_0^sP^\beta_{s-u}\Big(\psi_0\big(\cdot, v_{t+u}(\cdot)\big)\Big)(x)~du
+  v_{t+s} + \int_0^s P^\beta_{s-u}\Psi_0v_{t+u}~du
+  =P^\beta_s v_t,
+  \quad t,s > 0.
+\end{equation}
+
+According to Assumption \ref{asp:3}.\eqref{subasp:measure_non_presistence}, for large $t$, we have that $v_t \in L^+_1(\nu)$.
+Therefore, there exists a $\rho > 0$ such that
+\begin{align}
+  &P_s^\beta v_t(x) = \int p^\beta_s(x,y) v_t(y) m(dy)
+  \\ &= e^{\lambda s} \phi(x) \left\langle v_t, \nu \right\rangle \left (1+e^{-\rho s}O(\limsup_{t\to \infty}\sup_{s\geq 1,x\in E})\right),\quad\text{by~\eqref{eq:IU_for_Ptf}} \label{eq:asmptotic_for_vs+tx}
+  \\&= O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) \cdot e^{\lambda s} \langle v_t,\nu \rangle \label{eq:Pv_and_vnu}
+  \\&= O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) e^{\lambda s},\quad\text{by~monotonicity}. \label{eq:Pv_convergence_exponentially}
+\end{align}
+From \eqref{eq:equation_for_vt}, we know that $v_{t+s} \leq P_s^\beta v_t$, so if we take $s = 1$, we have
+\begin{align}
+\label{eq:v1+t_is_controlled_by_vtnu}
+v_{1+t}(x) \leq P_1^\beta v_t(x) = O(\limsup_{t
+  \to \infty}\sup_{x\in E}) \langle v_t,\nu\rangle,\quad\text{by~\eqref{eq:Pv_and_vnu}} 
+\end{align}
+and if we take $s = t$, we have
+\begin{align}
+\label{eq:vt_convergence_to_zero}
+v_{2t}(x) 
+\leq P_t^\beta v_t(x)
+= e^{\lambda t} O(\limsup_{t\to \infty} \sup_{x\in E})
+  = o(\limsup_{t\to \infty} \sup_{x\in E}),\quad\text{by~\eqref{eq:Pv_convergence_exponentially}}.
+\end{align}
+This implies the desired result.
+\end{proof}
+
+\begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct_2_1}]
+
+For each $x\in E$, define 
+\begin{align}
+\label{eq:definition_of_psi'0}
+ \psi_0'(x,\lambda):=\frac{\partial}{\partial \lambda}\psi_0(x,\lambda)
+    =2\alpha(x)^2\lambda+\int_0^{\infty}\left(1-e^{-r\lambda}\right)rn(x,dr), 
+    \quad \lambda \geq 0,
+\end{align}
+which is a nonnegative and increasing function of $\lambda$. 
+Note that for each $x\in E$, $\psi_0(x,\lambda)$ is a convex function in $\lambda$, and therefore
+\begin{align}
+\psi(x,\lambda) \leq \lambda \psi_0'(x,\lambda),
+\quad \lambda \geq 0.
+\label{eq:6}
+\end{align}
+To simplify the notation, define an operator $\Psi'_0$ on $\mathcal B(E,[0,\infty))$ such that
+\begin{align}
+\Psi'_0 f(x) := \psi_0(x,f(x)), \quad x\in E.
+\end{align}
+For each $x\in E$, from \eqref{eq:vt_convergence_to_zero}, we have $\lim_{s\to \infty} v_s(x) = 0$, therefore according to \eqref{eq:definition_of_psi'0} we have from monotonicity that 
+\begin{align}
+\label{eq:psi0'vt_converges_to_0}
+\lim_{s\to \infty}\Psi_0' v_s(x) = 0.
+\end{align}
+
+It can also be verified from \eqref{eq:definition_of_psi'0} and \eqref{eq:vt_convergence_to_zero} that
+\begin{align}
+&\Psi_0'v_s(x) \leq 2\alpha(x)^2 v_s(x)+ \left(\int_0^1 r^2~n(x, dr)\right) v_s(x) + 2 \int_1^\infty r~n(x,dr)
+\\&= O(\sup_{x\in E,s>0})v_s(x)+ O(\sup_{x\in E,s>0})
+\\&=  O(\limsup_{s\to \infty} \sup_{x\in E}).
+\end{align}
+So by dominated convergece theorem, \eqref{eq:psi0'vt_converges_to_0} and \eqref{eq:psi0'vtx_is_Big_O} we have
+\begin{align}
+\label{eq:psi0'vsnu_is_small_o}
+\left\langle \Psi_0' v_s, \nu \right\rangle = o(\limsup_{s\to \infty}).
+\end{align}
+Another fact can be derived from \eqref{eq:psi0'vtx_is_Big_O} is that
+\begin{align}
+&\Psi_0 v_t(x) 
+\leq v_t(x) \cdot (\Psi'_0 v_t)(x) ,\quad\text{by~\eqref{eq:6}}
+  \\&= v_t(x) O(\limsup_{t\to \infty} \sup_{x\in E}),\quad\text{by~\eqref{eq:psi0'vtx_is_Big_O}}.  
+\end{align}
+
+Now,  integrating the both sides of \eqref{eq:equation_for_vt} with respect to measure $\nu$, we get
+\begin{equation}
+\langle v_{t+s}, \nu\rangle + e^{\lambda s}\int_0^s e^{-\lambda u}\left\langle \Psi_0 v_{t+u},\nu\right\rangle~du
+= e^{\lambda s}\left\langle v_t,\nu \right\rangle,
+\quad t,s > 0.
+\end{equation}  
+Note we already know from \eqref{eq:vt_convergence_to_zero} that $\left\langle v_t,\nu \right\rangle$ is finite for $t$ large enough.
+Therefore, $g(t):=e^{-\lambda t}\left\langle v_t,\nu \right\rangle<\infty$ for $t$ large enough.
+From \eqref{eq:equation_for_nuvt}, for large $t$ and each $s\geq 0$, we have 
+\begin{align}
+g(t+s)
+&=g(t)-e^{-\lambda t}\int_0^{s} e^{-\lambda u} \left\langle\Psi_0 v_{t+u},\nu\right\rangle~du
+\\&=g(t)-\int_0^{s}  \frac{\left\langle\Psi_0 v_{t+u},\nu\right\rangle}{ \left\langle v_{t+u},\nu \right\rangle } g(t+u)~du   
+\\&=g(t)-\int_t^{t+s}\frac{\langle\Psi_0 v_u,\nu\rangle}{\langle v_u,\nu\rangle}g(u)~du. 
+\end{align}
+This implies that 
+\begin{align}
+\label{eq:ratio_of_nuvt_and_nuvtplus1}
+g(t)
+=g(t_0)\exp\left\{-\int_{t_0}^t\frac{\langle\Psi_0 v_u,\nu\rangle}{\langle v_u,\nu\rangle}du\right\},
+\end{align}
+for both $t$ and $t_0$ large enough.  
+
+
+In particular we have, for large $t$,
+\begin{align}
+\label{eq:the_magic_formula}
+\frac{\langle v_t,\nu\rangle}{\langle v_{t+1},\nu\rangle}
+=\exp\Big\{-\lambda+\int_{t}^{t+1}\frac{\langle \Psi_0v_s,\nu\rangle}{\langle v_s,\nu\rangle}ds\Big\}.
+\end{align}
+This and \eqref{eq:7} imply that
+\begin{align}
+\langle v_t,\nu\rangle = O(\limsup_{t\to \infty}) \langle v_{t+1},\nu \rangle.
+\end{align}
+Therefore, from \eqref{eq:6}, \eqref{eq:psi0'vsnu_is_small_o}, \eqref{eq:v1+t_is_controlled_by_vtnu} and above, we have
+\begin{align}
+\label{eq:Psi0vt_is_integrable}
+&\left\langle \Psi_0 v_t, \nu \right\rangle 
+\leq \langle v_t \Psi'_0 v_t, \nu \rangle
+\leq \langle \Psi'_0 v_t,\nu\rangle  \cdot \sup_{x\in E} v_t(x)
+= o(\limsup_{t\to \infty}) \cdot O(\limsup_{t\to \infty}) \langle v_{t-1},\nu\rangle
+\\&= o(\limsup_{t\to \infty}) \frac{\langle v_{t-1},\nu \rangle}{\langle v_{t} ,\nu \rangle} \langle v_t,\nu \rangle = o(\limsup_{t\to \infty})\langle v_t,\nu \rangle.
+\end{align}
+Put this back into \eqref{eq:ratio_of_nuvt_and_nuvtplus1}, we get
+\begin{align}
+&\frac{\langle v_t,\nu\rangle}{\langle v_{t+s},\nu\rangle}
+=\exp\left\{-s\left(\lambda+o(\limsup_{t\to \infty} \sup_{s > 0})\right)\right\}
+\\ &= e^{-s\lambda} \left( 1+o(\sup_{s>0}\limsup_{t\to \infty}) \right). 
+\end{align}
+This implies the desired result.
+\end{proof}
+
+\begin{proof}[Proof of Lemma \ref{cor:extinct}.\eqref{lem:extinct:3} ]
+From~\eqref{eq:equation_for_vt}, for each $t>0$, $s>0$ and $\epsilon \in (0,s)$, we have
+\begin{align}
+  v_{t+s} + I_{t,s,\epsilon} + J_{t,s,\epsilon}= P_s^\beta v_t,
+\end{align}
+where
+\begin{align}
+I_{t,s,\epsilon}
+&:= \int_0^{s-\epsilon} P_{s-u}^\beta \Psi_0 v_{t+u} du,
+\\ J_{t,s,\epsilon}
+&:= \int_{s-\epsilon}^s P_{s-u}^\beta \Psi_0 v_{t+u} du.
+\end{align}
+According to \eqref{eq:asmptotic_for_vs+tx} and \eqref{eq:compare_with_vtnu_and_vt+snu}, we have 
+\begin{align}
+&\frac{ P_s^\beta v_t}{\left\langle v_{t+s},\nu \right\rangle } - \phi(x)
+= e^{\lambda s} \phi(x)\frac{  \left\langle v_t,\nu \right\rangle   }{\left\langle v_{t+s},\nu \right\rangle } \left( 1+ e^{-\rho s} O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) \right)- \phi(x)
+\\&=  \phi(x) \left( 1+o(\sup_{s>0} \limsup_{t\to \infty} \sup_{x\in E}) \right)  \left( 1+ e^{-\rho s} O(\limsup_{t\to \infty}\sup_{s\geq 1, x\in E}) \right)- \phi(x)
+\\&= o(\limsup_{s\to \infty}\limsup_{t\to \infty} \sup_{x\in E}). 
+\end{align}
+\begin{iss}[open]~
+  \begin{itemize}
+  \item[ZS:]
+I need to check if $\Psi_0 v_t(x) \in L_1^+(\nu)$ here.
+  \end{itemize}
+\end{iss}
+We can also verify that, for each $\epsilon > 0$,
+\begin{align}
+  &\frac{I_{t,s,\epsilon}(x)}{\left\langle v_{t+s},\nu \right\rangle} 
+    = \frac{1}{\left\langle v_{t+s},\nu \right\rangle }  \int_0^{s-\epsilon} P_{s-u}^\beta \Psi_0 v_{t+u}(x) du,\quad\text{by~\eqref{eq:definition_of_Its_epsilon}} 
+  \\& = \frac{1}{\left\langle v_{t+s},\nu \right\rangle}  \int_0^{s-\epsilon} du \cdot e^{\lambda (s- u)} O(\sup_{s > \epsilon, x\in E, t>0, u\in (0, s-\epsilon)}) \left\langle \Psi_0 v_{t+u},\nu \right\rangle ,\quad\text{by~Lemma \ref{lem:Pf_and_fnu}} 
+  \\& = \frac{1}{\left\langle v_{t+s},\nu \right\rangle} O(\sup_{s > \epsilon, x\in E, t>0}) \int_0^{s-\epsilon} du \cdot e^{\lambda (s- u)}  \left\langle \Psi_0 v_{t+u},\nu \right\rangle  
+\\& \leq \frac{1}{\left\langle v_{t+s},\nu \right\rangle} O(\sup_{s > \epsilon, x\in E, t>0}) \int_0^{s} du \cdot e^{\lambda (s- u)}  \left\langle \Psi_0 v_{t+u},\nu \right\rangle  
+\\& = \frac{1}{\left\langle v_{t+s},\nu \right\rangle} O(\sup_{s\geq \epsilon, t\geq 0, x\in E}) \left( e^{\lambda s} \left\langle v_t,\nu \right\rangle - \left\langle v_{t+s},\nu \right\rangle \right),\quad\text{by~\eqref{eq:equation_for_nuvt}}
+\\& =O(\sup_{s\geq \epsilon, t\geq 0, x\in E}) \left( e^{\lambda s}\frac{ \left\langle v_t,\nu \right\rangle }{\left \langle v_{t+s},\nu \right\rangle}- 1 \right) 
+\\& = O(\sup_{s\geq \epsilon, t\geq 0, x\in E}) o(\sup_{s>0}\limsup_{t\to \infty} \sup_{x\in E}) ,\quad\text{by~\eqref{eq:compare_with_vtnu_and_vt+snu}}
+ \\&= o(\sup_{s>0}\limsup_{t\to \infty} \sup_{x\in E}) .
+\end{align}
+Therefore, we have
+\begin{align}
+  \frac{I_{t,s,\epsilon}(x)}{\left\langle v_{t+s},\nu \right\rangle} 
+= o(\sup_{s, \epsilon >0} \limsup_{t\to \infty}\sup_{x\in E}).
+\end{align}
+On the other hand, we have
+\begin{align}
+& \frac{J_{t,s,\epsilon}(x)}{\left\langle v_{t+s},\nu \right\rangle} 
+= \frac{1}{\left\langle v_{t+s},\nu \right\rangle}\int_{s-\epsilon}^s P_{s-u}^\beta \Psi_0 v_{t+u} (x)du ,\quad\text{by~\eqref{eq:definition_of_Jtsepsilon}}
+\\&= \frac{1}{\left\langle v_{t+s},\nu \right\rangle} \int_0^\epsilon P_u^\beta \Psi_0 v_{t+s-u}(x) du
+  \\ & \leq  \frac{1}{\left\langle v_{t+s},\nu \right\rangle} \int_0^\epsilon P_u^\beta \Psi_0 v_{t+s-\epsilon}(x) du,\quad\text{by~monotonicity}
+  \\ & \leq  \frac{\sup_{x\in E} \Psi_0 v_{t+s-\epsilon}(x)}{\left\langle v_{t+s},\nu \right\rangle} \int_0^\epsilon \left(P_u^\beta \mathbf 1_E\right)(x) du
+  \\ & = O(\limsup_{t+s-\epsilon\to \infty} \sup_{x\in E})  \frac{\sup_{x\in E}v_{t+s-\epsilon}(x)}{\left\langle v_{t+s},\nu \right\rangle} o(\limsup_{\epsilon \to 0}\sup_{t,s>0,x\in E}),\quad\text{by~\eqref{eq:7}}
+  \\ & = \frac{\sup_{x\in E}v_{t+s-\epsilon}(x)}{\left\langle v_{t+s},\nu \right\rangle} o(\limsup_{\epsilon \to 0}\limsup_{t+s\to \infty}\sup_{x\in E})
+  \\ & = \frac{\left\langle v_{t+s - \epsilon - 1}, \nu \right\rangle}{\left\langle v_{t+s},\nu \right\rangle} O(\sup_{t+s \geq \epsilon + 1, x\in E}) o(\limsup_{\epsilon \to 0}\limsup_{t+s\to \infty}\sup_{x\in E}),\quad\text{by~\eqref{eq:v1+t_is_controlled_by_vtnu}}
+  \\ & = \frac{\left\langle v_{t+s - \epsilon - 1}, \nu \right\rangle}{\left\langle v_{t+s},\nu \right\rangle} o(\limsup_{\epsilon \to 0}\limsup_{t+s\to \infty}\sup_{x\in E})
+  \\ & = e^{-(1+\epsilon) \lambda} O(\sup_{\epsilon > 0} \limsup_{t+s - \epsilon  - 1 \to \infty}\sup_{x\in E}) o(\limsup_{\epsilon \to 0}\limsup_{t+s\to \infty}\sup_{x\in E}),\quad\text{by~\eqref{eq:compare_with_vtnu_and_vt+snu}}
+  \\ & = o(\limsup_{\epsilon \to 0}\limsup_{t+s\to \infty}\sup_{x\in E}).
+\end{align}
+
+To summarize, we have
+\begin{align}
+  & \frac{v_{t+s}(x)}{\left\langle v_{t+s},\nu \right\rangle} - \phi(x) 
+    = \frac{P_s^\beta v_t(x)}{\left\langle v_{t+s},\nu \right\rangle} - \phi(x) 
+    -\frac{I_{t,s,\epsilon}(x)}{\left\langle v_{t+s},\nu \right\rangle} -\frac{ J_{t,s,\epsilon}(x)}{\left\langle v_{t+s},\nu \right\rangle}
+  \\& = o(\limsup_{s\to \infty} \limsup_{t\to \infty} \sup_{x\in E, \epsilon > 0}) + o(\sup_{s,\epsilon>0} \limsup_{t\to \infty} \sup_{x\in E}) + o(\limsup_{\epsilon \to 0} \limsup_{t+s \to \infty} \sup_{x\in E}),
+\\&\qquad\qquad\text{by~\eqref{eq:9},\eqref{eq:10} and \eqref{eq:8}}
+\\& = o(\limsup_{\epsilon \to 0} \limsup_{s\to \infty}\limsup_{t\to \infty} \sup_{x\in E}). 
+\end{align}
+Therefore, we have
+\begin{align}
+\frac{v_{t}(x)}{\left\langle v_{t},\nu \right\rangle} - \phi(x) 
+= o(\limsup_{t\to \infty} \sup_{x\in E}).
+\end{align} 
+
+\end{proof}
+\end{comment}
+
+\begin{cor}\label{cor:general_rate}
+	For each $\mu\in\mathcal M_f(E)\setminus\{0\}$, $f\in\mathcal B_b(E,[0,\infty])$ and $s>0$, it holds that
+  \begin{equation}\label{eq:ratio_limits}
+\lim_{t\rightarrow\infty}\frac{\langle V_{t+s}f,\mu\rangle }{\langle V_{t}f,\nu\rangle }
+=\langle \phi,\mu\rangle e^{\lambda s}.
+  \end{equation}
+\end{cor}
+
+{\bf (Sun: The following lemma is the key to the existence of the Yaglom law. Unfortunately, it's not fully proved yet.)}
+\begin{lem}\label{eq:ratio_limits_2}
+	For any $f\in\mathcal B_b(E,[0,\infty))$, there is a nonnegative function $G(f)$ such that $G(v_t)=t$ and such that for any $\mu\in\mathcal M_f(E)\setminus\{0\}$,
+  \begin{equation}\label{eq:app_of_G}
+    \lim_{t\rightarrow\infty}\frac{\langle V_tf,\mu\rangle }{\langle v_t,\mu\rangle }=e^{\lambda G(f)}.
+  \end{equation}
+\end{lem}
+
+\begin{proof}
+	Thanks to Corollaray \ref{cor:general_rate} we only need to prove
+  \begin{equation}\label{eq:spec_ratio}
+    \lim_{t\rightarrow\infty}\frac{\langle V_tf,\nu\rangle }{\langle v_t,\nu\rangle }=e^{\lambda G(f)}.
+  \end{equation}
+  According to \eqref{eq:equation_for_nuvt}, we have $\langle v_t,\nu\rangle$ is a strictly decreasing continuous function of $t$, since
+  \begin{align}\label{eq:monotone}
+    \left\langle v_{t+s},\nu \right\rangle 
+\leq e^{\lambda s} \left\langle v_{t},\nu \right\rangle
+< \left\langle v_t,\nu \right\rangle.  
+\end{align}
+Moreover, Lemma \ref{lem:asmptotic_of_Vtf}.\eqref{subVtf_vanish} says that
+  \[
+\lim_{t\rightarrow\infty}\langle v_t,\nu\rangle =0,
+  \]
+and from the right continuity of the path of the superprocess, we have
+\begin{align}
+  \lim_{t\to 0+} \left\langle v_t,\nu \right\rangle 
+  = - \log \lim_{t\to 0+} \mathbb P_\nu\left( \|X_t\| = 0 \right)
+= +\infty.
+\end{align}
+Therefore, $t \mapsto \left\langle v_t,\nu \right\rangle$ is an 1-1 map from $(0,\infty)$ to $(0,\infty)$. 
+Denote by $\theta \mapsto B(\theta)$ the inverse of this map.
+Then, we always have
+\begin{align}
+  \left\langle v_{B(\theta)},\nu \right\rangle 
+  = \theta,
+\quad \theta \in (0,\infty);
+\qquad 
+  B\left( \left\langle v_t,\nu \right\rangle \right) 
+= t
+\quad t\in (0,\infty).
+\end{align}
+
+\begin{lem}
+\label{lem:wrong}
+  Suppose that $f,g\in L^1(\nu)$ satisfy that $\left\langle f,\nu \right\rangle = \left\langle g,\nu \right\rangle$. 
+Then, for each $t\geq 0$, we have $ \left\langle V_tf,\nu \right\rangle = \left\langle V_tg,\nu \right\rangle $.
+\end{lem}
+\begin{proof}
+  Write $w_t =\left\langle V_tf,\nu \right\rangle - \left\langle V_t g, \nu \right\rangle $. 
+  Then from \eqref{eq:equation_for_nuvt} we have
+  \begin{align}
+    \langle V_tf,\nu\rangle + \int_0^te^{\lambda(t-s)}\langle \Psi_0V_sf,\nu\rangle ds
+=e^{\lambda t}\langle f,\nu\rangle,
+  \end{align}
+and
+  \begin{align}
+    \langle V_tg,\nu\rangle + \int_0^te^{\lambda(t-s)}\langle \Psi_0V_sg,\nu\rangle ds
+    =e^{\lambda t}\langle g,\nu\rangle .
+  \end{align}
+Therefore, 
+\begin{align}
+  w_t \leq \int_0^t e^{\lambda (t-s)} \left | \left\langle \Psi_0 V_s f - \Psi_0 V_s g, \nu \right\rangle \right| ~ds 
+\end{align}
+.......
+{\bf ( Sun: This Lemma is wrong. Not only that they can't be equal. I think one shouldn't expect that $ \left\langle V_tf,\nu \right\rangle$ and $\left\langle V_t g,\nu \right\rangle$ are asymptotic equivalent.)}
+\end{proof}
+  Now from the fact that 
+  \begin{align}
+    \left\langle f, \nu \right\rangle
+    = \left\langle v_{B(\langle  f,\nu\rangle)},\nu \right\rangle;
+\quad 
+    V_t v_{B(\langle f,\nu \rangle)} = v_{t+ B(\langle f,\nu\rangle)};
+  \end{align}
+  and the above Lemma we have that
+  \begin{align}
+\label{eq:Vfnu_and_vnu}
+    \left\langle V_tf,\nu \right\rangle 
+    = \left\langle v_{t+B(\left\langle f,\nu \right\rangle)}, \nu \right\rangle,
+\quad t\geq 0.
+  \end{align}
+As a result, for any $\mu\in\mathcal M_f(E)\setminus\{0\}$,
+
+\begin{align}
+  &\lim_{t\to \infty}\frac{\left\langle V_tf, \mu \right\rangle}{\left\langle v_t,\mu \right\rangle}
+  = \lim_{t\to \infty} \frac{\left\langle V_tf,\mu \right\rangle}{\left\langle V_tf,\nu \right\rangle} \cdot \frac{\left\langle V_tf,\nu \right\rangle}{\left\langle v_t,\nu \right\rangle} \cdot \frac{\left\langle v_t,\nu \right\rangle}{\left\langle v_t,\mu \right\rangle}
+  \\&= \left\langle \phi,\mu \right\rangle \cdot \left(\lim_{t\to \infty}\frac{\left\langle v_{t+B(\left\langle f,\nu \right\rangle)}, \nu \right\rangle}{ \left\langle v_t,\nu \right\rangle}\right) \cdot \left\langle \phi,\mu \right\rangle^{-1},\quad\text{by~Corollaray \ref{cor:general_rate} and \eqref{eq:Vfnu_and_vnu}}
+  \\& = e^{\lambda B(\left\langle f, \nu \right\rangle)},\quad\text{by~Corollaray \ref{cor:extinct}}
+\end{align}
+\end{proof}
+
+
+% *** (Asymptotic of vt)
+\begin{comment}
 \subsection{Some properties of the solutions of partial differential equations}
 In this subsection, let $E$ be a measurable space, $\mathcal E$ the collection of all the measurable functions on $E$ and $\mathcal E^+$ the collection of all the non-negative measurable functions on $E$.
 Suppose that $A$ is a $[0,\infty]$-valued functional on some subset $\mathcal F \subset \mathcal E^+$. 
@@ -1373,7 +2236,6 @@ Taking $f \equiv \infty$ in the above Lemma, we get
 \end{cor}
 
 
-\begin{comment}
 \begin{proof}[Proof of Lemma~\ref{cor:extinct}.\eqref{lem:extinct_2}]
 Recall the operator $(V_t)_{t\geq 0}$ defined in~\eqref{eq:_def_of_vtf}.
 Using the monotone convergence theorem we can define
@@ -1605,7 +2467,6 @@ Therefore, we have
 \end{align} 
 
 \end{proof}
-\end{comment}
 
 \begin{cor}\label{cor:general_rate}
 	For each $\mu\in\mathcal M(E)\setminus\{0\}$, $f\in\mathcal B_b(E,[0,\infty])$ and $s>0$, it holds that
@@ -1704,16 +2565,16 @@ As a result, for any $\mu\in\mathcal M(E)\setminus\{0\}$,
   \\& = e^{\lambda B(\left\langle f, \nu \right\rangle)},\quad\text{by~Corollaray \ref{cor:extinct}}
 \end{align}
 \end{proof}
-
-% ** Proof of main theorems
+\end{comment}
+% *** Proof of main theorems
 \subsection{Proof of main theorems}
 \begin{proof}[{\bf Proof of Theorem \ref{thm:distribution_of_zeta}}]
-	For any finite measure $\mu\in \mathcal M(E)$,
+	For any finite measure $\mu\in \mathcal M_f(E)$,
   \[
     \mathbb P_\mu(\zeta=\infty)=\lim_{t\rightarrow\infty}\mathbb P_\mu(\zeta>t)=1-e^{-\lim_{t\rightarrow\infty}\langle v_t,\mu\rangle }=0,
   \]
 	follows from Lemma\ref{cor:extinct}.
-	Meanwhile, thanks to \eqref{ext con}, for any $\mu,\widetilde\mu\in \mathcal M(E)\setminus\{0\}$ and $s\in\mathbb R$,
+	Meanwhile, thanks to \eqref{ext con}, for any $\mu,\widetilde\mu\in \mathcal M_f(E)\setminus\{0\}$ and $s\in\mathbb R$,
   \[
     \lim_{t\rightarrow\infty}\frac{\mathbb P_{\mu}(\zeta>t+s)}{\mathbb P_{\widetilde\mu}(\zeta>t)}=\lim_{t\rightarrow\infty}\frac{1-e^{-\langle v(t+s,\cdot),\mu\rangle }}{1-e^{-\langle v_t,\widetilde\mu\rangle }}
     =\lim_{t\rightarrow\infty}\frac{\langle v(t+s,\cdot),\mu\rangle }{\langle v_t,\widetilde\mu\rangle }=\frac{\langle \phi,\mu\rangle }{\langle \phi,\widetilde\mu\rangle }e^{\lambda s}.
@@ -1868,7 +2729,7 @@ Therefore, by dominated convergence theory,
 {\bf (The rest of the proofs are based on the wrong Lemma \ref{lem:wrong}. So They are all not correct. However, some ideas of those proofs might be useful.)
 
 \begin{proof}[{\bf Proof of Theorem \ref{thm:qsd_thm}}]
-  For any nonzero $\mu\in \mathcal M(E)$, and any $f\in\mathcal B_b(E,[0,\infty))$,
+  For any nonzero $\mu\in \mathcal M_f(E)$, and any $f\in\mathcal B_b(E,[0,\infty))$,
   \begin{eqnarray*}
     \mathbb P_\mu\left(\left.1-\exp\{-\langle f, X_t\rangle \}\right|\zeta>t\right)= \frac{\mathbb P_\mu\left(1-\exp\{-\langle f, X_t\rangle \};\zeta>t\right)}{\mathbb P_\mu(\zeta>t)}=\frac{1-e^{-\langle V_tf,\mu\rangle }}{1-e^{-\langle v_t,\mu}\rangle }.
   \end{eqnarray*}
@@ -1880,7 +2741,7 @@ Therefore, by dominated convergence theory,
   \[
     \lim_{t\rightarrow\infty}\mathbb P_\mu\left(\left.\exp\{-\langle f, X_t\rangle \}\right|\zeta>t\right)=1-e^{\lambda G(f)}.
   \]
-  When $f=0$, $G(f)=\infty$. Thus $1-e^{\lambda G(f)}$ is a Laplace functional of probability on $\mathcal M(E)$. We denote by $\mathbf P^{\lambda}$ the corresponding probability, then
+  When $f=0$, $G(f)=\infty$. Thus $1-e^{\lambda G(f)}$ is a Laplace functional of probability on $\mathcal M_f(E)$. We denote by $\mathbf P^{\lambda}$ the corresponding probability, then
   \[
     \mathbf P^{\lambda}(e^{-\langle f,\omega\rangle })=1-e^{\lambda G(f)}.
   \]
@@ -1905,7 +2766,7 @@ Therefore, by dominated convergence theory,
   \end{equation}
   As a consequence, $\mathbf P^\lambda$ is concentrated on the set
   $$
-  \mathcal S:=\{\mu\in\mathcal M(E); \mu(dx)=a\widehat\phi(x)m(dx), a\geq 0\}.
+  \mathcal S:=\{\mu\in\mathcal M_f(E); \mu(dx)=a\widehat\phi(x)m(dx), a\geq 0\}.
   $$
   Or we can say  $X_t|_{\zeta>t}$ converges to  $M^{(\lambda)}\widehat\phi(x)m(dx)$ weakly under $\mathbb P_\mu$.
 
@@ -1948,32 +2809,32 @@ Therefore, by dominated convergence theory,
 
   For $\gamma<0$, we assume there is a quasi-stationary distribution $\mathbf P$.  Then
   \[
-    \mathbf P\mathbb P(\zeta>t)=1-\int_{\mathcal M(E)}e^{-\langle v_t,\omega\rangle }\mathbf P(d\omega)=e^{\gamma t}.
+    \mathbf P\mathbb P(\zeta>t)=1-\int_{\mathcal M_f(E)}e^{-\langle v_t,\omega\rangle }\mathbf P(d\omega)=e^{\gamma t}.
   \]
   And for any nonnegative bounded Borel function $f$ on $E$,
   \begin{eqnarray*}
     \mathbf P\mathbb P\left(e^{-\langle f, X_t\rangle }\big|\zeta>t\right)&=&1-e^{-\gamma t}\mathbf P\mathbb P\left(1-e^{-\langle f, X_t\rangle }\right)\\
-                                                                          &=&1-e^{-\gamma t}\left(1-\int_{\mathcal M(E)}e^{-\langle V_tf,\omega\rangle }\mathbf P(d\omega)\right)\\
-                                                                          &=&\int_{\mathcal M(E)}e^{-\langle f,\omega\rangle }\mathbf P(d\omega).
+                                                                          &=&1-e^{-\gamma t}\left(1-\int_{\mathcal M_f(E)}e^{-\langle V_tf,\omega\rangle }\mathbf P(d\omega)\right)\\
+                                                                          &=&\int_{\mathcal M_f(E)}e^{-\langle f,\omega\rangle }\mathbf P(d\omega).
   \end{eqnarray*}
-  Recall that $\lim_{t\rightarrow\infty}\dfrac{\langle v(t+s,\cdot),\omega\rangle }{\langle v_t,\nu\rangle }=\langle \phi,\omega\rangle e^{\lambda s} $ and that $\lim_{t\rightarrow\infty}\dfrac{\langle V_{t+s}f,\omega\rangle }{\langle V_tf,\nu\rangle }=\langle \phi,\omega\rangle e^{\lambda s}$ uniformly for all $\omega\in \mathcal M(E)\setminus\{0\}$.  For any $\varepsilon>0$, there is $T>0$, such that when $t>T$,
+  Recall that $\lim_{t\rightarrow\infty}\dfrac{\langle v(t+s,\cdot),\omega\rangle }{\langle v_t,\nu\rangle }=\langle \phi,\omega\rangle e^{\lambda s} $ and that $\lim_{t\rightarrow\infty}\dfrac{\langle V_{t+s}f,\omega\rangle }{\langle V_tf,\nu\rangle }=\langle \phi,\omega\rangle e^{\lambda s}$ uniformly for all $\omega\in \mathcal M_f(E)\setminus\{0\}$.  For any $\varepsilon>0$, there is $T>0$, such that when $t>T$,
   \[
-    (1-\varepsilon)\langle v_t,\nu\rangle \langle \phi,\omega\rangle\leq \langle v_t,\omega\rangle\leq (1+\varepsilon)\langle v_t,\nu\rangle \langle \phi,\omega\rangle,\qquad \omega\in\mathcal M(E).
+    (1-\varepsilon)\langle v_t,\nu\rangle \langle \phi,\omega\rangle\leq \langle v_t,\omega\rangle\leq (1+\varepsilon)\langle v_t,\nu\rangle \langle \phi,\omega\rangle,\qquad \omega\in\mathcal M_f(E).
   \]
   Therefore, on one hand,
   \begin{eqnarray*}
-    1&=&e^{-\gamma t}\left(1-\int_{\mathcal M(E)}e^{-\langle v_t,\omega\rangle }\mathbf P(d\omega)\right)\\
-     &\leq &e^{-\gamma t}\left(1-\int_{\mathcal M(E)}e^{-\langle v_t,\nu\rangle\langle\phi,\omega\rangle }\mathbf P(d\omega)\right)+e^{-\gamma t}\int_{\mathcal M(E)}\left(1-e^{-\varepsilon\langle v_t,\nu\rangle\langle\phi,\omega\rangle  }\right)\mathbf P(d\omega)\\
+    1&=&e^{-\gamma t}\left(1-\int_{\mathcal M_f(E)}e^{-\langle v_t,\omega\rangle }\mathbf P(d\omega)\right)\\
+     &\leq &e^{-\gamma t}\left(1-\int_{\mathcal M_f(E)}e^{-\langle v_t,\nu\rangle\langle\phi,\omega\rangle }\mathbf P(d\omega)\right)+e^{-\gamma t}\int_{\mathcal M_f(E)}\left(1-e^{-\varepsilon\langle v_t,\nu\rangle\langle\phi,\omega\rangle  }\right)\mathbf P(d\omega)\\
      &=&I_t+II_t.
   \end{eqnarray*}
   For the given $\varepsilon>0$, choose $s>0$, such that $e^{\lambda s}/2>\varepsilon$.  And there is $T_1>0$, such that $t>T_1$,
   \[
-    \varepsilon\langle v_t,\nu\rangle\langle\phi,\omega\rangle\leq \langle v(t+s,\cdot),\omega\rangle \quad\mbox{for all}\, \omega\in\mathcal M(E).
+    \varepsilon\langle v_t,\nu\rangle\langle\phi,\omega\rangle\leq \langle v(t+s,\cdot),\omega\rangle \quad\mbox{for all}\, \omega\in\mathcal M_f(E).
   \]
   So
   \begin{eqnarray*}
-    0\leq II_t&\leq& e^{-\gamma t}\int_{\mathcal M(E)}\left(1-e^{-\varepsilon\langle v_t,\nu\rangle\langle\phi,\omega\rangle  }\right)\mathbf P(d\omega)\\
-              &\leq& e^{-\gamma t}\int_{\mathcal M(E)}\left(1-e^{-\langle v(t+s,\cdot),\omega\rangle  }\right)\mathbf P(d\omega)\\
+    0\leq II_t&\leq& e^{-\gamma t}\int_{\mathcal M_f(E)}\left(1-e^{-\varepsilon\langle v_t,\nu\rangle\langle\phi,\omega\rangle  }\right)\mathbf P(d\omega)\\
+              &\leq& e^{-\gamma t}\int_{\mathcal M_f(E)}\left(1-e^{-\langle v(t+s,\cdot),\omega\rangle  }\right)\mathbf P(d\omega)\\
               &=&e^{\gamma s}.
   \end{eqnarray*}
   We can see that when $\varepsilon\to0+$, $s$ can be chosen any large number.  Then
@@ -1984,21 +2845,21 @@ Therefore, by dominated convergence theory,
 
   On the other hand,
   \begin{eqnarray*}
-    1&=&e^{-\gamma t}\left(1-\int_{\mathcal M(E)}e^{-\langle v_t,\omega\rangle }\mathbf P(d\omega)\right)\\
-     &\geq &e^{-\gamma t}\left(1-\int_{\mathcal M(E)}e^{-\langle v_t,\nu\rangle\langle\phi,\omega\rangle }\mathbf P(d\omega)\right)-e^{-\gamma t}\int_{\mathcal M(E)}\left(1-e^{-\varepsilon\langle v_t,\nu\rangle\langle\phi,\omega\rangle  }\right)\mathbf P(d\omega)\\
+    1&=&e^{-\gamma t}\left(1-\int_{\mathcal M_f(E)}e^{-\langle v_t,\omega\rangle }\mathbf P(d\omega)\right)\\
+     &\geq &e^{-\gamma t}\left(1-\int_{\mathcal M_f(E)}e^{-\langle v_t,\nu\rangle\langle\phi,\omega\rangle }\mathbf P(d\omega)\right)-e^{-\gamma t}\int_{\mathcal M_f(E)}\left(1-e^{-\varepsilon\langle v_t,\nu\rangle\langle\phi,\omega\rangle  }\right)\mathbf P(d\omega)\\
      &=&I_t-II_t.
   \end{eqnarray*}
   It follows that $\limsup_{t\to\infty}I_t\leq 1$. In conclusion,
   \begin{equation}\label{eq:limit1}
-    \lim_{t\rightarrow\infty}e^{-\gamma t}\left(1-\int_{\mathcal M(E)}e^{-\langle v_t,\nu\rangle\langle\phi,\omega\rangle }\mathbf P(d\omega)\right)=1.
+    \lim_{t\rightarrow\infty}e^{-\gamma t}\left(1-\int_{\mathcal M_f(E)}e^{-\langle v_t,\nu\rangle\langle\phi,\omega\rangle }\mathbf P(d\omega)\right)=1.
   \end{equation}
   Repeating the arguments for \eqref{eq:limit1}, we can deduce the following limit
   \begin{equation}\label{eq:limit2}
-    \lim_{t\rightarrow\infty}e^{-\gamma t}\left(1-\int_{\mathcal M(E)}e^{-\langle V_tf,\nu\rangle \langle \phi,\omega\rangle }\mathbf P(d\omega)\right)=1-\int_{\mathcal M(E)}e^{-\langle f,\omega\rangle }\mathbf P(d\omega).
+    \lim_{t\rightarrow\infty}e^{-\gamma t}\left(1-\int_{\mathcal M_f(E)}e^{-\langle V_tf,\nu\rangle \langle \phi,\omega\rangle }\mathbf P(d\omega)\right)=1-\int_{\mathcal M_f(E)}e^{-\langle f,\omega\rangle }\mathbf P(d\omega).
   \end{equation}
   Since $\langle V_tf,\nu\rangle =\langle v(t+G(f),\cdot),\nu\rangle $, combining \eqref{eq:limit1} and \eqref{eq:limit2}, we get
   \begin{equation}\label{eq:lap_qsd}
-    \int_{\mathcal M(E)}e^{-\langle f,\omega\rangle }\mathbf P(d\omega)=1-e^{\gamma G(f)}.
+    \int_{\mathcal M_f(E)}e^{-\langle f,\omega\rangle }\mathbf P(d\omega)=1-e^{\gamma G(f)}.
   \end{equation}
   When  $\lambda\leq\gamma<0$, this Laplace functional is the same in form to that of the QSD $\mathbf P^{\gamma}$.  The uniqueness follows.  Now the assertions $(1)$ and $(2)$ are proved.
 
@@ -2010,12 +2871,12 @@ Therefore, by dominated convergence theory,
   Observe that $\lim_{\theta\rightarrow 0+} B(\theta)=+\infty$, therefore $\lim_{\theta\rightarrow 0+}B'(\theta)=+\infty$. Taking derivative in \eqref{eq:lap_qsd},
   and noting that $G(f)=G(\langle f,\nu\rangle\phi)$, for $r>0$,
   \[
-    \int_{\mathcal M(E)}\langle f,\omega\rangle e^{-r\langle f,\omega\rangle }\mathbf P(d\omega)
+    \int_{\mathcal M_f(E)}\langle f,\omega\rangle e^{-r\langle f,\omega\rangle }\mathbf P(d\omega)
     =-\gamma \langle f,\nu\rangle  e^{\gamma B(r\langle f,\nu\rangle)}B'(r\langle f,\nu\rangle).
   \]
   Therefore,
   \[
-    \int_{\mathcal M(E)}\langle f,\omega\rangle \mathbf P(d\omega)=-\gamma \langle f,\nu\rangle  \lim_{r\rightarrow 0+}e^{\gamma B(r)}B'(r)
+    \int_{\mathcal M_f(E)}\langle f,\omega\rangle \mathbf P(d\omega)=-\gamma \langle f,\nu\rangle  \lim_{r\rightarrow 0+}e^{\gamma B(r)}B'(r)
   \]
   When $\gamma<\lambda$,
   \[
@@ -2023,13 +2884,13 @@ Therefore, by dominated convergence theory,
   \]
   Therefor if the QSD $\mathbf P^{\gamma}$ exists in the cases $\gamma<\lambda$, then
   \[
-    \int_{\mathcal M(E)}\langle f,\omega\rangle \mathbf P^{\gamma}(d\omega)=0.
+    \int_{\mathcal M_f(E)}\langle f,\omega\rangle \mathbf P^{\gamma}(d\omega)=0.
   \]
   So there is no QSD associated to the rate of mass decay $-\gamma$, for $\gamma<\lambda$.
 \end{proof}
 
 %%% -------------------------------------------------------------------------------------------------------------------------------------------------
-{\color{blue}According to the definition for QSD in \cite{ChampagnatVillemonais2018Convergence}, there should be some probability measure $\mathbf Q^\gamma$ on $\mathcal M(E)$, $\gamma\in[\lambda, 0)$ such that
+{\color{blue}According to the definition for QSD in \cite{ChampagnatVillemonais2018Convergence}, there should be some probability measure $\mathbf Q^\gamma$ on $\mathcal M_f(E)$, $\gamma\in[\lambda, 0)$ such that
   \[
     \mathbf Q^{\gamma}\mathbb P(X_t \in \cdot | \zeta > t) \xrightarrow[t\to \infty]{w} {\mathbf P^\gamma}(\cdot).
   \]
@@ -2124,7 +2985,7 @@ Therefore, by dominated convergence theory,
   According to the discussion for $k$, we know that $\langle\phi, X_\infty\rangle<\infty$ if and only if $\int_E\widehat\phi(x)l(x)m(dx)<\infty$.
 
 
-  Now let us consider the cases for general initial value $\mu\in\mathcal M(E)$.  For $f\in\mathcal B_b(E,[0,\infty))$, define function
+  Now let us consider the cases for general initial value $\mu\in\mathcal M_f(E)$.  For $f\in\mathcal B_b(E,[0,\infty))$, define function
   \begin{equation}\label{def:H}
     H(x,t):={\mathbb Q}_x\left(e^{-\langle f, Z^{\mathrm n, [0,t)}_{t} + Z^{\mathrm m, [0,t)}_{t}\rangle }\right).
   \end{equation}
@@ -2266,7 +3127,7 @@ Therefore, by dominated convergence theory,
     =\lim_{t\rightarrow\infty}\widetilde{\mathbb P}_{\nu}\left(e^{-\langle f, X_t\rangle }\right)
     =\widehat{\mathbb Q}_{\nu}\left(e^{-\langle f, X_{\infty}\rangle }\right).
   \end{equation*}
-  Therefore for any $\mu\in\mathcal M(E)\setminus\{0\}$, and $f\in\mathcal B_b(E,[0,\infty))$,
+  Therefore for any $\mu\in\mathcal M_f(E)\setminus\{0\}$, and $f\in\mathcal B_b(E,[0,\infty))$,
   \begin{eqnarray*}
     \lim_{t\rightarrow\infty}\widetilde{\mathbb P}_\mu\left(e^{-\langle f, X_t\rangle}\right)&=&\lim_{t\rightarrow\infty}\mathbb P_\mu\left(e^{-\langle f, X_t\rangle}\right)
                                                                                                  \lim_{t\to\infty}\dfrac{1}{\mu(\phi)}\int_E\phi(x)H(x, t)\mu(dx)=q(f)\\
@@ -2287,7 +3148,7 @@ Therefore, by dominated convergence theory,
     &&=\int_E\widehat\phi(y)f(y)m(dy) \sum_{t\in \mathcal D^{\mathrm m}}(1+ce^{-\rho t})m_te^{\lambda t}\phi(Y_t)<\infty,
   \end{eqnarray*}
   $\mathbb Q_{\nu}-{\mathrm a.s.}$ when $\int_E\widehat\phi(x)l(x)m(dx)<\infty$ by Lemma \ref{lem:import_lemma}.
-  Thus in this case, the limit measure $X_\infty\in \mathcal M(E)$.  Denote the distribution of $X_\infty$ by $\mathbf P$.  Then $\mathbf P$
+  Thus in this case, the limit measure $X_\infty\in \mathcal M_f(E)$.  Denote the distribution of $X_\infty$ by $\mathbf P$.  Then $\mathbf P$
   is the invariant probability of the $Q$-process.
   %% ----------------------------------------------------------------------------------------------------------------------------
 
@@ -2303,7 +3164,7 @@ Therefore, by dominated convergence theory,
         \right).
   \end{eqnarray*}
   Since $\lim_{t\rightarrow\infty}X_t=0$ in probability and $\widehat Z^{\mathrm m}_t+ \widehat Z^{\mathrm n}_t$ is increasing having almost sure limit
-  $X_\infty\in\mathcal M(E)$, as $t\to\infty$. Therefore
+  $X_\infty\in\mathcal M_f(E)$, as $t\to\infty$. Therefore
   \[
     \lim_{t\rightarrow\infty}\widehat{\mathbb Q}_{\nu}\left(\dfrac{\exp\Big\{-\langle f, X_t\rangle -\langle f,  \widehat Z^{\mathrm m}_t+ \widehat Z^{\mathrm n}_t\rangle\Big \}}{\langle\phi, X_t\rangle +\langle\phi,  \widehat Z^{\mathrm m}_t+ \widehat Z^{\mathrm n}_t\rangle }
     \right)=\mathbf P\left(\frac{1}{\langle\phi, X_\infty\rangle }\exp\{-\langle f, X_{\infty}\rangle \}\right).
@@ -2343,7 +3204,7 @@ Therefore, by dominated convergence theory,
   \[
     \langle \phi, X_{\infty}\rangle =\infty,\qquad \mathbf P-{\mathrm a.s.}
   \]
-  In this case, the $Q$ process does not have invariant probability. And $\langle \phi, X_t\rangle $ converges to $\infty$ as $t\to\infty$ in probability with respect to $\widetilde{\mathbb P}_\mu$ for any $\mu\in \mathcal M(E)\setminus\{0\}$.
+  In this case, the $Q$ process does not have invariant probability. And $\langle \phi, X_t\rangle $ converges to $\infty$ as $t\to\infty$ in probability with respect to $\widetilde{\mathbb P}_\mu$ for any $\mu\in \mathcal M_f(E)\setminus\{0\}$.
 \end{proof}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% ----------------------------------------------------------------------------------------------------------------
 \begin{proof}[Proof of Proposition \ref{eq:exp_prop}]
