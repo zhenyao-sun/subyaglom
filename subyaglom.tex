@@ -43,8 +43,7 @@
 \title {Subcritical Superprocesses }
 \author
 [R. Liu, Y.-X. Ren, R. Song and Z. Sun]
-{
-  Rongli Liu, Yan-Xia Ren, Renming Song and Zhenyao Sun}
+{Rongli Liu, Yan-Xia Ren, Renming Song and Zhenyao Sun}
 \address{
   Yan-Xia Ren\\
   School of Mathematical Sciences\\
@@ -57,518 +56,48 @@
 \address{
   Rongli Liu\\
   Information about Rongli Liu}
-\email{rlliu@bjtu.edu.cn }
+\email{rlliu@bjtu.edu.cn}
 \thanks{
   The research of Rongli Liu is supported in part by NSFC
   (Grant No. 11301261), and the Fundamental Research Funds for the Central Universities (Grant No.  2017RC007)}
+\address{
+  Renming Song\\
+  Information about Renming Song}
+\email{email of RS}
 \address{
   Zhenyao Sun\\
   School of Mathematical Sciences\\
   Peking University\\
   Beijing, P. R. China, 100871}
-\email{
-  zhenyao.sun@pku.edu.cn}
+\email{zhenyao.sun@pku.edu.cn}
 \begin{abstract}
-\begin{comment}
-	In this paper, we discussed the decay rate of the extinction probability of a class of superdiffusions.
-  Two different conditional limits, the Yaglom probability and the Q process, are considered.
-  We characterize the Yaglom distribution by some function $G(f)$, which satisfies $G(v^t(0,\cdot))=t$ for each $t>0$ and where $v^t(0,x)=-\log(\mathbb P_x(\zeta<t))$.
-  It is proved that the Yaglom distribution is the minimal quasi-stationary distribution.
-  As for the Q process, we show that under finite LlogL moment assumptions, the Q process has the equilibrium distribution.
-  And it is a size-biased Yaglom distribution.
-  Moreover, we point out that under some conditional distribution the equilibrium  distribution is an infinitely divisible distribution.
-\end{comment}
 {\bf TBD}
 \end{abstract}
 \maketitle
 % * Document body
-% ** Introduction
+% ** (I)ntroduction
 \section{Introduction}
-% *** (Backgroud)
-\begin{comment}
-  \subsection{Backgroud}
-  % Suppose $(Z_n, n\ge 1)$ is a Galton-Watson branching process with offspring distribution $\{p_n\}$. 
-  Suppose that $(Z_n)_{n \in \mathbb Z_+}$ is a Galton-Watson process with offspring distribution $(p_n)_{n\in \mathbb Z_+}$. 
-  % Let $m:=\sum^{\infty}_{n=1}np_n$ be the mean number of children per particle.
-  Let $m:=\sum^{\infty}_{n=0}np_n$ be the mean number of children per particle.
-  % It is well known that when $m<1$ the extinction probability $q:=\lim_{n\rightarrow\infty}P\left(Z_n=0\right)$ is equal to $1$.
-  % That is to say the process $(Z_n)$ is extinct in finite time almost surely.
-  % A natural question is what the right decay rate of the probability is.
-  A natural question is what the right decay rate of those non-extinction probability $P(Z_n >0)$ is.
-  % In 1967, Heathcot, Seneta and Vere-Jone \cite{HeathcoteSenetaVere-Jones1967Refinement} answered the question, giving an LlogL criteria.
-  In 1967, Heathcot, Seneta and Vere-Jone \cite{HeathcoteSenetaVere-Jones1967Refinement} answered this question with an LlogL criteria.
-  % Let $L$ stand for a random variable with distribution $\{p_n\}$.
-  Let $L$ stands for a random variable with distribution $(p_n)_{n \in \mathbb Z_+}$.
-  \begin{thm}[\cite{HeathcoteSenetaVere-Jones1967Refinement}]
-    The sequence $\{ P(Z_n>0)/m^n\}$ is decreasing. 
-    If $m<1$, then the following are equivalent:
-    \begin{enumerate}
-    \item $\lim_{n\rightarrow\infty}P(Z_n>0)/m^n>0$,
-    \item $\sup E[Z_n|Z_n>0]<\infty$,
-    \item $E\left[L\log^+ L\right]<\infty$.
-    \end{enumerate}
-  \end{thm}
-  % In 1995, Lyons, Pemantle and Peres developed a martingale change of measure method in \cite{LyonsPemantlePeres1995Conceptual} to give a new proof for this $L\log L$ theorem.
-  In 1995, Lyons, Pemantle and Peres developed a martingale change of measure method in \cite{LyonsPemantlePeres1995Conceptual} to give a new proof for this $L\log L$ theorem.
-
-  In \cite{Lambert2001Arbres,Lambert2003Coalescence}, Lambert discusses the similar equivalencies for continuous time continuous state branching process $(Z_t)$.
-  Its branching mechanism function $\psi$ is specified by the L\'evy-Khinchin formula
-\[
-	\psi(\lambda)=-\beta\lambda+\sigma^2\lambda^2+\int_0^\infty \left(e^{-\lambda r}-1+\lambda r\right)n(dr),
-\]
-where $n(dr)$ is a positive measure on $(0,\infty)$ such that $\int_0^\infty(r^2\wedge r) n(dr)<\infty$ and where
-\begin{equation}\label{eq:_extinc_assump_for_continuous}
-	\int^\infty\frac{1}{\psi(\lambda)}d\lambda   <   \infty.
-\end{equation}
-We denote by $\mathbb P_x$ the law of $(Z_t)$ with initial value $Z_0=x>0$.
-Then for any $\lambda, t\geq 0$,
-\[
-	\mathbb P_x\left(\exp\{-\lambda Z_t\}\right)=\exp(-xu_t(\lambda)),
-\]
-where $u_t(\lambda)$ is the unique solution to the following equation
-\begin{equation}
-  \begin{cases}
-    \dfrac{d u_t(\lambda)}{dt}=-\psi(u_t(\lambda));\\
-    u_0(\lambda)=\lambda.
-  \end{cases}
-\end{equation}
-Let $\zeta:=\inf\{t\geq 0; Z_t=0\}$ be the extinction time of $Z$. There is a
-nonnegative function $\varphi(t)$ such that for any $x>0$,
-\[
-	\mathbb P_x(Z_t>0)=\mathbb P_x(\zeta>t)=1-\exp(-x\varphi(t)), \qquad t>0.
-\]
-When $\beta<0$ (c.f.\cite{Grey1974Asymptotic}),
-\[
-	\mathbb P_x(\zeta<\infty)=1.
-\]
-Thus the decay rate of $\mathbb P_x(\zeta>t)$ is determined by the decay rate of
-$\varphi(t)$. It is shown (c.f.\cite{Lambert2007Quasistationary}) that for any
-$\lambda>0$,
-\[
-	\lim_{t\rightarrow\infty}\frac{u_t(\lambda)}{\varphi(t)}=G(\lambda),
-\]
-where $G(\lambda)=\exp(\beta\int_{\lambda}^\infty1/\psi(u)du)$. Moreover, the
-following LlogL criteria holds.
-\begin{thm}
-  \label{thm:equivalent_for_cbp}
-	When $\beta<0$, the following items are equivalent
-  \begin{itemize}
-  \item[$(i).$] $G'(0+)<\infty$;
-  \item[$(ii).$] There is a positive constant $c$ such that $\varphi(t)\sim
-    c\exp(\beta t)$;
-  \item[$(iii).$] $\int_1^\infty r\log r n(dr)<\infty$.
-  \end{itemize}
-  In this case, $c^{-1}=G'(0+)$.
-\end{thm}
-As far as the two type dynamics running over large amounts of time are
-concerned, special attentions are given to two conditional limits. One is called
-Yaglom distribution and another one is called $Q$ process. Here we take the
-continuous state branching process $Z$ for example to give the definitions of
-the two limits. We can find the corresponding investigations for GW branching
-processes in \cite{AthreyaNey1972Branching}.
-
-The Yaglom distribution $\nu_{\beta}$ is the limit probability that for any
-$x>0$ and Borel set $A$,
-\[
-	\lim_{t\rightarrow\infty}\mathbb P_x(Z_t\in A\big|\zeta>t)=\nu_{\beta}(A).
-\]
-The conditional convergence can be found in \cite{Li2000Asymptotic} where it is
-also generalized to conditioning of the type $\{\zeta>t+r\}$ for any finite
-$r>0$ instead of $\{\zeta>t\}$. A quasi-stationary distribution (QSD) is a
-subinvariant distribution $\nu$ on $(0,\infty)$ satisfying
-\[
-	\mathbb P_{\nu}(Z_t\in A|\zeta>t)=\nu(A).
-\]
-It is shown in \cite{Lambert2007Quasistationary} that the Yaglom distribution
-$\nu_{\beta}$ is the minimal QSD of $Z$ in the following sense. For any
-$\gamma\in[\beta,0)$, there is a unique QSD $\nu_{\gamma}$ associated to the
-rate of mass decay $-\gamma$, and there is no QSD associated to $\gamma<\beta$.
-
-
-Let $\mathcal F_t=\sigma(Z_s,s\leq t), t\geq 0$ be the natural
-$\sigma-$filtration generated by $Z$. Then due to
-\cite{RenSongZhang2018Williams}, another conditional limit $\widetilde{\mathbb
-  P}_x$ is defined in the sense that for any $x,t>0$ and $A\in\mathcal F_t$,
-\begin{align}
-	\lim_{s\rightarrow\infty}\mathbb P_x(A\big|\zeta>s)=\widetilde{\mathbb P}_x(A).
-\end{align}
-It can be expressed as an $h-$transform of $\mathbb P_x$ with martingale
-$M_t=Z_te^{-\beta t}$ that
-\[
-	\left.\dfrac{d\widetilde{\mathbb P}_x}{d\mathbb P_x}\right|_{\mathcal F_t}=\frac{M_t}{x}.
-\]
-Moreover, under $\widetilde{\mathbb P}_x$, the process $Z$ is a branching
-process with immigration called $Q$-process. Lambert established the connection
-between these two limit distributions in \cite{Lambert2007Quasistationary}. Let
-$\Upsilon$ be a random variable whose distribution is the Yaglom distribution
-$\nu_\beta$. If $\int_1^\infty r\log r n(dr)<\infty$, then under
-$\widetilde{\mathbb P}_x$, $Z_t$ converges in distribution to a positive random
-variable $Z_\infty$ as $t\to\infty$, which has the distribution of the
-size-biased Yaglom distribution
-\[
-	\widetilde{\mathbb P}_x(Z_\infty\in dr)=\frac{r}{\mathbb E\Upsilon}\mathbb P(\Upsilon\in dr).
-\]
-The studies on the Q processes,the Yaglom distributions and the quasi-stationary
-distributions for more models we refer to the survey
-\cite{MeleardVillemonais2012Quasistationary}, the thesis
-\cite{Penisson2010Conditional} and the references therein.
-
-Superdiffusions are a class of branching processes with spatial motions. Similar
-to branching processes we introduced above, $0$ is also their absorbing state.
-In this paper, we will discuss a class of superdiffusions which will be extinct
-in finite time. We establish an $L\log L$ criterion taking use of the spine
-method and investigate the Yaglom distributions and $Q$ processes. Moreover, we
-study the QSD for our model as well. To state our main results, we need to
-introduce the setup we are going to work with first.
-\end{comment}
-
-% *** (Main results)
-\begin{comment}
+% \label{sec:I}
+% *** Main (R)esults
 \subsection{Main results}
-\label{sec:main-results}
-Let $E$ be a locally compact separable metric space. 
-Denote by $\mathcal B_b(E,\mathbb R)$ the collection of all bounded measurable functions on
-$E$. 
-Denote by $\mathcal B_b(E, [0,\infty))$ the collection of all non-negative bounded measurable functions on $E$. 
-Denote by $\mathcal M(E)$ the space of all finite measures on $E$ equipped with the weak topology. 
-Write $\langle f,\mu\rangle$ or $\mu(f)$ for the integral $\int_E f(x)\mu(dx)$ whenever it makes sense.
-
-Let the \emph{spatial motion} $Y=\{(Y_t)_{t\geq 0};(\Pi_x)_{x\in E}\}$ be an $E$-valued Hunt process with its lifetime denoted by $\tau$ and its transition semigroup denoted by $(P_t)_{t\geq
-  0}$. 
-Let the \emph{branching mechanism} $\psi$ be a function on $E\times[0,\infty)$ given by
-\[
-	\psi(x,z)
-	=-\beta(x)z + \alpha(x)^2 z^2+ \int_{(0,\infty)} (e^{-rz}-1+zr )n(x, dr),\qquad x\in E, z\geq0,
-\]
-where $\beta, \alpha\in \mathcal B_b(E,\mathbb R)$ and $n$ is a $\sigma$-finite kernel from $E$ to $(0,\infty)$ with
-\[
-	\sup_{x\in E}\int_0^\infty (r\wedge r^2)n(x,dr)
-	<\infty.
-\]
-
-({\bf Sun: I think it is better to use $\pi$ for the Levy measure.})
-
-In this paper, we consider a \emph{$(Y,\psi)$-superprocess} $X$ which is defined as an $\mathcal M(E)$-valued Hunt process $X=\{(X_t)_{t\geq 0}; (\mathbb
-P_\mu)_{\mu \in \mathcal M(E)}\}$ satisfying that for any $\mu \in \mathcal M(E), f\in \mathcal B_b(E, [0,\infty))$,
-\begin{equation}
-  \label{eq:_def_of_vtf}
-  \mathbb P_\mu [e^{-\langle f,X_t\rangle}] = e^{-\langle V_tf, \mu\rangle},
-  \quad t\geq 0,
-\end{equation}
-where, for each $f\in\mathcal B_b(E, [0,\infty))$, function $(t,x) \mapsto V_tf(x)$ on $[0,\infty) \times E$ is the unique locally bounded positive solution to the
-equation
-\begin{equation}\label{eq:FKPP_in_definition}
-  V_t f(x) +   \Pi_x\left[\int_0^{t\wedge \tau} \psi \big(\xi_s,V_{t-s} f(\xi_s)\big) ds\right]
-	= P_t f(x),
-	\quad x \in E,\,\, t \geq 0.
-\end{equation}
-Here, we say a function $(t,x)\mapsto u(t,x)$ is \emph{locally bounded} on $[0,\infty) \times E$ if for each $T\geq 0$ we have $\sup_{t\in [0,T],x\in E} |u(t,x)| < \infty$. 
-See \cite[Theorem 5.11]{Li2011Measurevalued} for the existence of such processes.
-
-
-To simplify the notation, we also write $\mathbb P_x$ for $\mathbb P_{\delta_x}$.
-Define the \emph{Feynman-Kac semigroup} $(P^\beta_t)_{t\geq 0}$ such that for any $ f\in \mathcal B_b(E,\mathbb R)$,
-\begin{align}
-	P^\beta_tf(x)
-	:= \Pi_x \big[e^{\int_0^{t} \beta(Y_r)dr} f(Y_t)\mathbf 1_{\{t<\tau\}}\big],
-	\quad t\geq 0, x\in E.
-\end{align}
-It is known, see \cite[Proposition 2.27]{Li2011Measurevalued} for example, $(P^\beta_t)_{t\geq 0}$ is \emph{the mean semigroup} of the superprocess $X$, in the sense that for any $\mu \in \mathcal M(E)$, and $f \in \mathcal B_b(E,\mathbb R)$,
-\begin{align} \label{eq:Yaglom_type_result_without_2rd} 
-\mathbb P_\mu [\langle f,X_t\rangle] = \mu(P^\beta_t f), \quad t \geq 0.
-\end{align}
-
-
-For the spatial motion $Y$, we always assume the following:
-\begin{asp}\label{asp:1}
-  There exist a $\sigma$-finite measure $m$ with full support on $E$ and a family
-  of strictly positive, bounded continuous functions $\{ p_t(\cdot,\cdot): t > 0
-  \}$ on $E \times E$ such that
-  \begin{align}
-  	P_tf(x)
-  	= \int_E p_t(x,y) f(y) m(dy),
-  	&\quad t>0, x \in E,f \in \mathcal B_b(E,\mathbb R);
-  	\\ \int_E p_t(x,y)m(dx)\leq 1, &\quad t>0,y\in E;
-  	\\ \int_E \int_E p_t(x,y)^2 m(dx) m(dy)
-  	<\infty,
-  	&\quad t> 0;
-  \end{align}
-  and that the functions $x \mapsto \int_E p_t(x,y)^2 m(dy)$ and $y \mapsto \int_E
-  p_t(x,y)^2 m(dx)$ are both continuous.
-\end{asp}
-
-Under Assumption \ref{asp:1}, it is proved in \cite{RenSongZhang2015Limit,RenSongZhang2017Central} that there exists a family
-of strictly positive, bounded continuous functions $\{ p^\beta_t(\cdot,\cdot): t
-> 0 \}$ on $E \times E$ such that
-\begin{align}
-	P^\beta_t f(x)
-	= \int_E p_t^\beta (x,y) f(y) m(dy),
-	\quad \quad t>0, x \in E,f \in \mathcal B_b(E,\mathbb R).
-\end{align}
-Its corresponding dual semigroup $(\widehat P^{\beta}_t)_{t \geq 0}$ is given by
-\begin{align}
-	\widehat P^{\beta}_0 = I;
-	\quad \widehat P^{\beta}_t f(y)
-	:= \int_E p^\beta_t (x,y) f(x) m(dx),
-	\quad t>0, y\in E, f\in \mathcal B_b(E,\mathbb R).
-\end{align}
-It is shown in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that both $(P^\beta_t)_{t \geq 0}$ and $(\widehat P_t^{\beta})_{t\geq 0}$ are strongly continuous semigroups of compact operators on $L^2(E,m)$. 
-Let $A$ and $\widehat
-A$ be the generators of the semigroups $(P^\beta_t)_{t \geq 0}$ and $(\widehat
-P^\beta_t)_{t \geq 0}$, respectively. 
-Denote by $\sigma(A)$ and $\sigma(\widehat
-A)$ the spectra of $A$ and $\widehat A$, respectively. 
-According to \cite[Theorem V.6.6]{Schaefer1974Banach}, $\lambda := \sup \text{Re}(\sigma(A))
-= \sup \text{Re}(\sigma(\widehat A))$ is a common eigenvalue of multiplicity $1$ for both $A$ and $\widehat A$. 
-It is also proved in \cite{RenSongZhang2015Limit,RenSongZhang2017Central} that the eigenfunctions $\phi$ of $A$ and $\widehat\phi$ of $\widehat A$ associated with the common eigenvalue $\lambda$ can be chosen to be strictly positive and continuous everywhere on $E$. 
-Normalize $\phi$ and $\widehat\phi$ by
-\[	
-	\int_E \phi(x)^2 m(dx) = \int_E \phi(x) \widehat \phi(x) m(dx) = 1
-\]
-so that they are unique.
-
-Notice that, for each $t \geq 0$ and $\mu \in \mathcal M(E)$, we have $ \mathbb
-P_\mu[X_t(\phi)] = \mu(P^\beta_t \phi) = e^{\lambda t} \mu(\phi). $ 
-If $\lambda
-> 0$, the mean of $X_t(\phi)$ will increase exponentially; 
-if $\lambda < 0$, the mean of $X_t(\phi)$ will decrease exponentially; 
-and if $\lambda = 0$, the mean of $X_t(\phi)$ will be a constant. 
-Therefore, we say $X$ is \emph{supercritical, critical} or \emph{subcritical}, according to $\lambda > 0$, $\lambda = 0$ or
-$\lambda < 0$, respectively.
-
-Throughout this paper, we assume the following for the mean semigroup $(P_t^\beta)_{t\geq 0}$ in addition:
-\begin{asp}~
-\label{asp:IU}
-\begin{enumerate}
-\item The superprocess $X$ is subcritical, i.e. $\lambda < 0$.
-\item The eigenfunctions $\phi$ and $\widehat\phi$ are bounded on $E$.
-\item \label{subasp:IU} 
-  The mean semigroup $(P_t^\beta)_{t\geq 0}$ is \emph{intrinsically ultracontractive}, that is, for each $t>0$, there is a constant $c_t >0$ such that for each $x,y\in E$, $p^\beta_t(x,y) \leq c_t \phi(x) \widehat\phi(y)$.
-\end{enumerate}
-\end{asp}
-
-
-It follows from \cite[Proposition 2.5]{KimSong2008Intrinsic} that, under Assumption \ref{asp:IU}.\eqref{subasp:IU}, for each $t>0$, there exists $c'_t > 0$ such that 
-\begin{align}
-	p^\beta_t (x,y) 
-  \geq c_t' \phi(x) \widehat \phi(y),
-  \quad x,y \in E.
-\end{align}
-Define $\nu(dy):= \widehat \phi(y) m(dy)$. 
-Then from above, $\nu$ is a finite measure on $E$.
-Therefore we can consider the superprocess $X$ with initial configuration $\nu$.
-  
-For each measure $\mu$ on $E$, we write $\|\mu\|:= \left\langle \mathbf 1_E,\mu \right\rangle$.
-% Let $\zeta=\inf\{t>0: \langle \mathbf 1_E,X_t\rangle=0\}$ be the extinction time of the superprocess $X$.
-% Similar to \cite{RenSongSun2019Spine,RenSongZhang2018Williams}, we add the following assumption to assure the process will be extinct in finite time almost surely.
-Similar to \cite{RenSongSun2019Spine,RenSongZhang2018Williams}, we add the following non-persistent assumption:
-\begin{asp}~ 
-  \label{asp:3}
-  \begin{enumerate}
-  \item \label{subsup:point_non_presistence}
-    % $\mathbb P_{x}(\zeta < t)>0$ for each $x\in E$ and $t>0$.
-    $\mathbb P_{x}(\|X_t\| = 0)>0$ for each $x\in E$ and $t>0$.
-  \item \label{subasp:measure_non_presistence}
-    % $\mathbb P_{\nu}(\zeta< t)>0$ for some $t>0$ with $\nu(dx):=\widehat\phi(x)m(dx)$.
-    $\mathbb P_{\nu}(\|X_t\| = 0)>0$ for some $t>0$.
-  \end{enumerate}
-\end{asp}
- Let $\zeta=\inf\{t>0: \|X_t\| = 0\}$ be the extinction time of the superprocess $X$.
- The above assumption says that the process will extinct in finite time with a positive probability provided the initial configuration is $\nu$ or $\delta_x$ with $x\in E$.
-
-Define a new kernel $n^\phi(x, dr)$ from $E$ to $(0,\infty)$ such that
-\begin{equation} \label{eq:phi_change}
-	\int_0^\infty f(r)n^\phi(x,dr)=\int_0^\infty f(r\phi(x))n(x, dr),
-	\quad x\in E, f\in \mathcal B_b((0,\infty), \mathbb R).
-\end{equation}
-Our first result is about the asymptotic behavior of the extinction time $\zeta$:
-
-\begin{thm}\label{thm:distribution_of_zeta}
-	Suppose that the superprocess $X$ satisfies Assumptions \ref{asp:1},
-  \ref{asp:IU}, and \ref{asp:3}. Then,
-  \begin{enumerate}
-  \item
-    \label{subthm:extinct_almost_sure}
-    for each $\mu \in \mathcal M(E)$, we have  $\mathbb P_\mu(\zeta<\infty)=1$;
-  \item
-    for each $\mu,\widetilde\mu\in \mathcal M(E)\setminus\{0\}$ and $s>0$, we have
-    \[
-      \lim_{t\rightarrow\infty}\dfrac{\mathbb P_{\mu}(\zeta>t+s)}{\mathbb P_{\widetilde\mu}(\zeta>t)}=\frac{\langle \phi,\mu\rangle }{\langle \phi,\widetilde\mu\rangle }e^{\lambda s};
-    \]
-  \item
-  \label{subthm:LlogL}
-    there exists a constant $k\in [0,\infty)$, such that for any $x\in E$,
-    \begin{equation}\label{eq:decay_rate}
-      \lim_{t\rightarrow\infty} e^{-\lambda t}\mathbb P_x(\zeta>t)=k\phi(x).
-    \end{equation}
-    Moreover, the constant $k>0$ if and only if $\int_E \widehat\phi(y)l(y)m(dy)<\infty$ where
-    \begin{equation}\label{eq:m}
-      l(y):=\int_1^\infty r\log r~n^\phi(y, dr),\quad y \in E.
-    \end{equation}
-  \end{enumerate}
-\end{thm}
-
-In particular, for any $x,y\in E$ and $s\geq 0$, the second result in the above theorem can be written as
-\begin{equation}\label{eq:ratio_result}
- 	\lim_{t\rightarrow\infty}\frac{\mathbb P_x(\zeta>t+s)}{\mathbb P_y(\zeta>t)}=\frac{\phi(x)}{\phi(y)}e^{\lambda s}.
-\end{equation}
-So we can see that the effect of the position of the initial mass on the decay of the mass is a ratio of $\phi(\cdot)$ generally.
-For each probability ${\mathbf P}$ on $\mathcal M(E)$, we define
-\[
-	( {\mathbf P} \mathbb P)(\cdot) := \int_{\mathcal M(E)} \mathbb P_\mu(\cdot) {\mathbf P}(d\mu).
-\]
-Then $\{(X_t)_{t\geq 0}; ({\mathbf P}\mathbb P)\}$ can be considered as a $(Y,\psi)$-superprocess with a random initial value $X_0$ whose distribution is ${\mathbf P}$.
-We say a probability ${\mathbf P}$ on $\mathcal M(E)$ is a \emph{quise-stationary distribution (QSD)} of the superprocess $X$ if  for each $t\geq 0$,
-\[
-	({\mathbf P}\mathbb P)(X_t \in \cdot | \zeta > t) ={\mathbf P}(\cdot).
-\]
-According to the standard theory of QSD (see \cite{MeleardVillemonais2012Quasistationary}), if ${\mathbf P}$ is a QSD of $X$, then under $({\mathbf P}\mathbb P)$, the lifetime $\zeta$ has an exponential distribution with some constant $r > 0$, that is
-\[
-	( {\mathbf P}\mathbb P)(\zeta > t) = e^{-r t}.
-\]
-We refer to $r$ the \emph{rate of mass decay} associated to the QSD $\mathbf P$.
-
-We say a probability ${\mathbf P}$ on $\mathcal M(E)$ is the \emph{Yaglom distribution} of the superprocess $X$ if for any $\mu\in \mathcal M(E)\setminus\{0\}$ we have
-\[
-	\mathbb P_\mu(X_t \in \cdot | \zeta > t) \xrightarrow[t\to \infty]{w} {\mathbf P}(\cdot).
-\]
-If the Yaglom distribution ${\mathbf P}$ of the superprocess $X$ exists, then it must be a QSD of $X$ (see \cite{MeleardVillemonais2012Quasistationary}).
-
-Our second theorem is about the QSD and the Yaglom distribution of the superpocess $X$:
-{\bf (The following theorem is not correct. But we want to get something similar.)}
-\begin{thm}\label{thm:qsd_thm}
-  Suppose that the superprocess $X$ satisfies Assumptions \ref{asp:1}, \ref{asp:IU}, and \ref{asp:3}.
-  Then,
-  \begin{enumerate}
-  \item \label{thm:qsd_thm_1}
-    for each $\gamma\in[\lambda,0)$, there is a unique probability measure ${\mathbf P}^{\gamma}$ on $\mathcal M(E)$ such that $ {\mathbf P}^\gamma$ is a $QSD$ of the superprocess $X$ with rate of mass decay $-\gamma$.
-    Let $\nu(dx):=\widehat\phi(x) m(dx)$.
-    Then ${\mathbf P}^\gamma$ is the distribution of the random measure $M^{(\gamma)}\nu(dx)$ where $M^{(\gamma)}$ is a non-negative random variable with Laplace transform
-    \[
-      E[e^{-\theta M^{(\gamma)}}]
-      = 1 - e^{\gamma B(\theta)},
-      \quad \theta \in (0,\infty).
-    \]
-    Here, map $B: \theta \mapsto B(\theta)$ with $\theta \in (0,\infty)$ is defined as the inverse of the map
-    \[
-      t
-      \mapsto -\log \mathbb P_\nu(\zeta \leq t),
-      \quad t\in (0,\infty).
-    \]
-  \item
-    ${\mathbf P}^\lambda$ is the Yaglom distribution of $X$.
-    In another word, for any  $f\in\mathcal B_b(E,[0,\infty))$ and any $\mu\in \mathcal M(E)\setminus\{0\}$,
-    \[
-      \lim_{t\rightarrow\infty}\mathbb P_{\mu}[e^{-\langle f,X_t\rangle} | \zeta>t]
-      % = E [e^{- \langle f,\nu\rangle M^{(\lambda)}}],
-      = E [e^{- \langle f,\nu\rangle M^{(\lambda)}}].
-    \]
-    In particular, for each $\mu \in \mathcal M(E)$, $\{\langle \phi, X_t\rangle; \mathbb P_{\mu}(\cdot| \zeta > t) \}$ converges to $M^{(\lambda)}$ in distribution.
-  \item
-    There is no QSD with rate of mass decay $-\gamma$ for each $\gamma\in(-\infty , \lambda)$.
-  \end{enumerate}
-\end{thm}
-
-{\bf (The following proposition is not correct. But we still want something similar and we want to call it the LlogL criteria for the subcritical superprocesses.)}
-\begin{prop}\label{eq:exp_prop}
-	Suppose that the superprocess $X$ satisfies Assumptions \ref{asp:1},
-  \ref{asp:IU}, and \ref{asp:3}.
-	Let $M^{(\gamma)}$ be the random variables given by Theorem \ref{thm:qsd_thm} (1) where $\gamma \in [\lambda, 0)$.
-  Then
-  \begin{enumerate}
-  \item
-    $E[M^{(\gamma)}] = \infty$ for each $\gamma \in (\lambda, 0)$, and
-  \item
-    $E[M^{(\lambda)}] < \infty$ if and only if $\int_E \widehat\phi(y)l(y)m(dy)<\infty$.
-  \end{enumerate}
-  Moreover, if $\int_E \widehat\phi(y)l(y)m(dy)<\infty$ then the constant $k$ in \eqref{eq:decay_rate} is equal to $E[M^{(\lambda)}]^{-1}$.
-\end{prop}
-% Recall the LlogL criteria of Theorem \ref{thm:equivalent_for_cbp}, we can say the above equivalency in proposition \ref{eq:exp_prop} is the same to that between items $(i)$ and $(iii)$ there.
-
-Define the process
-\[
-	M_t=e^{-\lambda t}  \langle \phi, X_t\rangle, \quad t\geq 0.
-\]
-It is well known that the process  $(M_t)_{t\geq 0}$ is a martingale with respect to the natural filtration $(\mathscr F_t)_{t\geq 0}$ of the superprocess $X$.
-% For each $\mu \in \mathcal M(E)$, define probability $\widetilde{\mathbb P}_\mu$ as Doob's $h-$transform of $\mathbb P_\mu$
-For each $\mu \in \mathcal M(E)$, let probability $\widetilde{\mathbb P}_\mu$ be Doob's $h-$transform of $\mathbb P_\mu$ such that
-\begin{equation} \label{eq:martingale_transformation}
-	\frac{d\widetilde{\mathbb P}_\mu|_{\mathscr F_t}}{d\mathbb P_\mu|_{\mathscr F_t}}
-	=\frac{M_t}{\langle\phi,\mu\rangle },
-	\quad t\geq 0.
-\end{equation}
-This kind of martingale measure transformation for branching processes and measure-valued processes have been widely studied.
-We refer to the early papers \cite{EnglanderKyprianou2004Local,Evans1993Two,RoellyRouault1989Processus}, the thesis \cite{Penisson2010Conditional} and the references therein, and the recent papers \cite{ChampagnatRoelly2008Limit,RenSongSun2019Spine,RenSongZhang2018Williams}.
-It is well known that the process $\{(X_t)_{t\geq 0}; \widetilde{\mathbb P}_{\mu}\}$ can be characterized by the so called spine decomposition theorem.
-We will recall this decomposition in details for our model in section $2$.
-
-Our third theorem says that $\{(X_t)_{t\geq 0}; \widetilde{\mathbb P}_{\mu}\}$ can be considered as the Q-processs of $X$, i.e. the process $\{(X_t)_{t\geq 0}; \mathbb P_{\mu}\}$ conditioned to be never extinct:
-\begin{thm}\label{thm:Q_process}
-	Under the assumptions \ref{asp:1},\ref{asp:IU} and \ref{asp:3}, for each  $\mu \in \mathcal M(E), t\geq 0$ and $A\in\mathscr F_t$, we have $\lim_{s\rightarrow\infty}\mathbb P_\mu(A |\zeta>s)=\widetilde{\mathbb P}_\mu(A). $
-\end{thm}
-
-It would be interesting to study the asymptotic behavior of this Q-process $\{(X_t)_{t\geq 0}; (\widetilde{\mathbb P}_\mu)_{\mu \in \mathcal M(E)}\}$.
-Samilar to the definition of $\mathbf P\mathbb P$, for each probability $\mathbf
-P$ on $\mathcal M(E)$, we define probability $\mathbf P\widetilde{\mathbb P}$.
-Then $\{(X_t)_{t\geq 0}; (\mathbf P\widetilde{\mathbb P})\}$ can be considered as the Q-process with a random initial value $X_0$ whose distribution is $\mathbf P$.
-We say a probability $\mathbf P$ on $\mathcal M(E)$ is an \emph{invariant probability} of the Q-process $\{(X_t)_{t\geq 0}; (\widetilde{\mathbb P}_\mu)_{\mu\in\mathcal M(E)}\}$ if
-\[
-	(\mathbf P\widetilde{\mathbb P})(X_t \in \cdot ) =\mathbf P(\cdot),	\quad t\geq 0.
-\]
-
-Our fourth result is the following:
-{\bf (The following theorem is not entirely correct.)}
-\begin{thm}\label{thm:structure_of_Qprocess}
-	Under the assumptions \ref{asp:1},\ref{asp:IU} and \ref{asp:3}:
-  \begin{enumerate}
-  \item
-    If $\int_E\widehat\phi(x)l(x)m(dx)<\infty$, then $\{(X_t)_{t\geq 0};(\widetilde{\mathbb P}_\mu)_{\mu\in\mathcal M(E)}\}$ has an invariant probability ${\mathbf P}$.
-    For any $\mu\in\mathcal M(E)$, we have
-\begin{align}
-\label{eq:uniqueness_of_invariant_probability}
-\widetilde{\mathbb P}_\mu(X_t \in \cdot ) \xrightarrow[t\to \infty]{w} {\mathbf P}(\cdot).
-\end{align}
-    The invariant probability $\mathbf P$ is the distribution of the random measure $M\widehat\phi(x)m(dx)$, where the non-negative random variable $M$ has Laplace transform
-    \[
-      E[e^{-\theta  M}] = \dfrac{E[M^{(\lambda)}e^{-\theta M^{(\lambda)}}]}{E[M^{(\lambda)}]},\quad \theta > 0.
-    \]
-  \item
-    If $\int_E\widehat\phi(x)l(x)m(dx)<\infty$, then there is a random measure $K$ on $(0,\infty)$ such that
-    \[
-      E[e^{-\theta \widetilde M}] = E\Big[\exp\Big\{- \int_{(0,\infty)} (1-e^{-\theta z }) K(dz) \Big\}\Big].
-    \]
-  \item
-    If $\int_E\widehat\phi(x)l(x)m(dx)=\infty$, then for each $\mu \in \mathcal M(E)$, we have $\lim_{t\rightarrow\infty}\langle \phi, X_t\rangle =\infty$ in probability with respect to $\widetilde{\mathbb P}_\mu$.
-  \end{enumerate}
-\end{thm}
-{\bf (Why we only considered the existence of that equilibrium probability in the above theorem? Is it unique? Also, can I have this conjecture: Under $\mathbf P \widetilde{\mathbb P}$, $(X_t)_{t\geq 0}$ is a stationary (or even better, an ergodic) measure-valued process?)}
-
-One important technique used to prove the above theorems is a ``spine-decomposition'' for the super-diffusion $X$ under a martingale change of measure.
-This decomposition was used by Englander and Kyprianou in \cite{EnglanderKyprianou2004Local} to investigate the local extinction of super-diffusions, in which the branching mechanism is $\psi(x,z)-\beta(x)z=\alpha(x)^2z^2-\beta(x)z$.
-This technique is usually used to investigate the properties of supercritical superdiffusions ($\lambda>0$).
-Here we use it to analyze the subcritical case.
-\end{comment}
-
-% *** Main results
-\subsection{Main results}
-\label{sec:MR}
+\label{sec:IR}
 % **** Notations
 Denote by $\mathcal B(E,B)$ the collection of all Borel measurable maps from a Borel space $E$ to a measurable space $B$.
 Denote by $\mathcal B_b(E,B)$ the collection of all bounded elements in $\mathcal B(E,B)$.
 Denote by $\mathcal M(E)$ the space of all Borel measures on a Borel space $E$. 
 Denote by $\mathcal M_f(E)$ the space of all finite elements in $\mathcal M(E)$ equipped with the weak topology. 
 
-% **** Definition of (S)uper(P)rocesses
+% **** Definition of (S)uperrocesses
 \begin{defi}
-\label{def:SP}
+  \label{def:IRS}
 Let $E$ be a locally compact separable metric space. 
 We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb P_\mu)_{\mu\in \mathcal M_f(E)}\}$ is a \emph{$(Y,\psi)$-superprocess} if
 \begin{enumerate}
 \item
-\label{def:SP:1}
+\label{def:IRS1}
   the \emph{spatial motion} $Y=\{(Y_t)_{t\geq 0};(\Pi_x)_{x\in E}\}$ is an $E$-valued Hunt process with its life time denoted as $\tau$;
 \item
-  \label{def:SP:2}
+  \label{def:IRS2}
   the \emph{branching mechanism} $\psi$ is a map from $E\times[0,\infty)$ to $[0,\infty)$ given by
   \[
     \psi(x,z)
@@ -580,7 +109,7 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
     <\infty.
   \]
 \item
-  \label{def:SP:3}
+  \label{def:IRS3}
   for each $f\in \mathcal B_b(E,[0,\infty))$, it holds that
   \begin{align}
     \mathbb P_\mu [e^{- X_t(f)}] = e^{-\mu(V_tf)},
@@ -588,7 +117,7 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
   \end{align}
   where the map $(t,x) \mapsto V_tf(x)$ on $[0,\infty) \times E$ is the unique locally bounded positive solution to the equation
   \begin{align}
-    V_t f(x) +   \Pi_x\Big[\int_0^{t\wedge \tau} \psi \big(\xi_s,V_{t-s} f(\xi_s)\big) ds\Big]
+    V_t f(x) +   \Pi_x[\int_0^{t\wedge \tau} \psi (\xi_s,V_{t-s} f(\xi_s)) ds]
     = \Pi_x[f(\xi_t) \mathbf 1_{t < \tau}],
     \quad x \in E, t \geq 0.
   \end{align}
@@ -597,24 +126,24 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
 \end{defi}
 
 % **** Theorem (Y)glom
-\begin{thm}[Under the condition of Lemma \ref{lem:K}]
-  \label{thm:Y}
-	Let $X$ be the superprocess given by Definition \ref{def:SP}. 
+\begin{thm}
+  \label{thm:IRY}
+	Let $X$ be the superprocess given by Definition \ref{def:IRS}. 
   We say a probability ${\mathbf P}$ on $\mathcal M_f(E)$ is the \emph{Yaglom distribution} of the superprocess $X$ if for each $\mu\in \mathcal M_f(E)\setminus\{0\}$ we have
   \begin{align}
     \mathbb P_\mu(X_t \in \cdot | \|X_t\|>0) 
-    \xrightarrow[t\to \infty]{law} {\mathbf P}(\cdot).
+    \xrightarrow[t\to \infty]{d} {\mathbf P}(\cdot).
   \end{align}
   Then it holds that the Yaglom distribution $\mathbf P$ of $X$ exists.
 \end{thm}
-% ** Preliminary
+% ** (P)reliminary
 \section{Preliminary}
-% *** Preliminary results
+% *** (S)uperprocesses
 \subsection{Superprocesses}
-% ***** Lemma (C)umulant semigroup
-  \begin{lem}[Fact]
-    \label{lem:C}
-    Let $X$ be the superprocess given in Definition \ref{def:SP}.
+% ***** (C)umulant semigroup
+  \begin{lem}[$\Delta$]
+    \label{lem:ACP}
+    Let $X$ be the superprocess given in Definition \ref{def:IRS}.
     There exists a unique family of operators $(\overline V_t)_{t \geq 0}$ from $\mathcal B(E, [0,\infty])$ to $\mathcal B(E, [0,\infty])$ satisfying the followings
     \begin{enumerate}[label=(\alph*)]
     \item
@@ -632,9 +161,9 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
     With some abuse of the notations, we still write $V_t = \overline V_t$ for each $t\geq 0$, and call $(V_t)_{t\geq 0}$ the \emph{cumulant semigroup} of the superprocess $X$.
   \end{lem}
 
-% ***** Lemma: the (v)_t
-  \begin{lem}[Fact]
-    \label{lem:v}
+% ***** (E)xtinction exponent 
+  \begin{lem}[$\Delta$]
+    \label{lem:PSE}
     Define $v_t = V_t(\infty)$ for each $t\geq 0$, then it holds that 
     \begin{align}
       \mathbb P_\mu (\|X_t\| = 0) 
@@ -643,10 +172,10 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
     \end{align}      
   \end{lem}
   
-% ***** Lemma (Mean)
-  \begin{lem}[Fact]
-    \label{lem:M}
-    Let $X$ be a superprocess given by Definition \ref{def:SP}. 
+% ***** (M)ean semigroup
+  \begin{lem}[$\Delta$]
+    \label{lem:PSM}
+    Let $X$ be a superprocess given by Definition \ref{def:IRS}. 
     It holds that
     \begin{align} 
       \mathbb P_\mu [X_t(f)] = \mu(P^\beta_t f), 
@@ -655,15 +184,16 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
     where \emph{the mean semigroup} $(P_t^\beta)_{t\geq 0}$ is a family of operators on $\mathcal B_b(E, \mathbb R)$ given by
     \begin{align}
       P^\beta_tf(x)
-      := \Pi_x \big[e^{\int_0^{t} \beta(Y_r)dr} f(Y_t)\mathbf 1_{\{t<\tau\}}\big],
+      := \Pi_x [e^{\int_0^{t} \beta(Y_r)dr} f(Y_t)\mathbf 1_{\{t<\tau\}}],
       \quad f \in \mathcal B_b(E, \mathbb R),t\geq 0, x\in E.
     \end{align}
   \end{lem}
-% ***** Lemma (E)quations of superprocesses 
+
+% ***** % Equations of superprocesses 
 \begin{comment}
   \begin{lem}[Fact]
     \label{lem:E}
-    Let $X$ be the superprocess given in Definition \ref{def:SP}. 
+    Let $X$ be the superprocess given in Definition \ref{def:IRS}. 
     Define a function $\psi_0$ on $E\times [0,\infty)$ such that $ \psi_0(x,z)  := \psi(x,z)+ \beta(x) z$ for each  $x\in E$ and  $z \geq 0$.
     Using the monotonicity, extend $\psi$ as a $[0,\infty]$-valued function on $E \times [0,\infty]$ by setting that $\psi(x,\infty) = \lim_{z\uparrow \infty} \psi(x,z)$.
     Define operator $\Psi_0$ on $\mathcal B(E,[0,\infty])$ by $ \Psi_0 g(x):=\psi_0(x, g(x))$.
@@ -674,12 +204,13 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
     \end{align}
   \end{lem}
 \end{comment}
-% ***** Lemma (E)igenvalue
-  \begin{lem}[Need more conditions]
-    \label{lem:S}
-    Let $X$ be the superprocess given by Definition \ref{def:SP}. 
+
+% ***** (S)pectural porperty
+  \begin{lem}[$\Delta$]
+    \label{lem:PSS}
+    Let $X$ be the superprocess given by Definition \ref{def:IRS}. 
     Let $(P^\beta_t)_{t\geq 0}$ be the mean semigroup of $X$.
-    Then there exist a number $\lambda \in \mathbb R$, a function $\phi \in \mathcal B(E, (0,\infty))$ and a measure $\nu \in \mathcal M_f(E)$ satisfying that
+    Then there exist a number $\lambda \in \mathbb R$, a function $\phi \in \mathcal B_b(E, (0,\infty))$ and a measure $\nu \in \mathcal M_f(E)$ with full support on $E$ such that
     \begin{align}
       & P_t^\beta \phi(x) 
         = e^{\lambda t} \phi(x),
@@ -691,170 +222,332 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
            = 1.   
     \end{align}
   \end{lem}
-% ***** Proof of Lemma lem:S
-  \begin{proof}
-    {\bf TBD, obviously true if we make the IU assumption.}
-  \end{proof}
-
-% ***** The (K)ey Lemma
-  \begin{lem}[Under the condition of Lemma \ref{lem:S} and maybe more conditions]
-    \label{lem:K}
+  
+% ***** (K)ey Lemma
+  \begin{lem}[$\Box$]
+    \label{lem:PSK}
     Suppose that 
     \begin{enumerate}[label=(\alph*)]
     \item
-      \label{lem:K:a}
+      \label{lem:PSKa}
       $\lambda < 0$;
     \item
-      \label{lem:K:b}
+      \label{lem:PSKb}
       $P_t^\beta f(x) 
-      = e^{\lambda t} \phi(x) \nu(f) \big( 1+ o(\limsup_{t\to \infty} \sup_{x\in E, f\in L_1^+(\nu)})\big)$;
+      = e^{\lambda t} \phi(x) \nu(f) ( 1+ o(\limsup_{t\to \infty} \sup_{x\in E, f\in L_1^+(\nu)}))$;
     \item
-      \label{lem:K:c}
+      \label{lem:PSKc}
       for each $t\geq 0$, $ P_t^\beta f(x) = \phi(x) \nu(f) O(\sup_{x\in E, f\in L_1^+(\nu)})$.
     \end{enumerate}
-    Then for each $f\in \mathcal B(E, (0,\infty])$ the followings hold:
+    Then for each $f\in \mathcal B(E, [0,\infty])$ the followings hold:
     \begin{enumerate}
     \item 
-      \label{lem:K:1} 
+      \label{lem:PSK1} 
       $V_tf = o(\limsup_{t\to \infty} \sup_{x\in E})$;
     \item 
-      \label{lem:K:2}
+      \label{lem:PSK2}
       for each $s\geq 0$, we have $\nu(V_{t+s}f) = e^{\lambda s} \nu(V_tf) (1+o(\limsup_{t\to \infty}))$.
     \item 
-      \label{lem:K:3}
-      $ (\phi^{-1} \cdot V_tf)(x) = \nu(V_tf) \big( 1+ o(\limsup_{t\to \infty} \sup_{x\in E}) \big)$
+      \label{lem:PSK3}
+      $ (\phi^{-1} \cdot V_tf)(x) = \nu(V_tf) ( 1+ o(\limsup_{t\to \infty} \sup_{x\in E}) )$
     \end{enumerate}
   \end{lem}
 
-% ***** Proof of Lemma lem:K
-  \begin{proof}
-    {\bf TBD, almost proved in the previous version under the IU assumption.}
-  \end{proof}
-% ***** Lemma (Y)aglom: definition of (Ga)mma
-  \begin{lem}[Under the condition of Lemma \ref{lem:K}]
-    \label{lem:Y:Ga}
-    $\mathbf P_\mu(\|X_t\| > 0)>0$ for each $t\geq 0$ and $\mu \in \mathcal M_f(E)\setminus \{0\}$.
+% ***** (N)on-presistency
+  \begin{lem}[$\Delta$]
+    \label{lem:PSN}
+    $\mathbf P_\mu(\|X_t\| > 0)\in (0, 1)$ for each $t > 0$ and $\mu \in \mathcal M_f(E)\setminus \{0\}$.
   \end{lem}
-% ***** Proof of Lemma lem:Y:Ga  
+  
+% ***** Proof of lem:PSN  
   \begin{proof}
-    For each $t\geq 0$, since $\mathbb P_\nu[X_t(\phi)] = \nu(P_t^\beta \phi) = e^{\lambda t} > 0$, we have the desired result for $\mathbb P_\nu$.
-    {\bf (We still need to show this for all $\mathbb P_\mu$.)}
+    For each $t\geq 0$ and $\mu \in \mathcal M_f(E)\setminus \{0\}$, since $\phi$ is strictly positive, we have $\mathbb P_\mu[X_t(\phi)] = \mu(P_t^\beta \phi) = e^{\lambda t} \mu(\phi) > 0$. 
+    Then the desired result follows.  
+    {\bf (We still need to show the non-presistence)}
   \end{proof}
 
-% *** Concave functions
-\subsection{Concave functions}
-% ***** Lemma: (C)onvexity of the Laplace exponents
-\begin{lem}
-  \label{lem:C}
-  Suppose that $\{Z; P\}$ is a non-degenerate $[0,\infty]$-valued random variable. 
-  Write $L(u):= - \log P[e^{- u Z}]$ with $u \in (0,\infty)$, then $L$ is a concave function.
-\end{lem} 
-% ***** Proof of Lemma C
-\begin{proof}
-	It can be verified that
-  \begin{align}
-    \frac{\partial L(u)}{\partial u} = P[e^{-u Z}]^{-1} P[Ze^{- u Z}]
-    , \quad u > 0.
-  \end{align}
-  It can also be verified that
-  \begin{align}
-    & \frac{\partial^2 L(u)}{\partial u^2}
-    = P[e^{-uZ}]^{-2}\Big( \frac{\partial P[Ze^{-uZ}]}{\partial u} \cdot P[e^{-uZ}] - P[Ze^{-uZ}] \cdot \frac{\partial P[e^{-uZ}]}{\partial u}\Big) \\
-    & = - \frac{P[Z^2 e^{-uZ}]}{P[e^{-uZ}]} + \frac{P[Ze^{-uZ}]^2}{P[e^{-uZ}]^2} \\
-    & = Q^{(u)}[Z]^2 - Q^{(u)}[Z^2] 
-      \leq 0
-      , \quad u \in (0,\infty).
-  \end{align}
-  Here, for each $u$, the probability measure $Q^{(u)}$ is given by $dQ^{(u)}:= \frac{e^{-uZ}}{P[e^{-uZ}]} dP$; and in the last step, we used Jason's inequality.
-\end{proof}
-% ***** Lemma that (Q) is concave
-\begin{lem}
-	\label{lem:Q}
-  Suppose that $g(u)$ is a concave function on $u\in (0,\infty)$, then so is $q(u):= 1- e^{-g(u)}$.
-\end{lem}
-\begin{proof}
-For each $u,v \in (0,\infty)$ and $r \in [0,1]$, writing $\bar r = 1-r$, we have
-\begin{align}
-	&q(ru+\bar r v) 
-  = 1 - e^{- g(ru + \bar r v)}
-  \geq 1 - e^{- \big( r g(u) + \bar r g(v)\big)} \\
-  & \geq r(1- e^{- g(u)}) + \bar r (1 - e^{- g(v)})
-    = rq(u) + \bar r q(v).
-    \qedhere
-\end{align}	
-\end{proof}
-% ** Proof of the Main results
+% ** Proof of the (M)ain results
 \section{Proof of the main results.}
 % *** Proof of Theorem (Y)aglom
-\subsection{Proof of Theorem \ref{thm:Y}}
-% **** Proof of Theorem (Y)aglom by admitting Lemma 
-\begin{proof}[Proof of Theorem \ref{thm:Y} by admitting Lemma \ref{lem:Y:Gt} and \ref{lem:Y:Gs}]
+\subsection{Proof of Yaglom's theorem}
+\label{sec:MY}
+% **** Proof of Thm:IRY 
+\begin{proof}[Proof of Theorem \ref{thm:IRY}]
 
-Thanks to Lemma \ref{lem:Y:Ga}, we can define a family of $[0,\infty]$-valued functionals $(\Gamma_t)_{t\geq 0}$ on $\mathcal B(E, (0,\infty])$ such that
+% ***** \Gamma_t and G^t
+Thanks to Lemma \ref{lem:PSN}, we can define a family of $[0,\infty]$-valued functionals $(\Gamma_t)_{t\geq 0}$ on $\mathcal B(E, [0,\infty])$ such that
 \begin{align}
-  e^{-\Gamma_t f}:= \mathbf P_{\nu}\big[e^{- X_t(f)}\big| \|X_t\| > 0\big], 
-  \quad f\in \mathcal B(E,(0,\infty]), t \geq 0.
+  e^{-\Gamma_t f}
+  := \mathbf P_{\nu}[e^{- X_t(f)}| \|X_t\| > 0], 
+  \quad f\in \mathcal B(E,[0,\infty]), t \geq 0.
 \end{align}
-% ***** Lemma (Y)aglom: definition of (Gt) 
-\begin{lem}[Under the condition of Lemma \ref{lem:K}]
-  \label{lem:Y:Gt}
-  For each increasing time sequence $\mathbf t:= (t_n)_{n\in \mathbb N}$ with $ t_n \uparrow \infty$, we have that $G^{\mathbf t}(\infty \mathbf 1_E) = \infty$ and that 
+For each unbounded increasing time sequence $\mathbf t:= (t_n)_{n\in \mathbb N}$, define
+\begin{align}
+  G^{\mathbf t}f 
+  := \liminf_{n\to \infty} \Gamma_{(t_n)}f,
+  \quad f\in \mathcal B(E, (0,\infty]).
+\end{align}
+
+% ***** Step 1. 
+\emph{Step 1.}
+We show that for each unbounded increasing time sequence $\mathbf t:= (t_n)_{n\in \mathbb N}$, $G^{\mathbf t}$ is a $[0,\infty]$-valued monotone concave functional on $\mathcal B(E,[0,\infty])$ satisfying that $G^{\mathbf t}(\infty \mathbf 1_E) = \infty$ and that
+\begin{align}
+  \label{eq:MY1}
+  1 - e^{- G^{\mathbf t}V_sf} 
+  = e^{s\lambda} (1- e^{- G^{\mathbf t} f}),
+  \quad s \geq 0, f \in \mathcal B(E, [0,\infty]).
+\end{align}
+Here, we say a $[0,\infty]$-valued functional $A$ defined on $\mathcal B(E,[0,\infty])$ is \emph{monotone concave} if 
+\begin{enumerate}
+\item
+  $f\leq g$ in $\mathcal B(E,[0,\infty])$ implies $Af\leq Ag$;
+\item
+  for each $f\in \mathcal B(E,[0,\infty])$ with $Af<\infty$, function $u\mapsto A(uf)$ is concave on $[0, 1]$.  
+\end{enumerate}
+
+In this step, we fix an unbounded increasing time sequence $\mathbf t = (t_n)_{n\in \mathbb N}$, and observe that since $(\Gamma_t)_{t\geq 0}$ are $[0,\infty]$-valued, so is $G^{\mathbf t}$. 
+Also, from $\Gamma_t(\infty \mathbf 1_E) = \infty$ for each $t\geq 0$ we have that $G^{\mathbf t}(\infty \mathbf 1_E) = \infty$.
+
+We now claim that for each $t\geq 0$, $f\in \mathcal B(E,[0,1])$, $u,v \in [0,\infty)$, $r\in [0,1]$ and $\bar r = 1 - r$, it holds that
+\begin{align}
+  \label{eq:MY1.5}
+\Gamma_t((ru+\bar r v)f) 
+ \geq r \Gamma_t (uf) + \bar r \Gamma_t (vf).
+\end{align}
+To see this, we fix $t\geq 0$, $f\in \mathcal B(E,[0,1])$ and observe from Lemma \ref{lem:ACP} that the desired \eqref{eq:MY1.5} is trivial provided $\Gamma_t(f) = - \log \mathbb P_\nu[e^{-X_t(f)}|\|X_t\|>0]< \infty$. 
+On the other hand, if $\Gamma_t(f) = - \log \mathbb P_\nu[e^{-X_t(f)}|\|X_t\|>0] = \infty$ then $X_t(f) = \infty$ almost surely with respect to probability $\mathbb P_\mu(\cdot | \|X_t\|>0)$. 
+Therefore in this case, $\Gamma_t(0\cdot f) = 0$ and $\Gamma_t(uf) = \infty$ for each $u > 0$. 
+The desired result \eqref{eq:MY1.5} also follows.
+
+Using the above claim, we can verify that $G^\mathbf t$ is monotone concave.
+In fact, for each $f \leq g$ in $\mathcal B(E,[0,\infty])$, we have
+\(	
+G^{\mathbf t} f = \liminf_{n\to \infty} \Gamma_{(t_n)} f
+  \leq \liminf_{n\to \infty} \Gamma_{(t_n)} g
+  = G^{\mathbf t} g.
+  \)
+On the other hand, for each $u,v \in [0,\infty)$, $f\in \mathcal B(E,[0,\infty])$, $r \in [0,1]$ and $\bar r = 1 - r$, we have
+\begin{align}
+	& G^{\mathbf t}((ru + \bar rv)f)
+   = \liminf_{n \to \infty} \Gamma_{(t_n)}((ru + \bar rv)f)
+   \geq \liminf_{n\to \infty} (r\Gamma_{(t_n)} (uf) + \bar r\Gamma_{(t_n)}(vf)) \\
+  & \geq r (\liminf_{n\to \infty} \Gamma_{(t_n)} (uf)) + \bar r (\liminf_{n\to \infty} \Gamma_{(t_n)}(vf) ) 
+    = r G^{\mathbf t} (uf) + \bar r G^{\mathbf t}(vf).
+\end{align}
+
+  We still need to verify that \eqref{eq:MY1} is valid.
+  In fact, if $f\equiv 0$ then it can be verified that the both sides of \eqref{eq:MY1} is $0$.
+  In the rest of this step, we fix an $f\in \mathcal B(E,[0,\infty])\setminus \{0\}$.
+  Note that for each $t\geq 0$, $\{X_t(f);\mathbb P_\nu\}$ is a non-degenerate non-negative random variable since $\mathbb P_\nu[X_t(f)] = \nu(P_t^\beta f) = e^{\lambda t}\nu(f)>0$. 
+  Therefore from $e^{-\nu(V_tf)} = \mathbb P_\nu[e^{-X_t(f)}] < 1$ we know that $\nu(V_tf) \not\equiv 0$ for each $t\geq 0$.  
+  Notice that
   \begin{align}
-    1 - e^{- G^{\mathbf t}V_sf} 
-    = e^{s\lambda} \big(1- e^{- G^{\mathbf t} f}\big),
-    \quad s \geq 0, f \in \mathcal B(E, (0,\infty])
+    \label{eq:MY2}
+    & 1 - e^{- \Gamma_t f} 
+    = \mathbf P_\nu [ 1 - e^{-X_t(f)} | \|X_t\|> 0] \\
+    & = \frac{ \mathbf P_\nu [ 1 - e^{- X_t(f)}]}{ \mathbf P_\nu (\|X_t\| > 0)}
+    = \frac{ 1 - e^{- \nu(V_tf)} }{ 1 - e^{- \nu(v_t)}},
+    \quad t \geq 0.
   \end{align}
-  where $G^{\mathbf t}$ is a $[0,\infty]$-valued monotone concave functional on $\mathcal B(E,(0,\infty])$ given by
+  Therefore,
   \begin{align}
-    G^{\mathbf t}f 
-    := \liminf_{n\to \infty} \Gamma_{(t_n)}f,
-    \quad f\in \mathcal B(E, (0,\infty]).
+    & 1 - e^{- \Gamma_t V_s f}
+      = \frac{ 1 - e^{- \nu(V_{t+s} f)} }{ 1 - e^{- \nu(v_t)}}
+     = \frac{ 1 - e^{- \nu(V_{t+s} f)} }{ 1 - e^{- \nu(V_tf)}} \frac{ 1 - e^{ - \nu(V_tf)}}{ 1 - e^{- \nu(v_t)}} \\
+    & = \frac{ 1 - e^{- \nu(V_{t+s} f)} }{ 1 - e^{- \nu(V_tf)}} ( 1 - e^{- \Gamma_t f})
+      , \quad t\geq 0, s \geq 0.
   \end{align}
-  Here, we say a functional $A$ defined on $\mathcal B(E,(0,\infty])$ is monotone if $f\leq g$ in $\mathcal B(E,(0,\infty])$ implies that $Af\leq Ag$; say $A$ is concave if for each $f\in \mathcal B(E,(0,\infty])$ map $u\mapsto A(uf)$ is concave in $u \in (0, \infty)$.  
-\end{lem}
-% ***** Lemma (Y)aglom: are G^t are (G)-(s)tar
-\begin{lem}[Under the condition of Lemma \ref{lem:K} and \ref{lem:Y:Gs:Q}]
-  \label{lem:Y:Gs}
-  Suppose that $G^*$ is a $[0,\infty]$-valued monotone concave functional on $\mathcal B(E,(0,\infty])$ satisfying that $G^*(\infty \mathbf 1_E) = \infty$ and that 
+  Thus,
   \begin{align}
-    1 - e^{- G^* V_sf} = e^{s\lambda} \big(1- e^{- G^* f}\big),
-    \quad s \geq 0, f \in \mathcal B(E, (0,\infty]).
+    & 1 - e^{- G^{\mathbf t} V_s f}
+      = \liminf_{n\to \infty} ( 1 - e^{- \Gamma_{(t_n)} V_s f})
+      = \liminf_{n\to \infty} \Big(  \frac{ 1 - e^{- \nu(V_{t_n+s}f)}}{ 1 - e^{- \nu(V_{(t_n)}f)}} (1 - e^{- \Gamma_{(t_n)} f}) \Big) \\
+    & = \Big( \lim_{t \to \infty}   \frac{ 1 - e^{- \nu(V_{t+s}f)}}{ 1 - e^{- \nu(V_{t}f)}} \Big) \cdot \liminf_{n\to \infty} (1 - e^{- \Gamma_{(t_n)} f} ) 
+      = e^{s\lambda} (1 - e^{- G^{\mathbf t}f}), \quad s\geq 0.
   \end{align}
-  Then for each time sequence $\mathbf t:= (t_n)_{n\in \mathbb N}$ with $ t_n \uparrow \infty$, we have $G^* = G^{\mathbf t}$.
-\end{lem}
-% ***** .
-From the above two lemmas, using a sub-sub-sequence argument, we have that 
+  Here in the last step, we used Lemma \ref{lem:PSK}.
+
+% ***** Step 2  
+  \emph{Step 2.}
+  We show that if $G^*$ is a $[0,\infty]$-valued monotone concave functional on $\mathcal B(E,[0,\infty])$ satisfying that $G^*(\infty \mathbf 1_E) = \infty$ and that 
+  \begin{align}
+    1 - e^{- G^* V_sf} = e^{s\lambda} (1- e^{- G^* f}),
+    \quad s \geq 0, f \in \mathcal B(E, [0,\infty]),
+  \end{align}
+  then
+  \begin{align}
+    \lim_{t\to \infty} Q_t(u \mathbf 1_E) 
+    = u,
+    \quad u \in [0,1],
+  \end{align}
+  where $(Q_t)_{t\geq 0}$ is a family of $[0,\infty)$-valued functional on $\mathcal B(E,[0,\infty])$ given by
+  \begin{align}
+    Q_tg 
+    := e^{- \lambda t}( 1 - e^{-G^*(gv_t)} ).
+  \end{align}
+
+\emph{Substep 2.1.} We show that for each $u \in [0,1]$, $Q_t(u \mathbf 1_E)$ is non-decreasing in $t\in (0,\infty)$; and therefore we can define $\lim_{t\to \infty} Q_t(u \mathbf 1_E)=:q(u)\in [0,\infty)$.
+In fact, for each $s,t> 0$ and $x\in E$, since $\mathbb P_{\delta_x} [e^{-X_s (v_t)}] = e^{- (V_s v_t) (x)} = e^{-v_{t+s}(x)} = \mathbb P_{\delta_x}(\|X_{t+s}\| = 0) \in (0, 1)$ we have that $\{X_s(v_t); \mathbb P_{\delta_x}\}$ is a non-degenerate random variable.
+Therefore, Lemma \ref{lem:ACP} says that, for each $s,t > 0$ and $x\in E$, $u\mapsto V_s(uv_t)(x)$ is concave on $[0,\infty)$. 
+Therefore, for $u\in [0,1]$, writing $\bar u = 1- u$, we get that
+\begin{align}
+	V_s(uv_t)
+  =V_s((u\cdot 1 + \bar u \cdot 0)v_t) 
+  \geq uV_s(v_t) + \bar u V_s(0\cdot v_t) 
+  = uv_{s+t},
+  \quad s,t > 0.
+\end{align} 
+Using this, we have the following: 
+\begin{align}
+  & Q_{t+s}(u\mathbf 1_E) 
+    = e^{- \lambda (t+s)} ( 1-e^{-G^*(uv_{t+s})} ) 
+  \leq e^{- \lambda(t+s)}( 1-e^{-G^*[V_s(uv_t)]} ) \\
+  & = e^{-\lambda t}( 1-e^{-G^*(uv_t)} )
+    = Q_t(u\mathbf 1_E)
+  , \quad s,t > 0, u \in [0,1],
+\end{align}
+as required in this substep.
+In particular, 
+
+\emph{Substep 2.2.}
+We show that $q$ is non-decreasing and concave on $[0,1]$.
+In fact, from $G^*(\infty \mathbf 1_E) = \infty$ and $V_t(\infty \mathbf 1_E) = v_t$ we have that
+\begin{align}
+	Q_t(\mathbf 1_E) = e^{- \lambda t} ( 1-e^{-G^*v_t} )
+  = e^{- \lambda t} e^{\lambda t}( 1-e^{-G^*(\infty\mathbf 1_E)} )
+  = 1,
+  \quad t\geq 0.
+\end{align}
+This says that $q(1) = 1$, and that $G^*v_t < \infty$ for each $t>0$. 
+Therefore, from the condition that $G^*$ is monotone concave, we have that for each $t>0$, map $u \mapsto G^*(uv_t)$ is non-decreasing and concave on $[0,1]$.
+From Lemma \ref{lem:ACE} we can verify that, for each $t> 0$, $u \mapsto Q_t(u \mathbf 1_E)$ is non-negative, non-decreasing and concave on $[0,1]$.
+Finally, using Lemma \ref{lem:ACL} and Substep 2.1, we get the desired result in this substep. 
+
+\emph{Substep 2.3.}
+We show that $q(u) = u$ for each $u \in [0,1]$.
+From Lemma \ref{lem:PSK}\eqref{lem:PSK2} and \ref{lem:PSK}\eqref{lem:PSK3} we have that
+\begin{align}
+	& e^{\lambda s}(\phi^{-1}v_t)(x) 
+  = e^{\lambda s}\nu(v_{t})(1+o(\limsup_{t\to \infty}\sup_{x\in E})) 
+   =\nu(v_{t+s}) (1+o(\limsup_{t\to \infty}\sup_{x\in E})) \\
+  & = (\phi^{-1}v_{t+s})(x) (1+o(\limsup_{t\to \infty} \sup_{x\in E}))
+    , \quad s\geq 0.
+\end{align}
+Therefore, for each $s\geq 0$ and $\epsilon >0$ there exists $t>0$ large enough such that
+\begin{align}
+	1-\epsilon\leq \frac{e^{\lambda s}v_t(x)}{v_{t+s}(x)} 
+  \leq 1+\epsilon,
+  \quad x\in E.
+\end{align}
+From this we can verify that for each $s\geq 0$ and $\epsilon >0$ there exists $t>0$ large enough such that
+\begin{align}
+	& Q_{t+s}[ (1-\epsilon)u\mathbf 1_E ]
+   = e^{-\lambda(t+s)}( 1-e^{-G^*[(1-\epsilon)uv_{t+s}]} ) \\
+  & \leq e^{-\lambda t} e^{-\lambda s}( 1- e^{-G^*(ue^{\lambda s}v_t)} )
+    = e^{-\lambda s}Q_t(ue^{\lambda s} \mathbf 1_E),
+    \quad u \in [0,\infty),
+\end{align}
+and similarly that
+\begin{align}
+	e^{-\lambda s}Q_t[ue^{\lambda s}\mathbf 1_E] 
+  \leq Q_{t+s}[(1+\epsilon)u\mathbf 1_E].
+\end{align}
+Now taking $t\to \infty$ in the above two inequality, we get from substep 2.1 that, for each $s\geq 0, u\in (0,1), \epsilon > 0$ with $0 < (1 - \epsilon) u < (1+\epsilon)u < 1$, we have
+ \begin{align}
+   q((1-\epsilon)u)\leq e^{-\lambda s}q(u e^{\lambda s}) \leq q((1+\epsilon)u).
+ \end{align}
+ From substep 2.2 and Lemma \ref{lem:ACR} we have that $q$ is continuous on $(0,1]$. 
+Taking $\epsilon \to 0$ and then $u \uparrow 1$, we get that 
+\begin{align}
+	1
+  =q(1) 
+  = e^{- \lambda s} q(e^{\lambda s}), 
+  \quad s \geq 0. 
+\end{align} 
+This says that $q(u) = u$ on $(0,1]$.
+Finally note that $q$ is non-negative and non-decreasing, we also have $q(0) = 0$.
+
+% ***** Step 3
+\emph{Step 3.} 
+  We show that if $G^*$ is a $[0,\infty]$-valued monotone concave functional on $\mathcal B(E,[0,\infty])$ satisfying that $G^*(\infty \mathbf 1_E) = \infty$ and that 
+  \begin{align}
+    1 - e^{- G^* V_sf} = e^{s\lambda} (1- e^{- G^* f}),
+    \quad s \geq 0, f \in \mathcal B(E, [0,\infty]),
+  \end{align}
+  then for each unbounded increasing time sequence $\mathbf t:= (t_n)_{n\in \mathbb N}$, we have $G^* = G^{\mathbf t}$.
+  In fact, fixing an arbitrary unbounded increasing time sequence $\mathbf t=(t_n)_{n\in \mathbb N}$ and an arbitrary function $f\in \mathcal B(E,[0,\infty])$, we only have to proof that $G^* f = G^{\mathbf t}f$.
+From the definition of $G^{\mathbf t}f$, we can chose a subsequence $\mathbf t'=(t'_n)_{n \in \mathbb N}$ of $\mathbf t$ such that $ 1 - e^{- G^{\mathbf t}f} =  ( 1 - e^{-\Gamma_{( t_n')} f} ) \cdot (1+ o(\limsup_{n\to \infty})). $
+Therefore, from \eqref{eq:MY2} and  Lemma \ref{lem:PSK} we have
+\begin{align}
+  & 1 - e^{- G^{\mathbf t}f}
+  = \frac{1 - e^{- \nu( V_{(t_n')}f)}}{1- e^{- \nu(v_{(t_n')})}}  (1+o(\limsup_{n\to \infty})) \\
+  & = \frac{\nu (V_{(t_n')} f)}{\nu(v_{(t_n')})}(1+o(\limsup_{n\to \infty})) 
+  =  \frac{V_{(t_n')}f(x)}{v_{(t_n')}(x)} ( 1 + o(\limsup_{n \to \infty} \sup_{x\in E})).
+\end{align}
+Fix an arbitrary $\epsilon > 0$. 
+From above, there exists $n$ large enough such that
+\begin{align}
+  (1-\epsilon) (1 - e^{- G^{\mathbf t}f} )
+  \leq \frac{V_{(t_n')}f(x)}{v_{(t'_n)}(x)}
+  \leq (1+\epsilon) ( 1 - e^{- G^{\mathbf t}f} ) \wedge 1,
+  \quad x\in E.
+\end{align}
+This implies that for $n$ large enough 
+\begin{align}
+  \label{eq:Y:Gs:1}
+  & Q_{(t'_n)}[ (1-\epsilon) (1-e^{-G^{\mathbf t}f})\mathbf 1_E ]
+    \leq Q_{(t'_n)}\Big( \frac{V_{(t'_n)}f}{v_{(t'_n)}} \Big) 
+  \\ &  \leq Q_{(t'_n)}[ ( (1+\epsilon) (1-e^{-G^{\mathbf t}f}) \wedge 1) \mathbf 1_E ],
+\end{align}
+where $(Q_t)_{t\geq 0}$ is given by Step 2.
+Note from the definition of $(Q_t)_{t\geq 0}$ and $G^*$, we always have that
+\begin{align}
+	Q_t \Big( \frac{V_tf}{v_t}  \Big) 
+  = e^{- \lambda t}( 1 - e^{- G^*V_tf}  )
+  = 1- e^{- G^* f}.
+\end{align}	
+Therefore, taking $n \to \infty$ in \eqref{eq:Y:Gs:1}, from Step 2 we get that
+\begin{align}
+	(1 - \epsilon) (1 - e^{- G^{\mathbf t}f})
+  \leq 1 - e^{- G^* f} 
+  \leq (1 + \epsilon) (1 - e^{- G^{\mathbf t} f})\wedge 1.
+\end{align}
+Taking $\epsilon \to 0$, we get the desired result.
+
+% **** Step 4.
+\emph{Step 4.}
+From the step 1 and 3, using a sub-sub-sequence argument, we have that 
 \begin{align}
   \label{eq:Y:1}
 	Gf
-  := \lim_{t\to \infty} \Gamma_tf, \quad f\in \mathcal B(E,(0,\infty])
+  := \lim_{t\to \infty} \Gamma_tf, \quad f\in \mathcal B(E,[0,\infty])
 \end{align}
-is well-defined, and that $G$ is the unique $[0,\infty]$-valued monotone concave functional on $\mathcal B(E,(0,\infty])$ satisfying that $G(\infty \mathbf 1_E) = \infty$ and that
+is well-defined, and that $G$ is the unique $[0,\infty]$-valued monotone concave functional on $\mathcal B(E,[0,\infty])$ satisfying that $G(\infty \mathbf 1_E) = \infty$ and that
 \begin{align}
-  1 - e^{- G V_sf} = e^{s\lambda} \big(1- e^{- G f}\big),
-  \quad s \geq 0, f \in \mathcal B(E, (0,\infty]).
+  1 - e^{- G V_sf} = e^{s\lambda} (1- e^{- G f}),
+  \quad s \geq 0, f \in \mathcal B(E, [0,\infty]).
 \end{align}
+In this step, we show that for each sequence of functions $(g_{n})_{n\in \mathbb N}$ in $\mathcal B(E, [0,\infty])$ such that $\lim_{n \to \infty} g_n = 0$ bounded pointwisely, we have $\lim_{n \to \infty} G g_n = 0$.
 Taking $f = \infty$ in the above equation, we have that $1 - e^{- Gv_s} = e^{\lambda s}$ for each $s\geq 0$.
 
-We now claim that for each sequence of functions $(g_{n})_{n\in \mathbb N}$ in $\mathcal B(E, (0,\infty])$ such that $\lim_{n \to \infty} g_n = 0$ bounded pointwisely, we have $\lim_{n \to \infty} G g_n = 0$.
-In fact, fixing such sequence $(g_{n})_{n\in \mathbb N}$, from Lemma \ref{lem:K}\ref{lem:K:c}, there exists a constant $C > 0$ such that 
+In fact, fixing such sequence $(g_{n})_{n\in \mathbb N}$, from Lemma \ref{lem:PSK}\ref{lem:PSKc}, there exists a constant $C > 0$ such that 
 \begin{align}
 	V_1 g_n(x) \leq P^\beta_1 g_n(x) \leq C \phi(x) \nu(g_n),
   \quad n \in \mathbb N, x\in E.
 \end{align}
 Fixing this $C>0$, from the bounded convergence theorem, we have $\lim_{n\to \infty}C \nu(g_n) =0$.
 {\bf (Here, we should be able to show that map $t \mapsto \nu(v_t)$ is a strictly decreasing 1-1 map from $(0,\infty)$ to $(0,\infty)$.)}
-Denote by $R:(0,\infty) \to (0,\infty)$ as the inverse of the map $t \mapsto \nu(v_t)$, then it is a strictly decreasing $1-1$ map from $(0,\infty)$ to $(0,\infty)$. 
+Denote by $R:(0,\infty) \to (0,\infty)$ as the inverse of the map $t \mapsto \nu(v_t)$ on $(0,\infty)$, then $R$ is a strictly decreasing $1-1$ map from $(0,\infty)$ to $(0,\infty)$. 
 Define $t_n := R(2C\nu(g_n))> 0$.
 Then we have that $\lim_{n\to \infty} t_n = \infty$ and that 
 \begin{align}
 	V_1 g_n(x) \leq \frac{1}{2} \phi(x) \nu(v_{(t_n)}), 
 \quad n \in \mathbb N, x\in E.
 \end{align}
-Now, taking $f = \infty$ and $t = t_n$ in Lemma \ref{lem:K}\eqref{lem:K:3} we get that
+Now, taking $f = \infty$ and $t = t_n$ in Lemma \ref{lem:PSK}\eqref{lem:PSK3} we get that
 \begin{align}
  (\phi^{-1} \cdot v_{(t_n)})(x) 
-  = \nu(v_{(t_n)}) \big( 1+ o(\limsup_{n\to \infty} \sup_{x\in E}) \big).
+  = \nu(v_{(t_n)}) ( 1+ o(\limsup_{n\to \infty} \sup_{x\in E}) ).
 \end{align}
 In particular, we have that, for $n$ large enough,
 \begin{align}
@@ -869,221 +562,170 @@ This implies that
   & = e^{- \lambda} e^{\lambda t_n},
   \quad \text{$n$ large enough.}
 \end{align} 
-Recall that $\lambda < 0$, we get the desired claim.
+Taking $n\to \infty$, we get the desired claim.
 
-Now from \cite[Proposition 1.19]{Li2011MeasureValued}, \eqref{eq:Y:1} and the above claim, we have that there exists a unique probability $\mathbf P$ on $\mathcal M_f(E)$ such that 
+\emph{Final step.}
+Now from \cite[Proposition 1.19]{Li2011MeasureValued} and step 4, we have that there exists a unique probability $\mathbf P$ on $\mathcal M_f(E)$ such that 
 \begin{align}
   e^{-Gf}
   = \int_{\mathcal M_f(E)} e^{- \mu(f)} \mathbf P(d\mu)
-  , \quad f\in C_b(E, (0,\infty)),
+  , \quad f\in C_b (E, [0,\infty)),
 \end{align}
 and that
 \begin{align}
-	\mathbb P_{\nu}\big(X_t \in \cdot \big| \|X_t\|>0 \big) 
+	\mathbb P_{\nu}(X_t \in \cdot | \|X_t\|>0 ) 
   \xrightarrow[t\to \infty]{law} \mathbf P(\cdot).
 \end{align}
-({\bf We still need to show for each $\mathbb P_\mu$ the Yaglom law exists.})
+From Lemma \ref{lem:PSK3}.(\ref{lem:PSK1}) and (\ref{lem:PSK3}) we have that for each $\mu \in \mathcal M_f(E)\setminus \{0\}$ and $f \in \mathcal B(E,[0,\infty])$ that 
+\begin{align}
+	& \mu(V_tf) = \nu(V_tf) \mu\Big(\phi(1+o(\limsup_{t\to \infty}\sup_{x\in E})) \Big)
+   = \nu(V_tf) \mu(\phi)(1+o(\limsup_{t\to \infty}))
+  \\ & = o(\limsup_{t\to \infty}).
+\end{align}
+Therefore we have that for each $\mu \in \mathcal M_f(E)\setminus\{0\}$ and $f\in \mathcal B(E,[0,\infty])$, 
+\begin{align}
+  &\mathbb P_\mu[1 - e^{-X_t(f)}|\|X_t\|>0]
+  = \frac{1 - e^{- \mu(V_tf)}}{1 - e^{-\mu(v_t)}}
+  = \frac{\mu(V_tf)}{\mu(v_t)} (1+o(\limsup_{t\to \infty}))
+  \\&= \frac{\nu(V_tf)}{\nu(v_t)}(1+o(\limsup_{t\to \infty})) 
+  = \mathbb P_\nu [1 - e^{-X_t(f)}|\|X_t\|>0](1+o(\limsup_{t\to \infty}))
+  \\ & = (1 - e^{-Gf}) (1+o(\limsup_{t\to \infty})).
+\end{align}
+Therefore we have that for each $\mu \in \mathcal M_f(E)\setminus\{0\}$,
+\[
+  \mathbb P_\mu(X_t \in \cdot | \|X_t\|>0)
+  \xrightarrow[t\to \infty]{law} \mathbf P(\cdot).
+  \qedhere
+\]
 \end{proof}
-% **** Proof of Lemma Y:Gt
-\begin{proof}[Proof of Lemma \ref{lem:Y:Gt}]
-  From $\Gamma_t(\infty \mathbf 1_E) = \infty$ for each $t\geq 0$, we have that $G^{\mathbf t}(\infty \mathbf 1_E) = \infty$.
-  Notice that
-  \begin{align}
-    \label{eq:Y:Gt:1}
-    & 1 - e^{- \Gamma_t f} 
-    = \mathbf P_\nu \big[ 1 - e^{-X_t(f)} \big| \|X_t\|> 0\big] \\
-    & = \frac{ \mathbf P_\nu [ 1 - e^{- X_t(f)}]}{ \mathbf P_\nu (\|X_t\| > 0)}
-    = \frac{ 1 - e^{- \nu(V_tf)} }{ 1 - e^{- \nu(v_t)}},
-    \quad t \geq 0, f \in \mathcal B(E,[0,\infty]).
-  \end{align}
-  Therefore,
-  \begin{align}
-    & 1 - e^{- \Gamma_t V_s f}
-      = \frac{ 1 - e^{- \nu(V_{t+s} f)} }{ 1 - e^{- \nu(v_t)}}
-     = \frac{ 1 - e^{- \nu(V_{t+s} f)} }{ 1 - e^{- \nu(V_tf)}} \frac{ 1 - e^{ - \nu(V_tf)}}{ 1 - e^{- \nu(v_t)}} \\
-    & = \frac{ 1 - e^{- \nu(V_{t+s} f)} }{ 1 - e^{- \nu(V_tf)}} ( 1 - e^{- \Gamma_t f})
-      , \quad t\geq 0, s \geq 0, f\in \mathcal B(E, (0,\infty]).
-  \end{align}
-{\bf (Here, we need to show that $\nu(V_tf) > 0$ for each $t\geq 0$ and $f\in \mathcal B(E,(0,\infty])$.)}
-  Thus,
-  \begin{align}
-    & 1 - e^{- G^{\mathbf t} V_s f}
-      = \liminf_{n\to \infty} ( 1 - e^{- \Gamma_{(t_n)} V_s f})
-      = \liminf_{n\to \infty} \Big(  \frac{ 1 - e^{- \nu(V_{t_n+s}f)}}{ 1 - e^{- \nu(V_{(t_n)}f)}} (1 - e^{- \Gamma_{(t_n)} f}) \Big) \\
-    & = \Big( \lim_{t \to \infty}   \frac{ 1 - e^{- \nu(V_{t+s}f)}}{ 1 - e^{- \nu(V_{t}f)}} \Big) \cdot \liminf_{n\to \infty} (1 - e^{- \Gamma_{(t_n)} f} ) \\
-    &  = e^{s\lambda} (1 - e^{- G^{\mathbf t}f})
-      , \quad s\geq 0, f\in \mathcal B(E,(0,\infty]).
-  \end{align}
-  Here in the last step, we used Lemma \ref{lem:K}.
 
-  We still need to verify that $G^{\mathbf t}$ is monotone and concave.
-  Note that, for each $t\geq 0$, from Lemma \ref{lem:C}, $\Gamma_t$ is monotone and concave. 
-  Therefore, for each $f \leq g$ in $\mathcal B(E,(0,\infty])$, we have
-\begin{align}
-	G^{\mathbf t} f = \liminf_{n\to \infty} \Gamma_{(t_n)} f
-  \leq \liminf_{n\to \infty} \Gamma_{(t_n)} g
-  = G^{\mathbf t} g.
-\end{align}
-This says that $G^{\mathbf t}$ is monotone. 
-Similarly, for each $u,v \in (0,\infty)$, $f\in \mathcal B(E,(0,\infty])$ and $r \in [0,1]$, writing $\bar r = 1 - r$, we have that
-\begin{align}
-	& G^{\mathbf t}\big((ru + \bar rv)f\big)
-  = \liminf_{n \to \infty} \Gamma_{(t_n)}\big((ru + \bar rv)f\big)\\
-  & \geq \liminf_{n\to \infty} \big(r\Gamma_{(t_n)} (uf) + \bar r\Gamma_{(t_n)}(vf)\big) \\
- & \geq r \big(\liminf_{n\to \infty} \Gamma_{(t_n)} (uf)\big) + \bar r \big(\liminf_{n\to \infty} \Gamma_{(t_n)}(vf) \big) \\
-  & = r G^{\mathbf t} (uf) + \bar r G^{\mathbf t}(vf).
-\qedhere
-\end{align} 
-\end{proof}
-% **** Proof of Lem:Y:Gs
-\begin{proof}[Proof of Lemma \ref{lem:Y:Gs} by admitting Lemma \ref{lem:Y:Gs:Q}]
-% ***** Lemma Lem:Y:Gs:Q
-\begin{lem}
-  \label{lem:Y:Gs:Q}
-Define a family of $[0,\infty]$-valued functionals $(Q_t)_{t\geq 0}$ on $\mathcal B(E,(0,\infty])$ by
-\begin{align}
-	Q_tg 
-  := e^{- \lambda t}\big( 1 - e^{-G^*(gv_t)} \big).
-\end{align}
-Then it holds that
-\begin{align}
-	\lim_{t\to \infty} Q_t(u \mathbf 1_E) 
-  = u,
-  \quad u \in [0,1].
-\end{align}
+% **** Proof of Lemma lem:Y:Gs:Q
+% ** (A)ppendix
+\appendix
+\section{Analytic facts}
+% *** (C)oncave functions with extended values
+\subsection{Concave functions and extended values}
+% **** Extended values 
+In this paper, we often work with the extended non-negative real number system $[0,\infty]$ which consists of the non-negative real line $[0,\infty)$ and an extra point $\infty$. 
+We consider $[0,\infty]$ as the one point compactification of $[0,\infty)$; and therefore, it is a compact Hausdorff space.
+Preserving the original order in $[0,\infty)$, define $x < \infty$ for each $x\in [0,\infty)$.
+We also make the following conventions that 
+\begin{enumerate}
+\item
+$x + \infty = \infty$ for each $x\in [0,\infty]$; 
+\item
+$x \cdot \infty = \infty$ for each $x\in (0,\infty]$;
+\item
+$0 \cdot \infty = 0$; $\frac{1}{\infty} = 0$; $\frac{1}{0} = \infty$.
+\end{enumerate}
+
+% **** Concave functions
+We call $f$ a concave function on a convex subset $C$ of $\mathbb R$ iff $f$ is a $\mathbb R$-valued function on $C$ and that
+\[
+  f(rx+\bar r y) \geq r f(x) + \bar r f(y)
+\]
+for each $x,y \in C$, $r \in [0,1]$ and $\bar r = 1 - r$. 
+
+Some known facts about the concave functions are listed below.
+
+% **** Convex function is (C)ontinuous
+\begin{lem}[{\cite[Corollary 6.3.3.]{Dudley2002Real}}]
+  \label{lem:ACC}
+	If $f$ is a concave function on a convex subset $C$ of $\mathbb R$, then $f$ is continuous on $C^o$.
+ Furthermore, both left and right derivatives of $f$ exist and are finite on $C^o$.
 \end{lem}
 
-% ***** .
-Fix an arbitrary time sequence $\mathbf t=(t_n)_{n\in \mathbb N}$ and an arbitrary function $f\in \mathcal B_b(E)$.
-We only have to proof that $G^* f = G^{\mathbf t}f$.
-From the definition of $G^{\mathbf t}f$, we can chose a subsequence $\mathbf t'=(t'_n)_{n \in \mathbb N}$ of $\mathbf t$ such that $t_n'\uparrow \infty$ and that  $ 1 - e^{- G^{\mathbf t}f} =  \big( 1 - e^{-\Gamma_{( t_n')} f} \big) \cdot \big(1+ o(\limsup_{n \to \infty}  )\big). $
-Therefore, from \eqref{eq:Y:Gt:1} and  Lemma \ref{lem:K} we have
+% **** non-decreasing convex function is continuous on the (R)ight boundary
+\begin{lem}
+  \label{lem:ACR}
+	If $f$ is a non-decreasing concave function on $(a,b]$ where $a<b$ in $\mathbb R$, then $f$ is continuous on $(a,b]$.
+\end{lem}
+
+% **** Proof of Lem:ACR
+\begin{proof}
+From Lemma \ref{lem:ACC} we know that $f$ is continuous on $(a,b)$.
+From the fact that $f$ is non-decreasing, we have $f(b-) = \lim_{x \to b} f(x) \leq f(b)$. 
+So what is left is to proof that $f(b-) \geq f(b)$.
+From the concave property of the function $f$ on $(a,b]$ we know that, for a fixed $c \in (a,b)$,
+\[
+f(rc + \bar r b) 
+\geq r f(c) + \bar r f(b),
+\quad r\in [0,1], \bar r = 1 - r.
+\]
+Taking $r\to 0$, we get that $f(b-)\geq f(b)$.
+\end{proof}
+
+% **** (L)iminf of convex functions is convex
+\begin{lem}
+	\label{lem:ACL}
+  Suppose that $(f_n)_{n \in \mathbb N}$ is a sequence of non-negative concave functions on a convex subset $C$ of $\mathbb R$.
+  Then so is $f:= \liminf_{n\to \infty} f_n$.
+\end{lem}
+
+% **** Proof of lem:ACL
+\begin{proof}
+  Since $(f_n)_{n \in \mathbb N}$ are non-negative, we know $f$ is also a non-negative function.
+  From the fact that
+\(
+  f_n(rx+\bar r y) \geq r f_n(x) + \bar r f_n(y)
+\)
+for each $x,y\in C$, $r\in [0,1]$, $\bar r = 1 - r$ and $n \in \mathbb N$, we can verify that
 \begin{align}
-  & 1 - e^{- G^{\mathbf t}f}
-  = \frac{1 - e^{- \nu( V_{(t_n')}f)}}{1- e^{- \nu(v_{(t_n')})}}  \big(1+o(\limsup_{n\to \infty})\big) \\
-  & = \frac{\nu (V_{(t_n')} f)}{\nu(v_{(t_n')})}\big(1+o(\limsup_{n\to \infty})\big) 
-  =  \frac{V_{(t_n')}f(x)}{v_{(t_n')}(x)} \big( 1 + o(\limsup_{n \to \infty} \sup_{x\in E})\big).
+	& f(rx+ \bar r y) 
+   \geq \liminf_{n\to \infty} (r f_n(x) + \bar r f_n(y))
+   \\ & \geq r (\liminf_{n\to \infty} f_n(x)) + \bar r (\liminf_{n\to \infty} f_n(y)) 
+    = rf(x) + \bar r f(y).
+        \qedhere
 \end{align}
-Fix an arbitrary $\epsilon > 0$. 
-From above, there exists $n$ large enough such that
+\end{proof}
+
+% **** Log-La(P)lac is concave
+\begin{lem}
+  \label{lem:ACP}
+  Suppose that $\{Z; P\}$ is a $[0,\infty]$-valued random variable and that $P(Z < \infty)< \infty$. 
+  Write $L(u):= - \log P[e^{- u Z}]$ with $u \in [0,\infty)$, then $L$ is a concave function on $[0,\infty)$.
+\end{lem} 
+% **** Proof of Lem:ACP
+\begin{proof}
+  Observe that since $P(Z < \infty)< \infty$, we have $L$ is a $[0,\infty)$-valued function on $[0,\infty)$.
+	It can be verified that
+  \begin{align}
+    \frac{\partial L(u)}{\partial u} = P[e^{-u Z}]^{-1} P[Ze^{- u Z}]
+    , \quad u > 0.
+  \end{align}
+  It can also be verified that
+  \begin{align}
+    & \frac{\partial^2 L(u)}{\partial u^2}
+    = P[e^{-uZ}]^{-2}( \frac{\partial P[Ze^{-uZ}]}{\partial u} \cdot P[e^{-uZ}] - P[Ze^{-uZ}] \cdot \frac{\partial P[e^{-uZ}]}{\partial u}) \\
+    & = - \frac{P[Z^2 e^{-uZ}]}{P[e^{-uZ}]} + \frac{P[Ze^{-uZ}]^2}{P[e^{-uZ}]^2} 
+= Q^{(u)}[Z]^2 - Q^{(u)}[Z^2] 
+      \leq 0
+      , \quad u \in (0,\infty).
+  \end{align}
+  Here, for each $u$, the probability measure $Q^{(u)}$ is given by $dQ^{(u)}:= \frac{e^{-uZ}}{P[e^{-uZ}]} dP$; and in the last step, we used Jason's inequality.
+  All these says that $L$ is concave on $(0,\infty)$.
+  Finally, noticing that $L$ is continuous on $0$, we complete the proof.
+\end{proof}
+% **** (E)xponential linear transform 
+\begin{lem}
+	\label{lem:ACE}
+  Suppose that $g$ is a concave function on some convex subset $C$ of $\mathbb R$, then so is $q:= 1- e^{-g}$.
+\end{lem}
+
+% **** Proof of lem:ACE
+\begin{proof}
+For each $u,v \in C$ and $r \in [0,1]$, writing $\bar r = 1-r$, we have
 \begin{align}
-  (1-\epsilon) \big(1 - e^{- G^{\mathbf t}f} \big)
-  \leq \frac{V_{(t_n')}f(x)}{v_{(t'_n)}(x)}
-  \leq (1+\epsilon) \big( 1 - e^{- G^{\mathbf t}f} \big),
-  \quad x\in E.
-\end{align}
-This implies that for $n$ large enough 
-\begin{align}
-  \label{eq:Y:Gs:1}
-  & Q_{(t'_n)}\big[ (1-\epsilon) (1-e^{-G^{\mathbf t}f})\mathbf 1_E \big]
-    \leq Q_{(t'_n)}\Big( \frac{V_{(t'_n)}f}{v_{(t'_n)}} \Big) 
-    \leq Q_{(t'_n)}\big[  (1+\epsilon) (1-e^{-G^{\mathbf t}f}) \mathbf 1_E \big].
-\end{align}
-Note from the definition of $(Q_t)_{t\geq 0}$ and $G^*$, we always have that
-\begin{align}
-	Q_t\Big ( \frac{V_tf}{v_t} \Big ) 
-  = e^{- \lambda t}( 1 - e^{- G^*V_tf}  )
-  = 1- e^{- G^* f}.
+	&q(ru+\bar r v) 
+  = 1 - e^{- g(ru + \bar r v)}
+  \geq 1 - e^{- ( r g(u) + \bar r g(v))} \\
+  & \geq r(1- e^{- g(u)}) + \bar r (1 - e^{- g(v)})
+    = rq(u) + \bar r q(v).
+    \qedhere
 \end{align}	
-Therefore, taking $n \to \infty$ in \eqref{eq:Y:Gs:1}, from Lemma \ref{lem:Y:Gs:Q} we get that
-\begin{align}
-	(1 - \epsilon) (1 - e^{- G^{\mathbf t}f})
-  \leq 1 - e^{- G^* f} 
-  \leq (1 + \epsilon) (1 - e^{- G^{\mathbf t} f}).
-\end{align}
-Taking $\epsilon \to 0$, we get the desired result.
 \end{proof}
-% **** Proof of Lemma lem:Y:Gs:Q
-\begin{proof}[Proof of Lemma \ref{lem:Y:Gs:Q}]
-% ***** .
-Note that, for each $s,t\geq 0$ and $x\in E$, $u\mapsto V_s(uv_t)(x)$ is the laplace exponent of random variable $X_s(v_t)$ under probability $\mathbb P_{\delta_x}$.
-({\bf It can be verified that this random variable is non-degenerate.})
-Therefore, Lemma \ref{lem:C} says that, for each $s,t\geq 0$ and $x\in E$, $u\mapsto V_s(uv_t)(x)$ is concave on $[0,\infty)$. 
-Therefore, for $u\in [0,1]$, writing $\bar u = 1- u$, we get that
-\begin{align}
-	V_s(uv_t)
-  =V_s\big((u\cdot 1 + \bar u \cdot 0)v_t\big) 
-  \geq uV_s(v_t) + \bar u V_s(0\cdot v_t) 
-  = uv_{s+t},
-  \quad u\in [0,1], s,t\geq 0.
-\end{align} 
-Using this, we have the following: 
-\begin{align}
-  & Q_{t+s}(u\mathbf 1_E) 
-    = e^{- \lambda (t+s)} \big( 1-e^{-G^*(uv_{t+s})} \big) \\
-  &  \leq e^{- \lambda(t+s)}\big( 1-e^{-G^*[V_s(uv_t)]} \big) \\
-  & = e^{-\lambda t}\big( 1-e^{-G^*(uv_t)} \big)
-    = Q_t(u\mathbf 1_E)
-  , \quad t,s\geq 0, u \in [0,1].
-\end{align}
-Therefore, the following limits are well define:
-\begin{align}
-\label{eq:Y:Gs:Q:1}
-	q(u)
-  := \lim_{t\to \infty} Q_{t}(u \mathbf 1_E) \in [0,\infty),
-  \quad u \in [0,1].
-\end{align}
-In particular, from $G^*(\infty) = \infty$ we have that
-\begin{align}
-	Q_t(\mathbf 1_E) = e^{- \lambda t} \big( 1-e^{-G^*v_t} \big)
-  = e^{- \lambda t} e^{\lambda t}\big( 1-e^{-G^*\infty} \big)
-  = 1,
-\end{align}
-which says that $q(1) = 1$.
 
-We claim that $q$ is continuous on $[0,1]$.
-In fact, from the monotonicity of $G^*$ we have that for each $t>0$, $u \mapsto Q_t(u \mathbf 1_E)$ is non-decreasing. 
-Therefore, $u \mapsto q(u)$ is non-decreasing.
-Also, notice that $G^*$ is a concave functional, so $u \mapsto G^*(u v_t)$ is concave for each $t\geq 0$. 
-This and Lemma \ref{lem:Q} imply that, for each $t\geq 0$, $u \mapsto Q_t(u \mathbf 1_E)$ is concave.
-Therefore, $u \mapsto q(u)$ is concave in $u\in [0,1]$.
-Finally, since {\bf any non-decreasing and concave function must be continuous}, we get the desired claim.
-
-Now, from Lemma \ref{lem:K}\eqref{lem:K:2} and \ref{lem:K}\eqref{lem:K:3} we have that
-\begin{align}
-	& e^{\lambda s}(\phi^{-1}v_t)(x) 
-  = e^{\lambda s}\nu(v_{t})\big(1+o(\limsup_{t\to \infty}\sup_{x\in E})\big) \\
-  & =\nu(v_{t+s}) \big(1+o(\limsup_{t\to \infty}\sup_{x\in E})\big) \\
-  & = (\phi^{-1}v_{t+s})(x) (1+o(\limsup_{t\to \infty} \sup_{x\in E}))
-    , \quad s\geq 0.
-\end{align}
-Therefore, for each $s\geq 0$ and $\epsilon>0$ there exists $t$ large enough such that for each $x\in E$ we have
-\begin{align}
-	1-\epsilon\leq \frac{e^{\lambda s}v_t(x)}{v_{t+s}(x)} 
-  \leq 1+\epsilon,
-\end{align}
-which implies that
-\begin{align}
-	& Q_{t+s}[ (1-\epsilon)u\mathbf 1_E ]
-   = e^{-\lambda(t+s)}( 1-e^{-G^*[(1-\epsilon)uv_{t+s}]} ) \\
-  & \leq e^{-\lambda t} e^{-\lambda s}( 1- e^{-G^*(ue^{\lambda s}v_t)} )
-    = e^{-\lambda s}Q_t(ue^{\lambda s} \mathbf 1_E)
-    , \quad u \in [0,1].
-\end{align}
-and similarly that
-\begin{align}
-	e^{-\lambda s}Q_t[ue^{\lambda s}\mathbf 1_E] 
-  \leq Q_{t+s}[(1+\epsilon)u\mathbf 1_E]
-  , \quad u \in [0,1].
-\end{align}
-Now taking $t\to \infty$ in the above two inequality, we get from \eqref{eq:Y:Gs:Q:1} that, for each $s\geq 0, \epsilon > 0$ and $u \in [0,1]$:
- \begin{align}
-   q((1-\epsilon)u)\leq e^{-\lambda s}q(u e^{\lambda s}) \leq q((1+\epsilon)u \wedge 1).
- \end{align}
-Taking $\epsilon \to 0$, from the previous claim that $q$ is continuous, we get that 
-\begin{align}
-	q(u) 
-  = e^{- \lambda s} q(u e^{\lambda s}), 
-  \quad u \in [0,1], s \geq 0. 
-\end{align} 
-Therefore, recall that $q(1) = 1$, we have
-\begin{align}
-	q(u) 
-  = u
-  , \quad u \in [0,1].
-\end{align}
-\end{proof}
 % * Bibliography
-\bibliographystyle{amsplain}
-\bibliography{../bib/bib.bib}
+\bibliographystyle{plain}
+\bibliography{subyaglom.bib}
 \end{document}
