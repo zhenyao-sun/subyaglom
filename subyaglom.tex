@@ -18,7 +18,7 @@
 \theoremstyle{definition}
 \newtheorem{defi}[thm]{Definition}
 \newtheorem{exa}[thm]{Example}
-\newtheorem{asp}{Assumption}
+\newtheorem{cdt}{Condition}
 \newtheorem{iss}{Issue}
 \newtheorem{rem}[thm]{Remark}
 \newtheorem*{ack}{Acknowledgment}
@@ -83,8 +83,8 @@
 \label{sec:IR}
 % **** Notations
 Denote by $\mathcal B(E,B)$ the collection of all Borel measurable maps from a Borel space $E$ to a measurable space $B$.
-Denote by $\mathcal B_b(E,B)$ the collection of all bounded elements in $\mathcal B(E,B)$.
-Denote by $\mathcal M(E)$ the space of all Borel measures on a Borel space $E$. 
+If $B$ is a metric space, then denote by $\mathcal B_b(E,B)$ the collection of all metrically bounded elements in $\mathcal B(E,B)$.
+Denote by $\mathcal M(E)$ the space of all Borel measures on $E$. 
 Denote by $\mathcal M_f(E)$ the space of all finite elements in $\mathcal M(E)$ equipped with the weak topology. 
 
 % **** Definition of (S)uperrocesses
@@ -115,9 +115,9 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
     \mathbb P_\mu [e^{- X_t(f)}] = e^{-\mu(V_tf)},
     \quad \mu \in \mathcal M_f(E),t\geq 0,
   \end{align}
-  where the map $(t,x) \mapsto V_tf(x)$ on $[0,\infty) \times E$ is the unique locally bounded positive solution to the equation
+  where the map $(t,x) \mapsto V_tf(x)$ on $[0,\infty) \times E$ is the unique locally bounded non-negative solution to the equation
   \begin{align}
-    V_t f(x) +   \Pi_x[\int_0^{t\wedge \tau} \psi (\xi_s,V_{t-s} f(\xi_s)) ds]
+    V_t f(x) +   \Pi_x\Big[\int_0^{t\wedge \tau} \psi (\xi_s,V_{t-s} f(\xi_s)) ds\Big]
     = \Pi_x[f(\xi_t) \mathbf 1_{t < \tau}],
     \quad x \in E, t \geq 0.
   \end{align}
@@ -134,46 +134,69 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
     \mathbb P_\mu(X_t \in \cdot | \|X_t\|>0) 
     \xrightarrow[t\to \infty]{d} {\mathbf P}(\cdot).
   \end{align}
-  Then it holds that the Yaglom distribution $\mathbf P$ of $X$ exists.
+  Then under the Conditions \ref{cdt:PSS} and \ref{cdt:PSP}(\ref{cdt:PSP1}) it holds that the Yaglom distribution of $X$ exists.
 \end{thm}
 % ** (P)reliminary
 \section{Preliminary}
 % *** (S)uperprocesses
 \subsection{Superprocesses}
+\label{sec:PS}
 % ***** (C)umulant semigroup
-  \begin{lem}[$\Delta$]
-    \label{lem:ACP}
+  \begin{lem}[Fact]
+    \label{lem:PSC}
     Let $X$ be the superprocess given in Definition \ref{def:IRS}.
     There exists a unique family of operators $(\overline V_t)_{t \geq 0}$ from $\mathcal B(E, [0,\infty])$ to $\mathcal B(E, [0,\infty])$ satisfying the followings
     \begin{enumerate}[label=(\alph*)]
     \item
+      \label{lem:PSCa}
       for each $t\geq 0$ and $f \in \mathcal B_b(E, [0,\infty))$, we have $\overline V_tf = V_tf$.
     \item
+      \label{lem:PSCb}
       for each $t\geq 0$ and each $f_n \uparrow f$ pointwisely in $\mathcal B(E, [0,\infty])$, we have $\overline V_tf_n \uparrow \overline V_tf$ pointwisely.
     \end{enumerate}
     Moreover, $(\overline V_t)_{t\geq 0}$ satisfies that
     \begin{enumerate}
     \item
-      for each $t\geq 0$ and $f\leq g$ in $\mathcal B(E,[0,\infty])$, we have $\overline V_tf \leq \overline V_tg$;
+      \label{lem:PSC1}
+      for each $t\geq 0$ and $f\leq g$ in $\mathcal B(E,[0,\infty])$, $\overline V_tf \leq \overline V_tg$;
     \item
-      for each $t, s\geq 0$, we have $\overline V_{t+s} = \overline V_t \overline V_s$;
+      \label{lem:PSC2}
+      for each $t, s\geq 0$, $\overline V_{t+s} = \overline V_t \overline V_s$;
     \end{enumerate}
     With some abuse of the notations, we still write $V_t = \overline V_t$ for each $t\geq 0$, and call $(V_t)_{t\geq 0}$ the \emph{cumulant semigroup} of the superprocess $X$.
   \end{lem}
 
+% ***** (F)KPP equation for superprocess
+  \begin{lem}[Fact]
+    \label{lem:PSF}
+    Suppose that $X$ is the superprocess given in Definition \ref{def:IRS}. 
+    Define operator $\Psi_0: \mathcal B(E, [0,\infty]) \to \mathcal B(E,[0,\infty])$ such that for each $f\in \mathcal B(E,[0,\infty])$ and $x\in E$,
+\[
+  \Psi_0 f(x) = \lim_{n\to \infty}\Big(\psi(x,f_n(x)) + \beta(x)f_n(x)\Big),
+\]
+where $f_n:= f\wedge n$ for each $n\in \mathbb N$.
+Then it holds that
+\begin{align}
+  \label{eq:PS1}
+  V_s f + \int_0^s P_{s-u}^\beta \Psi_0 V_{u} f ~du
+  = P_s^\beta f,
+  \quad f\in \mathcal B(E,[0,\infty]), s\geq 0.
+\end{align}
+  \end{lem}
 % ***** (E)xtinction exponent 
-  \begin{lem}[$\Delta$]
+  \begin{lem}[Fact]
     \label{lem:PSE}
-    Define $v_t = V_t(\infty)$ for each $t\geq 0$, then it holds that 
+    Let $X$ be a superprocess given by Definition \ref{def:IRS}. 
+    Define $v_t = V_t(\infty\mathbf 1_E)$ for each $t\geq 0$, then it holds that 
     \begin{align}
       \mathbb P_\mu (\|X_t\| = 0) 
-      = e^{- \mu(v_t)}
+      = e^{- \mu v_t}
       , \quad \mu \in \mathcal M_f(E), t\geq 0.
     \end{align}      
   \end{lem}
   
 % ***** (M)ean semigroup
-  \begin{lem}[$\Delta$]
+  \begin{lem}[Fact]
     \label{lem:PSM}
     Let $X$ be a superprocess given by Definition \ref{def:IRS}. 
     It holds that
@@ -206,64 +229,163 @@ We say an $\mathcal M_f(E)$-valued Hunt process $X= \{(X_t)_{t\geq 0}; (\mathbb 
 \end{comment}
 
 % ***** (S)pectural porperty
-  \begin{lem}[$\Delta$]
-    \label{lem:PSS}
+  \begin{cdt}
+    \label{cdt:PSS}
     Let $X$ be the superprocess given by Definition \ref{def:IRS}. 
     Let $(P^\beta_t)_{t\geq 0}$ be the mean semigroup of $X$.
-    Then there exist a number $\lambda \in \mathbb R$, a function $\phi \in \mathcal B_b(E, (0,\infty))$ and a measure $\nu \in \mathcal M_f(E)$ with full support on $E$ such that
+    Suppose that
+\begin{enumerate}
+\item
+  \label{cdt:PSS1}
+    There exist a number $\lambda \in \mathbb R$, a function $\phi \in \mathcal B_b(E, (0,\infty))$ and a probability measure $\nu$ with full support on $E$ such that
     \begin{align}
       & P_t^\beta \phi(x) 
         = e^{\lambda t} \phi(x),
         \quad x\in E, t\geq 0;
-      \\ & \int_{x\in E} \nu(dx) P_t^\beta(x,\cdot) 
+      \quad \int_{x\in E} \nu(dx) P_t^\beta(x,\cdot) 
            = e^{\lambda t} \nu(\cdot),
            \quad t\geq 0;
-      \\ & \nu(\phi) 
-           = 1.   
     \end{align}
-  \end{lem}
-  
+    and that $\nu(\phi) = 1$.
+  \item
+    \label{cdt:PSS2}
+    $\lambda < 0$;
+  \item
+    \label{cdt:PSS3}
+    \(\displaystyle
+    P_t^\beta f(x) 
+    = e^{\lambda t} \phi(x) \nu(f) ( 1+ o(\lim_{t\to \infty} \sup_{x\in E, f\in L_1^+(\nu)}));
+    \)
+  \item
+    \label{cdt:PSS4}
+    for each $t\geq 0$, 
+    \(\displaystyle
+    P_t^\beta f(x) 
+    = \phi(x) \nu(f) O(\sup_{x\in E, f\in L_1^+(\nu)}).
+    \)
+\end{enumerate}
+  \end{cdt}
+% ***** Non-(P)resistency  
+  \begin{cdt}
+    \label{cdt:PSP}
+    Let $X$ be the superprocess given by Definition \ref{def:IRS}. 
+    Suppose that 
+    \begin{enumerate}
+    \item
+      \label{cdt:PSP1}
+      for each $x\in E$ and $t > 0$, $\mathbb P_{\delta_x}(\|X_t\| = 0)>0$;
+     \item
+       \label{cdt:PSP2}
+       there exists $t> 0$ such that $\mathbb P_\nu (\|X_t\| = 0) > 0$.
+    \end{enumerate}
+  \end{cdt}
 % ***** (K)ey Lemma
   \begin{lem}[$\Box$]
     \label{lem:PSK}
-    Suppose that 
-    \begin{enumerate}[label=(\alph*)]
-    \item
-      \label{lem:PSKa}
-      $\lambda < 0$;
-    \item
-      \label{lem:PSKb}
-      $P_t^\beta f(x) 
-      = e^{\lambda t} \phi(x) \nu(f) ( 1+ o(\limsup_{t\to \infty} \sup_{x\in E, f\in L_1^+(\nu)}))$;
-    \item
-      \label{lem:PSKc}
-      for each $t\geq 0$, $ P_t^\beta f(x) = \phi(x) \nu(f) O(\sup_{x\in E, f\in L_1^+(\nu)})$.
-    \end{enumerate}
+    Let $X$ be the superprocess given by Definition \ref{def:IRS}. 
+    Suppose that Condition \ref{cdt:PSS} hold.
     Then for each $f\in \mathcal B(E, [0,\infty])$ the followings hold:
     \begin{enumerate}
     \item 
       \label{lem:PSK1} 
-      $V_tf = o(\limsup_{t\to \infty} \sup_{x\in E})$;
+      $\displaystyle V_tf(x) = o(\lim_{t\to \infty} \sup_{x\in E})$;
     \item 
       \label{lem:PSK2}
-      for each $s\geq 0$, we have $\nu(V_{t+s}f) = e^{\lambda s} \nu(V_tf) (1+o(\limsup_{t\to \infty}))$.
+      for each $s\geq 0$, we have 
+      \(\displaystyle 
+      \nu(V_{t+s}f) 
+      = e^{\lambda s} \nu(V_tf) \chi(\lim_{t\to \infty});
+      \)
     \item 
       \label{lem:PSK3}
-      $ (\phi^{-1} \cdot V_tf)(x) = \nu(V_tf) ( 1+ o(\limsup_{t\to \infty} \sup_{x\in E}) )$
+      \( \displaystyle 
+      (V_tf/\phi)(x) 
+      = (\nu V_tf) \chi(\lim_{t\to \infty} \sup_{x\in E}).
+      \)
     \end{enumerate}
   \end{lem}
 
-% ***** (N)on-presistency
-  \begin{lem}[$\Delta$]
+% ***** Proof of lem:PSK1
+  \begin{proof}[Proof of Lemma \ref{lem:PSK}(\ref{lem:PSK1})]
+    Fix $f\in \mathcal B(E,[0,\infty])$.
+
+    $\Delta$ We know that for large $t$, $V_tf \in L_1^+(\nu)$.
+
+    $\Delta$ Therefore, from ... we have
+    \begin{align}
+      & V_{2t}f (x)\leq P_t^\beta V_tf(x) = e^{\lambda t}\phi(x) (\nu V_tf) (1+o(\lim_{t\to \infty} \sup_{x\in E})) 
+      \\ &  =e^{\lambda t} O(\varlimsup_{t\to \infty}\sup_{x\in E})
+           = o(\lim_{t\to \infty}\sup_{x\in E})
+        \qedhere
+    \end{align}
+  \end{proof}
+
+  
+% ***** Proof of lem:PSK2
+\begin{proof}[Proof of Lemma \ref{lem:PSK}(\ref{lem:PSK2})]
+
+  Fix $f\in \mathcal B(E,[0,\infty]) \setminus\{0\}$.
+
+$\Delta$ According to Lemma \ref{lem:PSF} and Condition \ref{cdt:PSS}.(\ref{cdt:PSS1}), we get that for each $t,s\geq 0$ and $f\in \mathcal B(E,[0,\infty])$,
+\[
+  e^{-\lambda (t+s)}\nu V_{t+s}f + \int_0^s e^{-\lambda (t+u)}\nu \Psi_0 V_{t+u} f~du
+  = e^{-\lambda t}\nu V_tf.
+\]
+
+$\Delta$ $\nu V_t f \neq 0$.
+
+  
+\emph{Step 1.}
+We show that for $t$ large and $s\geq 0$,
+\[
+  \nu V_tf / \nu V_{t+s}f 
+  = \exp\Big\{ -\lambda s +  \int_t^{t+s} (\nu \Psi_0 V_u f/ \nu V_uf) ~du \Big\}.
+\]
+
+In order to do this, we first claim that there exists $t_1 > 0$ such that for each $t\geq t_1$, $\nu (V_tf) \in (0,\infty)$.
+In fact, according to Condition \ref{cdt:PSS}.(\ref{cdt:PSS1}), $\mathbb P_\nu(X_t (f) = 0)< 1$ for each $t\geq 0$ since  $\mathbb P_\nu[X_t f] = \nu P_t^\beta f = e^{\lambda t}\nu f>0$. 
+Therefore, from $e^{-\nu (V_t f)} = \mathbb P_\nu[e^{-X_t (f)}] < 1$ we know that $\nu (V_tf) > 0$ for each $t\geq 0$.  
+On the other hand, from Lemma \ref{lem:PSC}.(\ref{lem:PSC2}), Lemma \ref{lem:PSE} and Condition \ref{cdt:PSP}.(\ref{cdt:PSP2}), we know that for $t$ large enough
+\[
+\nu (V_tf) \leq \nu (v_t) = -\log \mathbb P_\nu(X_t = 0)< \infty.
+\] 
+
+Now, integrating \eqref{eq:PS1} with measure $\nu$, replacing $f$ with $V_sf$, using Condition \ref{cdt:PSS}.(\ref{cdt:PSS1}), we get that for each $t,s\geq 0$ and $f\in \mathcal B(E,[0,\infty])$,
+\[
+  e^{-\lambda (t+s)}\nu (V_{t+s}f) + \int_0^s e^{-\lambda (t+u)}\nu (\Psi_0 V_{t+u} f) ~du
+  = e^{-\lambda t}\nu (V_tf).
+\]
+Write $H(t):= e^{- \lambda t}\nu(V_tf)$
+ 
+
+$\Box$ It can also be shown that 
+\[
+\nu\Psi_0V_uf / \nu V_tf
+= o(\lim_{t\to \infty}).
+\]
+
+Therefore, for each $s\geq 0$, 
+\begin{align}
+  & \nu V_tf / \nu V_{t+s}f 
+    = \exp\Big\{ -\lambda s +  \int_t^{t+s} (\nu \Psi_0 V_u f/ \nu V_uf) ~du \Big\}  
+  \\ & = \exp\Big\{ -\lambda s +  \int_t^{t+s}  o(\lim_{u\to \infty}) ~du \Big\}
+   = \exp\{ -\lambda s +  o(\lim_{t\to \infty}) \}
+   = e^{- \lambda s} \chi(\lim_{t\to \infty}).
+       \qedhere
+\end{align}
+\end{proof}
+
+% ***** (N)on-degenerate
+  \begin{lem}
     \label{lem:PSN}
-    $\mathbf P_\mu(\|X_t\| > 0)\in (0, 1)$ for each $t > 0$ and $\mu \in \mathcal M_f(E)\setminus \{0\}$.
+    Let $X$ be the superprocess given by Definition \ref{def:IRS}. 
+    Then under Condition \ref{cdt:PSS}.(\ref{cdt:PSS1}), we have that $\mathbf P_\mu(\|X_t\| > 0) > 0$ for each $t > 0$ and $\mu \in \mathcal M_f(E)\setminus \{0\}$.
   \end{lem}
   
 % ***** Proof of lem:PSN  
   \begin{proof}
-    For each $t\geq 0$ and $\mu \in \mathcal M_f(E)\setminus \{0\}$, since $\phi$ is strictly positive, we have $\mathbb P_\mu[X_t(\phi)] = \mu(P_t^\beta \phi) = e^{\lambda t} \mu(\phi) > 0$. 
+    For each $t\geq 0$ and $\mu \in \mathcal M_f(E)\setminus \{0\}$, since from \ref{cdt:PSS} $\phi$ is strictly positive, we have $\mathbb P_\mu[X_t(\phi)] = \mu(P_t^\beta \phi) = e^{\lambda t} \mu(\phi) > 0$. 
     Then the desired result follows.  
-    {\bf (We still need to show the non-presistence)}
   \end{proof}
 
 % ** Proof of the (M)ain results
@@ -285,7 +407,7 @@ For each unbounded increasing time sequence $\mathbf t:= (t_n)_{n\in \mathbb N}$
 \begin{align}
   G^{\mathbf t}f 
   := \liminf_{n\to \infty} \Gamma_{(t_n)}f,
-  \quad f\in \mathcal B(E, (0,\infty]).
+  \quad f\in \mathcal B(E, [0,\infty]).
 \end{align}
 
 % ***** Step 1. 
@@ -305,16 +427,16 @@ Here, we say a $[0,\infty]$-valued functional $A$ defined on $\mathcal B(E,[0,\i
   for each $f\in \mathcal B(E,[0,\infty])$ with $Af<\infty$, function $u\mapsto A(uf)$ is concave on $[0, 1]$.  
 \end{enumerate}
 
-In this step, we fix an unbounded increasing time sequence $\mathbf t = (t_n)_{n\in \mathbb N}$, and observe that since $(\Gamma_t)_{t\geq 0}$ are $[0,\infty]$-valued, so is $G^{\mathbf t}$. 
+In fact, we fix an unbounded increasing time sequence $\mathbf t = (t_n)_{n\in \mathbb N}$, and observe that since $(\Gamma_t)_{t\geq 0}$ are $[0,\infty]$-valued, so is $G^{\mathbf t}$. 
 Also, from $\Gamma_t(\infty \mathbf 1_E) = \infty$ for each $t\geq 0$ we have that $G^{\mathbf t}(\infty \mathbf 1_E) = \infty$.
 
-We now claim that for each $t\geq 0$, $f\in \mathcal B(E,[0,1])$, $u,v \in [0,\infty)$, $r\in [0,1]$ and $\bar r = 1 - r$, it holds that
+We now claim that for each $t\geq 0$, $f\in \mathcal B(E,[0,\infty])$, $u,v \in [0,\infty)$, $r\in [0,1]$ and $\bar r = 1 - r$, it holds that
 \begin{align}
   \label{eq:MY1.5}
 \Gamma_t((ru+\bar r v)f) 
  \geq r \Gamma_t (uf) + \bar r \Gamma_t (vf).
 \end{align}
-To see this, we fix $t\geq 0$, $f\in \mathcal B(E,[0,1])$ and observe from Lemma \ref{lem:ACP} that the desired \eqref{eq:MY1.5} is trivial provided $\Gamma_t(f) = - \log \mathbb P_\nu[e^{-X_t(f)}|\|X_t\|>0]< \infty$. 
+To see this, we fix $t\geq 0$, $f\in \mathcal B(E,[0,\infty])$ and observe from Lemma \ref{lem:PSC} that the desired \eqref{eq:MY1.5} is trivial provided $\Gamma_t(f) = - \log \mathbb P_\nu[e^{-X_t(f)}|\|X_t\|>0]< \infty$. 
 On the other hand, if $\Gamma_t(f) = - \log \mathbb P_\nu[e^{-X_t(f)}|\|X_t\|>0] = \infty$ then $X_t(f) = \infty$ almost surely with respect to probability $\mathbb P_\mu(\cdot | \|X_t\|>0)$. 
 Therefore in this case, $\Gamma_t(0\cdot f) = 0$ and $\Gamma_t(uf) = \infty$ for each $u > 0$. 
 The desired result \eqref{eq:MY1.5} also follows.
@@ -338,7 +460,7 @@ On the other hand, for each $u,v \in [0,\infty)$, $f\in \mathcal B(E,[0,\infty])
   We still need to verify that \eqref{eq:MY1} is valid.
   In fact, if $f\equiv 0$ then it can be verified that the both sides of \eqref{eq:MY1} is $0$.
   In the rest of this step, we fix an $f\in \mathcal B(E,[0,\infty])\setminus \{0\}$.
-  Note that for each $t\geq 0$, $\{X_t(f);\mathbb P_\nu\}$ is a non-degenerate non-negative random variable since $\mathbb P_\nu[X_t(f)] = \nu(P_t^\beta f) = e^{\lambda t}\nu(f)>0$. 
+  {\bf (Here are some duplication)} Note from Condition \ref{cdt:PSS}.(\ref{cdt:PSS1}), for each $t\geq 0$, $\{X_t(f);\mathbb P_\nu\}$ is a non-degenerate random variable since $\mathbb P_\nu[X_t(f)] = \nu(P_t^\beta f) = e^{\lambda t}\nu(f)>0$. 
   Therefore from $e^{-\nu(V_tf)} = \mathbb P_\nu[e^{-X_t(f)}] < 1$ we know that $\nu(V_tf) \not\equiv 0$ for each $t\geq 0$.  
   Notice that
   \begin{align}
@@ -365,7 +487,7 @@ On the other hand, for each $u,v \in [0,\infty)$, $f\in \mathcal B(E,[0,\infty])
     & = \Big( \lim_{t \to \infty}   \frac{ 1 - e^{- \nu(V_{t+s}f)}}{ 1 - e^{- \nu(V_{t}f)}} \Big) \cdot \liminf_{n\to \infty} (1 - e^{- \Gamma_{(t_n)} f} ) 
       = e^{s\lambda} (1 - e^{- G^{\mathbf t}f}), \quad s\geq 0.
   \end{align}
-  Here in the last step, we used Lemma \ref{lem:PSK}.
+  Here in the last step, we used Lemma \ref{lem:PSK}.(\ref{lem:PSK2}).
 
 % ***** Step 2  
   \emph{Step 2.}
@@ -387,8 +509,8 @@ On the other hand, for each $u,v \in [0,\infty)$, $f\in \mathcal B(E,[0,\infty])
   \end{align}
 
 \emph{Substep 2.1.} We show that for each $u \in [0,1]$, $Q_t(u \mathbf 1_E)$ is non-decreasing in $t\in (0,\infty)$; and therefore we can define $\lim_{t\to \infty} Q_t(u \mathbf 1_E)=:q(u)\in [0,\infty)$.
-In fact, for each $s,t> 0$ and $x\in E$, since $\mathbb P_{\delta_x} [e^{-X_s (v_t)}] = e^{- (V_s v_t) (x)} = e^{-v_{t+s}(x)} = \mathbb P_{\delta_x}(\|X_{t+s}\| = 0) \in (0, 1)$ we have that $\{X_s(v_t); \mathbb P_{\delta_x}\}$ is a non-degenerate random variable.
-Therefore, Lemma \ref{lem:ACP} says that, for each $s,t > 0$ and $x\in E$, $u\mapsto V_s(uv_t)(x)$ is concave on $[0,\infty)$. 
+In fact, from Condition \ref{cdt:PSP}.(\ref{cdt:PSP1}) and  Lemma \ref{lem:PSN} for each $s,t> 0$ and $x\in E$, since $\mathbb P_{\delta_x} [e^{-X_s (v_t)}] = e^{- (V_s v_t) (x)} = e^{-v_{t+s}(x)} = \mathbb P_{\delta_x}(\|X_{t+s}\| = 0) \in (0, 1)$ we have that $\{X_s(v_t); \mathbb P_{\delta_x}\}$ is a non-degenerate random variable.
+Therefore, Lemma \ref{lem:PSC} says that, for each $s,t > 0$ and $x\in E$, $u\mapsto V_s(uv_t)(x)$ is concave on $[0,\infty)$. 
 Therefore, for $u\in [0,1]$, writing $\bar u = 1- u$, we get that
 \begin{align}
 	V_s(uv_t)
@@ -407,19 +529,19 @@ Using this, we have the following:
   , \quad s,t > 0, u \in [0,1],
 \end{align}
 as required in this substep.
-In particular, 
 
 \emph{Substep 2.2.}
 We show that $q$ is non-decreasing and concave on $[0,1]$.
 In fact, from $G^*(\infty \mathbf 1_E) = \infty$ and $V_t(\infty \mathbf 1_E) = v_t$ we have that
 \begin{align}
+  \label{eq:MY3}
 	Q_t(\mathbf 1_E) = e^{- \lambda t} ( 1-e^{-G^*v_t} )
   = e^{- \lambda t} e^{\lambda t}( 1-e^{-G^*(\infty\mathbf 1_E)} )
   = 1,
   \quad t\geq 0.
 \end{align}
-This says that $q(1) = 1$, and that $G^*v_t < \infty$ for each $t>0$. 
-Therefore, from the condition that $G^*$ is monotone concave, we have that for each $t>0$, map $u \mapsto G^*(uv_t)$ is non-decreasing and concave on $[0,1]$.
+This says that $G^*v_t < \infty$ for each $t>0$. 
+Therefore, from the condition that $G^*$ is monotone concave, we have that for each $t>0$, map $u \mapsto G^*(uv_t)$ is a non-decreasing and concave $[0,\infty)$-valued function on $[0,1]$.
 From Lemma \ref{lem:ACE} we can verify that, for each $t> 0$, $u \mapsto Q_t(u \mathbf 1_E)$ is non-negative, non-decreasing and concave on $[0,1]$.
 Finally, using Lemma \ref{lem:ACL} and Substep 2.1, we get the desired result in this substep. 
 
@@ -433,19 +555,19 @@ From Lemma \ref{lem:PSK}\eqref{lem:PSK2} and \ref{lem:PSK}\eqref{lem:PSK3} we ha
   & = (\phi^{-1}v_{t+s})(x) (1+o(\limsup_{t\to \infty} \sup_{x\in E}))
     , \quad s\geq 0.
 \end{align}
-Therefore, for each $s\geq 0$ and $\epsilon >0$ there exists $t>0$ large enough such that
+From Lemma \ref{lem:PSN} we know that for each $x\in E$ and $t\geq 0$, $e^{-v_t(x)} = \mathbb P_{\delta_x}(\|X_t\| = 0) < 1$; and therefore for each $t\geq 0$, $v_t$ is strictly positive.
+Thus, for each $s\geq 0$ and $\epsilon >0$ there exists $t>0$ large enough such that
 \begin{align}
 	1-\epsilon\leq \frac{e^{\lambda s}v_t(x)}{v_{t+s}(x)} 
   \leq 1+\epsilon,
   \quad x\in E.
 \end{align}
-From this we can verify that for each $s\geq 0$ and $\epsilon >0$ there exists $t>0$ large enough such that
+From this we can verify that for each $s\geq 0$ and $\epsilon >0$ there exists $t>0$ large enough such that for each $u \in [0,\infty)$,
 \begin{align}
 	& Q_{t+s}[ (1-\epsilon)u\mathbf 1_E ]
    = e^{-\lambda(t+s)}( 1-e^{-G^*[(1-\epsilon)uv_{t+s}]} ) \\
   & \leq e^{-\lambda t} e^{-\lambda s}( 1- e^{-G^*(ue^{\lambda s}v_t)} )
     = e^{-\lambda s}Q_t(ue^{\lambda s} \mathbf 1_E),
-    \quad u \in [0,\infty),
 \end{align}
 and similarly that
 \begin{align}
@@ -459,12 +581,12 @@ Now taking $t\to \infty$ in the above two inequality, we get from substep 2.1 th
  From substep 2.2 and Lemma \ref{lem:ACR} we have that $q$ is continuous on $(0,1]$. 
 Taking $\epsilon \to 0$ and then $u \uparrow 1$, we get that 
 \begin{align}
-	1
-  =q(1) 
+	q(1) 
   = e^{- \lambda s} q(e^{\lambda s}), 
   \quad s \geq 0. 
 \end{align} 
-This says that $q(u) = u$ on $(0,1]$.
+From \eqref{eq:MY3} we have that $q(1) = 1$.
+These now imply that $q(u) = u$ on $(0,1]$.
 Finally note that $q$ is non-negative and non-decreasing, we also have $q(0) = 0$.
 
 % ***** Step 3
@@ -476,7 +598,7 @@ Finally note that $q$ is non-negative and non-decreasing, we also have $q(0) = 0
   \end{align}
   then for each unbounded increasing time sequence $\mathbf t:= (t_n)_{n\in \mathbb N}$, we have $G^* = G^{\mathbf t}$.
   In fact, fixing an arbitrary unbounded increasing time sequence $\mathbf t=(t_n)_{n\in \mathbb N}$ and an arbitrary function $f\in \mathcal B(E,[0,\infty])$, we only have to proof that $G^* f = G^{\mathbf t}f$.
-From the definition of $G^{\mathbf t}f$, we can chose a subsequence $\mathbf t'=(t'_n)_{n \in \mathbb N}$ of $\mathbf t$ such that $ 1 - e^{- G^{\mathbf t}f} =  ( 1 - e^{-\Gamma_{( t_n')} f} ) \cdot (1+ o(\limsup_{n\to \infty})). $
+From the definition of $G^{\mathbf t}f$, we can chose an unbounded subsequence $\mathbf t'=(t'_n)_{n \in \mathbb N}$ of $\mathbf t$ such that $ 1 - e^{- G^{\mathbf t}f} =  ( 1 - e^{-\Gamma_{( t_n')} f} ) \cdot (1+ o(\limsup_{n\to \infty})). $
 Therefore, from \eqref{eq:MY2} and  Lemma \ref{lem:PSK} we have
 \begin{align}
   & 1 - e^{- G^{\mathbf t}f}
@@ -485,66 +607,66 @@ Therefore, from \eqref{eq:MY2} and  Lemma \ref{lem:PSK} we have
   =  \frac{V_{(t_n')}f(x)}{v_{(t_n')}(x)} ( 1 + o(\limsup_{n \to \infty} \sup_{x\in E})).
 \end{align}
 Fix an arbitrary $\epsilon > 0$. 
-From above, there exists $n$ large enough such that
+From above, and the fact that $V_tf \leq v_t$ for each $t\geq 0$, there exists $n$ large enough such that
 \begin{align}
   (1-\epsilon) (1 - e^{- G^{\mathbf t}f} )
   \leq \frac{V_{(t_n')}f(x)}{v_{(t'_n)}(x)}
-  \leq (1+\epsilon) ( 1 - e^{- G^{\mathbf t}f} ) \wedge 1,
+  \leq ((1+\epsilon) ( 1 - e^{- G^{\mathbf t}f} )) \wedge 1,
   \quad x\in E.
 \end{align}
 This implies that for $n$ large enough 
 \begin{align}
-  \label{eq:Y:Gs:1}
+  \label{eq:MY4}
   & Q_{(t'_n)}[ (1-\epsilon) (1-e^{-G^{\mathbf t}f})\mathbf 1_E ]
     \leq Q_{(t'_n)}\Big( \frac{V_{(t'_n)}f}{v_{(t'_n)}} \Big) 
   \\ &  \leq Q_{(t'_n)}[ ( (1+\epsilon) (1-e^{-G^{\mathbf t}f}) \wedge 1) \mathbf 1_E ],
 \end{align}
 where $(Q_t)_{t\geq 0}$ is given by Step 2.
-Note from the definition of $(Q_t)_{t\geq 0}$ and $G^*$, we always have that
+Note from the definition of $(Q_t)_{t\geq 0}$, we always have that
 \begin{align}
 	Q_t \Big( \frac{V_tf}{v_t}  \Big) 
   = e^{- \lambda t}( 1 - e^{- G^*V_tf}  )
   = 1- e^{- G^* f}.
 \end{align}	
-Therefore, taking $n \to \infty$ in \eqref{eq:Y:Gs:1}, from Step 2 we get that
+Therefore, taking $n \to \infty$ in \eqref{eq:MY4}, from Step 2 we get that
 \begin{align}
 	(1 - \epsilon) (1 - e^{- G^{\mathbf t}f})
   \leq 1 - e^{- G^* f} 
   \leq (1 + \epsilon) (1 - e^{- G^{\mathbf t} f})\wedge 1.
 \end{align}
-Taking $\epsilon \to 0$, we get the desired result.
+Taking $\epsilon \to 0$, we get the desired result in this step.
 
 % **** Step 4.
 \emph{Step 4.}
 From the step 1 and 3, using a sub-sub-sequence argument, we have that 
 \begin{align}
-  \label{eq:Y:1}
 	Gf
   := \lim_{t\to \infty} \Gamma_tf, \quad f\in \mathcal B(E,[0,\infty])
 \end{align}
 is well-defined, and that $G$ is the unique $[0,\infty]$-valued monotone concave functional on $\mathcal B(E,[0,\infty])$ satisfying that $G(\infty \mathbf 1_E) = \infty$ and that
 \begin{align}
+  \label{eq:MY5}
   1 - e^{- G V_sf} = e^{s\lambda} (1- e^{- G f}),
   \quad s \geq 0, f \in \mathcal B(E, [0,\infty]).
 \end{align}
 In this step, we show that for each sequence of functions $(g_{n})_{n\in \mathbb N}$ in $\mathcal B(E, [0,\infty])$ such that $\lim_{n \to \infty} g_n = 0$ bounded pointwisely, we have $\lim_{n \to \infty} G g_n = 0$.
-Taking $f = \infty$ in the above equation, we have that $1 - e^{- Gv_s} = e^{\lambda s}$ for each $s\geq 0$.
 
-In fact, fixing such sequence $(g_{n})_{n\in \mathbb N}$, from Lemma \ref{lem:PSK}\ref{lem:PSKc}, there exists a constant $C > 0$ such that 
+
+In fact, fixing such sequence $(g_{n})_{n\in \mathbb N}$, from Lemma \ref{lem:PSK}\ref{cdt:PSS4}, there exists a constant $C > 0$ such that 
 \begin{align}
 	V_1 g_n(x) \leq P^\beta_1 g_n(x) \leq C \phi(x) \nu(g_n),
   \quad n \in \mathbb N, x\in E.
 \end{align}
 Fixing this $C>0$, from the bounded convergence theorem, we have $\lim_{n\to \infty}C \nu(g_n) =0$.
 {\bf (Here, we should be able to show that map $t \mapsto \nu(v_t)$ is a strictly decreasing 1-1 map from $(0,\infty)$ to $(0,\infty)$.)}
-Denote by $R:(0,\infty) \to (0,\infty)$ as the inverse of the map $t \mapsto \nu(v_t)$ on $(0,\infty)$, then $R$ is a strictly decreasing $1-1$ map from $(0,\infty)$ to $(0,\infty)$. 
+Denote by $R:(0,\infty) \to (0,\infty)$ as the inverse of the map $t \mapsto \nu(v_t)$ on $(0,\infty)$, then $R$ is a strictly decreasing 1-1 map from $(0,\infty)$ to $(0,\infty)$. 
 Define $t_n := R(2C\nu(g_n))> 0$.
 Then we have that $\lim_{n\to \infty} t_n = \infty$ and that 
 \begin{align}
 	V_1 g_n(x) \leq \frac{1}{2} \phi(x) \nu(v_{(t_n)}), 
 \quad n \in \mathbb N, x\in E.
 \end{align}
-Now, taking $f = \infty$ and $t = t_n$ in Lemma \ref{lem:PSK}\eqref{lem:PSK3} we get that
+From Lemma \ref{lem:PSK}\eqref{lem:PSK3} we get that
 \begin{align}
  (\phi^{-1} \cdot v_{(t_n)})(x) 
   = \nu(v_{(t_n)}) ( 1+ o(\limsup_{n\to \infty} \sup_{x\in E}) ).
@@ -554,7 +676,8 @@ In particular, we have that, for $n$ large enough,
 	\nu(v_{t_n}) \leq 2 \phi(x)^{-1} v_{(t_n)}(x), \quad x\in E.
 \end{align}
 Therefore, for $n$ large enough, we have that $V_1g_n \leq v_{(t_n)}$.
-This implies that
+Taking $f = \infty$ in \eqref{eq:MY5}, we have that $1 - e^{- Gv_s} = e^{\lambda s}$ for each $s\geq 0$.
+These imply that
 \begin{align}
 	& 1 - e^{- Gg_n}
   = e^{- \lambda} (1- e^{- GV_1g_n})
@@ -572,29 +695,29 @@ Now from \cite[Proposition 1.19]{Li2011MeasureValued} and step 4, we have that t
   , \quad f\in C_b (E, [0,\infty)),
 \end{align}
 and that
-\begin{align}
-	\mathbb P_{\nu}(X_t \in \cdot | \|X_t\|>0 ) 
-  \xrightarrow[t\to \infty]{law} \mathbf P(\cdot).
-\end{align}
+\(	
+\mathbb P_{\nu}(X_t \in \cdot | \|X_t\|>0 ) 
+  \xrightarrow[t\to \infty]{d} \mathbf P(\cdot).
+\)
 From Lemma \ref{lem:PSK3}.(\ref{lem:PSK1}) and (\ref{lem:PSK3}) we have that for each $\mu \in \mathcal M_f(E)\setminus \{0\}$ and $f \in \mathcal B(E,[0,\infty])$ that 
 \begin{align}
 	& \mu(V_tf) = \nu(V_tf) \mu\Big(\phi(1+o(\limsup_{t\to \infty}\sup_{x\in E})) \Big)
    = \nu(V_tf) \mu(\phi)(1+o(\limsup_{t\to \infty}))
-  \\ & = o(\limsup_{t\to \infty}).
+   = o(\limsup_{t\to \infty}).
 \end{align}
-Therefore we have that for each $\mu \in \mathcal M_f(E)\setminus\{0\}$ and $f\in \mathcal B(E,[0,\infty])$, 
+Therefore from \eqref{eq:MY2} we have that for each $\mu \in \mathcal M_f(E)\setminus\{0\}$ and $f\in \mathcal B(E,[0,\infty])$, 
 \begin{align}
   &\mathbb P_\mu[1 - e^{-X_t(f)}|\|X_t\|>0]
   = \frac{1 - e^{- \mu(V_tf)}}{1 - e^{-\mu(v_t)}}
   = \frac{\mu(V_tf)}{\mu(v_t)} (1+o(\limsup_{t\to \infty}))
   \\&= \frac{\nu(V_tf)}{\nu(v_t)}(1+o(\limsup_{t\to \infty})) 
-  = \mathbb P_\nu [1 - e^{-X_t(f)}|\|X_t\|>0](1+o(\limsup_{t\to \infty}))
+  = (\Gamma_t f)(1+o(\limsup_{t\to \infty}))
   \\ & = (1 - e^{-Gf}) (1+o(\limsup_{t\to \infty})).
 \end{align}
 Therefore we have that for each $\mu \in \mathcal M_f(E)\setminus\{0\}$,
 \[
   \mathbb P_\mu(X_t \in \cdot | \|X_t\|>0)
-  \xrightarrow[t\to \infty]{law} \mathbf P(\cdot).
+  \xrightarrow[t\to \infty]{d} \mathbf P(\cdot).
   \qedhere
 \]
 \end{proof}
@@ -681,7 +804,7 @@ for each $x,y\in C$, $r\in [0,1]$, $\bar r = 1 - r$ and $n \in \mathbb N$, we ca
 
 % **** Log-La(P)lac is concave
 \begin{lem}
-  \label{lem:ACP}
+  \label{lem:PSC}
   Suppose that $\{Z; P\}$ is a $[0,\infty]$-valued random variable and that $P(Z < \infty)< \infty$. 
   Write $L(u):= - \log P[e^{- u Z}]$ with $u \in [0,\infty)$, then $L$ is a concave function on $[0,\infty)$.
 \end{lem} 
