@@ -22,7 +22,6 @@
 \mathtoolsset{showonlyrefs}
 \usepackage{mathrsfs}
 \usepackage{comment}
-\everymath{\displaystyle}
 \usepackage{hyperref}
 \usepackage[inline]{showlabels}
 \usepackage{xcolor}
@@ -202,7 +201,6 @@ Define a new kernel $n^\phi(x, dr)$ from $E$ to $(0,\infty)$ such that for any $
 	Our first result is about the asymptotic behavior of the extinction time $\zeta$, including proving \eqref{p1extinc} from assumption $(3)$. 
 }
 \begin{thm}\label{thm:E}
-{\color{red}
 	Suppose that the superprocess $X$ satisfies Assumptions \ref{asp:mean}. Then,
 	there exists a constant $k\in [0,\infty)$, such that for any $x\in E$,
 	\begin{equation}\label{decay rate}
@@ -212,7 +210,6 @@ Define a new kernel $n^\phi(x, dr)$ from $E$ to $(0,\infty)$ such that for any $
 	\begin{equation}\label{def: m}
 	l(y):=\int_1^\infty r\log r~n^\phi(y, dr),\quad y \in E.
 	\end{equation}
-}
 {\color{gray}
 \begin{enumerate}
 \item \label{subthm: extinct as sure}
@@ -252,7 +249,7 @@ Define the process
 \]
 Then the process  $(M_t(\phi))_{t\geq 0}$ is a nonnegative martingale with respect to the natural filtration $(\mathscr F_t)_{t\geq 0}$ of the superprocess $X$.
 For each $\mu \in \mathcal M_f(E)\backslash\{0\}$, let probability $\widetilde{\mathbb P}_\mu$ be the Doob's $h-$transform of $\mathbb P_\mu$ with respect to $M_t(\phi)$, such that
-\begin{equation} \label{eq: martingale transformation}
+\begin{equation} \label{eq:mt}
 	\frac{d\widetilde{\mathbb P}_\mu|_{\mathscr F_t}}{d\mathbb P_\mu|_{\mathscr F_t}}
 	=\frac{M_t(\phi)}{\langle\phi,\mu\rangle },
 	\quad t\geq 0.
@@ -310,25 +307,26 @@ The equilibrium probability $\mathbf Q$ is the size-biased distribution of the q
 }
 \subsection{Proof of Theorem \ref{thm:E}}
 
-{\color{blue}Without loss of generalisity, we will always assme that our superprocess is conanical in a probability space $\Omega$. With filtration $\mathscr F_t^X$.}
+Without loss of generality, we will always assume that our superprocess is canonical, i.e. 
+(1) for each $t\geq 0$, $X_t : w\in \mathbb D \mapsto w_t \in \mathcal M_f(E)$ where $\mathbb D$ is the space of $\mathcal M_f(E)$-valued c\`adl\`ag paths $\omega$ on $[0,\infty)$, equipped with the filtration $\mathscr F_t = \sigma(X_s: 0\leq s\leq t), t\geq 0$ and sigma field $\mathscr F= \sigma(X_t:t\geq 0)$; 
+and (2) $(\mathbb P_\mu)_{\mu \in \mathcal M_f(E)}$ are probability measures on $(\mathbb D, \mathscr F)$.
 
-For any $\mu \in \mathcal M_f(E)\setminus\{0\}$, note that $(e^{- \lambda t} X_t(\phi))_{t\geq 0}$ is a non-negative non-degenerate martingale under $\mathbb P_\mu$.
+For any $\mu \in \mathcal M_f(E)\setminus\{0\}$, we can verify that $(e^{- \lambda t} X_t(\phi))_{t\geq 0}$ is a non-negative non-degenerate martingale under $\mathbb P_\mu$.
 In fact, for each $0\leq s\leq t< \infty$,
 \begin{align}
-&\mathbb P_\mu[e^{-\lambda t}X_t(\phi)|\mathscr F^X_s] 
+&\mathbb P_\mu[e^{-\lambda t}X_t(\phi)|\mathscr F_s] 
 \overset{\text{Markov property}} = \mathbb P_{X_s}[e^{-\lambda t} X_{t-s}(\phi)]
 \\&\overset{\eqref{eq:mean}}= e^{-\lambda t}X_s(P_{t-s}^\beta \phi)
 \overset{\text{Assumption \ref{asp:mean}}}=e^{-\lambda s}X_s(\phi).
 \end{align}
-Due to Doob's $h$-transformation theory, for each $\mu \in \mathcal M_f(E)\setminus\{\mathbf 0\}$, there exists a (unique) probability measure $\widetilde {\mathbb P}_\mu$  on $\Omega$ such that
-\begin{equation} \label{eq: martingale transformation}
+Due to \cite[Lemma 18.18]{Kallenberg2002Foundations}, for each $\mu \in \mathcal M_f(E)\setminus\{\mathbf 0\}$, there exists a (unique) probability measure $\widetilde {\mathbb P}_\mu$  on $\mathbb D$ such that
+\begin{equation} \label{eq:mt}
 \frac{d\widetilde{\mathbb P}_\mu|_{\mathscr F_t}}{d\mathbb P_\mu|_{\mathscr F_t}}
 =\frac{e^{-\lambda t}X_t(\phi)}{\mu(\phi) },
 \quad t\geq 0.
 \end{equation}
 
-Denote by $\mathbb D_e$ the space of $\mathcal M_f(E)$-valued right-continuous functions $w$ on $(0,\infty)$ with $\mathbf 0$ as a trap.
-
+Denote by $\mathbb D_e$ the space of $\mathcal M_f(E)$-valued C\`adl\`ag paths $w$ on $(0,\infty)$ with $\mathbf 0$ as a trap.
 According to \cite[Section 8.4]{Li2011Measure-valued}, there is a unique family of $\sigma$-finite measures $(\mathbb N_x)_{x\in E}$ on $\mathbb D_e$ such that (1) $\mathbb N_x (\forall t > 0, w_t =\mathbf 0) =0$ for each $x\in E$; and (2) for each $\mu \in \mathcal M(E)$, if $\mathcal N$ is a Poisson random measure on $\mathbb D_e$ with intensity
 \[
 \mathbb N_\mu(dw):= \int_E \mathbb N_x(dw)\mu(dx), \quad w\in \mathbb D_e.
@@ -339,122 +337,78 @@ then
 \overset{f.d.d.}{=} \left(\int_{\mathbb D_e} w_t\mathcal N(dw)\right)_{t> 0}.
 \]
 This family of measure $(\mathbb N_x)_{x\in E}$ is known as the \emph{Kuznetsov measures} of $X$.
-According to \cite[Theorem 8.22]{Li2011Measure-valued}, for each $x\in E$, the Kuznetsov measure $\mathbb N_x$ can be (and will be, in this paper) understood as a measure on $\mathbb D$.
+According to \cite[Theorem 8.22]{Li2011Measure-valued}, for each $x\in E$, the Kuznetsov measure $\mathbb N_x$ can be, and will be understood as a measure on $\mathbb D$.
 
 
-According to Ren-Song-Sun 2019, for any $\mu \in \mathcal M_f(E)\setminus \{\mathbf 0\}$, we have $\{(X_t)_{t\geq 0}; \widetilde {\mathbb P}_\mu\} \overset{f.d.d.} = \{ (X_t+ Y_t)_{t\geq 0}; \mathbb Q_\mu\} $ where (1) $\{(X_t)_{t\geq 0}; \mathbb Q_\mu\} \overset{d} =  \{(X_t)_{t\geq 0}; \mathbb P_\mu\}$; (2) $\{(Y_t)_{t\geq 0}; \mathbb Q_\mu \} \overset{d} = \{(w_t)_{t\geq 0}; \widetilde{ \mathbb N}_\mu\}$ where $\widetilde {\mathbb N}_\mu$ is the unique probability measure on $\mathbb D$ such that for each $t\geq 0$, $d \widetilde {\mathbb N}_\mu|_{\mathscr F_t} = \frac{w_t(\phi)}{\mathbb N_\mu[w_t(\phi)]} d\mathbb N_\mu|_{\mathscr F_t}$.
+According to Ren-Song-Sun 2019, for any $\mu \in \mathcal M_f(E)\setminus \{\mathbf 0\}$, we have $\{(X_t)_{t\geq 0}; \widetilde {\mathbb P}_\mu\} \overset{f.d.d.} = \{ (X_t+ Y_t)_{t\geq 0}; \mathbb Q_\mu\} $ where (1) $\{(X_t)_{t\geq 0}; \mathbb Q_\mu\} \overset{d} =  \{(X_t)_{t\geq 0}; \mathbb P_\mu\}$; (2) $\{(Y_t)_{t\geq 0}; \mathbb Q_\mu \} \overset{d} = \{(w_t)_{t\geq 0}; \widetilde{ \mathbb N}_\mu\}$ where $\widetilde {\mathbb N}_\mu$ is the unique probability measure on $\mathbb D$ such that for each $t\geq 0$, 
+\[d \widetilde {\mathbb N}_\mu|_{\mathscr F_t} = \frac{w_t(\phi)}{\mathbb N_\mu[w_t(\phi)]} d\mathbb N_\mu|_{\mathscr F_t}.\]
 
 {\color{blue} We say a process is stochastically non-decreasing if blah blah blah }
 
-\begin{prop}
+\begin{prop} \label{thm:sn}
 	$\{(Y_t)_{t\geq 0}; \mathbb Q_\nu \}$ is stochasticlly non-decreasing.
 \end{prop}
 
-	There exists a non-decreasing stochastic process $\{(Y_t); \mathbb Q^*_\nu\}$ which satisfies that for each $t\geq 0$, $\{Y_t; \mathbb Q^*_\nu\} \overset{d} = \{Y_t; \mathbb Q_\nu\}$. 
+Therefore, there exists a non-decreasing stochastic process $\{(Y_t); \mathbb Q^*_\nu\}$ which satisfies that for each $t\geq 0$, $\{Y_t; \mathbb Q^*_\nu\} \overset{d} = \{Y_t; \mathbb Q_\nu\}$. 
 	Under probability $\mathbb Q^*_\nu$, define $Y_\infty(\phi) = \lim_{t\to \infty} Y_t(\phi)$.
 
-\begin{proof}
-	And the result $(2)$ comes from $(3)$ in Lemma \ref{lem:extinc}.  We are left to prove $(1)$ and $(3)$ under $\mathbb P_{\nu}$.  It is easy to see that for any $t\ge 0,$
-	\begin{eqnarray*}\label{subcritical equality}
-		&&e^{-\lambda t}\mathbb P_\nu(\zeta>t)=\widetilde{\mathbb P}_\nu\left(\frac{1}{\langle\phi, X_{t}\rangle }\right)\\
-		&=&\mathbb Q_{\nu}\left[\frac{1}{\langle\phi, X_{t}\rangle +\sum_{\sigma\in(0, t]\bigcap\mathcal D^{\mathrm m}}\langle \phi, X_{t-\sigma}^{{\mathrm m},\sigma}\rangle +\sum_{\sigma\in (0, t]\bigcap \mathcal D^{\mathrm n}}\langle \phi, X_{t-\sigma}^{{\mathrm n}, \sigma}\rangle} \right]
-	\end{eqnarray*}
-	
-	{\tt Basically, I agree, but we probably want to mention $\widetilde {\mathbb P}$ here.}
-	
-	When the initial value of $X$ is $\nu(dx)$, the initial distribution of the spine under $\mathbb Q_\nu$ is $\phi\cdot\nu$.
-	From Lemma \ref{lem:reverse of the spine}, we have
-	\begin{eqnarray*}\label{duality}
-		&&  \mathbb Q_{\nu}\left[\frac{1}{\langle\phi, X_{t}\rangle +\sum_{\sigma\in(0, t]\bigcap\mathcal D^{\mathrm m}}\langle \phi, X_{t-\sigma}^{{\mathrm m},\sigma}\rangle +\sum_{\sigma\in (0, t]\bigcap \mathcal D^{\mathrm n}}\langle \phi, X_{t-\sigma}^{{\mathrm n}, \sigma}\rangle }\right]\\
-		&=&\widehat{\mathbb Q}_{\nu}\left[\frac{1}{\langle\phi, X_{t}\rangle +\sum_{\sigma\in(0, t]\bigcap\mathcal D^{\mathrm m}}\langle \phi, \widehat X_{\sigma}^{{\mathrm m},\sigma}\rangle +\sum_{\sigma\in (0, t]\bigcap \mathcal D^{\mathrm n}}\langle \phi, \widehat X_{\sigma}^{{\mathrm n},\sigma}\rangle }\right]
-	\end{eqnarray*}
-	Since $\lim_{t\to\infty}\langle\phi, X_{t}\rangle=0$ and $\sum_{\sigma\in(0, t]\bigcap\mathcal D^{\mathrm m}}\langle \phi, \widehat X_{\sigma}^{{\mathrm m},\sigma}\rangle +\sum_{\sigma\in (0, t]\bigcap \mathcal D^{\mathrm n}}\langle \phi, \widehat X_{\sigma}^{{\mathrm n},\sigma}\rangle $ is increasing with respect to $t$ having almost sure limit as $t\to\infty$ as well.  
-	
-	{\tt We should be able to show the increaseness without the backward spine decomposition.}
-	
-	Therefore, by dominated convergence theory, if we let
-	\begin{equation}\label{cons}
-	k=\widehat{\mathbb Q}_{\nu}\left[\frac{1}{\sum_{\sigma\in\mathcal D^{\mathrm m}}\langle \phi, \widehat X_{\sigma}^{{\mathrm m},\sigma}\rangle +\sum_{\sigma\in \mathcal D^{\mathrm n}}\langle \phi, \widehat X_{\sigma}^{{\mathrm n},\sigma}\rangle }\right],
-	\end{equation}
-	then $k<\infty$ and $\lim_{t\to\infty} e^{-\lambda t}\mathbb P_{\nu}(\zeta>t)=k$.  {\tt We should be using monotone convergence theorem, right?}
-	
-	$(1)$ follows. {\tt We don't have to prove $(1)$ here.}
-	
-	Now let us analyze the cases in which $k>0$.	For the continuum immigration part,
-	\[
-	\widehat{\mathbb Q}_{\nu}\left(\sum_{\sigma\in \mathcal D^{\mathrm n}}\langle \phi, \widehat X_{\sigma}^{{\mathrm n},\sigma}\rangle \right)=\int_0^\infty e^{\lambda s}\langle 2\alpha\phi, \phi\nu\rangle  ds=\frac{\langle 2\alpha\phi, \phi\nu\rangle}{-\lambda}<\infty.
-	\]
-	Therefore, $\sum_{\sigma\in \mathcal D^{\mathrm n}}\langle \phi, \widehat X_{\sigma}^{{\mathrm n},\sigma}\rangle$ is finite almost surely.
-	
-	For the discrete immigration part, let $\mathcal G=\sigma(Y, ( m_\sigma)_{\sigma\in\mathcal D^{\mathrm m}})$.  When  $\int_E\hat{\phi}(y)l(y)m(dy)<\infty$, by Lemma \ref{import lemma},
-	\[
-	\widehat{\mathbb Q}_{\nu}\left(\sum_{\sigma\in \mathcal D^{\mathrm m}}\langle \phi, \widehat X_{\sigma}^{{\mathrm m}}\rangle\Big|\mathcal G \right)
-	=\sum_{\sigma<\infty}m_\sigma e^{\lambda \sigma}\phi(Y_{\sigma})<\infty,  \qquad\qquad \widehat{\mathbb Q}_{\nu}-{\mathrm a.s.}
-	\]
-	Thus in this case, $k>0$.
-	
-	We claim that when $\int_D\hat\phi(y)l(y)m(dy)=\infty$,
-	\begin{equation}\label{infty}
-	\sum_{\sigma\in \mathcal D^{\mathrm m}}\langle \phi, \widehat X_{\sigma}^{{\mathrm m},\sigma}\rangle =\infty,\quad\qquad  \widehat{\mathbb Q}_\nu-{\mathrm a.s.}
-	\end{equation}
-	
-	{\tt I think here, some details can be seperated.}
-	
-	In the proof of \cite[Lemma $3.2$]{LiuRenSong2009Llog}.  It is shown that for any $N>0$,
-	\begin{equation}\label{inf}
-	\int_0^\infty dt\int_{\phi(Y_t)^{-1}e^{Nt}}^\infty rn(Y_t,dr)
-	=\infty,\quad \widehat{\mathbb Q}_\nu-{\mathrm a.s.}
-	\end{equation}
-	Fix a path of $(Y_t)$.  And define stochastic
-	time sequence
-	\[
-	\tau_0:=\left\{t>0; m_t>\phi(Y_t)^{-1}e^{Nt}\right\},\,
-	\tau_{i+1}:=\left\{t>\tau_i;\, m_t>\phi(Y_t)^{-1}e^{Nt}\right\},\, i=0,1,\cdots
-	\]
-	Then $\tau_i<\infty$, $i=1,2,\ldots$ almost surely from Lemma \ref{import lemma}.
-	If we can prove that $\sum_{i=0}^\infty I_{\left\{\langle\phi, \widehat X^{{\mathrm m},\tau_i}_{\tau_i}\rangle  >\varepsilon\right\}}=\infty,$ for some $\varepsilon>0,$ then our claim holds.  Similar to the argument for the proof of the second assertion of \cite[Lemma $2.2$]{LiuRenSong2009Llog}, we just need to prove
-	\[
-	\widehat{\mathbb Q}_\nu
-	\left[\left.\sum_{i=0}^\infty I_{\left\{\langle\phi, \widehat X^{{\mathrm m},\tau_i}_{\tau_i}\rangle  >\varepsilon\right\}} \right| Y\right]=\infty,\quad \widehat\Pi_{\phi\cdot\nu}{\mathrm -a.s.}
-	\]
-	Since given the spatial motion of the spine the immigration process is a Poisson point process, therefore,
-	\[
-	\widehat{\mathbb Q}_\nu\left[\left.\sum_{i=0}^\infty I_{\left\{\langle\phi, \widehat X^{{\mathrm m},\tau_i}_{\tau_i}\rangle  >\varepsilon\right\}}\right| Y\right]=\int_0^\infty dt\int_{\phi(Y_t)^{-1}e^{Nt}}^\infty rn(Y_t, dr)\mathbb{P}_{r\delta_{Y_t}}\big(\langle\phi, X_t \rangle >\varepsilon\big).
-	\]
-	If we can prove for some $\varepsilon>0$, there is some time $t_0>0$, and $\delta>0$, such that when $t>t_0$,
-	\begin{eqnarray}\label{last point}
-	\inf_{r\geq \phi(x)^{-1}e^{Nt}, x\in E}\mathbb P_{r\delta_x}\big(\langle\phi, X_t
-	\rangle >\varepsilon\big)>\delta,
-	\end{eqnarray}
-	then from \eqref{inf}, \eqref{infty} is obtained.  By Chebyshev inequality, for any $\varepsilon>0$,
-	\begin{eqnarray*}
-		&&\mathbb P_{r\delta_x}\big(\langle\phi, X_t\rangle >\varepsilon\big)=\mathbb P_{r\delta_x}\left(e^{-\langle\phi, X_t\rangle }<e^{-\varepsilon}\right)\\
-		&=&1-\mathbb P_{r\delta_x}\left(e^{-\langle\phi, X_t
-			\rangle }\geq e^{-\varepsilon}\right)\geq 1-e^{\varepsilon }\mathbb P_{r\delta_x}e^{-\langle\phi, X_t\rangle }\\
-		&=&1-e^{\varepsilon }e^{-rV_t\phi(x)},
-	\end{eqnarray*}
-	where, $V_t\phi(x)$ is a classical solution to evolution equation
-	\begin{equation}\label{eq diff}
-	\begin{cases}
-	\dfrac{\partial U}{\partial t}=AU-\beta(x)U-\psi_0(x, U),& x\in E, t>0;\\
-	U(0,x)=\phi(x),& x\in E.\\
-	\end{cases}
-	\end{equation}
-	Define a function on $[0,\infty)\times E,$ $V(t,x)=e^{-Nt}\phi(x).$  Then
-	\[
-	(A-\beta)V(t,x)-\psi_0(x, V)-\frac{\partial V(t,x)}{\partial t}=(\lambda +N)V(t,x)-\psi_0(x,V(t,x)).
-	\]
-	It is obvious that $V$ is bounded on $[0,\infty)\times E$.  So we can choose $N$ large enough such that $(\lambda+N)V(t,x)-\psi(x,V)\geq 0$ on $[0,\infty)\times E.$
-	Meanwhile, $V(0,x)=\phi(x)$.  Applying comparison theorem for semilinear equation, we obtain that $V_t\phi(x)\geq V(t,x)$.  So
-	\begin{eqnarray*}
-		&&\inf_{r\geq \phi(x)^{-1}e^{Nt}, x\in E}\mathbb P_{r\delta_x}\big(\langle\phi, X_t \rangle >\varepsilon\big)\geq \inf_{r\geq \phi(x)^{-1}e^{Nt}, x\in E} 1-e^{\varepsilon}e^{-rV_t\phi(x)}\\
-		&&\geq \inf_{r\geq \phi(x)^{-1}e^{Nt}, x\in E} 1-e^{\varepsilon}e^{-rV(t,x)}
-		\geq 1-e^{\varepsilon-1}.
-	\end{eqnarray*}
-	Choose $0<\varepsilon<1$, and let $\delta=1-e^{\varepsilon-1}$.  Then \eqref{last point} is obtained. And
-	\eqref{infty} follows. Thus $k=0$. The proof is finished.
+\begin{prop} \color{red} \label{thm:ii}
+	$\mathbb Q^*_\nu[Y_\infty(\phi)^{-1}] \in[0,\infty)$. Moreover, $\mathbb Q^*_\nu[Y_\infty(\phi)^{-1}] = 0$ iff $\nu(l) = \infty$.
+\end{prop}
+
+\begin{proof} 
+	\color{blue}
+	Note that
+\begin{align}
+	&e^{-\lambda t}\mathbb P_\nu(X_t \neq \mathbf 0)
+	\overset{\eqref{eq:mt}}= \nu(\phi)\widetilde{\mathbb P}_\nu [X_t(\phi)^{-1}]
+	\\ & \overset{\eqref{asp:mean}}= \widetilde{\mathbb P}_\nu [X_t(\phi)^{-1}]
+	=\mathbb Q_{\nu}\left[\frac{1}{X_t(\phi) + Y_t(\phi)} \right]
+	=\mathbb Q^*_{\nu}\left[\frac{1}{X_t(\phi) + Y_t(\phi)} \right]
+\end{align}
+	Note that, (1) $\mathbb Q^*_\mu$ almost surely, $X_t(\phi)+Y_t(\phi) \xrightarrow[t\to \infty]{} Y_\infty(\phi)$; (2) under $\mathbb Q^*_\mu$, random variables $\{\frac{1}{X_t(\phi) + Y_t(\phi)}: t\geq 1\}$ are dominated by $\frac{1}{Y_1(\phi)}$; and (3) it can be verified that
+\[
+	\mathbb Q_\nu^*[Y_1(\phi)^{-1}] 
+	= \mathbb Q_\nu [Y_1(\phi)^{-1}] 
+	= \widetilde {\mathbb N}_\nu [w_1(\phi)^{-1}]
+	= \mathbb N_\nu (w_1\neq \mathbf 0) < \infty.
+\]
+	Using the dominated convergence theorem, we get the desired result.
 \end{proof}
 
+\section{Proof of Propositions \ref{thm:sn}-\ref{thm:ii}}
+\subsection{Proof of Proposition \ref{thm:sn}}
+
+Let us first recall the spine decomposition theory. 
+{\color{blue} Recall that $\xi$ is the spatial motion of the superprocess $X$. 
+Without loss of generality let us assume that it is canonical.}
+In spirit of RenSongSun 2019.
+Let $\{(\xi_t)_{t\geq 0}, \mathbf N^\xi; \mathbb Q_\mu\}$ is a spine decomposition of $\{(w_t)_{t\geq 0}; \widetilde {\mathbb N}_\mu\}$, i.e.
+(1) $\{(\xi_t)_{t\geq 0}; \mathbb Q_\mu\} \overset{d}= \{(\xi_t)_{t\geq 0}; \widetilde \Pi_{\mu} \}$ {\color{blue} where blah blah}; 
+(2) given $\{(\xi)_{t\geq 0}; \mathbb Q_\mu\}$, $\{\mathbf N^\xi; \mathbb Q_\mu\}$ is a Possion random measure on $[0,\infty) \times \mathbb D$ with intensity $N^\xi(ds,dw) =  $ {\color{blue} blah blah}. 
+Then according to RenSongSun2019, we have that
+\begin{align} 
+ & \{(w_t)_{t\geq 0}; \widetilde{ \mathbb N}_\mu \} \overset{\text{f.d.d.}} = \Big\{ \Big( \int_{[0,t)\times \mathbb D} w_{t-s} \mathbf N^\xi(ds,dw) \Big)_{t\geq 0} ; \mathbb Q_\mu\Big\}. 
+ \end{align}
+Thanks to this, without loss any generalisity, under $\mathbb Q_\nu$, we can assume that 
+\begin{align} 
+&  \int_{[0,t)\times \mathbb D} w_{t-s} \mathbf N^\xi(ds,dw) = Y_t, \quad t\geq 0.
+\end{align} 
+
+{\color{blue} When we introducing the process $\xi$, lets directly define a two sided process $\{(\xi_t)_{t\in \mathbb R}; \widetilde \Pi_\nu\}$. And construct the spine decomposition $\{ (\xi_t)_{t\in \mathbb R}, \mathbf N^\xi; \mathbb Q_\nu\}$ using this $\xi$. Also define $Y_t^{a,b}$}
+
+\begin{lem} \color{red}
+\begin{align} 
+& Y_t^{a,b} \overset{\text{d}}= Y_{t+r}^{a+r,b+r}, \quad -\infty < a<b\leq t < \infty, r\in \mathbb R.
+\end{align}
+\end{lem}
+
+\begin{proof}[Proof of Proposition \ref{thm:sn}]
+	{\color{blue} It is obvious now.}
+\end{proof}
+
+\subsection{Proof of Proposition \ref{thm:ii}}
+s
 
 \section{Preliminaries}
 \subsection{Spine process and its time reverse}
@@ -608,7 +562,7 @@ for arbitrary $B_i \in \mathscr B(E)$,  $i=1,\dots, n$.
 
 
 \subsection{Spine decomposition}
-    Suppose that $X$ is the superprocess introduced in Section \ref{model} which satisfies Assumption \ref{asp:mean}.   Fix an arbitrary $\mu\in \mathcal M_f(E)$.  Define the probability $\widetilde {\mathbb P}_\mu$ using \eqref{eq: martingale transformation}.
+    Suppose that $X$ is the superprocess introduced in Section \ref{model} which satisfies Assumption \ref{asp:mean}.   Fix an arbitrary $\mu\in \mathcal M_f(E)$.  Define the probability $\widetilde {\mathbb P}_\mu$ using \eqref{eq:mt}.
 
     For each $\mu \in \mathcal M_f(E)\backslash\{0\}$,
     we say $\{(Y)_{t\geq 0}, (X^{\mathrm n, \sigma})_{\sigma\in \mathcal D^\mathrm n}, (X^{\mathrm m, \sigma})_{\sigma \in \mathcal D^\mathrm m}, (X_t)_{t\geq 0}; \mathbb Q_{\mu}\}$ is a \emph{spine representation} of $\{(X_t)_{t\geq 0}; \widetilde {\mathbb P}_\mu\}$ if the followings are true:
@@ -668,7 +622,7 @@ Suppose that $X$ is the superprocess introduced in Section \ref{model} which sat
 	{\tt I'm not really a fan of this Reverse spine representation. It is in its natural the spine decomposition. We should be able proof things without it.
 	The only key is that the spine process is, well, invariant under certain invariant measure.}
 
-    Recall that $\nu := \hat \phi \cdot m \in \mathcal M_f(E)$. Define the probability $\widetilde {\mathbb P}_\nu$ using \eqref{eq: martingale transformation}.
+    Recall that $\nu := \hat \phi \cdot m \in \mathcal M_f(E)$. Define the probability $\widetilde {\mathbb P}_\nu$ using \eqref{eq:mt}.
     We say $\{(Y)_{t\geq 0}, (X^{\mathrm n, \sigma})_{\sigma\in \mathcal D^\mathrm n}, (X^{\mathrm m, \sigma})_{\sigma \in \mathcal D^\mathrm m}, (X_t)_{t\geq 0}; \widehat {\mathbb Q}_{\nu}\}$ is a \emph{reverse spine representation} of $\{(X_t)_{t\geq 0}; \widetilde {\mathbb P}_\nu\}$ if the followings are true:
 \begin{itemize}
 \item
