@@ -1,6 +1,4 @@
-% * Preamble
 \documentclass[xcolor=dvipsnames]{beamer}
-%\usepackage[UTF8,scheme=plain]{ctex}
 \usepackage{hyperref}
 \usepackage{lmodern}
 \usepackage{mathrsfs}
@@ -17,109 +15,100 @@
 \setbeamerfont{title}{shape=\itshape,family=\rmfamily}
 \setbeamercolor{title}{fg=red!80!black,bg=red!20!white}
 \everymath{\displaystyle}
-% * Top matter
 \title[QSDs for superprocesses]{Quasi-stationary distributions for subcritical superprocesses}
 \author[Zhenyao Sun]{ 
   {\bf \Large Zhenyao Sun  }
 }
 \institute[]{
-	Based on a joint work with {\bf Rongli Liu}, {\bf Yan-Xia Ren} and {\bf Renming Song}}
+	Based on a joint work with {\bf Rongli Liu}, {\bf Yan-Xia Ren} and {\bf Renming Song}
+\\ http://arxiv.org/abs/2001.06697v1}
 \date[]{
-	Technion, Israel Institute of Technology
-\\ February, 2020}
+	The Bernoulli-IMS One World Symposium.
+\\ August, 2020}
 \begin{document}
 
 \begin{frame}
   \titlepage
 \end{frame}
 
-% * Presentation
-% ** Model
 \section{Model}
-% *** Settings
 \subsection{Settings}
-\begin{frame}{Definition of the superprocess}
-	Let us first give the definition of the superprocess.
+\begin{frame}{Superprocess}
 \begin{itemize}
 \item
-	Let the {\color{red} underlying space} $E$ be a Polish space. 
+	Let $E$ be a Polish space. 
 \item
-	Let the {\color{red} spatial motion} $\{(\xi_t)_{0\leq t< \zeta}; (\Pi_x)_{x\in E}\}$ be an $E$-valued Borel right process with a random lifetime $\zeta \in (0,\infty]$. 
+	Let $\xi = \{(\xi_t)_{t\in [0,\zeta)}; (\Pi_x)_{x\in E}\}$ be a $E$-valued Borel right process with (sub)Markovian transition semigroup $(P_t)_{t\geq 0}$. 
 \item
-	Let the {\color{red} branching mechanism} $\psi$ be a real function on $E\times [0,\infty)$ such that for any $x\in E$ and $z\geq 0$,
-  \[\psi(x, z)=
-  - \beta(x) z + \sigma(x)^2 z^2 + \int_{(0,\infty)} (e^{-zu} - 1 + zu) \pi(x,du)
+	Let $\psi$ be a function on $E\times \mathbb R_+$ such that
+  \[
+  \psi(x, z)=
+  - \beta(x) z + \sigma(x)^2 z^2 + \int_{(0,\infty)} (e^{-zu} - 1 + zu) \pi(x,\mathrm du)
   \]
-	where $\beta$ and $\sigma$ are bounded measurable functions on $E$ and $(u\wedge u^2)\pi(x,du)$ is a bounded kernel from $E$ to $(0,\infty)$.
+	where $\beta, \sigma \in \mathcal B_b(E)$ and $(u\wedge u^2)\pi(x,\mathrm du)$ is a bounded kernel from $E$ to $(0,\infty)$.
 
 \item
 	Let $\mathcal M_f(E)$ be the space of all finite Borel measures on $E$ equipped with the topology of weak convergence.
+\item
+Say a function $f$ on $\mathbb R_+\times E$ is locally bounded if 
+\[
+\sup_{s\in [0,t],x\in E} |f(s,x)|
+<\infty,
+\quad t\in \mathbb R_+.
+\]
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Definition of the superprocess}
+\begin{frame}{Superprocess}
 \begin{itemize}
 \item
-  Denote by $\mu(f)$, $\langle f, \mu\rangle$ or $\langle \mu, f\rangle$ the integration of a function $f$ and a measure $\mu$ whenever the integral is well-defined.
+	For a measure $\mu$ and a function $f$, denote by $\mu(f)$ the integral of $f$ w.r.t. $\mu$ when it is well-defined.
+\item 
+	$\forall f\in \mathcal B_b^+(E)$, $\exists$ a unique locally bounded non-negative Borel function $(t,x) \mapsto V_tf(x)$ on $\mathbb R_+ \times E$ such that 
+\[
+	V_tf + \int_0^{t} P_s\psi\big(\cdot, V_{t-s}f (\cdot)\big)\mathrm ds = P_tf \quad \text{ on } E, t\geq 0.
+\]
+\item 
+	$\exists$ an $\mathcal M_f(E)$-valued Borel right process $X=\{(X_t)_{t\geq 0}; (\mathbb P_\mu)_{\mu\in \mathcal M_f(E)}\}$ such that 
+\[
+	\mathbb{P}_{\mu}[e^{-X_t(f)}]
+	= e^{-\mu(V_tf)}, 
+	\quad f\in \mathcal B_b^+(E), t\geq 0, \mu\in \mathcal M_f(E).
+\]
+\item 
+	We call this process the $(\xi, \psi)$-superprocess (Watanabe (1968), Ikeda, Nagasawa and Watanabe (1968, 1969), Dawson (1975, 1977)).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Yaglom limit, QLDs and QSDs}
+\begin{itemize}
+\item 
+	Denote $\mathbf 0$ the null measure on $E$. 
+	Write $\mathcal M_f^o(E) = \mathcal M_f(E)\setminus \{\mathbf 0\}$. 
+\item 
+	For any probability measure $\mathbf P$ on $\mathcal M_f(E)$, define \[(\mathbf P \mathbb P)[\cdot]: = \int_{\mathcal M_f(E)} \mathbb P_\mu[\cdot] \mathbf P(\mathrm d\mu).\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Yaglom limit and QSDs}
+\begin{itemize}
 \item
-	Say a function $f$ on $\mathbb R_+\times E$ is {\color{red} locally bounded} if 
-$
-    \sup_{s\in [0,t],x\in E} |f(s,x)|
-    <\infty,
-    \quad t\in \mathbb R_+.
-$
+	Suppose that $\mathbf Q$ is a probability measure on $\mathcal M_f(E)$ concentrated on $\mathcal M_f^o(E)$.
 \item 
-	Let the {\color{red} cumulant semigroup} $(V_t)_{t\geq 0}$ be given by the following. 
-	For any bounded non-negative function $f$ on $E$, there exists a unique locally bounded non-negative Borel function $(t,x) \mapsto V_tf(x)$ on $[0,\infty) \times E$ such that for any $t\geq 0$ and $x\in E$,
-$
-	V_tf(x) + \Pi_x \Big[ \int_0^{t\wedge \zeta} \psi(\xi_s, V_{t-s}f (\xi_s)) ds\Big] = \Pi_x[f(\xi_t) \mathbf 1_{t< \zeta}].
-$
-\end{itemize}
-\end{frame}
-
-% *** Superprocesses
-\subsection{Superprocesses}
-\begin{frame}{Definition of the superprocess}
-\begin{itemize}
-	\item 
-	Let the {\color{red} $(\xi,\psi)$-superprocess} $\{(X_t)_{t\geq 0}; (\mathbb P_\mu)_{\mu\in \mathcal M_f(E)}\}$ be given as an $\mathcal M_f(E)$-valued Markov process such that for each bounded non-negative measurable function $f$ on $E$, $t\geq 0$ and finite measure $\mu$ on $E$,
-$
-	\label{eq: def of V_t}
-	\mathbb{P}_{\mu}[e^{-\langle f,X_t \rangle}]
-	= e^{-\langle V_tf, \mu \rangle}.
-$
-	\item
-	$(\xi, \psi)$-superprocess exists (Watanabe (1968), Ikeda, Nagasawa and Watanabe (1968, 1969), Dawson (1975, 1977)).
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Definition of Yaglom limit, QLDs and QSDs}
-	Let us now introduce the concept of Yaglom limit, QLDs and QSDs for the superprocess.
-\begin{itemize}
+	Say $\mathbf Q$ is the {\color{red} Yaglom limit} of the superprocess $X$ if 
+\[
+	\mathbb P_\mu(X_t \in \cdot | X_t\neq \mathbf 0) \xrightarrow[t\to \infty]{\text{d}} \mathbf Q(\cdot), \quad \mu \in \mathcal M_f^o(E).
+\]
 \item 
-	Denote $\mathbf 0$ the {\color{red} null measure} on $E$. Write $\mathcal M_f^o(E) = \mathcal M_f(E)\setminus \{\mathbf 0\}$. Any probability measure $\mathbf P$ on $\mathcal M_f^o(E)$ will also be understood as its unique extension on $\mathcal M_f(E)$ with $\mathbf P(\{\mathbf 0\}) = 0$.
+	Say $\mathbf Q$ is a {\color{red} quasi-limit distribution (QLD)} of $X$, if $\exists$ a probability measure $\mathbf P$ on $\mathcal M_f^o(E)$ such that
+\[
+	(\mathbf P \mathbb P)(X_t \in B|X_t\neq \mathbf 0) \xrightarrow[t\to \infty]{} \mathbf Q(B), \quad B\in \mathcal B(\mathcal M_f^o(E)).
+\]		
 \item 
-	We say a probability measure $\mathbf Q$ on $\mathcal M_f^o(E)$ is the {\color{red} Yaglom limit} of the superprocess $X$ if for any $\mu \in \mathcal M_f^o(E)$, 
-$
-	\mathbb P_\mu(X_t \in \cdot | \|X_t\| > 0) \xrightarrow[t\to \infty]{d} \mathbf Q(\cdot).
-$ 
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Definition of Yaglom limit and QSDs}
-\begin{itemize}
-\item 
-	For any probability measure $\mathbf P$ on $\mathcal M_f(E)$, define $(\mathbf P \mathbb P)[\cdot]: = \int_{\mathcal M_f(E)} \mathbb P_\mu[\cdot] \mathbf P(d\mu)$.
-\item 
-	We say a probability measure $\mathbf Q$ on $\mathcal M_f^o(E)$ is a {\color{red} quasi-limit distribution (QLD)} of $X$, if there exists a probability measure $\mathbf P$ on $\mathcal M_f^o(E)$ such that
-$
-	(\mathbf P \mathbb P)(X_t \in B|\|X_t\|>0) \xrightarrow[t\to \infty]{} \mathbf Q(B), \quad B\in \mathcal B(\mathcal M_f^o(E)).
-$		
-\item 
-We say a probability measure $\mathbf Q$ on $\mathcal M_f^o(E)$ is a {\color{red} quasi-stationary distribution (QSD)} of $X$, if 
-$
-(\mathbf Q \mathbb P)(X_t \in B|\|X_t\|>0) = \mathbf Q(B), \quad t\geq 0, B\in \mathcal B(\mathcal M_f^o(E)).
-$		
+	Say $\mathbf Q$ is a {\color{red} quasi-stationary distribution (QSD)} of $X$, if 
+\[
+	(\mathbf Q \mathbb P)(X_t \in B|X_t\neq \mathbf 0) = \mathbf Q(B), \quad t\geq 0, B\in \mathcal B(\mathcal M_f^o(E)).
+\]		
 \end{itemize}
 \end{frame}
 
@@ -134,73 +123,81 @@ Here are some basic facts (M\'el\'eard and Villemonais (2012)):
 \item
 	$ \{\text{Yaglom limit of X}\} \subset \{\text{QLDs of X}\} = \{\text{QSDs of X}\}$.
 \item
-	For any $\mathbf Q \in \{\text{QSDs of X}\}$, there exists an $r \in (-\infty, 0)$ such that $(\mathbf Q \mathbb \mathbb P)(X_t \neq \mathbf 0) = e^{rt}$. We say $r$ is the {\color{red} decay rate} of $\mathbf Q$.
+	For any $\mathbf Q \in \{\text{QSDs of X}\}$, there exists an $r \in (0,\infty)$ such that $(\mathbf Q \mathbb \mathbb P)(X_t \neq \mathbf 0) = e^{-rt}$. We say $r$ is the {\color{red} decay rate} of $\mathbf Q$.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Criticality of superprocesses}
-	Let us first discuss the criticality of the superprocesses.
 \begin{itemize}
 \item 
-	{\color{red} The mean semigroup $(P_t^\beta)_{t\geq 0}$ of $X$} is given by 
-$
-	P_t^\beta f(x) : = \Pi_x\Big[e^{\int_0^t \beta(\xi_r) dr} f(\xi_t) \mathbf 1_{t< \zeta}\Big]
-$
+	The mean semigroup $(P_t^\beta)_{t\geq 0}$ of $X$ is given by 
+\[
+	P_t^\beta f(x) 
+	:= \Pi_x\Big[e^{\int_0^t \beta(\xi_r) \mathrm dr} f(\xi_t) \mathbf 1_{t< \zeta}\Big]
+	= \mathbb P_{\delta_x}[X_t(f)],
+\]
 	where $f \in \mathcal B_b(E), t\geq 0$ and $x\in E$.
 \item
-	{\bf Assumption 0:} There exist a constant $\lambda < 0$, a bounded strictly positive Borel function $\phi$ on $E$, and a probability measure $\nu$ with full support on $E$ such that for each $t\geq 0$,
-$
+	{\bf Assumption 0:} $\exists$ a constant $\lambda < 0$, a strictly positive $\phi\in \mathcal B_b(E)$, and a probability measure $\nu$ with full support on $E$ such that for each $t\geq 0$,
+\[
 	P_t^\beta \phi = e^{\lambda t}\phi,
 	\quad \nu P_t^\beta = e^{\lambda t}\nu,
 	\quad \nu(\phi) = 1.
-$
+\]
 \item
-	The assumption $\lambda < 0$ says that the mean of $(X_t(\phi))_{t\geq 0}$ decay exponentially with rate $-\lambda>0$, and in this case the superprocess $X$ is called {\color{red} subcritical}. 
+	The assumption $\lambda < 0$ says that the mean of $(X_t(\phi))_{t\geq 0}$ decay exponentially with rate $-\lambda>0$. 
+	In this case the superprocess $X$ is called {\color{red} subcritical}. 
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Intrinsic ultracontractive and non-persistent}
-	We will also need the following two assumptions:
 \begin{itemize}
 \item
-	Denote by $L_1^+(\nu)$ the collection of non-negative Borel functions on $E$ which are integrable w.r.t. $\nu$.
+	Denote by $L_1^+(\nu)$ the collection of all function $f\in \mathcal B_b^+(E)$ which are integrable w.r.t. $\nu$.
 \item 
-	{\bf Assumption 1:} For all $t>0, x\in E$ and $f\in L_1^+(\nu)$, it holds that $P_t^\beta f(x) = e^{\lambda t} \phi(x) \nu(f) (1+ C_{t,x,f})$ for some real $C_{t,x,f}$ with
-	$\sup_{x\in E, f\in L_1^+(\nu)}|C_{t,x,f}|< \infty$ and
-	$\lim_{t\to \infty}\sup_{x\in E, f\in L_1^+(\nu)}|C_{t,x,f}| =0$.
+	{\bf Assumption 1:} For all $t>0, x\in E$ and $f\in L_1^+(\nu)$, it holds that 
+	\[
+		P_t^\beta f(x) = e^{\lambda t} \phi(x) \nu(f) (1+ C_{t,x,f})
+	\] 
+	for some real $C_{t,x,f}$ with
+	\[\sup_{x\in E, f\in L_1^+(\nu)}|C_{t,x,f}|< \infty\] and
+	\[\lim_{t\to \infty}\sup_{x\in E, f\in L_1^+(\nu)}|C_{t,x,f}| =0.\]
 \item
-	{\bf Assumption 2:} There exists $T\geq 0$ such that $\mathbb P_\nu(\|X_t\|=0)>0$ for all $t>T$. 
-\end{itemize}
-	One simple consequence of Assumption 1 is the following.
-\begin{itemize}
-	\item $\mathbb P_\mu(\|X_t\|>0)>0$ for each $t\geq 0$ and $\mu \in \mathcal M_f^o(E)$. 
-	Hence we can condition the superprocess $X$ on survival up to a given time $t$.
+	{\bf Assumption 2:} There exists $T\geq 0$ such that $\mathbb P_\nu(X_t=\mathbf 0)>0$ for all $t>T$. 
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Main Results}
 \begin{theorem}[Liu, Ren, Song and S. (2020)]
-	If Assumptions 0-2 hold, then there exists a probability measure $\mathbf Q$ on $\mathcal M_f^o(E)$ such that for each $\mu \in \mathcal M_f^o(E)$,
-	$\mathbb P_\mu (X_t \in \cdot | \|X_t\| > 0) \xrightarrow[t\to \infty]{d} \mathbf Q(\cdot)$. 
+	If Assumptions 0-2 hold, then the Yaglom limit $\mathbf Q$ of $X$ exists. 
 \end{theorem}
 \begin{theorem}[Liu, Ren, Song and S. (2020)]
-	Suppose that Assumptions 0-2 hold. Then (1) for each $r \in (-\infty, \lambda)$, there is no QSD for $X$ with decay rate $r$; and (2) for each $r\in [\lambda,0)$, there exists a unique QSD $\mathbf Q_r$ for $X$ with decay rate $r$.
-	Moreover, for any $r \in [\lambda, 0)$ and non-negative Borel function $h$ on $E$,
-$
-	\Big(\int_{\mathcal M_f^o(E)} (1-e^{- w(h)}) \mathbf Q_r(dw)\Big)^{1/r}
-	= \Big(\int_{\mathcal M_f^o(E)} (1-e^{- w(h)}) \mathbf Q (dw) \Big)^{1/\lambda}.
-$
+	Suppose that Assumptions 0-2 hold. Then 
+\begin{itemize}
+	\item 
+	$\forall r > -\lambda$, there is no QSD of $X$ with decay rate $r$;
+	\item
+	$\forall r\in (0,-\lambda]$, $\exists$ a unique QSD $\mathbf Q_r$ of $X$ with decay rate $r$;
+	\item
+	$\mathbf Q$, the Yaglom limit $=$ $\mathbf Q_{-\lambda}$, the QSD with the highest decay rate.   
+\end{itemize}
 \end{theorem}
 \end{frame}
 
 \begin{frame}{Literature}
 \begin{itemize}
-	\item Yaglom limit for Galton-Watson processes are studied by Yaglom (1947), Heathcote, Seneta and Vere-Jones (1967), and Joff (1967).
-	\item QSDs for Galton-Watson processes are studied by Hoppe and Seneta (1976).
-	\item Yaglom limit for Multitype Galton-Watson processes are studied by Hoppe (1975), Hoppe and Seneta (1978), Joffe (1967).
-	\item For Yaglom limit and QSDs for branching Markov processes, see Asmussen and Hering's book: \emph{branching processes} (1983) and the references therein. 
-	\item Yaglom limit for continuous-state branching process (a degenerated superprocess) where studied by Li (2000) and Lambert (2007).
-	\item QSDs for continuous-state branching processes are studied by Lambert (2007).
+\item 
+	Yaglom limit for Galton-Watson processes were studied by Yaglom (1947), Heathcote, Seneta and Vere-Jones (1967), and Joff (1967).
+\item 
+	QSDs for Galton-Watson processes were studied by Hoppe and Seneta (1976).
+\item 
+	Yaglom limit for Multitype Galton-Watson processes are studied by Hoppe (1975), Hoppe and Seneta (1978), Joffe (1967).
+\item 
+	For Yaglom limit and QSDs for branching Markov processes, see Asmussen and Hering's book: \emph{branching processes} (1983) and the references therein. 
+\item 
+	Yaglom limit for continuous-state branching process (a degenerated superprocess) were studied by Li (2000) and Lambert (2007).
+\item 
+	QSDs for continuous-state branching processes were studied by Lambert (2007).
 \end{itemize}
 \end{frame}
 
