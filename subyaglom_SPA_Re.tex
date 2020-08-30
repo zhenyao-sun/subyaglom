@@ -27,7 +27,7 @@
 \begin{document}
 \title{Quasi-stationary distributions for subcritical superprocesses}
 \author[R. Liu, Y.-X. Ren, R. Song and Z. Sun]{Rongli Liu, Yan-Xia Ren, Renming Song and Zhenyao Sun}
-\address{Rongli Liu\\ Mathematics and Applied Mathematics\\ Beijing Jiaotong University\\ Beijing 100044\\ P. R. China}
+\address{Rongli Liu\\ School of Science\\ Beijing Jiaotong University\\ Beijing 100044\\ P. R. China}
 \email{rlliu@bjtu.edu.cn}
 \thanks{The research of Rongli Liu is supported in part by NSFC (Grant No. 11301261), and the Fundamental Research Funds for the Central Universities (Grant No.  2017RC007)}
 \address{Yan-Xia Ren\\ LMAM School of Mathematical Sciences \& Center for
@@ -48,22 +48,22 @@ Statistical Science\\ Peking University\\ Beijing 100871\\ P. R. China}
 \maketitle
 \section{Introduction}
 \subsection{Background}\label{sec:BGD}
-	Denote $\mathbb Z_+:= \{1,2,\cdots\}$ and $\mathbb N = \mathbb Z_+ \cup \{0\}$. 
+	Denote $\mathbb Z_+:= \{1,2,\cdots\}$ and $\mathbb N = \mathbb Z_+ \cup \{0\}$.
 	Suppose that $Z=\{(Z_n)_{n\in \mathbb N}; (P_z)_{z\in \mathbb N}\}$
 	is a Galton-Watson process with offspring distribution
 		$(p_n)_{n\in \mathbb N}$.
 	Let $m:=\sum^{\infty}_{n=1}np_n$ be the mean
 	of the offspring distribution.
-	It is well known that when $m\leq 1$,
+	 It is well known that when $m \leq 1$ and $p_1<1$,
 	the process $Z$ becomes extinct in finite time almost surely, that is,
 \[
 	P_z(Z_n = 0 \text{ for some $n \in \mathbb N$} ) = 1, \quad z \in \mathbb N.
 \]
 	Let $\zeta:=\inf\{n\geq 0: Z_n=0\}$ be the extinction time of $Z$.
 	If $\nu$ is a distribution on
-	$\mathbb Z_+$ such that for any $z\in \mathbb Z_+$ and subset $A$ of $\mathbb Z_+$, 
+	$\mathbb Z_+$ such that for any $z\in \mathbb Z_+$ and subset $A$ of $\mathbb Z_+$,
 \[
-	\lim_{n\rightarrow\infty} P_z\left(Z_n\in A\middle|\zeta>n \right)=\nu(A), 
+	\lim_{n\rightarrow\infty} P_z\left(Z_n\in A\middle|\zeta>n \right)=\nu(A),
 \]
 	then we say that $\nu$ is the Yaglom limit of $Z$.
 	Yaglom \cite{Yaglom47} showed that such limit exists when $m < 1$ and the offspring distribution has finite second moment.
@@ -77,30 +77,33 @@ Statistical Science\\ Peking University\\ Beijing 100871\\ P. R. China}
 \]
 	then we say $\nu$ is a quasi-stationary distribution of $Z$.
 	Hoppe and Seneta \cite{HoppeSeneta1978Analytical} studied the quasi-stationary distributions of $(Z_n)_{n\in \mathbb N}$.
-	Recently, Maillard \cite{Maillard2018The}
-characterized all  $\lambda$-invariant measures of $(Z_n)_{n \in \mathbb N}$.
-(If a $\lambda$-invariant measure is a probability measure, then it is equivalent to a quasi-stationary distribution).
+	Recently, Maillard \cite{Maillard2018The} characterized all  $\lambda$-invariant measures of $(Z_n)_{n \in \mathbb N}$.
+	If a $\lambda$-invariant measure is a probability measure, then it is equivalent to a quasi-stationary distribution.
 	Multitype analogs for the Yaglom limit results can be found in
 	\cite{Hoppe1975Stationary, HoppeSeneta1978Analytical, JoffeSpitzer1967On}.
 
-	Now suppose that $Z =\{(Z_t)_{t \geq 0}; (P_x)_{x\geq 0}\}$  is a  continuous-state branching process on $[0,\infty)$ where $0$ is an absorbing state.  Let $\zeta:=\inf\{t\geq 0: Z_t=0\}$ be the extinction time of $Z$.
+	Now suppose that $Z =\{(Z_t)_{t \geq 0}; (P_x)_{x\geq 0}\}$  is a  continuous-state branching process on $[0,\infty)$ where $0$ is an absorbing state.  Let
+    $\zeta:=\inf\{t\geq 0: Z_t=0\}$ be the extinction time of $Z$.
 	If $\nu$ is a distribution on $(0,\infty)$ such that for any $x>0$ and Borel subset $A$ of $(0,\infty)$,
 \[
-	\lim_{t\rightarrow\infty}\mathbb P_x\left(Z_t\in A\middle|\zeta>t\right)=\nu(A),
+\lim_{t\rightarrow\infty} P_x\left(Z_t\in A\middle|\zeta>t\right)=\nu(A),
 \]
 	then $\nu$ is called the Yaglom limit of $Z$.
 	If $\nu$ is a distribution on $(0,\infty)$ such that for any Borel subset $A$ of $(0,\infty)$,
 \[
-	\int_{(0,\infty)} \nu(dx)\mathbb P_x (Z_t \in A | \zeta > t) = \nu (A), \quad t\geq 0.
+\int_{(0,\infty)} \nu(dx) P_x (Z_t \in A | \zeta > t) = \nu (A),
+	\quad t\geq 0,
 \]
 	then we say $\nu$ is a quasi-stationary distribution for $Z$.
-	The Yaglom limits of continuous-state branching processes were studied in \cite{Li00}, where conditioning of the type $\{\zeta>t+r\}$ for any finite $r>0$ instead of $\{\zeta>t\}$ was also considered.
+	The Yaglom limits of continuous-state branching processes were studied in \cite{Li00}, where conditioning of the type $\{\zeta>t+r\}$ for any finite $r>0$
+    instead of $\{\zeta>t\}$ was also considered.
 	Lambert \cite{Lambert2007Quasi-stationary} also studied Yaglom limits using a different method, and characterized all the quasi-stationary distributions  for $Z$.
 	Seneta and Vere-Jones \cite{SenetaVere-Jones1968On} studied some similar type of conditional limits for discrete-time continuous-state branching processes.
 	Recently \cite{Labbe2013Quasi-stationary} considered quasi-stationary distributions for continuous-state branching processes conditioned on non-explosion.
 
 	Asmussen and Hering \cite{AH} studied limit behaviors of subcritical branching Markov processes.
-	They proved that the Yaglom limits for a class of subcritical  branching Markov processes exist under some conditions on the mean semigroup, and characterized all of their quasi-stationary distributions, see \cite[Chapter 5]{AH} and the references therein.
+	They proved that the Yaglom limits for a class of subcritical  branching Markov processes exist under some conditions on the mean semigroup, and
+    characterized all of their quasi-stationary distributions, see \cite[Chapter 5]{AH} and the references therein.
 
 	In this paper, we are interested in a class of subcritical $(\xi, \psi)$-superprocesses.
 	We will prove the existence of the Yaglom limit and identify all  quasi-stationary distributions under some asymptotic conditions on its mean semigroup.
@@ -118,9 +121,10 @@ characterized all  $\lambda$-invariant measures of $(Z_n)_{n \in \mathbb N}$.
 	We first recall some basics about superprocesses.
 	Let $E$ be a Polish space.
     Let $\partial$ be an isolated point not contained in $E$ and $E_\partial: = E \cup \{\partial\}$.
-	Denote by $\mathcal B(E, D)$ the collection of Borel maps  from $E$ to some metric space $D$.
-    Denote by $\mathcal B_b(E,D)$ the metrically bounded elements in $\mathcal B(E,D)$.
-	Assume that \emph{the underlying process} $\xi = \{(\xi_t)_{t\ge0}; (\Pi_x)_{x\in E}\}$ is an $E_\partial$-valued Borel right process with $\partial$ as an absorbing state.
+	Denote by $\mathcal B(E, D)$ the collection of Borel maps  from $E$ to some measurable space $D$.
+    If $D$ is a subset of $\mathbb R$, we denote by $\mathcal B_b(E,D)$ the bounded measurable functions from $E$ to $D$.
+	Assume that \emph{the underlying process} $\xi = \{(\xi_t)_{t\ge0}; (\Pi_x)_{x\in E}\}$ is an $E_\partial$-valued Borel right process with $\partial$ as an
+    absorbing state.
 	Denote by $\zeta:=\inf\{t>0: \xi_t=\partial\}$ the lifetime of $\xi$.
 	Let \emph{the branching mechanism} $\psi$ be a function on $E \times [0,\infty)$ given by
 \begin{equation}
@@ -131,8 +135,10 @@ characterized all  $\lambda$-invariant measures of $(Z_n)_{n \in \mathbb N}$.
 	where $\beta, \sigma \in \mathcal B_b(E,\mathbb R)$ and $(u \wedge u^2) \pi(x,du)$ is a bounded kernel from $E$ to $(0,\infty)$.
 	Let $\mathcal M_f(E)$ denote the space of all finite Borel measures on $E$ equipped with the topology of weak convergence.
 	Denote by $\mathcal B(\mathcal M_f(E))$ the Borel $\sigma$-field generated by this topology.
-	For any $\mu\in\mathcal M_f(E)$ and $f \in \mathcal B(E, [0,\infty))$, we use $\mu(f)$ to denote the integration of $f$ with respect to $\mu$ whenever the integration is well defined.
-	For any $f \in \mathcal B_b(E, [0,\infty))$, there is a unique locally bounded non-negative map $(t,x)\mapsto V_tf(x)$ on $[0,\infty) \times E$ such that
+	For any $\mu\in\mathcal M_f(E)$ and $g \in \mathcal B(E, [0,\infty))$, we use $\mu(g)$ to
+   denote the integration of $g$ with respect to $\mu$ whenever the integration is well defined.
+    We will use $\|\mu\|$ to denote $\mu(1)$.
+  	For any $f \in \mathcal B_b(E, [0,\infty))$, there is a unique locally bounded non-negative map $(t,x)\mapsto V_tf(x)$ on $[0,\infty) \times E$ such that
 \begin{equation} \label{eq:BGD.1}
 	V_tf(x) + \Pi_x \left[ \int_0^{t\wedge \zeta} \psi \left(\xi_s, V_{t-s}f(\xi_s)\right) ds\right]
 	= \Pi_x\left[ f(\xi_t)  \mathbf 1_{t < \zeta}\right], \quad t\geq 0, x\in E.
@@ -159,38 +165,42 @@ characterized all  $\lambda$-invariant measures of $(Z_n)_{n \in \mathbb N}$.
 	\quad \mu \in \mathcal M_f(E), t\geq 0, f \in \mathcal B_b(E,\mathbb R).
 \end{equation}	
 
-	In this paper, we will always assume that there exist a constant $\lambda<0$, a function $\phi \in \mathcal B_b(E,(0,\infty))$ and a probability measure $\nu$ with full support on $E$ such that for each $t\geq 0$, $P_t^\beta \phi = e^{\lambda t}\phi$, $\nu P_t^\beta = e^{\lambda t} \nu$ and $\nu(\phi) = 1$.
-	The assumption $\lambda<0$ says that the mean of $(X_t(\phi))_{t\geq 0}$ decay exponentially with rate $\lambda$, and in this case the superprocess $X$ is called subcritical.
+	In this paper, we will always assume that there exist a constant $\lambda<0$, a function $\phi \in \mathcal B_b(E,(0,\infty))$ and a probability measure
+    $\nu$ with full support on $E$ such that for each $t\geq 0$, $P_t^\beta \phi = e^{\lambda t}\phi$, $\nu P_t^\beta = e^{\lambda t} \nu$ and $\nu(\phi) = 1$.
+	The assumption $\lambda<0$ says that the mean of $(X_t(\phi))_{t\geq 0}$
+	decays exponentially with rate $\lambda$, and in this case the superprocess $X$ is called subcritical.
 	Denote by $L_1^+(\nu)$ the collection of non-negative Borel functions on $E$ which are integrable with respect to the measure $\nu$.
 	We further assume that the following two conditions  hold:
-\begin{align}
+\begin{equation}
 \label{asp:H2!} \tag{H1}
-&\begin{minipage}{0.8\textwidth}
+\begin{minipage}{0.9\textwidth}
 	For all $t>0$, $x\in E$, and $f\in L_1^+(\nu)$, it holds that
-\end{minipage}
-\\
-&\begin{minipage}{0.8\textwidth}
-	\[ P_t^\beta f(x) = e^{\lambda t} \phi(x) \nu(f) (1+ C^{\eqref{asp:H2!}}_{t,x,f})\]
-	for some real $C^{\eqref{asp:H2!}}_{t,x,f}$ with
-	\[\sup_{x\in E, f\in L_1^+(\nu)} |C^{\eqref{asp:H2!}}_{t,x,f}| < \infty
+	 \[ P_t^\beta f(x) = e^{\lambda t} \phi(x) \nu(f) (1+ H_{t,x,f})\]
+		for some real $H_{t,x,f}$ with
+	\[\sup_{x\in E, f\in L_1^+(\nu)} |H_{t,x,f}| < \infty
 	\mbox{ and }
-	\lim_{t\to \infty} \sup_{x\in E, f\in L_1^+(\nu)} |C^{\eqref{asp:H2!}}_{t,x,f}| = 0.\]
+	\lim_{t\to \infty} \sup_{x\in E, f\in L_1^+(\nu)} |H_{t,x,f}| = 0.\]
 \end{minipage}
-\end{align}
+\end{equation}
 \begin{equation}
 \label{asp:H4!} \tag{H2}
-\begin{minipage}{0.8\textwidth}
-	There exists  $T^{\eqref{asp:H4!}}\geq 0$ such that $\mathbb P_\nu(\|X_t\| = 0)>0$ for all $t> T^{\eqref{asp:H4!}}$.
+\begin{minipage}{0.9\textwidth}
+	There exists  $T\geq 0$ such that $\mathbb P_\nu(\|X_t\| = 0)>0$ for all $t> T$.
 \end{minipage}
 \end{equation}
 	Note that $L_1^+(\nu)$ in \eqref{asp:H2!} can be replaced by the collection of all non-negative Borel functions $f$ with $\nu(f) = 1$.
-	In fact, for any $f\in L_1^+(\nu)$ and $k \in (0,\infty)$, it is easy to see that $C^{\eqref{asp:H2!}}_{t,x,f} = C^{\eqref{asp:H2!}}_{t,x,kf}$.
-	We  mention here that the constants in this paper might depend on the underlying process $\xi$ and the branching mechanism $\psi$.
-	Since $\xi$ and $\psi$ are fixed, dependence on them will not be explicitly specified.
+	In fact, for any $f\in L_1^+(\nu)$ and $k \in (0,\infty)$, it is easy to see that $H_{t,x,f} = H_{t,x,kf}$.
 
-	Denote by $\mathbf 0$ the null measure on $E$. 
-	Write $\mathcal M_f^o(E) := \mathcal M_f(E)\setminus \{ \mathbf 0\}$. 
-	Any probability measure $\mathbf P$ on $\mathcal M_f^o(E)$ will also be understood as its unique extension on $\mathcal M_f(E)$ with  $\mathbf P(\{\mathbf 0\}) = 0$. 
+	\eqref{asp:H2!} is mainly concerned with the spatial motion and \eqref{asp:H4!} is mainly about the branching mechanism of the superprocess.
+	In Subsection \ref{subsec:examples}, we will give examples satisfying these two assumptions.
+
+    We  mention here that quantities like $H_{t,x,f}$ in this paper might depend on the underlying process $\xi$ and the branching mechanism $\psi$.
+    Since $\xi$ and $\psi$ are fixed, dependence on them will not be explicitly specified.
+
+	Denote by $\mathbf 0$ the null measure on $E$.
+	Write $\mathcal M_f^o(E) := \mathcal M_f(E)\setminus \{ \mathbf 0\}$.
+	Any probability measure $\mathbf P$ on $\mathcal M_f^o(E)$ will also be understood as its unique extension on $\mathcal M_f(E)$ with  $\mathbf P(\{\mathbf
+    0\}) = 0$.
 	Since $\phi$ is strictly positive, we have
 \begin{equation}
 	\mathbb P_\mu[X_t(\phi)]
@@ -201,7 +211,7 @@ characterized all  $\lambda$-invariant measures of $(Z_n)_{n \in \mathbb N}$.
 \begin{equation}  \label{lem:Nd!}
 		\mathbb P_\mu(\|X_t\| > 0) > 0,\quad t\geq 0,\mu \in \mathcal M_f^o(E).
 \end{equation}
-Hence we can condition the superprocess $X$ on survival up to time $t$ if  the distribution of $X_0$ is not concentrated on $\{\mathbf 0\}$.
+   Hence we can condition the superprocess $X$ on survival up to time $t$ if  the distribution of $X_0$ is not concentrated on $\{\mathbf 0\}$.
 	Our first main result is the following.
 	
 \begin{thm} \label{Theorem:Y:H1:H2:H3:H4}
@@ -215,8 +225,9 @@ Hence we can condition the superprocess $X$ on survival up to time $t$ if  the d
 \end{thm}
 
 	Now we introduce the concepts of \emph{quasi-limiting distribution (QLD)} and \emph{quasi-stationary distribution (QSD)} for our superprocess $X$.
-	For any probability measure $\mathbf P$ on $\mathcal M_f(E)$, define $(\mathbf P\mathbb P)[\cdot] := \int_{\mathcal M_f(E)} \mathbb P_\mu[\cdot] \mathbf P(d\mu)$.
-	We say a probability measure $\mathbf Q$ on $\mathcal M^o_f(E)$ is a QLD of $X$, if there exists a probability measure $\mathbf P$ on 
+	For any probability measure $\mathbf P$ on $\mathcal M_f(E)$, define $(\mathbf P\mathbb P)[\cdot] := \int_{\mathcal M_f(E)} \mathbb P_\mu[\cdot] \mathbf
+    P(d\mu)$.
+	We say a probability measure $\mathbf Q$ on $\mathcal M^o_f(E)$ is a QLD of $X$, if there exists a probability measure $\mathbf P$ on
 	$\mathcal M_f^o(E)$ such that
 \[
 	(\mathbf P\mathbb P)\left(X_t \in B \middle| \|X_t\|>0\right) \xrightarrow[t\to \infty]{} \mathbf Q(B),
@@ -235,15 +246,17 @@ Hence we can condition the superprocess $X$ on survival up to time $t$ if  the d
 	Thus $\mathcal M^o_f(E)$ is Borel isomorphic to $(0,\infty)$ \cite[Theorem A.1.6]{Kallenberg2002Foundations}.
 	That is, there exists a bijection $\tau: \mathcal M^o_f(E) \to (0,\infty)$ such that both $\tau$ and its inverse $\tau^{-1}$ are Borel measurable.
 	Extend $\tau$ uniquely so that it is a bijection between $\mathcal M_f(E)$ and $[0,\infty)$.
-	Then, it is easy to verify that $\tau$ is a Borel isometric between $\mathcal M_f(E)$ and $[0,\infty)$ which maps $\mathbf 0$ to $0$. 
+	Then, it is easy to verify that $\tau$ is a Borel isomorphism
+	between $\mathcal M_f(E)$ and $[0,\infty)$ which maps $\mathbf 0$ to $0$.
 	Now for any $\mathcal M_f(E)$-valued Markov process with $\mathbf 0$ as an absorbing state,
 	its image under $\tau$ is a $[0,\infty)$-valued Markov process with $0$ as an absorbing state.
-	Therefore we can apply \cite[Proposition 1]{MeleardVillemonais2012Quasi-stationary} for $(\tau(X_t))_{t\geq 0}$ which gives that
+	Therefore we can apply \cite[Proposition 1]{MeleardVillemonais2012Quasi-stationary} to $(\tau(X_t))_{t\geq 0}$ which gives that
 	a probability $\mathbf Q$ on $\mathcal M^o_f(E)$ is a QLD for $X$ if and only if it is a QSD for $X$.
 	Similarly, we can apply \cite[Proposition 2]{MeleardVillemonais2012Quasi-stationary} to $X$ which says that
 \begin{equation} \label{eq:S.2}
 \begin{minipage}{0.9\textwidth}
-	if a probability measure $\mathbf Q$ on $\mathcal M^o_f(E)$ is a QSD of $X$, then there exists an $r\in (-\infty,0)$ such that $(\mathbf Q\mathbb P)(\|X_t\|>0) = e^{rt}$ for all $t\geq 0$.
+	if a probability measure $\mathbf Q$ on $\mathcal M^o_f(E)$ is a QSD of $X$, then there exists an $r\in (-\infty,0)$ such that $(\mathbf Q\mathbb
+    P)(\|X_t\|>0) = e^{rt}$ for all $t\geq 0$.
 	In this case, we call $r$ the mass decay rate of $\mathbf Q$.
 \end{minipage}
 \end{equation}
@@ -254,22 +267,159 @@ Hence we can condition the superprocess $X$ on survival up to time $t$ if  the d
 	and (2) for each $r\in (-\infty, \lambda)$, there is no QSD for $X$ with mass decay rate $r$.
 \end{thm}
 
+
+ \subsection{Examples} \label{subsec:examples}
+
+	In this subsection, we will give some examples satisfying \eqref{asp:H2!} and \eqref{asp:H4!}.
+
+	We first give an example satisfying \eqref{asp:H4!}.
+	Suppose that $\psi$ is bounded from below by a spatially independent branching mechanism, that is, there is a function $\widetilde\psi$ of the form
+\[
+	\widetilde\psi(z)
+	=\widetilde\beta z+\widetilde\sigma^2z^2+\int^\infty_0(e^{-zu}-1+zu)\widetilde\pi(du), \quad z\ge 0
+\]
+    with $\widetilde\beta\in \mathbb{R}$, $\widetilde\sigma\ge 0$ and $\widetilde\pi$ is a measure
+    on $(0, \infty)$ satisfying $\int^\infty_0(u\wedge u^2)\widetilde\pi(du)<\infty$ such that
+\[
+	\psi(x, z)\ge \widetilde\psi(z), \quad x\in E, z\ge 0.
+\]
+    If $\widetilde\psi(\infty)=\infty$ and $\int^\infty1/\widetilde\psi(z)dz<\infty$, then by
+    \cite[Lemma 2.3]{RenSongZhang2015Limit}, for any $t>0$,
+\[
+		   \inf_{x\in E}\mathbb P_{\delta_x}(\|X_t\| = 0)>0.
+\]
+     Using this and \eqref{eq:OY.1} below one can easily get that
+     $\mathbb P_\nu(\|X_t\| = 0)>0$ for all $t>0$. Thus \eqref{asp:H4!} is satisfied with $T=0$.
+
+	Now we give conditions that imply \eqref{asp:H2!}.
+	We assume that $\xi$ is a Hunt process and there exist an $\sigma$-finite measure $m$ with full support on $E$ and a family of strictly positive, bounded
+    continuous functions $\{p_t(\cdot,\cdot): t>0\}$ on $E\times E$ such that
+\begin{align}
+	\Pi_x[f(\xi_t) \mathbf 1_{t< \zeta}] = \int_E p_t(x,y) f(y)m(dy), & \quad t>0, x\in E, f\in \mathcal B_b(E,\mathbb R);
+	\\ \int_E p_t(x,y) m(dx) \leq 1, &\quad t>0, y\in E;
+	\\ \int_E \int_E p_t(x,y)^2 m(dx)m(dy) < \infty, &\quad t>0;
+\end{align}
+	and the functions $x \mapsto \int_E p_t(x,y)^2m(dy)$ and $y\mapsto \int_E p_t(x,y)^2m(dx)$ are both continuous.
+	Choose an arbitrary $ \mathfrak b\in \mathcal B_b(E,\mathbb R)$.
+	Denote by $(P_t^\mathfrak b)_{t\geq 0}$ a semigroup of operators on $\mathcal B_b(E,\mathbb R)$ given by
+\begin{equation}
+	P_t^\mathfrak b f(x)
+	:= \Pi_x[e^{\int_0^t \mathfrak b(\xi_s)ds} f(\xi_t) \mathbf 1_{t< \zeta}],
+	\quad f\in \mathcal B_b(E, \mathbb R), t\geq 0, x\in E.
+\end{equation}
+	Let us write $\langle f,g \rangle_m:= \int_E f(x)g(x) m(dx)$ for  the inner product of the Hilbert space $L^2(E,m)$.
+	Then it is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that there exists a family of strictly positive, bounded continuous functions
+    $\{p_t^\mathfrak b: t> 0\}$ on $E\times E$ such that
+\begin{equation} \label{eq:IU.0}
+	e^{-\|\mathfrak b\|_\infty t} p_t(x,y)
+	\leq p_t^\mathfrak b(x,y) \leq e^{\|\mathfrak b\|_\infty t}p_t(x,y),
+	\quad t>0, x,y\in E
+\end{equation}
+	and that
+\begin{equation}
+	P_t^\mathfrak b f(x)
+	= \int_E p_t^\mathfrak b(x,y) f(y) m(dy),
+	\quad t>0, x\in E.
+\end{equation}
+	Define the dual semigroup $(\widehat {P^{\mathfrak b}_t} )_{t\geq 0}$ by
+\begin{equation}
+	\widehat {P_0^{\mathfrak b}}
+	= I;
+	\quad \widehat {P_t^{\mathfrak b}} f(x)
+	:= \int_E p_t^\mathfrak b(y,x) f(y) m(dy),
+	\quad t>0,x\in E, f\in \mathcal B_b(E,\mathbb R).
+\end{equation}
+	It is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that both $(P_t^\mathfrak b)_{t\geq 0}$ and $(\widehat {P_t^\mathfrak b})_{t\geq 0}$
+    are strongly continuous semigroups of compact operators on $L^2(E,m)$.	
+	Let $L^\mathfrak b$ and $\widehat {L^\mathfrak b}$ be the generators of the semigroups of compact operators on $(P_t^\mathfrak b)_{t\geq 0}$ and $(\widehat
+    {P_t^\mathfrak b})_{t\geq 0}$, respectively.
+	Denote by $\sigma(L^\mathfrak b)$ and $\sigma(\widehat{L^\mathfrak b})$ the spectra of $L^\mathfrak b$ and $\widehat {L^{\mathfrak b}}$, respectively.
+	According to Theorem 29 of \cite{Schaefer1974Banach}, $\lambda_\mathfrak b:= \sup \Re(\sigma(L^\mathfrak b)) = \sup \Re(\sigma( \widehat{L^\mathfrak b})) $
+    is a common eigenvalue of multiplicity $1$ for both $L^\mathfrak b$ and $\widehat {L^{\mathfrak b}}$.
+	By the argument in \cite{RenSongZhang2015Limit} and \cite{RenSongZhang2017Central}, the eigenfunctions $h_\mathfrak b$ of $L^\mathfrak b$ and $\widehat
+    h_\mathfrak b$ of $\widehat{L^\mathfrak b}$ associated with the eigenvalue $\lambda_\mathfrak b$ can be chosen to be strictly positive and continuous everywhere on $E$.
+	Setting $\langle h_\mathfrak b,h_\mathfrak b\rangle_m = \langle h_\mathfrak b, \widehat h_\mathfrak b\rangle_m = 1$ so that $h_\mathfrak b$ and $\widehat
+    h_\mathfrak b$ are uniquely determined pointwisely.
+
+	We assume further that $h_0:= h_\mathfrak b|_{\mathfrak{b} \equiv 0}$ is bounded, and the semigroup $(P_t)_{t\geq 0}$ is intrinsically ultracontractive in the following sense: for all $t>0$ and $x, y \in E$, it holds that $p_t(x,y) = c_{t,x,y} h_0(x) \widehat h_0(y)$ for some positive $c_{t,x,y}$ with $\sup_{x,y \in E} c_{t,x,y}< \infty$.
+	Here, $\widehat h_0 := \widehat h_\mathfrak b|_{\mathfrak{b}\equiv 0}$.
+	Then, it is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that, for arbitrary $\mathfrak b \in \mathcal B_b(E,\mathbb R)$, $h_\mathfrak b$ is also bounded; and $(P_t^\mathfrak b)_{t\geq 0}$ is also intrinsically ultracontractive, in the sense that for any $t> 0$ and $x,y \in E$ we have
+\begin{equation} \label{eq:IU.1}
+	p^\mathfrak b_t(x,y)
+		  = C^1_{\mathfrak b,t,x,y}h_\mathfrak b(x) \widehat h_\mathfrak b (y)
+	\end{equation}
+		 for some positive $C^1_{\mathfrak b,t,x,y}$ with $\sup_{x,y \in E} C^1_{\mathfrak b,t,x,y}< \infty$.
+It follows from \cite[Proposition 2.5 and Theorem 2.7]{KimSong2008Intrinsic}, when \eqref{eq:IU.1} holds, $C^1_{\mathfrak b,t,x,y}$ can be chosen so that
+\begin{equation} \label{eq:IU.11}
+		\sup_{x,y \in E} (C^1_{\mathfrak b,t,x,y})^{-1}
+	< \infty,
+	\quad t>0,
+\end{equation}
+	and that for any $t>0, x,y \in E$,
+\begin{equation}\label{eq:IU.2}
+		C^1_{\mathfrak b,t,x,y}
+	= e^{t\lambda_\mathfrak{b}} (1+ C^2_{\mathfrak b,t,x,y})
+\end{equation}
+		for some real $C^2_{\mathfrak b,t,x,y}$ with $\lim_{t\to \infty} \sup_{x,y \in E} C^2_{\mathfrak b,t,x,y} =0$.
+	Therefore,
+\begin{align}
+		& m(\widehat h_{\mathfrak b}) \overset{\text{\eqref{eq:IU.1}}}= \int_{E} p_t^\mathfrak{b}(x,y)h_\mathfrak{b}(x)^{-1} (C^1_{\mathfrak b,t,x,y})^{-1} m(dy), \quad x\in E,
+		\\&\leq  h_\mathfrak{b}(x)^{-1} \left(\sup_{z\in E}(C^1_{\mathfrak b,t,x,z})^{-1}\right)  \int_{E} p_t^\mathfrak{b}(x,y)m(dy)
+	\\& < \infty \quad\text{by \eqref{eq:IU.0} and \eqref{eq:IU.11} and the strict positivity of $h_\mathfrak{b}$}.
+\end{align}
+	This allows us to define a probability measure $\nu_\mathfrak b (dx):= m(\widehat h_{\mathfrak b})^{-1} \widehat h_\mathfrak b (x)m(dx), x\in E$, and an eigenfunction $\phi_\mathfrak{b}(x) := m(\widehat h_{\mathfrak b}) h_\mathfrak b(x), x\in E$.
+
+Finally we write $\lambda := \lambda_\beta$ and assume that $ \lambda< 0$. We now show that $X$ satisfies \eqref{asp:H2!} with $\phi:=\phi_\beta$ and $\nu:= \nu_\beta$.
+	From their definitions, we see that the function $\phi \in \mathcal B_b(E,(0,\infty))$, and that the probability measure $\nu$ has full support on $E$.
+	Further, it is easy to see that for each $t\geq 0$, $P_t^\beta \phi = e^{\lambda t}\phi$ and $\nu(\phi) = 1$.
+	We also have that for any $t>0$,
+\begin{align}
+	&(\nu P_t^\beta)(dy) = \int_{x\in E}p_{t}^\beta(x,y)m(dy) \nu(dx)
+	\\&= \int_{x\in E}p_{t}^\beta(x,y)m(dy) m(\widehat h_\beta)^{-1}\widehat h_\beta(x)m(dx)
+	\\&=  m(\widehat h_\beta)^{-1}  \left(\int_{x\in E} p_t^\beta(x,y) \widehat h_\beta(x) m(dx) \right) m(dy)
+	\\& = m(\widehat h_\beta)^{-1} e^{\lambda t}\widehat h_\beta(y) m(dy) =
+	e^{\lambda t}\nu(dy).
+\end{align}
+	Therefore $\nu P_t^\beta = e^{\lambda t}\nu, t\geq 0$. Now for each $t>0, x \in E$ and $f\in L_1^+(\nu)$, we have
+\begin{align}
+	&P_t^\beta f(x) = \int_{E} p^\beta_t(x,y) f(y)m(dy)
+	\overset{\text{\eqref{eq:IU.1}}}= \int_{E} h_\beta (x) \widehat h_\beta (y) C^1_{\beta,t,x,y} f(y) m(dy)
+	\\&= \int_{E} \phi (x)  C^1_{\beta,t,x,y} f(y) \nu(dy)
+	=: e^{\lambda t} \phi(x) \nu(f) (1+ H_{t,x,f}).
+\end{align}
+	Finally, from \eqref{eq:IU.1} and \eqref{eq:IU.2}, it is elementary to verify that $H_{t,x,f}$ satisfies the required condition \eqref{asp:H2!}.
+
+	In three paragraphs above, we give some conditions that imply \eqref{asp:H2!}. See \cite[Section 1.4]{RenSongZhang2015Limit} for more than 10 concrete examples of processes satisfying these conditions.
+
+	\subsection*{Organization of the rest of the paper.}
+	In Subsection \ref{subsec:OY} we will give the proof of Theorem \ref{Theorem:Y:H1:H2:H3:H4}
+    using Propositions \ref{prop:Vf1::H1:H2::Y}--\ref{prop::GD:H1:H2:H3:H4::Y}.
+	In Subsection \ref{subsec:QSD} we will give the proof of Theorem \ref{thm:QSD}
+	using Propositions \ref{prop:EQ}--\ref{prop:UC}.
+	The proofs of Propositions \ref{prop:Vf1::H1:H2::Y}--\ref{prop::GD:H1:H2:H3:H4::Y} are given in
+	Section \ref{sec:propsforthm1}.
+ The proof of  Propositions \ref{prop:EQ}--\ref{prop:UC} are given in Section \ref{sec:propsforthm2}.
+	Some technical lemmas are in the Appendix, and will be referred to as needed in the proofs.
+	
+
+\section{Proofs of Theorems \ref{Theorem:Y:H1:H2:H3:H4} and \ref{thm:QSD}} \label{sec:proofof thms}
+
 \subsection{Proof of Theorem \ref{Theorem:Y:H1:H2:H3:H4}} \label{subsec:OY}
 	It is easy to see that the operators $(V_t)_{t\geq 0}$
 	given by \eqref{eq:BGD.1} can be extended uniquely to a family of operators $(\overline V_t)_{t\geq 0}$ on $\mathcal B(E,[0,\infty])$ such that for all $t\geq 0$, $f_n \uparrow f$ pointwisely in  $\mathcal B(E, [0,\infty])$ implies that $\overline V_tf_n \uparrow \overline V_tf$ pointwisely.
 	Moreover, $(\overline V_t)_{t\geq 0}$ satisfies that
 \begin{equation}
-\begin{minipage}{0.8\textwidth}
+\begin{minipage}{0.9\textwidth}
 	$\overline V_t f \leq \overline V_t g$ for $t\geq 0$ and $f\leq g$ in $\mathcal B(E,[0,\infty])$;
 \end{minipage}\label{Fact:BV!}
 \end{equation}
 \begin{equation}
-\begin{minipage}{0.8\textwidth}
+\begin{minipage}{0.9\textwidth}
 	$\overline V_{t+s} = \overline V_t \overline V_s$ for $t, s\geq 0$;  and
 \end{minipage} \label{eq:OY.0}
 \end{equation}
 \begin{equation}
-\begin{minipage}{0.8\textwidth}
+\begin{minipage}{0.9\textwidth}
 	$\mathbb P_\mu [e^{-X_t(f)}] = e^{- \mu(\overline V_tf)}$ for $t\geq 0$, $\mu \in \mathcal M_f(E)$, and $f\in \mathcal B(E,[0,\infty])$.
 \end{minipage} \label{eq:BGD.2}
 \end{equation}
@@ -289,13 +439,12 @@ Hence we can condition the superprocess $X$ on survival up to time $t$ if  the d
 	In the  proof of Theorem \ref{Theorem:Y:H1:H2:H3:H4}, we will use the following four propositions whose proofs are postponed to Subsections \ref{sec:Vf1}, \ref{sec:Vf2}, \ref{sec:G} and \ref{sec:GD} respectively.
 
 \begin{prop} \label{prop:Vf1::H1:H2::Y}
-	For any $f\in \mathcal B(E, [0,\infty]),~t > T^{\eqref{asp:H4!}}$ and $x\in E$, we have $V_tf(x) = C^{\ref{prop:Vf1::H1:H2::Y}}_{t,x,f} \phi(x)$ for some non-negative $C_{t,x,f}^{\ref{prop:Vf1::H1:H2::Y}}$ with $\lim_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E, [0,\infty])}  C^{\ref{prop:Vf1::H1:H2::Y}}_{t,x,f} = 0$.
+	For any $f\in \mathcal B(E, [0,\infty]),~t > T$ and $x\in E$, we have $V_tf(x) = C^3_{t,x,f} \phi(x)$ for some non-negative $C^3_{t,x,f}$ with $\lim_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E, [0,\infty])}  C^3_{t,x,f} = 0$.
 	In particular, we have $\lim_{t\to \infty} \mu(V_tf)= 0 $ for all $\mu \in \mathcal M_f(E)$ and $f\in \mathcal B(E,[0,\infty])$.
 \end{prop}
 
 \begin{prop} \label{prop:Vf2}
-	For any $f\in \mathcal B(E,[0,\infty]),~t>T^{\eqref{asp:H4!}}$ and $x\in E$, we have $V_tf(x) = \phi(x) \nu (V_tf) (1+C^{\ref{prop:Vf2}}_{t,x,f}) $ for some real $C^{\ref{prop:Vf2}}_{t,x,f}$ with
-$\lim_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E, [0,\infty])} |C^{\ref{prop:Vf2}}_{t,x,f}| = 0$.
+	For any $f\in \mathcal B(E,[0,\infty]),~t>T$ and $x\in E$, we have $V_tf(x) = \phi(x) \nu (V_tf) (1+C^4_{t,x,f}) $ for some real $C^4_{t,x,f}$ with $\lim_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E, [0,\infty])} |C^4_{t,x,f}| = 0$.
 \end{prop}
 
 	For a probability measure $\mathbf P$ on $\mathcal M_f(E)$,
@@ -304,9 +453,10 @@ $\lim_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E, [0,\infty])} |C^{\ref{prop:
 	\mathscr L_\mathbf P f := - \log \int_{\mathcal M_f(E)}  e^{-\mu(f)} \mathbf P(d\mu), \quad
 	f\in \mathcal B(E,[0,\infty]).
 	\]
-	For a finite random measure $\{Y; P\}$, the log-Laplace functional of its distribution is denoted as $\mathscr L_{Y;P}$.
-	To simplify our notation, for each $t\geq 0$, we write $\Gamma_t := \mathscr L_{X_t;\mathbf P_\nu(\cdot | \|X_t\|>0)}$.
-
+	For a finite random measure $\{Y; \mathbf P\}$, the log-Laplace functional of its distribution is denoted as $\mathscr L_{Y;\mathbf P}$.
+	To simplify our notation, for each $t\geq 0$, we write
+	$\Gamma_t := \mathscr L_{X_t;\mathbb P_\nu(\cdot | \|X_t\|>0)}$.
+	
 	We say a $[0,\infty]$-valued functional $A$ defined on $\mathcal B(E,[0,\infty])$ is monotone concave if
 	(1) $A$ is a monotone functional, i.e., $f\leq g$ in $\mathcal B(E,[0,\infty])$ implies $Af \leq Ag$; and
 	(2) for any $f\in \mathcal B(E,[0,\infty])$ with $Af< \infty$, the function $u \mapsto A(uf)$ is concave on $[0,1]$.
@@ -323,7 +473,7 @@ $\lim_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E, [0,\infty])} |C^{\ref{prop:
 \end{prop}
 
 \begin{prop} \label{prop::GD:H1:H2:H3:H4::Y}
-	For any $g\in \mathcal B_b(E,[0,\infty))$ and 
+	For any $g\in \mathcal B_b(E,[0,\infty))$ and
 	sequence $(g_n)_{n\in \mathbb N}$ in $\mathcal B_b(E,[0,\infty))$
 	such that $g_n \downarrow g$ pointwisely,
 	we have $G g_n \downarrow Gg$.
@@ -346,11 +496,10 @@ $\lim_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E, [0,\infty])} |C^{\ref{prop:
 	\mathscr L_{\mathbf Q_\lambda}
 	= G \quad \mbox{on } \mathcal B(E,[0,\infty]);
 \end{equation}
-	and as a consequence of this, 
-$\mathscr L_{\mathbf Q_\lambda}(\infty \mathbf 1_E) = G(\infty \mathbf 1_E)= 0$, which says that $\mathbf Q_\lambda$ is actually a probability measure on $\mathcal M_f^o(E)$.
+	and as a consequence of this, $\mathscr L_{\mathbf Q_\lambda}(\infty \mathbf 1_E) = G(\infty \mathbf 1_E)= \infty$, which says that $\mathbf Q_\lambda$ is actually a probability measure on $\mathcal M_f^o(E)$.
 	To see the claim is true, we first note from Proposition \ref{prop:Vf1::H1:H2::Y} that
 \begin{equation} \label{eq:EQ.1} \begin{minipage}{0.9\textwidth}
-	there exists $T^{\eqref{eq:EQ.1}}>0$ such that, for all $t>T^{\eqref{eq:EQ.1}}$ and $f\in \mathcal B(E,[0,\infty])$, $V_tf \in \mathcal B_b(E,[0,\infty))$.
+	there exists $T_1>0$ such that, for all $t>T_1$ and $f\in \mathcal B(E,[0,\infty])$, $V_tf \in \mathcal B_b(E,[0,\infty))$.
 \end{minipage} \end{equation}
 	 We then notice that from \eqref{eq:Y.00} and the bounded convergence theorem,
 \begin{equation} \label{eq:Y.001}
@@ -359,7 +508,7 @@ $\mathscr L_{\mathbf Q_\lambda}(\infty \mathbf 1_E) = G(\infty \mathbf 1_E)= 0$,
 \end{minipage}
 \end{equation}
 	Now let $\{g_n:n\in \mathbb N\} \cup \{g\} \subset \mathcal B(E,[0,\infty])$ and $g_n \uparrow g$ pointwisely.
-	Taking and fixing an $s > T^{\eqref{eq:EQ.1}}$, we have by \eqref{eq:EQ.1} and \eqref{eq:Y.001} that
+	Taking and fixing an $s > T_1$, we have by \eqref{eq:EQ.1} and \eqref{eq:Y.001} that
 \[
 	(1 - e^{-G g_n})
 	\overset{\eqref{eq:G.0}} = e^{- s\lambda } (1 - e^{- G V_s g_n})
@@ -367,34 +516,39 @@ $\mathscr L_{\mathbf Q_\lambda}(\infty \mathbf 1_E) = G(\infty \mathbf 1_E)= 0$,
 	\overset{\eqref{eq:G.0}} =(1 - e^{-G g}).
 \]
 	In other word, we showed that $Gg_n \uparrow Gg$.
-	The desired claim followed by this and \eqref{eq:Y.00}.
+	The desired claim follows from this and \eqref{eq:Y.00}.
 
 
-	Let us now prove that the probability $\mathbf Q_\lambda$ on $\mathcal M_f^o(E)$ satisfy the requirement for the desired result. 
-	It follows from Proposition \ref{prop:Vf2} that there exists $T^{\ref{prop:Vf2}}>0$ such that $\sup_{x\in E, f \in \mathcal B(E,[0,\infty])} |C^{\ref{prop:Vf2}}_{t,x,f}|< \infty$ for $t>T^{\ref{prop:Vf2}}$.
-	Thus for $f \in \mathcal B(E,[0,\infty])$, $t>T^{\ref{prop:Vf2}}$ and $\mu \in \mathcal M_f^o(E)$, we have
+	Let us now prove that the probability $\mathbf Q_\lambda$ on $\mathcal M_f^o(E)$
+	satisfies the requirement for the desired result.
+	It follows from Proposition \ref{prop:Vf2} that there exists $T_2 >0$ such that
+	$\sup_{x\in E, f \in \mathcal B(E,[0,\infty])} |C^4_{t,x,f}|< \infty$ for $t>T_2$.
+	Thus for $f \in \mathcal B(E,[0,\infty])$, $t>T_2$ and $\mu \in \mathcal M_f^o(E)$, we have
 \begin{align}
 	\mu(V_tf)
-	&= \int_E  \phi(x) \nu (V_tf) (1+C^{\ref{prop:Vf2}}_{t,x,f})\mu(dx)
-	\\ \label{eq:Y.1} & = \nu(V_tf) \mu(\phi)(1+ C^{\eqref{eq:Y.1}}_{\mu,t,f})
+		& \overset{\text{Proposition \ref{prop:Vf2}}}=
+		\int_E  \phi(x) \nu (V_tf) (1+ C^4_{t,x,f})\mu(dx)
+	\\ \label{eq:Y.1}
+		& = \nu(V_tf) \mu(\phi)(1+ C^5_{\mu,t,f})
 \end{align}
-	for some real $C^{\eqref{eq:Y.1}}_{\mu,t,f}$ with
-	$\lim_{t\to \infty} \sup_{f \in \mathcal B(E,[0,\infty])}
-	|C^{\eqref{eq:Y.1}}_{\mu,t,f}| = 0$.
-	Therefore, for $f\in \mathcal B(E,[0,\infty])$,
-	$t > T^{\ref{prop:Vf2}}$ and $\mu \in \mathcal M_f^o(E)$,
+		for some real $C^{5}_{\mu,t,f}$ with $\lim_{t\to \infty} \sup_{f \in \mathcal B(E,[0,\infty])} |C^{5}_{\mu,t,f}| = 0$.
+		Also note that for $f\in \mathcal B(E,[0,\infty])$,
+	$t > T_2$ and $\mu \in \mathcal M_f^o(E)$,
 \begin{align}
 	&\mathbb P_\mu \left[1 - e^{-X_t(f)} \middle|\|X_t\|>0\right]
-	\overset{\eqref{eq:BGD.2},\eqref{eq:OY.1}}= \frac{1 - e^{- \mu(V_tf)}} {1 - e^{-\mu(v_t)}}
-	\\\label{eq:Y.1.5}& = \frac{ \mu(V_t f) }{ \mu(v_t) } (1+C^{\eqref{eq:Y.1.5}}_{\mu,t,f})
+	\overset{\eqref{eq:BGD.2},\eqref{eq:OY.1}}= \frac{1 - e^{- \mu(V_tf)}} {1 - e^{-\mu(v_t)}}\\ \label{eq:Y.1.5}
+    & = \frac{ \mu(V_t f) }{ \mu(v_t) }
+	(1+C^{6}_{\mu,t,f})
 \end{align}
-	for some real $C^{\eqref{eq:Y.1.5}}_{\mu,t,f}$ with $\lim_{t\to \infty} |C^{\eqref{eq:Y.1.5}}_{\mu,t,f}| = 0$.
+	for some real $C^{6}_{\mu,t,f}$ with $\lim_{t\to \infty} |C^{6}_{\mu,t,f}| = 0$.
 	Here in the last equality we used \eqref{lem:sv2!}, Proposition \ref{prop:Vf1::H1:H2::Y} and the fact that $(1-e^{-x})/x \xrightarrow[x\to 0]{}1$.
 	Thus, for each $\mu \in \mathcal M^o_f(E)$ and $f\in C_b(E,[0,\infty))$, we have
 \begin{align}
 	&\mathbb P_\mu \left[1 - e^{-X_t(f)} \middle|\|X_t\|>0\right]
-	 \overset{\text{\eqref{eq:Y.1}, \eqref{eq:Y.1.5}}}= \frac{ \nu(V_tf) }{ \nu(v_t) } \frac{1+C^{\eqref{eq:Y.1}}_{\mu,t,f}}{1+C^{\eqref{eq:Y.1}}_{\mu, t,\infty \mathbf 1_E}}(1+ C^{\eqref{eq:Y.1.5}}_{\mu,t,f})
-	\\& \overset{\text{\eqref{eq:Y.1.5}}}= \mathbb P_\nu \left[1 - e^{-X_t(f)} \middle| \|X_t\|>0\right](1+C^{\eqref{eq:Y.1.5}}_{\nu, t,f})^{-1}  \frac{1+C^{\eqref{eq:Y.1}}_{\mu,t,f}}{1+C^{\eqref{eq:Y.1}}_{\mu,  t,\infty \mathbf 1_E}}(1+ C^{\eqref{eq:Y.1.5}}_{\mu,t,f})
+	\overset{\text{\eqref{eq:Y.1}, \eqref{eq:Y.1.5}}}= \frac{ \nu(V_tf) }{ \nu(v_t) }
+	\frac{1+C^5_{\mu,t,f}}{1+C^5_{\mu, t,\infty \mathbf 1_E}}(1+ C^6_{\mu,t,f})
+	\\& \overset{\text{\eqref{eq:Y.1.5}}}= \mathbb P_\nu \left[1 - e^{-X_t(f)} \middle| \|X_t\|>0\right]
+(1+C^6_{\nu, t,f})^{-1}  \frac{1+C^5_{\mu,t,f}}{1+C^5_{\mu,  t,\infty \mathbf 1_E}}(1+ C^6_{\mu,t,f})
 	\\&\xrightarrow[t\to \infty]{} \int_{\mathcal M_f(E)}(1-e^{-w(f)}) \mathbf Q_\lambda(dw),
 \end{align}
 	where in the last line above, we used \eqref{eq:Y.0}.
@@ -404,7 +558,7 @@ $\mathscr L_{\mathbf Q_\lambda}(\infty \mathbf 1_E) = G(\infty \mathbf 1_E)= 0$,
 	\mathbf Q_\lambda(\cdot). \qedhere\]
 \end{proof}
 
-\subsection{Proof of Theorem \ref{thm:QSD}}
+\subsection{Proof of Theorem \ref{thm:QSD}} \label{subsec:QSD}
 	In this subsection,
 	we give the proof of Theorem \ref{thm:QSD} using the following three
 Propositions \ref{prop:EQ}, \ref{prop:CQ} and \ref{prop:UC}  whose proofs are postponed to
@@ -412,7 +566,7 @@ Subsection \ref{sec:EQ}, \ref{sec:CQ} and \ref{sec:UC}, respectively.
 
 \begin{prop} \label{prop:EQ}
 	(1) The Yaglom limit $\mathbf Q_\lambda$ given by Theorem \ref{Theorem:Y:H1:H2:H3:H4} is a QSD of $X$ with mass decay rate $\lambda$; and
-	(2) for any $r \in (\lambda , 0)$, 
+	(2) for any $r \in (\lambda , 0)$,
 	there exists a probability measure $\mathbf Q_r$  on $\mathcal M^o_f(E)$
 such that  $\mathbf Q_r$ is a QSD of $X$ with mass decay rate $r$.
 \end{prop}
@@ -423,22 +577,26 @@ such that  $\mathbf Q_r$ is a QSD of $X$ with mass decay rate $r$.
 	is a QSD
 	for $X$ with mass decay rate $r$.
 	Then we have that (1) $r \geq \lambda$; and
-	(2) $\mathscr L_{\mathbf Q^*_r}$ is a monotone concave functional on $\mathcal B(E,[0,\infty])$ 
+	(2) $\mathscr L_{\mathbf Q^*_r}$ is a monotone concave functional on $\mathcal B(E,[0,\infty])$
 	with $\mathscr L_{\mathbf Q^*_r}(\infty \mathbf 1_E) = \infty$ and that
 \[
-	1 - e^{- \mathscr L_{\mathbf Q^*_r} V_s f} = e^{r\lambda }(1- e^{- \mathscr L_{\mathbf Q^*_r} f}), \quad s\geq 0, f\in \mathcal B(E,[0,\infty]).
+	1 - e^{- \mathscr L_{\mathbf Q^*_r} V_s f}
+	= e^{sr}(1- e^{- \mathscr L_{\mathbf Q^*_r} f}),
+	\quad s\geq 0, f\in \mathcal B(E,[0,\infty]).
 \]
 \end{prop}
 
 \begin{prop} \label{prop:UC}
 	Let $G$ be the unique functional on $\mathcal B(E,[0,\infty])$ given by Proposition \ref{prop:G}.
 	Let $r \in [\lambda, 0)$.
-	If $G_r$ is a monotone concave functional on $\mathcal B(E,[0,\infty])$ with 
+	If $G_r$ is a monotone concave functional on $\mathcal B(E,[0,\infty])$ with
 	$G_r(\infty \mathbf 1_E) = \infty$ and that
 \[
-	1 - e^{-G_r V_s f} = e^{r\lambda }(1- e^{- G_r f}), \quad s\geq 0, f\in \mathcal B(E,[0,\infty]).
+	1 - e^{-G_r V_s f}
+	= e^{sr }(1- e^{- G_r f}),
+	\quad s\geq 0, f\in \mathcal B(E,[0,\infty]),
 \]
-	Then $1 - e^{-G_rf} = (1 - e^{- G f})^{r/\lambda}$ for any $f\in \mathcal B(E,[0,\infty])$.
+then $1 - e^{-G_rf} = (1 - e^{- G f})^{r/\lambda}$ for any $f\in \mathcal B(E,[0,\infty])$.
 \end{prop}
 
 \begin{proof}[Proof of Theorem \ref{thm:QSD}]
@@ -447,7 +605,7 @@ such that  $\mathbf Q_r$ is a QSD of $X$ with mass decay rate $r$.
 	The uniqueness of QSD for $X$ with mass decay rate $r\in [\lambda , 0)$ is due to Propositions \ref{prop:CQ}, \ref{prop:UC} and \cite[Theorem 1.17]{Li2011MeasureValued}.
 \end{proof}
 
-\section{Proofs of Propositions \ref{prop:Vf1::H1:H2::Y}--\ref{prop::GD:H1:H2:H3:H4::Y}}
+\section{Proofs of Propositions \ref{prop:Vf1::H1:H2::Y}--\ref{prop::GD:H1:H2:H3:H4::Y}} \label{sec:propsforthm1}
 \subsection{Proof of Proposition \ref{prop:Vf1::H1:H2::Y}} \label{sec:Vf1}
 	Define a function $\psi_0$ by
 \[
@@ -468,22 +626,22 @@ such that  $\mathbf Q_r$ is a QSD of $X$ with mass decay rate $r$.
 
 	The following fact will be used repeatedly:
 \begin{equation} \label{lem:nV::H2::Vf1}
-	\{V_tf:t> T^{\eqref{asp:H4!}}, f\in \mathcal B(E, [0,\infty])\}\subset L_1^+(\nu).
+	\{V_tf:t> T, f\in \mathcal B(E, [0,\infty])\}\subset L_1^+(\nu).
 \end{equation}
-	To see this, note from \eqref{Fact:BV!}, \eqref{eq:OY.1} and \eqref{asp:H4!} that, for  all $t> T^{\eqref{asp:H4!}}$ and $f\in \mathcal B(E,[0,\infty])$, $\nu(V_t f) \leq \nu(v_t)   = - \log \mathbb P_\nu (\|X_t\| = 0)  < \infty. $
+	To see this, note from \eqref{Fact:BV!}, \eqref{eq:OY.1} and \eqref{asp:H4!} that, for  all $t> T$ and $f\in \mathcal B(E,[0,\infty])$, $\nu(V_t f) \leq \nu(v_t)   = - \log \mathbb P_\nu (\|X_t\| = 0)  < \infty. $
 
 \begin{proof}[{Proof of Proposition \ref{prop:Vf1::H1:H2::Y}}]
 	Note that for all $s>0$ and $\epsilon>0$,
 \begin{align}
-	& V_{s+\epsilon +T^{\eqref{asp:H4!}}} f (x)
-	\overset{\eqref{eq:OY.0}}= V_s V_{T^{\eqref{asp:H4!}}+\epsilon} f(x)
-	\leq P_s^\beta V_{T^{\eqref{asp:H4!}} + \epsilon} f(x)\quad\text{by \eqref{eq:Vf1.1}},
- 	\\ \label{eq:Vf1.2} & \overset{\eqref{asp:H2!},\eqref{lem:nV::H2::Vf1}}= e^{\lambda s}\phi(x) \nu( V_{T^{\eqref{asp:H4!}} +\epsilon} f)  (1+ C^{\eqref{asp:H2!}}_{s,x,V_{T^{\eqref{asp:H4!}} + \epsilon} f})
-	\\&\leq e^{\lambda s}\phi(x) \nu(v_{T^{\eqref{asp:H4!}} +\epsilon})  (1+ \sup_{x\in E, g\in \mathcal B(E,[0,\infty])}|C^{\eqref{asp:H2!}}_{s,x,g}|),
+	& V_{s+\epsilon +T} f (x)
+	\overset{\eqref{eq:OY.0}}= V_s V_{T+\epsilon} f(x)
+	\leq P_s^\beta V_{T + \epsilon} f(x)\quad\text{by \eqref{eq:Vf1.1}},
+ 	\\ \label{eq:Vf1.2} & \overset{\eqref{asp:H2!},\eqref{lem:nV::H2::Vf1}}= e^{\lambda s}\phi(x) \nu( V_{T +\epsilon} f)  (1+ H_{s,x,V_{T + \epsilon} f})
+	\\&\leq e^{\lambda s}\phi(x) \nu(v_{T +\epsilon})  (1+ \sup_{x\in E, g\in L_1^+(\nu)}|H_{s,x,g}|),
 \end{align}
 	where
-	in the last inequality we used the fact that $\nu(V_t f) \leq \nu(v_t)   = - \log \mathbb P_\nu (\|X_t\| = 0)  < \infty$  
-	for all  $f\in \mathcal B(E,[0,\infty])$ and $t > T^{\eqref{asp:H4!}}$.
+	in the last inequality we used the fact that $\nu(V_t f) \leq \nu(v_t)   = - \log \mathbb P_\nu (\|X_t\| = 0)  < \infty$
+	for all  $f\in \mathcal B(E,[0,\infty])$ and $t > T$.
 	From this and the fact that $\lambda < 0$, we immediately get the desired result.
 \end{proof}
 
@@ -502,21 +660,23 @@ such that  $\mathbf Q_r$ is a QSD of $X$ with mass decay rate $r$.
 	Combining \eqref{lem:nVn!} with \eqref{eq:Vf1.2} we get that
 \begin{equation}
 \begin{minipage}{0.9\textwidth}
-	for all $t>T^{\eqref{asp:H4!}},~x\in E$ and $f \in \mathcal B(E,[0,\infty])$ with $\nu(f) = 0$, we have $V_t f(x ) = 0$.
+	for all $t>T,~x\in E$ and $f \in \mathcal B(E,[0,\infty])$ with $\nu(f) = 0$, we have $V_t f(x ) = 0$.
 \end{minipage} \label{lem:nullVf}
 \end{equation}
-Note  from \eqref{asp:H2!} and \eqref{lem:nV::H2::Vf1} that for all $s>0, t> T^{\eqref{asp:H4!}}, x\in E$ and $f\in \mathcal B(E,[0,\infty])$, we have
+Note  from \eqref{asp:H2!} and \eqref{lem:nV::H2::Vf1} that for all $s>0, t> T, x\in E$ and $f\in \mathcal B(E,[0,\infty])$, we have
 \begin{equation}
-	P_s^\beta V_tf(x)  =e^{\lambda s} \phi(x)\nu(V_tf) (1+C^{\eqref{asp:H2!}}_{s,x,V_tf}) <\infty.
+	P_s^\beta V_tf(x)  =e^{\lambda s} \phi(x)\nu(V_tf) (1+H_{s,x,V_tf}) <\infty.
 \label{lem:PV}
 \end{equation}
 
 	In the proof of Proposition \ref{prop:Vf2} we will use the following three lemmas whose proofs are postponed later.
 
 \begin{lem} \label{prop:PVf}
-	For all $s> 0,~t> T^{\eqref{asp:H4!}},~ x\in E$ and $f\in \mathcal B(E,[0,\infty])$, we have $P_s^\beta V_t f(x) = \phi(x) \nu(V_{t+s}f) (1+C^{\ref{prop:PVf}}_{s,t,x,f})$ for some real $C^{\ref{prop:PVf}}_{s,t,x,f}$ with
-	\[\lim_{s\to \infty} \varlimsup_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
-	|C^{\ref{prop:PVf}}_{s,t,x,f}| = 0.\]
+ For all $s> 0,~t> T,~ x\in E$ and $f\in \mathcal B(E,[0,\infty])$, we have $P_s^\beta V_t f(x) = \phi(x) \nu(V_{t+s}f) (1+C^7_{s,t,x,f})$ for some real $C^7_{s,t,x,f}$ with
+\[
+	\lim_{s\to \infty} \varlimsup_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E,[0,\infty])} |C^7_{s,t,x,f}|
+		= 0.
+\]
 \end{lem}
 
 For $f\in \mathcal B(E,[0,\infty])$ and $0 < \epsilon < s < \infty$, we define
@@ -527,19 +687,16 @@ For $f\in \mathcal B(E,[0,\infty])$ and $0 < \epsilon < s < \infty$, we define
  	= \int_{s-\epsilon}^s P_{s-u}^\beta \Psi_0 V_u f ~du.
 \end{equation}
 \begin{lem} \label{prop:IVf}
-	For all $t> T^{\eqref{asp:H4!}},~0<\epsilon<s< \infty,~x\in E$ and $f\in \mathcal B(E,[0,\infty])$ with $\nu(f)>0$, we have $I_{s,\epsilon}V_t f(x) = \phi(x) \nu(V_{s+t} f) C^{\ref{prop:IVf}}_{t,\epsilon, s, x,f}$ for some non-negative $C^{\ref{prop:IVf}}_{t,\epsilon, s, x,f}$ with
+		For all $t> T,~0<\epsilon<s< \infty,~x\in E$ and $f\in \mathcal B(E,[0,\infty])$ with $\nu(f)>0$, we have $I_{s,\epsilon}V_t f(x) = \phi(x) \nu(V_{s+t} f) C^8_{t,\epsilon, s, x,f}$ for some non-negative $C^8_{t,\epsilon, s, x,f}$ with
 \[
-\lim_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
-C^{\ref{prop:IVf}}_{t,\epsilon, s, x,f} = 0.
+	\lim_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E,[0,\infty])} C^8_{t,\epsilon, s, x,f} = 0.
 \]
 \end{lem}
 
 \begin{lem} \label{prop:JVf}
-For all $t>T^{\eqref{asp:H4!}},~0<\epsilon<s< \infty,~x\in E$ and $f\in \mathcal B(E,[0,\infty])$ with $\nu(f)>0$, we have $ J_{s,\epsilon} V_tf(x) = \phi(x) \nu(V_{s+t}f) C^{\ref{prop:JVf}}_{t,\epsilon,s,x,f}$ for some non-negative $C^{\ref{prop:JVf}}_{t,\epsilon,s,x,f}$ with
+For all $t>T,~0<\epsilon<s< \infty,~x\in E$ and $f\in \mathcal B(E,[0,\infty])$ with $\nu(f)>0$, we have $ J_{s,\epsilon} V_tf(x) = \phi(x) \nu(V_{s+t}f) C^9_{t,\epsilon,s,x,f}$ for some non-negative $C^9_{t,\epsilon,s,x,f}$ with
 \[
-\lim_{\epsilon \to 0}\varlimsup_{t+s\to \infty}
-\sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
-C^{\ref{prop:JVf}}_{t,\epsilon,s,x,f} =0.
+	\lim_{\epsilon \to 0}\varlimsup_{t+s\to \infty} \sup_{x\in E, f\in \mathcal B(E,[0,\infty])} C^9_{t,\epsilon,s,x,f} =0.
 \]
 \end{lem}
 
@@ -553,32 +710,31 @@ we have for any $s>0$ and $\epsilon\in (0,s)$,
 	\overset{\eqref{eq:OY.0}}= V_s V_t f(x)
 	\overset{\eqref{eq:Vf1.1},\eqref{lem:PV}}= P_s^\beta V_t f(x) - \int_0^s P^\beta_{s-u}\Psi_0 V_uV_t f(x) du
 	\\&= P_s^\beta V_t f(x) - I_{s,\epsilon} V_tf(x) - J_{s,\epsilon} V_t f(x)
-	\\\label{eq:Vf2.1} &=\phi(x)\nu(V_{t+s}f) \left( 1+ C^{\ref{prop:PVf}}_{s,t,x,f} - C^{\ref{prop:IVf}}_{t,\epsilon, s, x,f}- C^{\ref{prop:JVf}}_{t,\epsilon,s,x,f}\right).
+		\\\label{eq:Vf2.1} &=\phi(x)\nu(V_{t+s}f)
+		\left( 1+ C^7_{s,t,x,f} - C^8_{t,\epsilon, s, x,f}- C^9_{t,\epsilon,s,x,f}\right).
 \end{align}
 	On the other hand, we have
 \begin{equation}\label{eq:Vf2.2}
 	V_{t}f (x)
-	= \phi(x) \nu(V_{t}f) (1+ C^{\ref{prop:Vf2}}_{t,x,f})
-	\quad \text{for some real $C^{\ref{prop:Vf2}}_{t,x,f}$}.
+		= \phi(x) \nu(V_{t}f) (1+ C^{10}_{t,x,f})		\quad \text{for some real $C^{10}_{t,x,f}$}.
 \end{equation}
 	Combining \eqref{eq:Vf2.1} and \eqref{eq:Vf2.2}, we have for all $s>0$ and $\epsilon \in (0,s)$,
 \[
-	C^{\ref{prop:Vf2}}_{t+s,x,f} = C^{\ref{prop:PVf}}_{s,t,x,f} - C^{\ref{prop:IVf}}_{t,\epsilon, s, x,f}- C^{\ref{prop:JVf}}_{t,\epsilon,s,x,f}.
+	C^{10}_{t+s,x,f} = C^{7}_{s,t,x,f} - C^{8}_{t,\epsilon, s, x,f}- C^{9}_{t,\epsilon,s,x,f}.
 \]
 	 Using this and the fact that
 \[
 	\lim_{\epsilon \to 0}\varlimsup_{s\to \infty}\varlimsup_{t\to \infty}
 	\sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
-	|C^{\ref{prop:PVf}}_{s,t,x,f} - C^{\ref{prop:IVf}}_{t,\epsilon, s, x,f}- C^{\ref{prop:JVf}}_{t,\epsilon,s,x,f}|=0,
+	|C^7_{s,t,x,f} - C^8_{t,\epsilon, s, x,f}- C^9_{t,\epsilon,s,x,f}|=0,
 \]
-	it is easy to check that $\varlimsup_{s\to \infty}\varlimsup_{t\to \infty}
-\sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
-	|C^{\ref{prop:Vf2}}_{t+s,x,f}|=0$.
+	it is easy to check that $\varlimsup_{s\to \infty}\varlimsup_{t\to \infty} \sup_{x\in E, f\in
+	\mathcal B(E,[0,\infty])} |C^{10}_{t+s,x,f}|=0$.
 	This implies
 \[
 	\lim_{t\to \infty}
-\sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
-	|C^{\ref{prop:Vf2}}_{t,x,f}|=0.
+	\sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
+	|C^{10}_{t,x,f}|=0.
 	\qedhere
 \]
 \end{proof}
@@ -592,23 +748,23 @@ we have for any $s>0$ and $\epsilon\in (0,s)$,
 	e^{- \lambda (t+s)} \nu(V_{t+s}f) + \int_0^s e^{- \lambda (t+u)} \nu(\Psi_0 V_{t+u}f) du
 	= e^{- \lambda t} \nu(V_t f).
 \end{equation}
-	As a consequence of \eqref{eq:nuP.1}, we can get that for all $t>T^{\eqref{asp:H4!}}$, $s\geq 0$ and $f \in \mathcal B(E,[0,\infty])$ with $\nu(f)>0$,
+	As a consequence of \eqref{eq:nuP.1}, we can get that for all $t>T$, $s\geq 0$ and $f \in \mathcal B(E,[0,\infty])$ with $\nu(f)>0$,
 \begin{equation}\label{Claim:nVI}
 	\frac{\nu(V_{t+s} f)} {\nu(V_t f)}
 	= \exp\left\{ \lambda s - \int_t^{t+s} \frac{\nu(\Psi_0 V_u f) }{\nu(V_u f)} ~du\right\}.
 \end{equation}
-	In fact, first observe from \eqref{lem:nV::H2::Vf1} and \eqref{lem:nVn!} that both sides of \eqref{eq:nuP.1} are finite and positive if $t> T^{\eqref{asp:H4!}}$ and $\nu(f)>0$.
-	Therefore the function $H: u\mapsto e^{-\lambda u}\nu(V_u f)$ is absolutely continuous on $(T^{\eqref{asp:H4!}},\infty)$ and
+	In fact, first observe from \eqref{lem:nV::H2::Vf1} and \eqref{lem:nVn!} that both sides of \eqref{eq:nuP.1} are finite and positive if $t> T$ and $\nu(f)>0$.
+	Therefore the function $H: u\mapsto e^{-\lambda u}\nu(V_u f)$ is absolutely continuous on $(T,\infty)$ and
 \begin{equation}
 	d H(u)
 	= - e^{- \lambda u} \nu(\Psi_0 V_u f) du,
-	\quad u\in (T^{\eqref{asp:H4!}},\infty),
+	\quad u\in (T,\infty),
 \end{equation}
 	which implies that
 \begin{equation}
 	d \log H(u)
 	= - \frac{\nu(\Psi_0 V_u f )}{ \nu(V_u f)} du,
-	\quad u \in (T^{\eqref{asp:H4!}},\infty).
+	\quad u \in (T,\infty).
 \end{equation}
 	Now an elementary integration argument gives \eqref{Claim:nVI}.
 	
@@ -618,11 +774,10 @@ we have for any $s>0$ and $\epsilon\in (0,s)$,
 	= \lim_{n\to \infty}\frac{\partial \psi_0}{ \partial z} (x, n\wedge f(x)),
 	\quad x\in E, f\in \mathcal B(E,[0,\infty]).
 \end{equation}
-	We first claim that for all $t> T^{\eqref{asp:H4!}}, x\in E$ and $f\in \mathcal B(E,[0,\infty])$,
-\begin{equation}
-	\Psi_0'V_tf(x) = C^{\eqref{lem:PsV}}_{t,x,f} \label{lem:PsV}
+	We first claim that for all $t> T, x\in E$ and $f\in \mathcal B(E,[0,\infty])$,
+\begin{equation}\label{lem:PsV}
+	\varlimsup_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E, [0,\infty])}\Psi_0'V_tf(x) < \infty.
 \end{equation}
-	for some non-negative $C^{\eqref{lem:PsV}}_{t,x,f}$ with $\varlimsup_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E, [0,\infty])} C^{\eqref{lem:PsV}}_{t,x,f} <\infty$.
 	In fact, since
 \begin{equation}\label{e:derofpsi0-2}
 	\frac{\partial \psi_0 }{ \partial z} (x,z)
@@ -633,15 +788,16 @@ we have for any $s>0$ and $\epsilon\in (0,s)$,
 \begin{align}
 	&\Psi_0' V_tf(x)
 	\leq 2\sigma (x)^2 V_t f(x) + V_t f(x) \int_0^1 r^2 \pi(x,dr) + \int_1^\infty r \pi(x,dr)
-	\\&\overset{\text{Proposition \ref{prop:Vf1::H1:H2::Y}}}= C^{\ref{prop:Vf1::H1:H2::Y}}_{t,x,f} \phi(x) \left(2\sigma (x)^2 +\int_0^1 r^2 \pi(x,dr) \right)+ \int_1^\infty r \pi(x,dr).
+		\\&\overset{\text{Proposition \ref{prop:Vf1::H1:H2::Y}}}
+	= C^3_{t,x,f}
+	\phi(x) \left(2\sigma (x)^2 +\int_0^1 r^2 \pi(x,dr) \right)+ \int_1^\infty r \pi(x,dr),
 \end{align}
 	Since $\phi$, $\sigma$ are bounded,  and $(r\wedge r^2)\pi(x,du)$ is a bounded kernel, \eqref{lem:PsV} follows easily.
 	
-	We next claim that for all $t > T^{\eqref{asp:H4!}}$ and $f\in \mathcal B(E,[0,\infty])$,
-\begin{equation}
-	\nu(\Psi_0' V_t f) = C^{\eqref{eq:nPPV}}_{t,f} \label{eq:nPPV}
+	We next claim that for all $t > T$ and $f\in \mathcal B(E,[0,\infty])$,
+\begin{equation}\label{eq:nPPV}
+	\lim_{t\to \infty}\sup_{f\in \mathcal B(E, [0,\infty])} \nu(\Psi_0' V_t f) = 0.
 \end{equation}
-	for some non-negative $C^{\eqref{eq:nPPV}}_{t,f}$ with $\lim_{t\to \infty}\sup_{f\in \mathcal B(E, [0,\infty])} C^{\eqref{eq:nPPV}}_{t,f} = 0$.
 	In fact, it follows from \eqref{e:derofpsi0-2} that, for any fixed $x\in E$, $z\mapsto \frac{\partial \psi_0}{\partial z} (x,z)$ is a non-negative, non-decreasing and continuous function on $[0,\infty)$ with $\frac{\partial \psi_0}{\partial z} (\cdot,0) \equiv 0$.
 	Therefore for any $x\in E$, we have
 \[
@@ -653,7 +809,7 @@ we have for any $s>0$ and $\epsilon\in (0,s)$,
 	Here is another claim that will be used below:
 \begin{equation}
 \begin{minipage}{0.9\textwidth}
-	For all $t> T^{\eqref{asp:H4!}}, x\in E$ and $f\in \mathcal B(E,[0,\infty])$, it holds that \[V_t f(x) = \phi(x) \nu(V_tf) C^{\eqref{eq:VfO}}_{t,x,f}\] for some non-negative $C^{\eqref{eq:VfO}}_{t,x,f}$ with $\varlimsup_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E,[0,\infty])} C^{\eqref{eq:VfO}}_{t,x,f} <\infty$.
+	For all $t> T, x\in E$ and $f\in \mathcal B(E,[0,\infty])$, it holds that \[V_t f(x) = \phi(x) \nu(V_tf) C^{11}_{t,x,f}\] for some non-negative $C^{11}_{t,x,f}$ with $\varlimsup_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E,[0,\infty])} C^{11}_{t,x,f} <\infty$.
 \end{minipage} \label{eq:VfO}
 \end{equation}
 	To see this, first note that \eqref{eq:VfO} is trivial when $\nu(f) = 0$ thanks to \eqref{lem:nVn!} and \eqref{lem:nullVf}.
@@ -667,39 +823,42 @@ we have for any $s>0$ and $\epsilon\in (0,s)$,
 	that
 \begin{align}
 	&\nu(\Psi_0 V_tf)
-	\leq \nu((V_tf)\cdot (\Psi_0' V_tf)) \leq \nu(V_tf) \sup_{y\in E} \Psi_0' V_tf(y)
-	\overset{\eqref{lem:PsV}}= \nu(V_tf) \sup_{y\in E} C^{\eqref{lem:PsV}}_{t,y,f}.
-\end{align}
+    \leq \nu((V_tf)\cdot (\Psi_0' V_tf)) \leq \nu(V_tf) \sup_{y\in E} \Psi_0' V_tf(y).
+	\end{align}
 	From \eqref{lem:nV::H2::Vf1}  we get that $\nu(V_tf) <\infty$.
-	Thus for $t> T^{\eqref{asp:H4!}}$ and $f\in \mathcal B(E,[0,\infty])$,
+	Thus from \eqref{lem:PsV} for $t> T$ and $f\in \mathcal B(E,[0,\infty])$,
 \begin{equation}
-	\nu(\Psi_0 V_t f)  = \nu(V_tf) C^{\eqref{eq:VfO.1}}_{t,f} \label{eq:VfO.1}
+	\nu(\Psi_0 V_t f)
+	= \nu(V_tf) C^{12}_{t,f} \label{eq:VfO.1}
 \end{equation}
-	for some non-negative $C^{\eqref{eq:VfO.1}}_{t,f} $ with $\varlimsup_{t\to \infty} \sup_{f\in \mathcal B(E,[0,\infty])}C^{\eqref{eq:VfO.1}}_{t,f}  < \infty$.
+	for some non-negative $C^{12}_{t,f} $ with $\varlimsup_{t\to \infty} \sup_{f\in \mathcal B(E,[0,\infty])}C^{12}_{t,f}  < \infty$.
 	Therefore, for any $s\geq 0$,
 \begin{align}
 	&  \frac{\nu(V_{t+s} f)} {\nu(V_t f)} \overset{\eqref{Claim:nVI}}= \exp\left\{ \lambda s - \int_t^{t+s} \frac{\nu(\Psi_0 V_u f) }{\nu(V_u f)} du\right\}
-	\\&\label{eq:VfO.2} \overset{\text{\eqref{eq:VfO.1}}}= \exp\left\{ \lambda s - \int_t^{t+s} C^{\eqref{eq:VfO.1}}_{u,f} ~du\right\}.
+	\\&\label{eq:VfO.2} \overset{\text{\eqref{eq:VfO.1}}}= \exp\left\{ \lambda s -
+	\int_t^{t+s} C^{12}_{u,f} ~du\right\}.
 \end{align}
-Now note that for any $\epsilon\in (0, t- T^{\eqref{asp:H4!}})$,
+Now note that for any $\epsilon\in (0, t- T)$,
 \begin{align}
 	&V_{t}f(x) \overset{\eqref{Fact:BV!}}= V_{\epsilon} V_{t-\epsilon} f\leq P_\epsilon^\beta V_{t-\epsilon} f(x)\quad\text{by \eqref{eq:Vf1.1}},
-	\\& \overset{\text{\eqref{asp:H2!}}}= \phi(x) \nu(V_{t-\epsilon}f) e^{\lambda  \epsilon} (1+C_{\epsilon,x, V_{t-\epsilon} f}^{\eqref{asp:H2!}} )
-	\\& \label{eq:VfO.3}\overset{\text{\eqref{eq:VfO.2}}}= \phi(x)\nu(V_{t}f)\exp\left\{ \int_{t-\epsilon}^t C^{\eqref{eq:VfO.1}}_{u,f} ~du\right\} (1+C_{\epsilon,x, V_{t-\epsilon} f}^{\eqref{asp:H2!}} ).
-\end{align}
+	\\& \overset{\text{\eqref{asp:H2!}}}= \phi(x) \nu(V_{t-\epsilon}f) e^{\lambda  \epsilon} (1+H_{\epsilon,x, V_{t-\epsilon} f} )
+		\\& \label{eq:VfO.3}\overset{\text{\eqref{eq:VfO.2}}}= \phi(x)\nu(V_{t}f)\exp\left\{ \int_{t-\epsilon}^t
+	C^{12}_{u,f} ~du\right\} (1+H_{\epsilon,x, V_{t-\epsilon} f} ).
+	\end{align}
 	According to \eqref{lem:nV::H2::Vf1}  and \eqref{asp:H2!} we have
 \begin{equation}	
 	\varlimsup_{t\to \infty}\sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
-	|C_{\epsilon,x, V_{t-\epsilon} f}^{\eqref{asp:H2!}}| < \infty, \quad \epsilon > 0.
+	|H_{\epsilon,x, V_{t-\epsilon} f}| < \infty, \quad \epsilon > 0.
 \end{equation}
-	From this, $\eqref{eq:VfO.3}$ and the fact that $\varlimsup_{u\to \infty} \sup_{f\in \mathcal B(E,[0,\infty])} C^{\eqref{eq:VfO.1}}_{u,f}  < \infty$,
-	\eqref{eq:VfO} follows immediately.
+	From this, $\eqref{eq:VfO.3}$ and the fact that
+	$\varlimsup_{u\to \infty} \sup_{f\in \mathcal B(E,[0,\infty])} C^{12}_{u,f}  < \infty$,
+ \eqref{eq:VfO} follows immediately.
 	
 	We now use \eqref{lem:PsV}, \eqref{eq:nPPV} and \eqref{eq:VfO} to give the asymptotic ratio of $\nu(\Psi_0V_tf)$ and $\nu(V_tf)$.
 	Note that we already obtained some result for this ratio in \eqref{eq:VfO.1}.
 	We claim that the following stronger assertion is valid:
 \begin{equation}\label{eq:nP}
-	\lim_{t\to \infty}\sup_{f\in \mathcal B(E,[0,\infty])} C^{\eqref{eq:VfO.1}}_{t,f} = 0,
+	\lim_{t\to \infty}\sup_{f\in \mathcal B(E,[0,\infty])} C^{12}_{t,f} = 0,
 	\quad f\in \mathcal B(E,[0,\infty]).
 \end{equation}
 	To see this, we observe that
@@ -707,15 +866,20 @@ Now note that for any $\epsilon\in (0, t- T^{\eqref{asp:H4!}})$,
 	&\nu(\Psi_0 V_tf)
 	\leq \nu((V_tf)\cdot (\Psi_0' V_tf)) ,\quad\text{by \eqref{e:derofpsi0}},
 	\\&  \leq  \nu(\Psi_0' V_tf) \sup_{x\in E}V_tf(x)
-	\overset{\eqref{eq:nPPV},\eqref{eq:VfO}}=   C^{\eqref{eq:nPPV}}_{t,f} \nu(V_tf) \sup_{x\in E} (\phi(x) C^{\eqref{eq:VfO}}_{t,x,f}).
+	\overset{\eqref{eq:VfO}}=   \nu(\Psi_0' V_tf)  \cdot \nu(V_tf) \sup_{x\in E}
+	(\phi(x) C^{11}_{t,x,f}).
 \end{align}
-	Since $\phi$ is bounded, \eqref{eq:nP} follows.
+	Since $\phi$ is bounded, \eqref{eq:nP} follows from \eqref{eq:nPPV} and \eqref{eq:VfO}.
+	
 	
 	Using \eqref{eq:nP}, we can get the following asymptotic ratio of $\nu(V_{t+s}f)$ and $\nu(V_tf)$:
 \begin{equation} \label{eq:nVR}
 \begin{minipage}{0.9\textwidth}
-	For all $t> T^{\eqref{asp:H4!}},~s \geq 0$ and $f\in \mathcal B(E,[0,\infty])$, we have \[\nu(V_{t+s}f) = \nu(V_tf) \exp\{\lambda s (1+C^{\eqref{eq:nVR}}_{t,s,f}) \}\] for some real $C^{\eqref{eq:nVR}}_{t,s,f}$ with
-	 $\lim_{t\to \infty} \sup_{s\geq  0,f\in \mathcal B(E,[0,\infty])} |C^{\eqref{eq:nVR}}_{t,s,f}| = 0$.
+	For all $t> T,~s \geq 0$ and $f\in \mathcal B(E,[0,\infty])$, we have
+\[
+	\nu(V_{t+s}f) = \nu(V_tf) \exp\{\lambda s (1+C^{13}_{t,s,f}) \}
+\]
+	for some real $C^{13}_{t,s,f}$ with $\lim_{t\to \infty} \sup_{s\geq  0,f\in \mathcal B(E,[0,\infty])} |C^{13}_{t,s,f}| = 0$.
 	In particular, for all $f\in \mathcal B(E,[0,\infty])$ with $\nu(f)>0$ and $s\geq 0$, we have $\lim_{t\to \infty} \frac{\nu(V_{t+s}f)}{\nu(V_tf)} = e^{\lambda s}$.
 \end{minipage}
 \end{equation}
@@ -723,12 +887,11 @@ Now note that for any $\epsilon\in (0, t- T^{\eqref{asp:H4!}})$,
 	we only need to consider the case $\nu(f)>0$. In this case,  it holds  that
 \begin{align}
 	&\frac{\nu(V_{t+s} f)} {\nu(V_t f)}
-	\overset{\eqref{eq:VfO.2}}= \exp\left\{\lambda s- \int_t^{t+s} C^{\eqref{eq:VfO.1}}_{u,f} ~du\right\}
-	=: \exp\{\lambda s (1+C^{\eqref{eq:nVR}}_{t,s,f}) \}.
-\end{align}
-	Noticing that $C^{\eqref{eq:nVR}}_{t,s,f} = -\frac{1}{\lambda s}\int_t^{t+s} C^{\eqref{eq:VfO.1}}_{u,f} ~du$ and by \eqref{eq:nP} that $\lim_{u\to \infty}\sup_{f\in \mathcal B(E,[0,\infty])} C^{\eqref{eq:VfO.1}}_{u,f} = 0$,
-	so we have
-	$\lim_{t\to \infty} \sup_{s> 0,f\in \mathcal B(E,[0,\infty])} |C^{\eqref{eq:nVR}}_{t,s,f}| = 0. $
+	\overset{\eqref{eq:VfO.2}}= \exp\left\{\lambda s- \int_t^{t+s} C^{12}_{u,f} ~du\right\}
+		=: \exp\{\lambda s (1+C^{13}_{t,s,f}) \}.
+	\end{align}
+Noticing that $C^{13}_{t,s,f} = -\frac{1}{\lambda s}\int_t^{t+s} C^{12}_{u,f} ~du$ and by \eqref{eq:nP} that $\lim_{u\to \infty}\sup_{f\in \mathcal B(E,[0,\infty])} C^{12}_{u,f} = 0$,
+so we have $\lim_{t\to \infty} \sup_{s> 0,f\in \mathcal B(E,[0,\infty])} |C^{13}_{t,s,f}| = 0$.	
 	
 	We are now  ready to prove the conclusion of Lemma \ref{prop:PVf}.
 	Again we only need to consider the case $\nu(f)>0$ thanks to \eqref{lem:nVn!} and  \eqref{lem:nullVf}.
@@ -736,83 +899,90 @@ Now note that for any $\epsilon\in (0, t- T^{\eqref{asp:H4!}})$,
 	Therefore, we have
 \begin{align}
 	& P_s^\beta V_t f(x)
-	\overset{\text{\eqref{asp:H2!}}}= e^{\lambda s} \phi(x) \nu(V_tf) (1+C^{\eqref{asp:H2!}}_{s,x,V_tf})
-	\\&\overset{\eqref{eq:nVR}}= \phi(x) \nu(V_{t+s}f) \exp\{-\lambda s C^{\eqref{eq:nVR}}_{t,s,f}\} (1+C^{\eqref{asp:H2!}}_{s,x,V_tf}).
-\end{align}
-	From \eqref{asp:H2!} and \eqref{lem:nV::H2::Vf1}, we know that $\lim_{s\to \infty} \sup_{x\in E, t> T^{\eqref{asp:H4!}}, f\in \mathcal B(E,[0,\infty])}
-	|C^{\eqref{asp:H2!}}_{s,x,V_tf}| = 0$.
-	From \eqref{eq:nVR}, we know that $\sup_{s\geq 0} \lim_{t\to \infty} \sup_{f\in \mathcal B(E,[0,\infty])}
-	|sC^{\eqref{eq:nVR}}_{t,s,f}| = 0$.
+	\overset{\text{\eqref{asp:H2!}}}= e^{\lambda s} \phi(x) \nu(V_tf) (1+H_{s,x,V_tf})
+	\\&\overset{\eqref{eq:nVR}}= \phi(x) \nu(V_{t+s}f)
+	\exp\{-\lambda s C^{13}_{t,s,f}\} (1+H_{s,x,V_tf}).
+	\end{align}
+	From \eqref{asp:H2!} and \eqref{lem:nV::H2::Vf1}, we know that $\lim_{s\to \infty} \sup_{x\in E, t> T, f\in \mathcal B(E,[0,\infty])}|H_{s,x,V_tf}| = 0$.
+From \eqref{eq:nVR}, we know that $\sup_{s\geq 0} \lim_{t\to \infty}
+\sup_{f\in \mathcal B(E,[0,\infty])} |sC^{13}_{t,s,f}| = 0$.
 	Therefore, we have
-\[
-	\lim_{s\to \infty}\varlimsup_{t\to \infty}\sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
-	|\exp\{-\lambda s C^{\eqref{eq:nVR}}_{t,s,f}\} (1+C^{\eqref{asp:H2!}}_{s,x,V_tf})-1| = 0. \qedhere
-\]
+ \[
+\lim_{s\to \infty}\varlimsup_{t\to \infty}\sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
+    |\exp\{-\lambda s C^{13}_{t,s,f}\} (1+H_{s,x,V_tf})-1| = 0.
+ \]
+Combining the displays above we get the conclusion of Lemma \ref{prop:PVf}.
 \end{proof}
 
 \begin{proof}[Proof of Lemma \ref{prop:IVf}]
 	For all $u\geq 0$, we have
 \begin{align} \label{eq:IVf.25}
-	&\nu(P_u^\beta \Psi_0 V_t f) = e^{\lambda u}\nu(\Psi_0 V_t f)
-	\\&\overset{\eqref{eq:VfO.1}}=e^{\lambda u}\nu(V_tf) C^{\eqref{eq:VfO.1}}_{t,f}
-	< \infty, \label{eq:IVf.5}
+	&\nu(P_u^\beta \Psi_0 V_t f) = e^{\lambda u}\nu(\Psi_0 V_t f)<\infty,
 \end{align}
-	where the last inequality follows from \eqref{lem:nV::H2::Vf1}.
+where the inequality follows from \eqref{eq:VfO.1} and \eqref{lem:nV::H2::Vf1}
 	Therefore, we have
 \begin{align}
  	& I_{s,\epsilon} V_t f(x)
  	= \int_0^{s- \epsilon} P_{s-u}^\beta \Psi_0 V_{t+u} f (x) du
  	= \int_0^{s- \epsilon} P_\epsilon^\beta (P_{s - \epsilon - u}^\beta \Psi_0 V_{t+u} f )(x) du
- 	\\&\overset{\eqref{asp:H2!},\eqref{eq:IVf.5}}= \int_0^{s - \epsilon} e^{\lambda \epsilon} \phi(x) \nu(P_{s - \epsilon - u}^{\beta} \Psi_0 V_{t+u} f)  \left(1+C^{\eqref{asp:H2!}}_{\epsilon ,x , P_{s - \epsilon - u}^{\beta} \Psi_0 V_{t+u} f}\right) du
-	\\&\overset{\text{\eqref{eq:IVf.25}}}= e^{(t+s)\lambda} \int_0^{s - \epsilon} \phi(x) e^{-\lambda (t+u)}\nu(\Psi_0 V_{t+u} f)  \left(1+C^{\eqref{asp:H2!}}_{\epsilon ,x , P_{s - \epsilon - u}^{\beta} \Psi_0 V_{t+u} f}\right) du
-	\\&\leq \phi(x) \left(1+\sup_{g\in L_1^+(\nu)}|C^{\eqref{asp:H2!}}_{\epsilon ,x , g}|\right) e^{(t+s)\lambda} \int_0^{s} e^{-\lambda (t+u)} \nu(\Psi_0 V_{t+u}f)du\quad\text{by \eqref{eq:IVf.5}}
- 	\\&\overset{\eqref{eq:nuP.1}}= \phi(x) \left(1+\sup_{g\in L_1^+(\nu)}|C^{\eqref{asp:H2!}}_{\epsilon ,x , g}|\right)  e^{(t+s)\lambda} \left(e^{-\lambda t}\nu(V_tf)- e^{-\lambda(t+s)}\nu(V_{t+s}f)\right)
- 	\\&\overset{\eqref{lem:nV::H2::Vf1},\eqref{lem:nVn!}}= \phi(x) \left(1+\sup_{g\in L_1^+(\nu)}|C^{\eqref{asp:H2!}}_{\epsilon ,x , g}|\right) \nu(V_{t+s}f) \left( \frac{e^{s \lambda }\nu(V_tf)}{\nu(V_{t+s}f)} - 1\right)
- 	\\&\overset{\eqref{eq:nVR}}= \phi(x) \left(1+\sup_{g\in L_1^+(\nu)}|C^{\eqref{asp:H2!}}_{\epsilon ,x , g}|\right) \nu(V_{t+s}f) ( \exp\{- \lambda s C^{\eqref{eq:nVR}}_{t,s,f}\} - 1).
+ 	\\&\overset{\eqref{asp:H2!}}
+ 	= \int_0^{s - \epsilon} e^{\lambda \epsilon} \phi(x) \nu(P_{s - \epsilon - u}^{\beta} \Psi_0 V_{t+u} f)  \left(1+H_{\epsilon ,x , P_{s - \epsilon - u}^{\beta} \Psi_0 V_{t+u} f}\right) du
+	\\&\overset{\text{\eqref{eq:IVf.25}}}= e^{(t+s)\lambda} \int_0^{s - \epsilon} \phi(x) e^{-\lambda (t+u)}\nu(\Psi_0 V_{t+u} f)  \Big(1+H_{\epsilon ,x , P_{s - \epsilon - u}^{\beta} \Psi_0 V_{t+u} f}\Big) du
+	\\&\leq \phi(x) \Big(1+\sup_{g\in L_1^+(\nu)}|H_{\epsilon ,x , g}|\Big) e^{(t+s)\lambda} \int_0^{s} e^{-\lambda (t+u)} \nu(\Psi_0 V_{t+u}f)du\quad
+	\text{by \eqref{eq:IVf.25}}
+ 	\\&\overset{\eqref{eq:nuP.1}}= \phi(x) \left(1+\sup_{g\in L_1^+(\nu)}|H_{\epsilon ,x , g}|\right)  e^{(t+s)\lambda} \Big(e^{-\lambda t}\nu(V_tf)- e^{-\lambda(t+s)}\nu(V_{t+s}f)\Big)
+ 	\\&\overset{\eqref{lem:nV::H2::Vf1},\eqref{lem:nVn!}}= \phi(x) \Big(1+\sup_{g\in L_1^+(\nu)}|H_{\epsilon ,x , g}|\Big) \nu(V_{t+s}f) \Big( \frac{e^{s \lambda }\nu(V_tf)}{\nu(V_{t+s}f)} - 1\Big)
+  \\&\overset{\eqref{eq:nVR}}= \phi(x) \Big(1+\sup_{g\in L_1^+(\nu)}|H_{\epsilon ,x , g}|\Big)
+  \nu(V_{t+s}f) ( \exp\{- \lambda s C^{13}_{t,s,f}\} - 1).
 \end{align}
 	It is easy to check that
 \begin{equation}
 	\lim_{t\to \infty}\sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
-	\left|\left(1+\sup_{g\in L_1^+(\nu)}|C^{\eqref{asp:H2!}}_{\epsilon ,x , g}|\right)( \exp\{- \lambda s C^{\eqref{eq:nVR}}_{t,s,f}\} - 1) \right| = 0.
+	\Big|\Big(1+\sup_{g\in L_1^+(\nu)}|H_{\epsilon ,x , g}|\Big)
+	( \exp\{- \lambda s C^{13}_{t,s,f}\} - 1) \Big| = 0.
 \end{equation}
 	The desired result then follows.
 \end{proof}
 
 \begin{proof}[Proof of Lemma \ref{prop:JVf}]
-	It follows from \eqref{e:derofpsi0} that for all $t> T^{\eqref{asp:H4!}}, x\in E$ and $f\in \mathcal B(E,[0,\infty])$,
+	It follows from \eqref{e:derofpsi0} that for all $t> T, x\in E$ and $f\in \mathcal B(E,[0,\infty])$,
 \begin{equation}
 	\Psi_0 V_t f (x)
-	\leq V_tf(x)\cdot \Psi_0' V_t f(x) \overset{\eqref{lem:PsV}}= V_tf(x) C^{\eqref{lem:PsV}}_{t,x,f}.
+	\leq V_tf(x)\cdot \Psi_0' V_t f(x)
+	\end{equation}
+		Now by \eqref{lem:PsV} we have
+	\begin{equation} \label{lem:PVtV}
+		\Psi_0 V_t f(x) = V_tf(x) C^{14}_{t,x,f}
 \end{equation}
-	Since $\varlimsup_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E,[0,\infty])} C^{\eqref{lem:PsV}}_{t,x,f} <\infty$, we have
-\begin{equation} \label{lem:PVtV}
-	\Psi_0 V_t f(x) = V_tf(x) C^{\eqref{lem:PVtV}}_{t,x,f}
-\end{equation}
-	for some non-negative $C^{\eqref{lem:PVtV}}_{t,x,f}$ with $\varlimsup_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E,[0,\infty])}
-	C^{\eqref{lem:PVtV}}_{t,x,f} < \infty$.
-	
-	From this we can get that for all $u\geq 0$, $t>T^{\eqref{asp:H4!}}$, $x\in E$ and $f\in \mathcal B(E,[0,\infty])$,
+for some non-negative $C^{14}_{t,x,f}$ with $\varlimsup_{t\to \infty} \sup_{x\in E, f\in \mathcal B(E,[0,\infty])} C^{14}_{t,x,f} < \infty$.
+		
+
+Recall the quantity $C^{13}_{t,s,f}$ given in  \eqref{eq:nVR}.
+	Now we claim that for all $u\geq 0$, $t>T$, $x\in E$ and $f\in \mathcal B(E,[0,\infty])$,
 \begin{equation} \label{Claim:PuPVt}
-	P_u^\beta \Psi_0 V_{t} f(x) = \phi(x)\nu(V_{t+u}f) \exp\{-\lambda u C^{\eqref{eq:nVR}}_{t,u,f} \} C^{\eqref{Claim:PuPVt}}_{t,u,x,f}
+        P_u^\beta \Psi_0 V_{t} f(x) = \phi(x)\nu(V_{t+u}f)
+       \exp\{-\lambda u C^{13}_{t,u,f} \} C^{15}_{t,u,x,f}
 \end{equation}
-	for some non-negative $C^{\eqref{Claim:PuPVt}}_{t,u,x,f}$ with
-	$\varlimsup_{t\to \infty}
-	\sup_{u\geq 0, x\in E, f\in \mathcal B(E,[0,\infty])}
-	C^{\eqref{Claim:PuPVt}}_{t,u,x,f} < \infty$.
-	To see this, we note that
+for some non-negative $C^{15}_{t,u,x,f}$ with $\varlimsup_{t\to \infty} \sup_{u\geq 0, x\in E, f\in \mathcal B(E,[0,\infty])} C^{15}_{t,u,x,f} < \infty$.
 \begin{align}
 	&P_u^\beta \Psi_0 V_{t} f(x)
 	= \int_{E} \Psi_0V_tf(y) P_u^\beta (x,dy)
-	\overset{\eqref{lem:PVtV}}=\int_{E} V_tf(y)C^{\eqref{lem:PVtV}}_{t,y,f} P_u^\beta (x,dy)
-	\\&\overset{\eqref{eq:VfO}}=\int_{E} \phi(y)\nu(V_tf)C^{\eqref{eq:VfO}}_{t,y,f}C^{\eqref{lem:PVtV}}_{t,y,f} P_u^\beta (x,dy)
-	\\&\overset{\eqref{eq:nVR}}=\int_{E} \phi(y)\nu(V_{t+u}f) \exp\{-\lambda u (1+C^{\eqref{eq:nVR}}_{t,u,f}) \} C^{\eqref{eq:VfO}}_{t,y,f}C^{\eqref{lem:PVtV}}_{t,y,f} P_u^\beta (x,dy)
-	\\& \leq \nu(V_{t+u}f) \exp\{-\lambda u (1+C^{\eqref{eq:nVR}}_{t,u,f}) \} \left(\sup_{z\in E} C^{\eqref{eq:VfO}}_{t,z,f}C^{\eqref{lem:PVtV}}_{t,z,f}\right) \int_{E} \phi(y) P_u^\beta (x,dy)
-	\\& = \nu(V_{t+u}f) \exp\{-\lambda u (1+C^{\eqref{eq:nVR}}_{t,u,f}) \} \left(\sup_{z\in E} C^{\eqref{eq:VfO}}_{t,z,f}C^{\eqref{lem:PVtV}}_{t,z,f}\right) e^{\lambda u}\phi(x).
+	\overset{\eqref{lem:PVtV}}=\int_{E} V_tf(y)
+	C^{14}_{t,y,f} P_u^\beta (x,dy)
+        \\&\overset{\eqref{eq:VfO}}=\int_{E} \phi(y)\nu(V_tf)
+        C^{11}_{t,y,f}C^{14}_{t,y,f} P_u^\beta (x,dy)
+\\&\overset{\eqref{eq:nVR}}=\int_{E} \phi(y)\nu(V_{t+u}f) \exp\{-\lambda u
+(1+C^{13}_{t,u,f}) \} C^{11}_{t,y,f}C^{14}_{t,y,f} P_u^\beta (x,dy)
+\\& \leq \nu(V_{t+u}f)
+\exp\{-\lambda u (1+C^{13}_{t,u,f}) \} \Big(\sup_{z\in E} C^{11}_{t,z,f}C^{14}_{t,z,f}\Big)
+\int_{E} \phi(y) P_u^\beta (x,dy)
+\\& = \nu(V_{t+u}f)
+\exp\{-\lambda u (1+C^{13}_{t,u,f}) \} \Big(\sup_{z\in E} C^{11}_{t,z,f}C^{14}_{t,z,f}\Big)
+e^{\lambda u}\phi(x).
 \end{align}
-    Now \eqref{Claim:PuPVt} follows from the fact that
-	$\varlimsup_{t\to \infty} \left(
-	\sup_{z\in E, f\in \mathcal B(E,[0,\infty])} C^{\eqref{eq:VfO}}_{t,z,f}
-	C^{\eqref{lem:PVtV}}_{t,z,f}\right) < \infty$.
+ Now \eqref{Claim:PuPVt} follows from the fact that $\varlimsup_{t\to \infty}
+ \Big(\sup_{z\in E, f\in \mathcal B(E,[0,\infty])} C^{11}_{t,z,f} C^{14}_{t,z,f}\Big) < \infty$.
+
 	
 	Note that \eqref{Claim:PuPVt} gives the asymptotic behavior of $P_u^\beta \Psi_0 V_t f(x)$.
 	We want to reformulate it into the asymptotic behavior  of $P_u^\beta \Psi_0 V_{t-u} f(x)$.	
@@ -821,47 +991,53 @@ Now note that for any $\epsilon\in (0, t- T^{\eqref{asp:H4!}})$,
 	\varlimsup_{t\to \infty} \sup_{u\geq 0} |h(t,u)| < \infty & \implies \sup_{\epsilon > 0} \varlimsup_{t\to \infty} \sup_{u \in (0,\epsilon)} |h(t-u,u)| < \infty;
 	\\ 	\lim_{t\to \infty} \sup_{u \geq 0} |h(t,u)| = 0 & \implies \sup_{\epsilon > 0} \lim_{t\to \infty} \sup_{u \in (0,\epsilon)} u\cdot |h(t-u,u)| = 0.
 \end{align}
-	Observe that for all $u>0$, $t> T^{\eqref{asp:H4!}} + u$ and $f \in \mathcal B(E,[0,\infty])$,
+	Observe that for all $u>0$, $t> T + u$ and $f \in \mathcal B(E,[0,\infty])$,
 \begin{align}
 	& P_u^\beta \Psi_0 V_{t-u} f(x)
-	\overset{\eqref{Claim:PuPVt}}= \phi(x) \nu(V_{t}f) \exp\{-\lambda u C^{\eqref{eq:nVR}}_{t-u,u,f} \} C^{\eqref{Claim:PuPVt}}_{t-u,u,x,f}.
+	\overset{\eqref{Claim:PuPVt}}= \phi(x) \nu(V_{t}f)
+	\exp\{-\lambda u C^{13}_{t-u,u,f} \} C^{15}_{t-u,u,x,f}.
 \end{align}
 	From \eqref{Fact:TO!}, we know that
 \[
 	\sup_{\epsilon > 0}\varlimsup_{t\to \infty}
 	\sup_{u\in (0,\epsilon), x\in E, f \in \mathcal B(E,[0,\infty])}
-	C^{\eqref{Claim:PuPVt}}_{t-u,u,x,f} < \infty
+	C^{15}_{t-u,u,x,f} < \infty
 \]
 	and that
 \[
 	\sup_{\epsilon > 0}\lim_{t\to \infty}
 	\sup_{u\in (0,\epsilon), f \in \mathcal B(E,[0,\infty])}
-	uC^{\eqref{eq:nVR}}_{t-u,u,f} =0.
+       uC^{13}_{t-u,u,f} =0.
 \]
 	Thus,
 \begin{equation}
 	\label{Claim:PPV}
-	P_u^\beta \Psi_0 V_{t-u} f(x) = \phi(x)\nu(V_tf) C^{\eqref{Claim:PPV}}_{t,u,f,x}
-\end{equation}
-	for some non-negative $C^{\eqref{Claim:PPV}}_{t, u,f,x}$ with
-	$\sup_{\epsilon > 0} \varlimsup_{t\to \infty}
-	\sup_{u \in (0,\epsilon), x\in E, f \in \mathcal B(E,[0,\infty])}
-	C^{\eqref{Claim:PPV}}_{t,u,f,x} < \infty$.
+	P_u^\beta \Psi_0 V_{t-u} f(x)
+	= \phi(x)\nu(V_tf) C^{16}_{t,u,f,x}
+	\end{equation}
+for some non-negative $C^{16}_{t, u,f,x}$ with $\sup_{\epsilon > 0} \varlimsup_{t\to \infty}
+\sup_{u \in (0,\epsilon), x\in E, f \in \mathcal B(E,[0,\infty])} C^{16}_{t,u,f,x} < \infty$.
+	
 
 	Finally, we note that
 \begin{align}
 	&J_{s,\epsilon}V_tf(x) = \int_{s-\epsilon}^s P_{s-u}^\beta \Psi_0 V_{t+u} f(x)du
 	= \int_0^\epsilon P_u^\beta \Psi_0 V_{t+s - u}f(x) du
-	\\& \overset{\eqref{Claim:PPV}}= \int_0^\epsilon \phi(x) \nu(V_{t+s}f) C^{\eqref{Claim:PPV}}_{t+s,u,f,x}~du
-	\leq \epsilon \phi(x)\nu(V_{t+s}f) \sup_{u\in (0,\epsilon)} C^{\eqref{Claim:PPV}}_{t+s,u,f,x}.
-\end{align}
+	\\& \overset{\eqref{Claim:PPV}}= \int_0^\epsilon \phi(x) \nu(V_{t+s}f) C^{16}_{t+s,u,f,x}~du
+	\leq \epsilon \phi(x)\nu(V_{t+s}f) \sup_{u\in (0,\epsilon)} C^{16}_{t+s,u,f,x}.
+	\end{align}
 	It is elementary to see that \[\lim_{\epsilon \to 0}\varlimsup_{t+s \to \infty}
 	\sup_{x\in E, f \in \mathcal B(E,[0,\infty])}
-	\left(\epsilon \sup_{u\in (0,\epsilon)} C^{\eqref{Claim:PPV}}_{t+s,u,f,x}\right) = 0.\qedhere\]
-\end{proof}
+		\Big(\epsilon \sup_{u\in (0,\epsilon)} C^{16}_{t+s,u,f,x}\Big) = 0.\]
+		Combining the two displays above, we get the conclusion of Lemma \ref{prop:JVf}.
+		\end{proof}
 
 
 \subsection{Proof of Proposition \ref{prop:G}}\label{sec:G}
+	Recall that for each $t\geq 0$, $\Gamma_t :=
+		\mathscr L_{X_t;\mathbb P_\nu(\cdot | \|X_t\|>0)}$,
+	the log-Laplace functional for $X_t$ under probability
+	$\mathbb P_\nu(\cdot | \|X_t\|>0)$.
 	For any unbounded increasing positive sequence $\mathbf t = (t_n)_{n\in \mathbb N}$, define $G^\mathbf t f = \varliminf_{n\to \infty} \Gamma_{(t_n)} f$.
 
 	To prove Proposition \ref{prop:G}, we first prove two lemmas.
@@ -904,7 +1080,7 @@ Now note that for any $\epsilon\in (0, t- T^{\eqref{asp:H4!}})$,
 	Note that for any $t>0$ and $f\in \mathcal B(E,[0,\infty])$, it holds that
 \begin{equation}\label{lem:Gfnv!}
 	1 - e^{- \Gamma_t f}
-	= \frac{ \mathbf P_\nu [ 1 - e^{- X_t(f)}]}{ \mathbf P_\nu (\|X_t\| > 0)}
+	= \frac{ \mathbb P_\nu [ 1 - e^{- X_t(f)}]}{ \mathbb P_\nu (\|X_t\| > 0)}
 	= \frac{ 1 - e^{- \nu(V_tf)} }{ 1 - e^{- \nu(v_t)}}.
 \end{equation}
 	Fix a function $f\in \mathcal B(E,[0,\infty])$.
@@ -933,7 +1109,7 @@ Now note that for any $\epsilon\in (0, t- T^{\eqref{asp:H4!}})$,
 
 \begin{lem} \label{prop:G*:H1:H2:H3:H4}
 	Suppose that $r \in [\lambda,0)$.
-	If $G_r$ is a $[0,\infty]$-valued monotone concave functional on $\mathcal B(E,[0,\infty])$ 
+	If $G_r$ is a $[0,\infty]$-valued monotone concave functional on $\mathcal B(E,[0,\infty])$
 	such that $G_r(\infty \mathbf 1_E) = \infty$ and that
 \begin{equation}
 	1 - e^{-G_r V_s f}
@@ -953,19 +1129,18 @@ Now note that for any $\epsilon\in (0, t- T^{\eqref{asp:H4!}})$,
 	:= e^{- r t}( 1 - e^{-G_r(gv_t)} ).
 \]
 	Note that, by \eqref{lem:sv2!}, $v_t(x)>0$ for all $x\in E$.
-	It follows  from Proposition \ref{prop:Vf1::H1:H2::Y} that $v_t(x)<\infty$ for all $x\in E$ and all $t> T^{\eqref{asp:H4!}}$.
-	Thus $v_t(\cdot)$ is a $(0,\infty)$-valued function for all $t> T^{\eqref{asp:H4!}}$.
+	It follows  from Proposition \ref{prop:Vf1::H1:H2::Y} that $v_t(x)<\infty$ for all $x\in E$ and all $t> T$.
+	Thus $v_t(\cdot)$ is a $(0,\infty)$-valued function for all $t> T$.
 
-	We claim that for any $u \in [0,1]$, 
+	We claim that for any $u \in [0,1]$,
 	$Q_t(u \mathbf 1_E)$ is non-increasing in $t\in (0,\infty)$.
-	In particular, we can define the $[0,\infty]$-valued function 
+	In particular, we can define the $[0,\infty]$-valued function
 	$q(u):= \lim_{t\to \infty} Q_t(u \mathbf 1_E), u\in [0,1]$.
 	In fact, note that $\mathbb P_{\delta_x}[e^{- X_s(uv_t)}] = e^{-V_s(uv_t)},x\in E, s,t>0, u \geq 0$.
 	Lemma \ref{Fact:CP!} says that, for all $s,t > 0$ and $x\in E$, $u\mapsto V_s(uv_t)(x) $ is a $[0,\infty]$-valued concave function on $[0,\infty)$.
 	Therefore, for $u\in [0,1]$, we have
 \begin{equation}
 	V_s(uv_t)
-	=V_s((u+ (1-u))v_t)
 	\geq uV_s(v_t) + (1-u) V_s(0\cdot v_t)
 	= uv_{s+t},
 	\quad s,t > 0.
@@ -1006,23 +1181,26 @@ Now note that for any $\epsilon\in (0, t- T^{\eqref{asp:H4!}})$,
 \begin{equation} \label{eq:GQ}
 	q(u) = u^{r/\lambda},\quad u\in [0,1].
 \end{equation}
-	To see this, note that for all $s\geq 0$, $t>T^{\eqref{asp:H4!}}$ and $x\in E$, we have that
+To see this, note that for all $s\geq 0$, $t>T$ and $x\in E$, we have that
 \begin{align}
 	& e^{\lambda s}(\phi^{-1}v_t)(x)
-	\overset{\text{Proposition \ref{prop:Vf2}}}= e^{\lambda s}\nu(v_{t})(1+ C^{\ref{prop:Vf2}}_{t,x,\infty \mathbf 1_E})
-	\\&\overset{\eqref{eq:nVR}}=\nu(v_{t+s}) \exp\{-\lambda sC^{\eqref{eq:nVR}}_{t,s,\infty \mathbf 1_E}\} (1+ C^{\ref{prop:Vf2}}_{t,x,\infty \mathbf 1_E})
-	\\&\overset{\text{Proposition \ref{prop:Vf2}}}= (\phi^{-1}v_{t+s})(x) (1+ C^{\ref{prop:Vf2}}_{t+s,x,\infty \mathbf 1_E})^{-1} \exp\{-\lambda sC^{\eqref{eq:nVR}}_{t,s,\infty \mathbf 1_E}\} (1+ C^{\ref{prop:Vf2}}_{t,x,\infty \mathbf 1_E})
-	\\& \label{eq:GQ.5}= (\phi^{-1}v_{t+s})(x) (1+C_{s,t,x}^{\eqref{eq:GQ.5}}),
+	\overset{\text{Proposition \ref{prop:Vf2}}}= e^{\lambda s}\nu(v_{t})
+		(1+ C^4_{t,x,\infty \mathbf 1_E})
+	\\&\overset{\eqref{eq:nVR}}=\nu(v_{t+s})
+	\exp\{-\lambda sC^{13}_{t,s,\infty \mathbf 1_E}\} (1+ C^4_{t,x,\infty \mathbf 1_E})
+	\\&\overset{\text{Proposition \ref{prop:Vf2}}}= (\phi^{-1}v_{t+s})(x)
+	(1+ C^4_{t+s,x,\infty \mathbf 1_E})^{-1} \exp\{-\lambda sC^{13}_{t,s,\infty \mathbf 1_E}\} (1+ C^4_{t,x,\infty \mathbf 1_E})
+	\\& \label{eq:GQ.5}= (\phi^{-1}v_{t+s})(x) (1+C^{17}_{s,t,x}),
 \end{align}
-	for some real $C_{s,t,x}^{\eqref{eq:GQ.5}}$ with $\lim_{t\to \infty}\sup_{x\in E} |C_{s,t,x}^{\eqref{eq:GQ.5}}| =0$.
-	Thus, we know that for all $s\geq 0$ and $\epsilon >0$ there exists $T^{\eqref{eq:GQ.6}}_{s,\epsilon}>0$ such that
-\begin{equation} \label{eq:GQ.6}
+for some real $C_{s,t,x}^{17}$ with $\lim_{t\to \infty}\sup_{x\in E} |C_{s,t,x}^{17}| =0$.
+	Thus, we know that for all $s\geq 0$ and $\epsilon >0$ there exists $T^1_{s,\epsilon}>0$ such that
+	\begin{equation} \label{eq:GQ.6}
 	1-\epsilon
 	\leq \frac{e^{\lambda s}v_t(x)}{v_{t+s}(x)}
 	\leq 1+\epsilon,
-	\quad x\in E, t> T^{\eqref{eq:GQ.6}}_{s,\epsilon}.
-\end{equation}
-	From this we get that for all $s\geq 0, \epsilon > 0$, $t\ge T^{\eqref{eq:GQ.6}}_{s,\epsilon}$, and $u\geq 0$,
+	 \quad x\in E, t> T^1_{s,\epsilon}.
+	 \end{equation}
+	From this we get that for all $s\geq 0, \epsilon > 0$, $t\ge T^1_{s,\epsilon}$, and $u\geq 0$,
 \begin{align}
 	& Q_{t+s}[ (1-\epsilon)u \mathbf 1_E ]
 	= e^{-r (t+s)}( 1-e^{-G_r[(1-\epsilon)uv_{t+s}]} )
@@ -1050,32 +1228,37 @@ Now note that for any $\epsilon\in (0, t- T^{\eqref{asp:H4!}})$,
 	We are now ready to finish the proof of Lemma \ref{prop:G*:H1:H2:H3:H4}.
 	Fix an unbounded increasing positive sequence $\mathbf t=(t_n)_{n\in \mathbb N}$ and a function $f\in \mathcal B(E,[0,\infty])$, we only need to  prove that $1-G_r f =(1- G^{\mathbf t}f)^{r/\lambda}.$
 	
-	From the definition of $G^{\mathbf t} f$, we can choose a subsequence $\mathbf t'=(t'_n)_{n \in \mathbb N}$ of $\mathbf t$ such that for each $n\in \mathbb N$, we have $t'_n > T^{\eqref{asp:H4!}}$ and
+	From the definition of $G^{\mathbf t} f$, we can choose a subsequence $\mathbf t'=(t'_n)_{n \in \mathbb N}$ of $\mathbf t$ such that for each $n\in \mathbb N$, we have $t'_n > T$ and
 \begin{equation} \label{eq:vp.5}
-	G^{\mathbf t}f = \Gamma_{t_n'}f + C^{\eqref{eq:vp.5}}_n
-\end{equation}
-	for some real $C^{\eqref{eq:vp.5}}_n$ (depend on both $f$ and $\mathbf t'$) such that $\lim_{n\to \infty} |C^{\eqref{eq:vp.5}}_n| =0$.
-	
+		G^{\mathbf t}f = \Gamma_{t_n'}f + C^{18}_n
+\end{equation}	
+for some real $C^{18}_n$ (depending on both $f$ and $\mathbf t'$) such that $\lim_{n\to \infty} |C^{18}_n| =0$.	
 	
 Therefore, we have for any $n \in \mathbb N$,
 \begin{align}
 	& 1 - e^{- G^{\mathbf t}f}
-	\overset{\eqref{eq:vp.5}}= 1 - e^{- \Gamma_{t'_n} f  - C^{\eqref{eq:vp.5}}_n}
-	= (1 - e^{- \Gamma_{t'_n} f }) e^{- C^{\eqref{eq:vp.5}}_n} + (1 - e^{-C_n^{\eqref{eq:vp.5}}})
-	\\&\overset{\eqref{lem:Gfnv!}}= \frac{1 - e^{- \nu( V_{(t_n')}f)}}{1- e^{- \nu(v_{(t_n')})}}  e^{ - C^{\eqref{eq:vp.5}}_n} + (1 - e^{-C_n^{\eqref{eq:vp.5}}})
-	\\& \label{eq:vp.6}= \frac{\nu (V_{(t_n')} f)}{\nu(v_{(t_n')})}  (1+C^{\eqref{eq:vp.6}}_n) + (1 - e^{-C_n^{\eqref{eq:vp.5}}})
+		\overset{\eqref{eq:vp.5}}= 1 - e^{- \Gamma_{t'_n} f  - C^{18}_n}
+		= (1 - e^{- \Gamma_{t'_n} f }) e^{- C^{18}_n} + (1 - e^{-C_n^{18}})
+		\\&\overset{\eqref{lem:Gfnv!}}= \frac{1 - e^{- \nu( V_{(t_n')}f)}}{1- e^{- \nu(v_{(t_n')})}}  e^{ - C^{18}_n} + (1 - e^{-C_n^{18}})
+		\\& \label{eq:vp.6}=
+	\frac{\nu (V_{(t_n')} f)}{\nu(v_{(t_n')})}  (1+C^{19}_n) + (1 - e^{-C_n^{18}})
 \end{align}
-	for some real $C^{\eqref{eq:vp.6}}_n$ with $\lim_{n\to \infty} |C^{\eqref{eq:vp.6}}_n| =0$, by Proposition \ref{prop:Vf1::H1:H2::Y} and the fact that $(1- e^{-x})/x \xrightarrow[x\to 0]{}1$.
+for some real $C^{19}_n$ with $\lim_{n\to \infty} |C^{19}_n| =0$, by Proposition
+ \ref{prop:Vf1::H1:H2::Y} and the fact that $(1- e^{-x})/x \xrightarrow[x\to 0]{}1$.
 	Thus
 \begin{equation} \label{eq:vp.61}
 	1 - e^{- G^{\mathbf t}f}
-	\overset{\text{ Proposition \ref{prop:Vf2}}}=  \frac{V_{(t_n')}f(x)}{v_{(t_n')}(x)} \frac{1+C^{\ref{prop:Vf2}}_{t_n',x,\infty \mathbf 1_E}}{1+C^{\ref{prop:Vf2}}_{t_n',x,f}} (1+C^{\eqref{eq:vp.6}}_n) + (1 - e^{-C_n^{\eqref{eq:vp.5}}}).
+	 \overset{\text{ Proposition \ref{prop:Vf2}}}=  \frac{V_{(t_n')}f(x)}{v_{(t_n')}(x)}
+\frac{1+C^4_{t_n',x,\infty \mathbf 1_E}}{1+C^4_{t_n',x,f}} (1+C^{19}_n) + (1 - e^{-C^{18}_n}).
 \end{equation}
-	It is elementary to see that $\lim_{n\to \infty} \sup_{x\in E} \left|\frac{1+C^{\ref{prop:Vf2}}_{t_n',x,\infty \mathbf 1_E}}{1+C^{\ref{prop:Vf2}}_{t_n',x,f}} (1+C^{\eqref{eq:vp.6}}_n) -1 \right| = 0$.
+	It is elementary to see that
+	\[
+	\lim_{n\to \infty} \sup_{x\in E} \left|\frac{1+C^4_{t_n',x,\infty \mathbf 1_E}}{1+C^4_{t_n',x,f}} (1+C^{19}_n) -1 \right| = 0.
+	\]
 	Therefore, for any $\epsilon > 0$, there exists $N_\epsilon>0$ such that for any $n>N_\epsilon$,
 \begin{equation} \label{eq:vp.62}
-	\left| \left(\frac{1+C^{\ref{prop:Vf2}}_{t_n',x,\infty \mathbf 1_E}}{1+C^{\ref{prop:Vf2}}_{t_n',x,f}} (1+C^{\eqref{eq:vp.6}}_n)\right)^{-1} -1 \right| < \epsilon;
-	\text{~and~} |1 - e^{-C_n^{\eqref{eq:vp.5}}}| < \epsilon.
+	\Big| \Big(\frac{1+C^4_{t_n',x,\infty \mathbf 1_E}}{1+C^4_{t_n',x,f}} (1+C^{19}_n)\Big)^{-1} -1 \Big| < \epsilon;
+	\text{~and~} |1 - e^{-C^{18}_n}| < \epsilon.
 \end{equation}
 	Note from \eqref{Fact:BV!}, $0 \leq V_tf \leq v_t$ for each $t\geq 0$.
 	It is elementary to verify from \eqref{eq:vp.61} and \eqref{eq:vp.62} that, for any $\epsilon>0$, $n>N_\epsilon$ and $x\in E$,
@@ -1091,7 +1274,7 @@ Therefore, we have for any $n \in \mathbb N$,
 	\leq Q_{(t'_n)}\left( \frac{V_{(t'_n)}f}{v_{(t'_n)}} \right)
 	\\&\leq Q_{(t'_n)}\left[ \left((1+\epsilon) ( 1 - e^{- G^{\mathbf t}f} + \epsilon) \wedge 1\right) \mathbf 1_E \right].
 \end{align}
-	Note from the definition of $(Q_t)_{t\geq 0}$ and $G_r$, we always have for $t>T^{\eqref{asp:H4!}}$ that
+	Note from the definition of $(Q_t)_{t\geq 0}$ and $G_r$, we always have for $t>T$ that
 \[
 	Q_t \left( \frac{V_tf}{v_t}  \right)
 	= e^{- r t}( 1 - e^{- G_rV_tf}  )
@@ -1119,19 +1302,19 @@ Therefore, we have for any $n \in \mathbb N$,
 \begin{align}\label{eq:GD.1}
 	&V_1 g_n(x)
 	\leq P^\beta_1 g_n(x)
-	\leq C^{\eqref{eq:GD.1}} \phi(x) \nu(g_n),
+	\leq C^{20} \phi(x) \nu(g_n),
 	\quad n \in \mathbb N, x\in E,
 \end{align}
-	where $C^{\eqref{eq:GD.1}}:= \sup_{x\in E, f\in L_+^1(\nu)}e^{\lambda }(1+|C^{\eqref{asp:H2!}}_{1,x,f}|)$.
+	where $C^{20} := \sup_{x\in E, f\in L_+^1(\nu)}e^{\lambda }(1+|H_{1,x,f}|)$.
 	By the bounded convergence theorem, we have
 \begin{equation} \label{eq:GD.11}
 	\lim_{n\to \infty} \nu(g_n) = \nu(g) = 0.
 \end{equation}
-	On the other hand, from \eqref{eq:nuP.1}, we know that $ t\mapsto e^{-\lambda t}\nu(v_t)$ is a non-increasing $(0,\infty)$-valued continuous function on $(T^{\eqref{asp:H4!}},\infty)$.
+	On the other hand, from \eqref{eq:nuP.1}, we know that $ t\mapsto e^{-\lambda t}\nu(v_t)$ is a non-increasing $(0,\infty)$-valued continuous function on $(T,\infty)$.
 	Since $\lambda <0$, we have
 \begin{equation} \label{eq:GD.12}
 \begin{minipage}{0.9\textwidth}
-	$ t\mapsto \nu(v_t)$ is a strictly decreasing $(0,\infty)$-valued continuous function on $(T^{\eqref{asp:H4!}},\infty)$.
+	$ t\mapsto \nu(v_t)$ is a strictly decreasing $(0,\infty)$-valued continuous function on $(T,\infty)$.
 \end{minipage}
 \end{equation}
 	By Proposition \ref{prop:Vf1::H1:H2::Y}, we have
@@ -1143,9 +1326,9 @@ Therefore, we have for any $n \in \mathbb N$,
 	\lim_{n\to \infty} t_n = \infty
 \end{equation}
 	and that, for any $n>n_0$,
-\begin{equation} \label{eq:GD.2} 
-	2C^{\eqref{eq:GD.1}} \nu(g_n) 
-	\leq \nu(v_{t_n}). 
+\begin{equation} \label{eq:GD.2}
+2C^{20} \nu(g_n)
+	\leq \nu(v_{t_n}).
 \end{equation}
 	It follows from Proposition \ref{prop:Vf2} that there exists $n_1 > n_0$ such that for all $n>n_1$ and $x\in E$,
 \begin{equation} \label{eq:GD.25}
@@ -1154,7 +1337,7 @@ Therefore, we have for any $n \in \mathbb N$,
 	Now, for any $n>n_1$ and $x\in E$, we have
 \begin{align}
 	& V_1g_n(x)
-	\overset{\eqref{eq:GD.1}}\leq C^{\eqref{eq:GD.1}} \phi(x)\nu(g_n)
+\overset{\eqref{eq:GD.1}}\leq C^{20} \phi(x)\nu(g_n)
 	\overset{\eqref{eq:GD.2}}\leq \frac{1}{2}\phi(x)\nu(v_{t_n})
 	\\\label{eq:GD.26} & \overset{\eqref{eq:GD.25}}\leq v_{t_n}(x).
 \end{align}
@@ -1162,36 +1345,36 @@ Therefore, we have for any $n \in \mathbb N$,
 \begin{equation}
 	1 - e^{- Gg_n}
 	\overset{\text{\eqref{eq:G.0}}}= e^{- \lambda} (1- e^{- GV_1g_n})
-	\leq e^{- \lambda} (1- e^{- G v_{(t_n)}})
+	\leq e^{- \lambda} (1- e^{- G v_{t_n}})
 	= e^{- \lambda} e^{\lambda t_n},
 \end{equation}
 	where in the inequality above we used \eqref{eq:GD.26} and the monotonicity of $G$ (Proposition \ref{prop:G}), and in the last equality, we used Proposition \ref{prop:G} with $f = \infty \mathbf 1_E$.
 	Letting $n\to \infty$ in the display above, noticing \eqref{eq:GD.14} and the fact that $\lambda < 0$,
 	we get the desired result in this case.
 
-	We now consider the case that $g_n \downarrow g$ pointwisely 
-	where $\nu(g) > 0$. 
-	The monotonicity of $G$ (Proposition \ref{prop:G}) implies that $\lim_{n \to \infty} Gg_n$ exists and is greater 
+	We now consider the case that $g_n \downarrow g$ pointwisely
+	where $\nu(g) > 0$.
+	The monotonicity of $G$ (Proposition \ref{prop:G}) implies that $\lim_{n \to \infty} Gg_n$ exists and is greater
 	than $G g$.
 	So we only need to show that $\lim_{n\to \infty} Gg_n \leq Gg$.
-	From Proposition \ref{prop:Vf2}, for any $\epsilon>0$ there exists $T_\epsilon^{\eqref{eq:GD.n1}} >0$ such that for any $t\geq T_\epsilon^{\eqref{eq:GD.n1}}, x\in E$ and $f\in \mathcal B(E,[0,\infty])$,
+	From Proposition \ref{prop:Vf2}, for any $\epsilon>0$ there exists $T^2_\epsilon >0$ such that for any $t\geq T^2_\epsilon, x\in E$ and $f\in \mathcal B(E,[0,\infty])$,
 \begin{equation} \label{eq:GD.n1}
 	(1-\epsilon)\phi(x) \nu(V_tf)\leq V_tf(x)
 	\leq (1+\epsilon)\phi(x) \nu(V_tf).
 \end{equation}
-	Therefore, we have for any $\epsilon>0$, $t \geq T_\epsilon^{\eqref{eq:GD.n1}}$, $x\in E$ and $f, h\in \mathcal B(E,[0,\infty])$ with $\nu(h) >0$ that
+	Therefore, we have for any $\epsilon>0$, $t \geq T^2_\epsilon$, $x\in E$ and $f, h\in \mathcal B(E,[0,\infty])$ with $\nu(h) >0$ that
 \begin{align}
 	&V_tf(x)
 	\overset{\eqref{eq:GD.n1}}\geq (1-\epsilon)\phi(x) \nu(V_tf)
 	\\& \overset{\eqref{lem:nVn!}}= (1-\epsilon)\phi(x) \frac{\nu(V_tf)}{\nu(V_th)} \nu(V_th)
 \overset{\eqref{eq:GD.n1}}\geq \frac{1-\epsilon}{1+\epsilon} \frac{\nu(V_tf)}{\nu(V_th)} V_th(x)
-	\\ \label{eq:GD.n2} & \geq \left(\frac{1-\epsilon}{1+\epsilon} \frac{\nu(V_tf)}{\nu(V_th)} \wedge 1\right) V_th(x)
+	\\ \label{eq:GD.n2} & \geq \left(\frac{1-\epsilon}{1+\epsilon} \frac{\nu(V_tf)}{\nu(V_th)} \wedge 1\right) V_th(x).
 \end{align}
 	Since $G$ is a monotone concave function (Proposition \ref{prop:G}), we know that for any $f\in \mathcal B(E,[0,\infty])$, $u \mapsto 1 - e^{-G(uf)}$ is a concave function on $[0,1]$ (Lemma \ref{lem:CE}); and therefore,
 \begin{equation} \label{eq:GD.n3}
 	1 - e^{- G(uf)}\geq u(1- e^{- Gf}) + (1-u) (1- e^{- G(0  \mathbf 1_E)}) = u(1- e^{- Gf}), \quad u \in [0,1].
 \end{equation}
-	Now we have for any $\epsilon>0$, $t \geq T_\epsilon^{\eqref{eq:GD.n1}}$, $x\in E$ and $f, h\in \mathcal B(E,[0,\infty])$ with $\nu(h) >0$ that
+	Now we have for any $\epsilon>0$, $t \geq T^2_\epsilon$, $x\in E$ and $f, h\in \mathcal B(E,[0,\infty])$ with $\nu(h) >0$ that
 \begin{align}
 	&1 - e^{-Gf}
 	\overset{\text{Proposition \ref{prop:G}}}= e^{-\lambda t}(1- e^{- GV_t f})
@@ -1206,12 +1389,12 @@ Therefore, we have for any $n \in \mathbb N$,
 	as desired (noticing $\epsilon > 0$ is arbitrary).
 \end{proof}
 
-\section{Proofs of Propositions \ref{prop:EQ}--\ref{prop:UC}}
+\section{Proofs of Propositions \ref{prop:EQ}--\ref{prop:UC}} \label{sec:propsforthm2}
 
 \subsection{Proof of Proposition \ref{prop:EQ}} \label{sec:EQ}
 \begin{proof}[Proof of Proposition \ref{prop:EQ} (1)]	
 	Denote by $G$ the functional given by Proposition \ref{prop:G}; and by $\mathbf Q_\lambda$ the Yaglom limit given by Theorem \ref{Theorem:Y:H1:H2:H3:H4}.
-	By \eqref{eq:Y.000}, we know that $G$ is the log-Laplace functional of $\mathbf Q_\lambda$. 
+	By \eqref{eq:Y.000}, we know that $G$ is the log-Laplace functional of $\mathbf Q_\lambda$.
 	Now note that for $t\geq 0$,
 \begin{align}
 	&(\mathbf Q_\lambda \mathbb P) (\|X_t\|>0)
@@ -1239,15 +1422,17 @@ Therefore, we have for any $n \in \mathbb N$,
 
 \begin{proof}[Proof of Proposition \ref{prop:EQ} (2)]
 	Denote by $\gamma = r / \lambda \in (0,1)$.
-	We first claim that there exists a $\mathbb Z_+$-valued random variable $\{Z;P\}$ with probability generating function $P[s^Z] = 1 - (1- s)^{\gamma}, s\in [0,1]$. 
+	We first claim that there exists a $\mathbb Z_+$-valued random variable $\{Z;P\}$ with probability generating function $P[s^Z] = 1 - (1- s)^{\gamma}, s\in [0,1]$.
 	To see this, we set
 \[
-	P(Z = n) = \frac{\gamma(1-\gamma ) \cdot (n-1-\gamma  )}{n!},
+	P(Z = n) = \frac{\gamma(1-\gamma ) \cdots (n-1-\gamma  )}{n!},
 	\quad n \in \mathbb Z_+.
 \]
 	Using Newton's binomial theorem (see \cite[Exercise 8.22]{Rudin1976Principles}), we get
 \[
-	1 - (1 - s)^\gamma = \sum_{n = 1}^\infty \frac{\gamma (1-\gamma)\cdot (n-1-\gamma )}{n!} s^n, \quad s\in [0,1],
+	1 - (1 - s)^\gamma
+	= \sum_{n = 1}^\infty \frac{\gamma (1-\gamma)\cdots (n-1-\gamma )}{n!} s^n,
+	\quad s\in [0,1],
 \]
 	thus, such a random variable exists.
 	
@@ -1300,7 +1485,7 @@ Therefore, we have for any $n \in \mathbb N$,
 \begin{equation} \label{eq:CQ.2}
 		1 - e^{- \mathscr L_{\mathbf Q_r^*}(uv_t)} \geq u(1 - e^{- \mathscr L_{\mathbf Q_r^*}(1\cdot v_t)}) + (1-u) (1 - e^{- \mathscr L_{\mathbf Q_r^*}(0 \cdot v_t)})  = u(1 - e^{- \mathscr L_{\mathbf Q_r^*}(v_t)}).
 \end{equation}
-	Now for any $s>0, \epsilon > 0$ and $t > T^{\eqref{eq:GQ.6}}_{s, \epsilon}$ we have
+Recall that $T^1_{s,\epsilon}$ is the constant given in \eqref{eq:GQ.6}. Now for any $s>0, \epsilon > 0$ and $t > T^1_{s, \epsilon}$ we have
 \begin{align}
 	& e^{rs} \overset{\text{\eqref{eq:CQ.1}}}= \frac{1 - e^{-\mathscr L_{\mathbf Q_r^*}v_{t+s}}}{1 - e^{-\mathscr L_{\mathbf Q_r^*}v_{t}}}
 	\overset{\eqref{eq:GQ.6}}\geq \frac{1 - e^{-\mathscr L_{\mathbf Q_r^*}( \frac{e^{\lambda s}}{1+\epsilon}v_t )}}{1 - e^{-\mathscr L_{\mathbf Q_r^*}(v_{t})}}
@@ -1310,7 +1495,7 @@ Therefore, we have for any $n \in \mathbb N$,
 \end{proof}
 
 \begin{proof}[Proof of Proposition \ref{prop:CQ} (2)]
-	From the definition of QSD, we know that $\mathbf Q_r^*$ has no concentration 
+	From the definition of QSD, we know that $\mathbf Q_r^*$ has no concentration
 	on $\{\mathbf 0\}$.
 	Therefore $\mathscr L_{\mathbf Q_r^*}(\infty  \mathbf 1_E) = \infty$.
 	According to Lemma \ref{Fact:CP!}, we know that $\mathscr L_{\mathbf Q_r^*}$ is a monotone concave functional.
@@ -1416,112 +1601,9 @@ for any $\mathbb R$-valued list $(a_k)_{k = 1}^n$ and $\mathcal B_b(E,[0,\infty)
 	Finally, \eqref{eq:WC.1} implies that $\mathscr L_{\mathbf Q} = L$ on $\mathcal B_b(E,[0,\infty))$.
 \end{proof}
 
-\subsection{Intrinsic ultracontractivity: an example} \label{sec:example}
-	In this subsection, we will give a example of a superprocess $X$ which satisfies \eqref{asp:H2!}.
-	Let $E$ be a locally compact separable metric space.
-	Let $\xi:= \{(\xi)_{0\leq t < \zeta}; (\Pi_x)_{x\in E}\}$ be an $E$-valued general Hunt process with general transition kernels $(P_t)_{t\geq 0}$ and lifetime $\zeta$.
-	Let $\psi$ be a function on $E \times [0,\infty)$ given by
-\begin{equation}
-	\psi(x,z)
-	=- \beta(x) z + \sigma(x)^2 z^2 + \int_0^\infty (e^{-zu} -1 + zu) \pi(x,du),
-	\quad x\in E, z\geq 0
-\end{equation}
-	where $\beta, \sigma \in \mathcal B_b(E,\mathbb R)$ and $(u \wedge u^2) \pi(x,du)$ is a bounded kernel from $E$ to $(0,\infty)$.
-	Let $X$ be a $(\xi, \psi)$-superprocess.
-
-	We assume  that there exist an $\sigma$-finite measure $m$ with full support on $E$ and a family of strictly positive, bounded continuous functions $\{p_t(\cdot,\cdot): t>0\}$ on $E\times E$ such that
-\begin{align}
-	\Pi_x[f(\xi_t) \mathbf 1_{t< \zeta}] = \int_E p_t(x,y) f(y)m(dy), & \quad t>0, x\in E, f\in \mathcal B_b(E,\mathbb R);
-	\\ \int_E p_t(x,y) m(dx) \leq 1, &\quad t>0, y\in E;
-	\\ \int_E \int_E p_t(x,y)^2 m(dx)m(dy) < \infty, &\quad t>0;
-\end{align}
-	and the functions $x \mapsto \int_E p_t(x,y)^2m(dy)$ and $y\mapsto \int_E p_t(x,y)^2m(dx)$ are both continuous.
-
-	Choose an arbitrary $ \mathfrak b\in \mathcal B_b(E,\mathbb R)$.
-	Denote by $(P_t^\mathfrak b)_{t\geq 0}$ a semigroup of operators on $\mathcal B_b(E,\mathbb R)$ given by
-\begin{equation}
-	P_t^\mathfrak b f(x)
-	:= \Pi_x[e^{\int_0^t \mathfrak b(\xi_s)ds} f(\xi_t) \mathbf 1_{t< \zeta}],
-	\quad f\in \mathcal B_b(E, \mathbb R), t\geq 0, x\in E.
-\end{equation}
-	Let us write $\langle f,g \rangle_m:= \int_E f(x)g(x) m(dx)$ for  the inner product of the Hilbert space $L^2(E,m)$.
-	Then it is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that there exists a family of strictly positive, bounded continuous functions $\{p_t^\mathfrak b: t> 0\}$ on $E\times E$ such that
-\begin{equation} \label{eq:IU.0}
-	e^{-\|\mathfrak b\|_\infty t} p_t(x,y)
-	\leq p_t^\mathfrak b(x,y) \leq e^{\|\mathfrak b\|_\infty t}p_t(x,y),
-	\quad t>0, x,y\in E
-\end{equation}
-	and that
-\begin{equation}
-	P_t^\mathfrak b f(x)
-	= \int_E p_t^\mathfrak b(x,y) f(y) m(dy),
-	\quad t>0, x\in E.
-\end{equation}
-	Define the dual semigroup $(\widehat {P^{\mathfrak b}_t} )_{t\geq 0}$ by
-\begin{equation}
-	\widehat {P_0^{\mathfrak b}}
-	= I;
-	\quad \widehat {P_t^{\mathfrak b}} f(x)
-	:= \int_E p_t^\mathfrak b(y,x) f(y) m(dy),
-	\quad t>0,x\in E, f\in \mathcal B_b(E,\mathbb R).
-\end{equation}
-	It is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that both $(P_t^\mathfrak b)_{t\geq 0}$ and $(\widehat {P_t^\mathfrak b})_{t\geq 0}$ are strongly continuous semigroups of compact operators on $L^2(E,m)$.	
-	Let $L^\mathfrak b$ and $\widehat {L^\mathfrak b}$ be the generators of the semigroups of compact operators on $(P_t^\mathfrak b)_{t\geq 0}$ and $(\widehat {P_t^\mathfrak b})_{t\geq 0}$, respectively.
-	Denote by $\sigma(L^\mathfrak b)$ and $\sigma(\widehat{L^\mathfrak b})$ the spectra of $L^\mathfrak b$ and $\widehat {L^{\mathfrak b}}$, respectively.
-	According to Theorem 29 of \cite{Schaefer1974Banach}, $\lambda_\mathfrak b:= \sup \Re(\sigma(L^\mathfrak b)) = \sup \Re(\sigma( \widehat{L^\mathfrak b})) $ is a common eigenvalue of multiplicity $1$ for both $L^\mathfrak b$ and $\widehat {L^{\mathfrak b}}$.
-	By the argument in \cite{RenSongZhang2015Limit} and \cite{RenSongZhang2017Central}, the eigenfunctions $h_\mathfrak b$ of $L^\mathfrak b$ and $\widehat h_\mathfrak b$ of $\widehat{L^\mathfrak b}$ associated with the eigenvalue $\lambda_\mathfrak b$ can be chosen to be strictly positive and continuous everywhere on $E$.
-	Setting $\langle h_\mathfrak b,h_\mathfrak b\rangle_m = \langle h_\mathfrak b, \widehat h_\mathfrak b\rangle_m = 1$ so that $h_\mathfrak b$ and $\widehat h_\mathfrak b$ are uniquely determined pointwisely.
-
-	For the rest of this subsection, we assume further that $h_0:= h_\mathfrak b|_{\mathfrak{b} \equiv 0}$ is bounded, and the semigroup $(P_t)_{t\geq 0}$ is intrinsically ultracontractive in the following sense: for all $t>0$ and $x, y \in E$, it holds that $p_t(x,y) = c_{t,x,y} h_0(x) \widehat h_0(y)$ for some non-negative $c_{t,x,y}$ with $\sup_{x,y \in E} c_{t,x,y}< \infty$.
-	Here, $\widehat h_0 := \widehat h_\mathfrak b|_{\mathfrak{b}\equiv 0}$.
-	Then, it is proved in \cite{RenSongZhang2015Limit, RenSongZhang2017Central} that, for arbitrary $\mathfrak b \in \mathcal B_b(E,\mathbb R)$, $h_\mathfrak b$ is also bounded; and $(P_t^\mathfrak b)_{t\geq 0}$ is also intrinsically ultracontractive, in the sense that for any $t> 0$ and $x,y \in E$ we have
-\begin{equation} \label{eq:IU.1}
-	p^\mathfrak b_t(x,y)
-	= h_\mathfrak b(x) \widehat h_\mathfrak b (y) C^{\eqref{eq:IU.1}}_{\mathfrak b,t,x,y}
-\end{equation}
-	for some positive $C^{\eqref{eq:IU.1}}_{\mathfrak b,t,x,y}$ with $\sup_{x,y \in E} C^{\eqref{eq:IU.1}}_{\mathfrak b,t,x,y}< \infty$.
-	From this, it is proved in \cite{KimSong2008Intrinsic} that,
-\begin{equation} \label{eq:IU.11}
-	\sup_{x,y \in E} (C^{\eqref{eq:IU.1}}_{\mathfrak b,t,x,y})^{-1}
-	< \infty,
-	\quad t>0,
-\end{equation}
-	and that for any $t>0, x,y \in E$,
-\begin{equation}\label{eq:IU.2}
-	C^{\eqref{eq:IU.1}}_{\mathfrak b,t,x,y}
-	= e^{t\lambda_\mathfrak{b}} (1+ C^{\eqref{eq:IU.2}}_{\mathfrak b,t,x,y})
-\end{equation}
-	for some real $C^{\eqref{eq:IU.2}}_{\mathfrak b,t,x,y}$ with $\lim_{t\to \infty} \sup_{x,y \in E} C^{\eqref{eq:IU.2}}_{\mathfrak b,t,x,y} =0$.
-	Therefore,
-\begin{align}
-	& m(\widehat h_{\mathfrak b}) \overset{\text{\eqref{eq:IU.1}}}= \int_{E} p_t^\mathfrak{b}(x,y)h_\mathfrak{b}(x)^{-1} (C^{\eqref{eq:IU.1}}_{\mathfrak b,t,x,y})^{-1} m(dy), \quad x\in E,
-	\\&\leq  h_\mathfrak{b}(x)^{-1} \left(\sup_{z\in E}(C^{\eqref{eq:IU.1}}_{\mathfrak b,t,x,z})^{-1}\right)  \int_{E} p_t^\mathfrak{b}(x,y)m(dy)
-	\\& < \infty \quad\text{by \eqref{eq:IU.0} and \eqref{eq:IU.11} and the strict positivity of $h_\mathfrak{b}$}.
-\end{align}
-	This allows us to define a probability measure $\nu_\mathfrak b (dx):= m(\widehat h_{\mathfrak b})^{-1} \widehat h_\mathfrak b (x)m(dx), x\in E$, and an eigenfunction $\phi_\mathfrak{b}(x) := m(\widehat h_{\mathfrak b}) h_\mathfrak b(x), x\in E$.
-
-	Finally we assume that $\lambda := \lambda_\beta < 0$. We now show that $X$ satisfies \eqref{asp:H2!} with $\phi:=\phi_\beta$ and $\nu:= \nu_\beta$.
-	From their definitions, we see that the function $\phi \in \mathcal B_b(E,(0,\infty))$, and that the probability measure $\nu$ has full support on $E$.
-	Further, it is easy to see that for each $t\geq 0$, $P_t^\beta \phi = e^{\lambda t}\phi$ and $\nu(\phi) = 1$.
-	We also have that for any $t>0$,
-\begin{align}
-	&(\nu P_t^\beta)(dy) = \int_{x\in E}p_{t}^\beta(x,y)m(dy) \nu(dx)
-	\\&= \int_{x\in E}p_{t}^\beta(x,y)m(dy) m(\widehat h_\beta)^{-1}\widehat h_\beta(x)m(dx)
-	\\&=  m(\widehat h_\beta)^{-1}  \left(\int_{x\in E} p_t^\beta(x,y) \widehat h_\beta(x) m(dx) \right) m(dy)
-	\\& = m(\widehat h_\beta)^{-1} e^{\lambda t}\widehat h_\beta(y) m(dy) =
-	e^{\lambda t}\nu(dy).
-\end{align}
-	Therefore $\nu P_t^\beta = e^{\lambda t}\nu, t\geq 0$. Now for each $t>0, x \in E$ and $f\in L_1^+(\nu)$, we have
-\begin{align}
-	&P_t^\beta f(x) = \int_{E} p^\beta_t(x,y) f(y)m(dy)
-	\overset{\text{\eqref{eq:IU.1}}}= \int_{E} h_\beta (x) \widehat h_\beta (y) C^{\eqref{eq:IU.1}}_{\beta,t,x,y} f(y) m(dy)
-	\\&= \int_{E} \phi (x)  C^{\eqref{eq:IU.1}}_{\beta,t,x,y} f(y) \nu(dy)
-	=: e^{\lambda t} \phi(x) \nu(f) (1+ C^{\eqref{asp:H2!}}_{t,x,f}).
-\end{align}
-	Finally, from \eqref{eq:IU.1} and \eqref{eq:IU.2}, it is elementary to verify that $C^{\eqref{asp:H2!}}_{t,x,f}$ satisfies the required condition \eqref{asp:H2!}.
-
 \begin{acknowledgment*}
 	We thank Zenghu Li and Leonid Mytnik for helpful conversations.
+	We also thank the two referees for helpful comments on the first version of this paper.
 \end{acknowledgment*}
 
 \begin{thebibliography}{99}
@@ -1566,7 +1648,7 @@ for any $\mathbb R$-valued list $(a_k)_{k = 1}^n$ and $\mathcal B_b(E,[0,\infty)
 	Evans, S.:
 	\emph{The entrance space of a measure-valued Markov branching process conditioned on nonextinction.}
 	Canad. Math. Bull. 35 (1992), no. 1, 70--74.
-	\MR{1157466} 
+	\MR{1157466}
 	
 	\bibitem{EvansPerkins1990Measure-valued}
 	Evans, S. and Perkins, E.:
@@ -1578,8 +1660,8 @@ for any $\mathbb R$-valued list $(a_k)_{k = 1}^n$ and $\mathcal B_b(E,[0,\infty)
 	\bibitem{Fitzsimmons1989Construction}
 	Fitzsimmons, P.:
 	\emph{Construction and regularity of measure-valued Markov branching processes.}
-	Israel J. Math. 64 (1988), no. 3, 337--C361 (1989).
-	\MR{0995575} 
+	Israel J. Math. 64 (1988), no. 3, 337--361 (1989).
+	\MR{0995575}
 
 	\bibitem{Heathcote}
 	Heathcote, R.,  Seneta, E.  and Vere-Jones, D.:
