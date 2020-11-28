@@ -23,11 +23,11 @@
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{cor}[thm]{Corollaray}
 \newtheorem{fact}[thm]{Fact}
-\newtheorem{remark}{Remark}
 \newtheorem{claim}[thm]{Claim}
 \theoremstyle{definition}
 \newtheorem*{ack*}{Acknowledgment}
 \theoremstyle{remark}
+\newtheorem{remark}{Remark}
 \newtheorem{exa}[thm]{Example}
 \usepackage{amssymb}
 \usepackage{mathtools}
@@ -104,7 +104,7 @@ In the authors' paper \cite{LSYS}, the Yaglom distributions of the superprocesse
 	an $\mathcal M_f(E)$-valued 
 	Borel right process 
 		  $X =\{(X_t)_{t\geq 0}; (\mathrm P_\mu)_{\mu \in \mathcal M_f(E)}\}$ such that
-	\begin{equation}
+	\begin{equation} \label{eq:M.13}
 	\mathrm P_\mu[e^{- X_t(f)}]
 	= e^{- \mu(V_tf)},
 	\quad \mu\in \mathcal M_f(E), t\geq 0, f \in \mathcal B_b(E,\mathbb R_+).
@@ -133,7 +133,7 @@ In the authors' paper \cite{LSYS}, the Yaglom distributions of the superprocesse
 	For this mean semigroup, we will always assume that
 \begin{equation}\label{asp:H1} \tag{H1}
 \begin{minipage}{0.9\textwidth}
-	there exist a constant $\lambda < 0$, a function $\phi \in \mathcal B_b(E,(0,\infty))$ and a probability measure $\nu$ with full support on $E$ such that for each $t\geq 0$, $P_t^\beta \phi = e^{\lambda t} \phi$, $\nu P_t^\beta = e^{\lambda t} \nu$ and $\nu(\phi) =1$.
+	there exists a constant $\lambda < 0$, a function $\phi \in \mathcal B_b(E,(0,\infty))$ and a probability measure $\nu$ with full support on $E$ such that for each $t\geq 0$, $P_t^\beta \phi = e^{\lambda t} \phi$, $\nu P_t^\beta = e^{\lambda t} \nu$ and $\nu(\phi) =1$.
 \end{minipage}
 \end{equation}
 	Denote by $L_1^+(\nu)$ the collection of non-negative Borel functions on $E$ which are integrable with respect to the measure $\nu$.
@@ -175,14 +175,25 @@ In the authors' paper \cite{LSYS}, the Yaglom distributions of the superprocesse
 	there exists a unique probability measure $\widetilde {\mathrm P_\mu}$
 	on $\mathbb W$ such that
 \begin{equation} \label{eq:M.3}
-	\frac{{\mathrm d}\widetilde{\mathrm P}_\mu|_{\mathscr F_t}}
+	\frac{{\mathrm d}\widetilde{\mathrm P_\mu}|_{\mathscr F_t}}
 	{{\mathrm d}\mathrm P_\mu|_{\mathscr F_t}}
 	=\frac{e^{-\lambda t}X_t(\phi)}{\mu(\phi) },
 	\quad t\geq 0.
 \end{equation}
 \end{lem}
 
-	(We mention in passing here tat $\widetilde {\mathrm P}_\mu$ is not equal to the measure defined by $\int_E\mu(\mathrm dx)\widetilde {\mathrm P}_x(\cdot)$.)
+%New{
+\begin{remark}
+	Denote by $E_\partial^*$ as a topological space with exactly the same elements as $E_\partial$, but with a different topology assuming that $\partial$ is an isolated point not contained in $E$.
+	If one change the setting by assuming that $\xi$ is an $E_\partial^*$-valued Hunt process (instead of being an $E_\partial$-valued Hunt process), then the corresponding $(\xi,\psi)$-superprocess $X$ has an $\mathcal M_f(E)$-valued Hunt version (See \cite[Theorem 5.12]{Li2011Measure-valued}).
+	And in this case, since $X$ has c\'adl\'ag sample paths, the existence of a measure $\widetilde {\mathrm P_\mu}$ on space of $\mathcal M_f(E)$-valued c\'adl\'ag sample paths so that \eqref{eq:M.3} holds follows directly from the standard martingale change of measure theory (See \cite[Lemma 18.18]{Kallenberg2002Foundations}).
+	However, this setting will exclude some interesting cases. For example, if $E$ is a standard ball in the Euclidean space, and $\xi$ is a Brownian motion killed (i.e. forced to take value $\partial$) upon leaving the ball, then $\xi$ is a $E_\partial$-valued Hunt process, but not a $E_\partial^*$-Hunt process.
+	This is why the prove of Theorem \ref{thm:T} needs a little bit more care. 
+\end{remark}
+%}
+
+	%Delete{
+	%(We mention in passing here tat $\widetilde {\mathrm P}_\mu$ is not equal to the measure defined by $\int_E\mu(\mathrm dx)\widetilde {\mathrm P}_x(\cdot)$.)%}
 	This kind of martingale measure transformation for branching processes and measure-valued branching processes have been widely studied.
 	We refer to the earlier papers \cite{EnglanderKyprianou2004Local,Evans1993Two,RoellyRouault1989Processus,Penisson2010Conditional} and the references therein.
 	For recent developments, we refer to \cite{ChampagnatRoelly2008Limit,RenSongSun2020Spine,RenSongZhang2018Williams}.
@@ -191,7 +202,7 @@ In the authors' paper \cite{LSYS}, the Yaglom distributions of the superprocesse
 	Suppose that \eqref{asp:H1}, \eqref{asp:H2} and \eqref{asp:H3} hold, then
 \[
 	\lim_{s \rightarrow \infty} \mathrm P_\mu(A |X_s\neq \mathbf 0)=
-	\widetilde{\mathrm P}_\mu(A),
+	\widetilde{\mathrm P_\mu}(A),
 	\qquad \mu \in \mathcal M_f^o(E), A\in \bigcup_{t\geq 0}\mathscr F_t.
 \]
 \end{thm}
@@ -306,7 +317,7 @@ Moreover, for each $\mu\in\mathcal M^o_f(E)$, we have
 	\sup_{0\leq t\leq T, x\in E_\partial} V^\partial_tf(x) < \infty.
 \]
 	According to \cite[Proposition 2.21 and Theorem 5.11]{Li2011Measure-valued}, there exists an $\mathcal M_f(E_\partial)$-valued Hunt process $X^\partial =\{(X^\partial_t)_{t\geq 0}; (\mathrm P^\partial_\mu)_{\mu \in \mathcal M_f(E_\partial)}\}$ such that
-\begin{equation}
+\begin{equation}\label{eq:T.005}
 	\mathrm P^\partial_\mu[e^{- X^\partial_t(f)}]
 	= e^{- \mu(V^\partial_tf)},
 	\quad \mu\in \mathcal M_f(E_\partial), t\geq 0, f \in \mathcal B_b(E_\partial,\mathbb R_+).
@@ -346,6 +357,8 @@ $
 	\{(\Gamma X^\partial_t)_{t\geq 0}; \mathrm P_\mu^\partial\} \overset{\text{f.d.d.}}= \{(X_t)_{t\geq 0}; \mathrm P_{\Gamma\mu}\}.
 $
 \end{lem}
+%Delete{
+\begin{comment}
 \begin{proof}	
 %ZS: The proof of this lemma will be changed accoding to Yanxia's segguestion.
 	Fix an arbitrary $\mu\in \mathcal M_f(E_\partial)$, $T\geq 0$, a finite measure $\lambda$ on $[0,T]$, and a bounded non-negative Borel function $f:(s,x)\mapsto f_s(x)$ on $[0,T]\times E$.
@@ -384,6 +397,60 @@ Thus
 \end{align}
 	The desired result then follows from this and the fact that $\lambda$ and $f$ have been chosen arbitrarily.
 \end{proof}
+\end{comment}
+%}
+%New{
+\begin{proof}
+	\emph{Step 1. We show that for any $t\geq 0$ and $f\in \mathcal B_b(E,\mathbb R_+)$, we have
+\[V_t^\partial f(x) 
+= \begin{cases}
+	V_tf(x), &\quad x\in E;
+	\\0, &\quad x=\partial.
+\end{cases}
+\]}
+	TBD
+
+	\emph{Step 2. We verify that for any $t\geq s>0$ and $f\in \mathcal B_b(E,\mathbb R_+)$ we have 
+\[
+	\mathrm P_\mu^\partial [e^{- (\Gamma X_t^\partial)(f)} | \mathscr F_s^\partial]
+	= e^{- (\Gamma X_s^\partial)(V_{t-s}f)}.
+\]}
+	In fact, for any $t\geq s>0$ and $f\in \mathcal B_b(E,\mathbb R_+)$,
+\begin{align}
+	&\mathrm P_\mu^\partial [e^{- (\Gamma X_t^\partial)(f)} | \mathscr F_s^\partial]
+	\overset{\text{Markov}}= \mathrm P_{X_s^\partial}^\partial [e^{- (\Gamma X_{t-s}^\partial)(f)} ]
+	= \mathrm P_{X_s^\partial}^\partial [e^{- X_{t-s}^\partial(f)} ]
+	\\ &\overset{\eqref{eq:T.005}}= e^{- X_s^\partial(V_{t-s}^\partial f)} 
+	\overset{\text{Step 1}} = e^{- (\Gamma X_s^\partial)(V_{t-s}f)}.
+\end{align}
+	
+	\emph{Step 3. We verify that for any $n\in \mathbb N$, $0\leq t_1 < \dots <t_n<\infty$ and $\{f_k: k = 1,\dots,n\}\subset \mathcal B_b(E,\mathbb R_+)$ we have}
+\[
+	\mathrm P_\mu^\partial \Big[\exp \Big\{- \sum_{k=1}^n(\Gamma X_{t_k}^\partial)(f_k)\Big\}\Big]
+	= \mathrm P_{\Gamma \mu} \Big[\exp \Big\{- \sum_{k=1}^n( X_{t_k})(f_k)\Big\}\Big].
+\]
+	In fact, for any $t\geq 0$ and $f\in  \mathcal B_b(E,\mathbb R_+)$, we have
+\[
+	\mathrm P_\mu^\partial [e^{- (\Gamma X_{t}^\partial)(f)}]
+	\overset{\text{Step 2}}= e^{- (\Gamma \mu)(V_{t}f)}
+	\overset{\eqref{eq:M.13}}= \mathrm P_{\Gamma \mu} [e^{- ( X_{t})(f)}].
+\]
+	This prove the desired result when $n=1$. 
+	Now suppose the desired result is true when $n=m$ for some $m\in \mathbb N$.  
+	Then for any $0\leq t_1 < \dots <t_{m+1}<\infty$ and $\{f_k: k = 1,\dots, m+1\}\subset \mathcal B_b(E,\mathbb R_+)$ we have
+\begin{align}
+	&\mathrm P_\mu^\partial \Big[\exp \Big\{- \sum_{k=1}^{m+1}(\Gamma X_{t_k}^\partial)(f_k)\Big\} \Big]
+	\\&= \mathrm P_\mu^\partial \Big[\exp \Big\{- \sum_{k=1}^{m}(\Gamma X_{t_k}^\partial)(f_k)\Big\} \mathrm P_\mu^\partial[e^{-(\Gamma X^\partial_{t_{m+1}}) (f_{m+1})}|\mathscr F_{t_m}]\Big]
+	\\&\overset{\text{Step 2}} = \mathrm P_\mu^\partial \Big[\exp \Big\{- \sum_{k=1}^{m}(\Gamma X_{t_k}^\partial)(f_k)\Big\} e^{- (\Gamma X_{t_m}^\partial)(V_{t_{m+1}-t_m}f_{m+1})}\Big]
+	\\&= \mathrm P_{\Gamma \mu} \Big[\exp \Big\{- \sum_{k=1}^{m}( X_{t_k})(f_k)\Big\}e^{-X_{t_m}(V_{t_{m+1}-t_m}f_{m+1})}\Big]
+	\\&\overset{\text{Markov, }\eqref{eq:M.13}}= \mathrm P_{\Gamma \mu} \Big[\exp \Big\{- \sum_{k=1}^{m}( X_{t_k})(f_k)\Big\}\mathrm P_{\Gamma \mu}[e^{-X_{t_{m+1}}(f_{m+1})}|\mathscr F_{t_m}]\Big].
+	\\& = \mathrm P_{\Gamma \mu} \Big[\exp \Big\{- \sum_{k=1}^{m+1}( X_{t_k})(f_k)\Big\}\Big].
+\end{align}
+	The desired result in this step then follows by induction.
+	
+\emph{Final Step.} The desired result of this Lemma now follows from Step 3 and \cite[Theorem 1.17]{Li2011Measure-valued}.
+\end{proof}
+%}
 
 \begin{lem} \label{thm:T.2}
 	For each $\mu \in \mathcal M_f(E_\partial)$, $\mathrm P_\mu^\partial$-almost surely, $(\Gamma X^\partial_t)_{t\geq 0}$ is an $\mathcal M_f(E)$-valued right continuous process.
@@ -550,67 +617,62 @@ for some $C_{s, t, f}$ with $\lim_{s\to\infty}\sup_{t\ge 0, f\in \mathcal B(E,[0
 
 \begin{proof}[Proof of Theorem \ref{thm:Q}]
 	Fix arbitrary $\mu\in \mathcal M^o_f(E)$, $t\ge 0$ and $A\in\mathscr F_t$.
-	For $s>t$,
-\begin{equation} \label{eq:Q.06}
-	\mathrm P_\mu(A|X_s\neq \mathbf 0)
-	=\frac{\mathrm P_\mu(A, X_s \neq \mathbf 0)}{\mathrm P_\mu(X_s\neq \mathbf 0)}
-	\overset{\text{Markov}}=\frac{\mathrm P_\mu\big(\mathrm P_{X_t}(X_{s-t} \neq \mathbf 0);A\big)}{\mathrm P_\mu(X_s\neq \mathbf 0)}.
-\end{equation}
-		We claim that
-\begin{equation} \label{eq:Q.1}
-	\frac{\mathrm P_{X_t}(X_{s-t} \neq \mathbf 0)}{\mathrm P_\mu(X_{s} \neq \mathbf 0)}
-	\xrightarrow[s\to \infty]{} \frac{e^{-\lambda t}X_t(\phi)}{\mu(\phi) },
-	\quad \mathrm P_\mu\text{-a.s.}
-\end{equation}
-	and that there exist (deterministic) $c,s_0>0$ such that for any $s\geq s_0$,
-\begin{equation} \label{eq:Q.2}
-	\frac{\mathrm P_{X_t}(X_{s-t} \neq \mathbf 0)}{\mathrm P_\mu(X_{s} \neq \mathbf 0)}
-	\leq cX_t(\phi), \quad \mathrm P_\mu\text{-a.s.}
-\end{equation}
-With these claims, we can use \eqref{eq:Q.1}, \eqref{eq:Q.2} and the dominated convergence theorem (DCT) to get
+	
+\emph{Step 1. We show that
+	\begin{equation} \label{eq:Q.1}
+		\frac{\mathrm P_{X_t}(X_{s-t} \neq \mathbf 0)}{\mathrm P_\mu(X_{s} \neq \mathbf 0)}
+		\xrightarrow[s\to \infty]{} \frac{e^{-\lambda t}X_t(\phi)}{\mu(\phi) },
+		\quad \mathrm P_\mu\text{-a.s.}
+\end{equation}}	
+	Notice that for any $\bar \mu\in \mathcal M_f(E)$,
+	\begin{align}
+		&\lim_{s\rightarrow\infty}\dfrac{ \bar \mu(v_{s-t}) }{ \mu(v_s) }
+		\overset{\eqref{eq:Q.056}}=\lim_{s\to \infty} \frac{\nu(v_{s-t})\bar \mu (\phi) (1+C_{\bar \mu,s-t}^{\eqref{eq:Q.056}})}{\nu(v_s)\mu(\phi)(1+C_{\mu,s}^{\eqref{eq:Q.056}})}
+		\overset{\eqref{eq:Q.056}}= \frac{\bar \mu(\phi)}{\mu(\phi)}\lim_{s\to \infty} \frac{\nu(v_{s-t}) }{\nu(v_s)}
+		\\\label{eq:Q.25}&\overset{\eqref{eq:Q.057}}= \frac{e^{-\lambda t} \bar \mu(\phi)}{\mu(\phi)}.
+	\end{align}
+	Thus we have that, $\mathrm P_\mu$-almost surely,
+	\begin{equation}
+		\lim_{s\to\infty}\frac{\mathrm P_{X_t}(X_{s-t}\neq \mathbf 0)}{\mathrm P_\mu(X_s\neq \mathbf 0)}
+		\overset{\eqref{eq:Q.04}}=\lim_{s\to\infty}\frac{1-e^{- X_t(v_{s-t}) }}{1-e^{- \mu(v_s) }}
+		\overset{\eqref{eq:Q.05},\eqref{eq:Q.055}}=\lim_{s\rightarrow\infty}\dfrac{ X_t(v_{s-t}) }{ \mu(v_s) }
+		\overset{\eqref{eq:Q.25}}= \frac{e^{-\lambda t} X_t(\phi)}{\mu(\phi)}. 
+	\end{equation}
+
+\emph{
+	Step 2. We show that there exist (deterministic) $c,s_0>0$ such that for any $s\geq s_0$,
+	\begin{equation} \label{eq:Q.2}
+		\frac{\mathrm P_{X_t}(X_{s-t} \neq \mathbf 0)}{\mathrm P_\mu(X_{s} \neq \mathbf 0)}
+		\leq cX_t(\phi), \quad \mathrm P_\mu\text{-a.s.}
+	\end{equation}
+}
+	Notice that, $\mathrm P_\mu$-almost surely,
+	\begin{align}
+		& \frac{\mathrm P_{X_t}(X_{s-t}\neq \mathbf 0)}{\mathrm P_\mu(X_s\neq \mathbf 0)}
+		\overset{\eqref{eq:Q.04}}= \frac{1-e^{- X_t(v_{s-t}) }}{1-e^{- \mu(v_s) }}
+		\leq \frac{X_t(v_{s-t}) }{1-e^{- \mu(v_s) }}
+		\\\label{eq:Q.3}&\overset{\eqref{eq:Q.05},\eqref{eq:Q.055}}= \frac{X_t(v_{s-t}) }{ \mu(v_s)} C_s^{\eqref{eq:Q.3}},
+		\\& \quad \text{for some deterministic $C_s^{\eqref{eq:Q.3}}>0$ with $\lim_{s\to \infty} C_s^{\eqref{eq:Q.3}} = 1$,}
+		\\\label{eq:Q.4}&\overset{\eqref{eq:Q.0565}}\leq \frac{X_t(\phi) \nu(v_{s-t}) \sup_{x\in E} C_{s-t,x}^{\eqref{eq:Q.0565}}}{ \mu(v_s)} C_s^{\eqref{eq:Q.3}}.
+	\end{align}
+	Then notice that
+	\begin{align}
+		&  \varlimsup_{s\to \infty}\frac{\nu(v_{s-t}) \sup_{x\in E} C_{s-t,x}^{\eqref{eq:Q.0565}}}{ \mu(v_s)} C_s^{\eqref{eq:Q.3}}
+		\overset{\eqref{eq:Q.25}} = \frac{e^{-\lambda t} \nu(\phi)}{\mu(\phi)} \varlimsup_{s\to \infty}C_s^{\eqref{eq:Q.3}} \sup_{x\in E}C_{s-t,x}^{\eqref{eq:Q.0565}}
+		\\\label{eq:Q.5}&\overset{\eqref{eq:Q.3}} = \frac{e^{-\lambda t} \nu(\phi)}{\mu(\phi)} \varlimsup_{s\to \infty} \sup_{x\in E}C_{s-t,x}^{\eqref{eq:Q.0565}}
+		\overset{\eqref{eq:Q.0565}}< \infty.
+	\end{align}
+	The desired result in this step follows from \eqref{eq:Q.4} and \eqref{eq:Q.5}. 
+	
+	\emph{Final Step.} Now due to Step 1 and Step 2, we can use dominated convergence theorem (DCT) to get
 \begin{align}
 &  \mathrm P_\mu(A|X_s\neq \mathbf 0)
-	\overset{\eqref{eq:Q.06}}=  \frac{\mathrm P_\mu\big(\mathrm P_{X_t}(X_{s-t} \neq \mathbf 0);A\big)}{\mathrm P_\mu(X_s\neq \mathbf 0)}
+	=\frac{\mathrm P_\mu(A, X_s \neq \mathbf 0)}{\mathrm P_\mu(X_s\neq \mathbf 0)}
+	\overset{\text{Markov}}=\frac{\mathrm P_\mu\big(\mathrm P_{X_t}(X_{s-t} \neq \mathbf 0);A\big)}{\mathrm P_\mu(X_s\neq \mathbf 0)}.
 	\\&\xrightarrow[s\to \infty]{\text{DCT}} \mathrm P_\mu\Big[\frac{e^{-\lambda t}X_t(\phi)}{\mu(\phi) }; A\Big]
 	\overset{\eqref{eq:M.3}} = \widetilde{\mathrm P}_\mu[A].
+	\qedhere
 \end{align}
-
-    We now prove  claims \eqref{eq:Q.1} and \eqref{eq:Q.2}.
-	We first prove \eqref{eq:Q.1}.
-	Notice that for any $\bar \mu\in \mathcal M_f(E)$,
-\begin{align}
-	&\lim_{s\rightarrow\infty}\dfrac{ \bar \mu(v_{s-t}) }{ \mu(v_s) }
-	\overset{\eqref{eq:Q.056}}=\lim_{s\to \infty} \frac{\nu(v_{s-t})\bar \mu (\phi) (1+C_{\bar \mu,s-t}^{\eqref{eq:Q.056}})}{\nu(v_s)\mu(\phi)(1+C_{\mu,s}^{\eqref{eq:Q.056}})}
-	\overset{\eqref{eq:Q.056}}= \frac{\bar \mu(\phi)}{\mu(\phi)}\lim_{s\to \infty} \frac{\nu(v_{s-t}) }{\nu(v_s)}
-	\\\label{eq:Q.25}&\overset{\eqref{eq:Q.057}}= \frac{e^{-\lambda t} \bar \mu(\phi)}{\mu(\phi)}.
-\end{align}
-	Thus we have that, $\mathrm P_\mu$-almost surely,
-\begin{equation}
-	\lim_{s\to\infty}\frac{\mathrm P_{X_t}(X_{s-t}\neq \mathbf 0)}{\mathrm P_\mu(X_s\neq \mathbf 0)}
-	\overset{\eqref{eq:Q.04}}=\lim_{s\to\infty}\frac{1-e^{- X_t(v_{s-t}) }}{1-e^{- \mu(v_s) }}
-	\overset{\eqref{eq:Q.05},\eqref{eq:Q.055}}=\lim_{s\rightarrow\infty}\dfrac{ X_t(v_{s-t}) }{ \mu(v_s) }
-	\overset{\eqref{eq:Q.25}}= \frac{e^{-\lambda t} X_t(\phi)}{\mu(\phi)},
-\end{equation}
-	which implies \eqref{eq:Q.1} holds.
-
-	Now we prove \eqref{eq:Q.2}.
-	Notice that, $\mathrm P_\mu$-almost surely,
-\begin{align}
-	& \frac{\mathrm P_{X_t}(X_{s-t}\neq \mathbf 0)}{\mathrm P_\mu(X_s\neq \mathbf 0)}
-	\overset{\eqref{eq:Q.04}}= \frac{1-e^{- X_t(v_{s-t}) }}{1-e^{- \mu(v_s) }}
-	\leq \frac{X_t(v_{s-t}) }{1-e^{- \mu(v_s) }}
-	\\\label{eq:Q.3}&\overset{\eqref{eq:Q.05},\eqref{eq:Q.055}}= \frac{X_t(v_{s-t}) }{ \mu(v_s)} C_s^{\eqref{eq:Q.3}},
-	\\& \quad \text{for some deterministic $C_s^{\eqref{eq:Q.3}}>0$ with $\lim_{s\to \infty} C_s^{\eqref{eq:Q.3}} = 1$,}
-	\\\label{eq:Q.4}&\overset{\eqref{eq:Q.0565}}\leq \frac{X_t(\phi) \nu(v_{s-t}) \sup_{x\in E} C_{s-t,x}^{\eqref{eq:Q.0565}}}{ \mu(v_s)} C_s^{\eqref{eq:Q.3}}.
-\end{align}
-	Then notice that
-\begin{align}
-&  \varlimsup_{s\to \infty}\frac{\nu(v_{s-t}) \sup_{x\in E} C_{s-t,x}^{\eqref{eq:Q.0565}}}{ \mu(v_s)} C_s^{\eqref{eq:Q.3}}
-	\overset{\eqref{eq:Q.25}} = \frac{e^{-\lambda t} \nu(\phi)}{\mu(\phi)} \varlimsup_{s\to \infty}C_s^{\eqref{eq:Q.3}} \sup_{x\in E}C_{s-t,x}^{\eqref{eq:Q.0565}}
-	\\\label{eq:Q.5}&\overset{\eqref{eq:Q.3}} = \frac{e^{-\lambda t} \nu(\phi)}{\mu(\phi)} \varlimsup_{s\to \infty} \sup_{x\in E}C_{s-t,x}^{\eqref{eq:Q.0565}}
-	\overset{\eqref{eq:Q.0565}}< \infty.
-\end{align}
-	The desired result \eqref{eq:Q.2}  follows from \eqref{eq:Q.4} and \eqref{eq:Q.5}.
 \end{proof}
 
 	\section{Proof of Theorem \ref{thm:E}} \label{sec:E}
@@ -719,16 +781,24 @@ We define
 %	\[\bar \nu(\mathrm dx) := \phi(x) \nu(\mathrm dx), \quad x\in E.\]
 \end{lem}
 \begin{proof}
-%	TBD
-For any $f\in \mathcal{B}_b(E, \mathbb R)$ and $t>0$, 
-\begin{align*}
-\widetilde{\Pi}_{\bar\nu}[f(\xi_t)]&=e^{-\lambda t}\int_E\nu(\mathrm dx)P^\beta_t(\phi f)(x)
-=\int_E\nu(\mathrm dx)\phi(x)f(x).
-\end{align*}
-The proof is complete.
+\emph{Step 1.} 
+Define 
+\[
+	S_t f(x):= \frac{1}{\phi(x)e^{\lambda t}}P_t^\beta (\phi f) (x), \quad t\geq 0, f\in \mathcal B_b(E,\mathbb R^+),x\in E.
+\]
+We can verify that $(S_t)_{t\geq 0}$ is a Markovian semigroup.
+
+\emph{Step 2.} 
+We can verify that for any probability measure $\mu$ on $E$, $\{(\xi_t)_{t\geq 0}; \widetilde{\mu \Pi}\}$ is a Markovian process with transition semigroup $(S_t)_{t\geq 0}$ and initial distribution $\widetilde \mu$.
+
+\emph{Step 3.}
+We can verify that $\widetilde \nu$ is the invariant measure corresponding to semigroup $(S_t)_{t\geq 0}$.
+
+\emph{Final step.} 
+The desired result of this Lemma now follows from Step 1-3.
 \end{proof}
 
-{\color{gray}
+\begin{comment}
 %We need the spine decomposition with a general initial measure. So I an resurrecting the more general spine decomposition from an earlier version, with some modifications. We still need to unify the presentation with the special spine decomposition. I will leave this to Zhenyao
 %reinstated from an earlier version with modifications
 In spirit of \cite{RenSongSun2020Spine}, for any $\mu\in \mathcal M^0_f(E)$, let
@@ -812,6 +882,7 @@ We now give a spine decomposition in the case $\mu=\nu$ which can be used to sho
 $(Z_t)_{t\ge 0}$ is stochastically increasing.
 %end resintstement
 }
+\end{comment}
 
 \begin{lem}  \label{thm:E.16}
 	There exist random elements
@@ -819,14 +890,14 @@ $(Z_t)_{t\ge 0}$ is stochastically increasing.
 	so that:
 \begin{enumerate}
 \item
-	$X$ is a $\mathbb W$-valued random element with $\{X; \mathrm Q\} \overset{\text{d}} \sim \mathrm P_\nu$;
+	$\{X;Q\}$ is a $\mathbb W$-valued random element with distribution $\mathrm P_\nu$;
 \item
 %{
 		$\xi = (\xi_t)_{t\in \mathbb R}$
 	 %is a stationary c\`adl\`ag 
 	 %stochastic process with $\{(\xi_t)_{t \geq 0}; \mathrm Q(\cdot | X)\} \overset{\text{d}} \sim \widetilde{\nu \Pi}$;
 	 %Markov process with 
-	 is a stationary process with 
+	 is a two-sided stationary process with 
 	 %$$\{(\xi_t)_{t \geq 0}; \mathrm Q(\cdot | X)\} \overset{\text{d}} =\{(\xi_t)_{t \geq 0}; \widetilde{\Pi}_{\bar\nu}\};$$
 	 $\{(\xi_t)_{t \geq 0}; \mathrm Q(\cdot | X)\} \overset{\text{d}} = \{(\xi_t)_{t \geq 0}; \widetilde{\nu\Pi}\};$
 %}
@@ -853,7 +924,7 @@ is a Poisson random measure on $\mathbb R \times \mathbb R_+$ with intensity
 %	:= \sum_{k\in \mathbb N} \delta_{(s_k, y_k)}(\mathrm ds,\mathrm dy), \quad (s,y)\in \mathbb R \times \mathbb R_+.
 %\]
 \item
-	$\{(w^{(k)})_{k\in \mathbb N}; \mathrm Q(\cdot|\mathscr G)\}$ is a list of independent $\mathbb W$-valued random elements satisfying that
+	$\{(w^{(k)})_{k\in \mathbb N}; \mathrm Q(\cdot|\mathscr G)\}$ is a sequence of independent $\mathbb W$-valued random elements satisfying that
 \[
 	\{w^{(k)}; \mathrm Q(\cdot| \mathscr G)\}
 	\overset{\text{d}}\sim \mathrm P_{y_k\delta_{\xi_{s_k}}},
