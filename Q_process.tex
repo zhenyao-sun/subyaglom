@@ -65,19 +65,12 @@ Statistical Science\\ Peking University\\ Beijing 100871\\ P. R. China}
 \maketitle
 \section{Introduction}
 \subsection{Background}
-{\bf RS: I think that we should use the setup of our previous paper: $E$ a Polish space and $\partial$ an isolated point not in $E$, and $\xi$ a Borel right process.
-The reasons are: Killed BM in a ball is a Hunt process on the one-point compactification of the ball, but killed symmetric stable process in a ball is not a 
-Hunt process on the one-point compactification of the ball. When $\partial$ an isolated point not in $E$, neither of the processes above are Hunt. So assuming Hunt
-is too restrictive. For Proposition 1.3, we should just quote \cite[Theorem (62.19)]{Sharpe}. This way, the current Section 2 is no longer needed.}
+%RS: I think that we should use the setup of our previous paper: $E$ a Polish space and $\partial$ an isolated point not in $E$, and $\xi$ a Borel right process. The reasons are: Killed BM in a ball is a Hunt process on the one-point compactification of the ball, but killed symmetric stable process in a ball is not a Hunt process on the one-point compactification of the ball. When $\partial$ an isolated point not in $E$, neither of the processes above are Hunt. So assuming Hunt is too restrictive. For Proposition 1.3, we should just quote \cite[Theorem (62.19)]{Sharpe1988General}. This way, the current Section 2 is no longer needed.
 
-The study of the extinction of populations is of a great interest in biology. Suppose that $(Z_n, n\ge 1)$ is a Galton-Watson process
-%with offspring distribution $\{p_n\}$. 
-with offspring distribution $\{p_m, m\ge 0\}$.
+The study of the extinction of populations is of a great interest in biology. Suppose that $(Z_n, n\ge 1)$ is a Galton-Watson process with offspring distribution $\{p_m, m\ge 0\}$.
 Let $m:=\sum^{\infty}_{n=1}np_n$ be the mean number of
 children per particle. It is well known that when $m<1$ the extinction probability $q:=\lim_{n\rightarrow\infty}P\left(Z_n=0\right)$ is equal to
-$1$. That is to say the process $(Z_n)$ becomes extinct in finite time almost surely. In this case, the non-extinction probability $P(Z_n>0)$ decays to $0$.  A natural question is  the right decay rate of the non-extinction probability. In 1967, Heathcot, Seneta and Vere-Jones \cite{HeathcoteSenetaVere-Jones1967A-refinement} answered the question, giving an $L\log L$ criteria. Let $L$ stand for a random variable with distribution 
-%$\{p_n, n\ge 1\}$.
-$\{p_n, n\ge 0\}$.
+$1$. That is to say the process $(Z_n)$ becomes extinct in finite time almost surely. In this case, the non-extinction probability $P(Z_n>0)$ decays to $0$.  A natural question is  the right decay rate of the non-extinction probability. In 1967, Heathcot, Seneta and Vere-Jones \cite{HeathcoteSenetaVere-Jones1967A-refinement} answered the question, giving an $L\log L$ criteria. Let $L$ stand for a random variable with distribution $\{p_n, n\ge 0\}$.
 
 \begin{thm}[Heathcote, Seneta and Vere-Jones \cite{HeathcoteSenetaVere-Jones1967A-refinement}]
 The sequence $\{ P(Z_n>0)/m^n\}$ is decreasing. If $m<1$, then the following are equivalent:
@@ -91,7 +84,6 @@ In 1995, Lyons, Pemantle and Peres developed a martingale change of measure meth
 
 
 In \cite{Lambert2001Arbres,Lambert2003Coalescence}, Lambert discussed  similar results for continuous  state  branching process (or CB-process for short) $\{Z_t, t\geq 0\}$. Suppose its branching mechanism $\psi$ is given by 
-%the L\'evy-Khinchin formula:
 \[
 \psi(\lambda)=-\beta\lambda+\sigma^2\lambda^2+\int_0^\infty \left(e^{-\lambda r}-1+\lambda r\right)n(dr),
 \]
@@ -135,11 +127,8 @@ When $\beta<0$, the following items are equivalent
 In this case, $c^{-1}=G'(0+)$.
  \end{thm}
 
-%As far as the population dynamics which are extinct in finite time running over large amounts of time are concerned, 
 In the case that the population becomes extinct in finite time, 
-special attentions are given to 
-%conditioning on non-extinction, 
-asymptotic behavior conditioned on non-extinction, 
+special attentions are given to asymptotic behavior conditioned on non-extinction, 
 which can not only  lead to a stationary behavior
 of the process, but also provides a lot of information about the evolution of the population before extinction.
 
@@ -149,19 +138,16 @@ Usually there are two ways to condition the process, and correspondingly there a
 \]
 which is the minimal  quasi-stationary distribution of $\{Z_t, t\geq 0\}$. This kind of  conditional limit for continuous state branching processes  can be found in \cite{Li00}, where it is also generalized to conditioning of the type $\{Z_{t+r}\neq 0\}$ for any finite $r>0$ instead of $\{Z_{t}\neq 0\}$. Corresponding results for Galton-Watson processes can be found in \cite{AthreyaNey1972Branching}.
 
-The other type of limit is the processes conditioned on being never extinct. More precisely,  let 
-%$\mathcal F_t=\sigma(Z_s,s\leq t),  t\geq 0$ be the natural $\sigma$-filtration generated by 
- $\{\mathcal F_t=\sigma(Z_s,s\leq t): t\geq 0\}$ be the natural filtration of 
- $Z$. For any $x,t>0$ and $A\in\mathcal F_t$, define
+The other type of limit is the processes conditioned on being never extinct. More precisely,  let $\{\mathcal F_t=\sigma(Z_s,s\leq t): t\geq 0\}$ be the natural filtration of $Z$. 
+For any $x,t>0$ and $A\in\mathcal F_t$, define
 \[
-\lim_{s\rightarrow\infty}\mathbb P_x(A\big|\zeta>s)=\widetilde{\mathbb P}_x(A).
+	\lim_{s\rightarrow\infty}\mathbb P_x(A\big|\zeta>s)=\widetilde{\mathbb P}_x(A).
 \]
 The conditional limit $\widetilde{\mathbb P}_x$  can be expressed as an $h$-transform of $\mathbb P_x$ with martingale $M_t=Z_te^{-\beta t}$:
 \[
-\left.\dfrac{d\widetilde{\mathbb P}_x}{d\mathbb P_x}\right|_{\mathcal F_t}=\dfrac{M_t}{x}.
+	\left.\dfrac{d\widetilde{\mathbb P}_x}{d\mathbb P_x}\right|_{\mathcal F_t}=\dfrac{M_t}{x}.
 \]
-Under $\widetilde{\mathbb P}_x$, the process $\{Z_t, t\geq 0\}$  can be seen as a branching model with immigrations along a immortal particle,
-and  called the  $Q$-process. The study on this kind of limit can be traced back to Lamperti and Ney \cite{LamandNey} for Galton-Watson processes, also see  \cite{AthreyaNey1972Branching}.
+Under $\widetilde{\mathbb P}_x$, the process $\{Z_t, t\geq 0\}$  can be seen as a branching model with immigrations along a immortal particle, and  called the  $Q$-process. The study on this kind of limit can be traced back to Lamperti and Ney \cite{LamandNey} for Galton-Watson processes, also see  \cite{AthreyaNey1972Branching}.
 
 The $Q$-process admits a stationary distribution.  In other words, the following limit probability distribution exists.
 \[
@@ -179,38 +165,30 @@ random variable $Z_\infty$ as $t\to\infty$, which has the distribution of the si
 It is shown in \cite{Lambert2007Quasi-stationary} that the Yaglom distribution $\nu$ is the minimal QSD of $Z$.
 
 
+  Similar results are investigated for continuous time and state multitype branching processes in \cite{Penisson2010Conditional} and \cite{Penisson2011Conditional}.  Asmussen and Hering \cite{AH} studied the limit behavior of subcritical branching Markov processes.
+	For studies on  the Yaglom distributions,  the quasi-stationary distributions, and the $Q$-processes of other branching models, we refer the reader to \cite{SP}, \cite{SM} and the references therein.
 
-
-
-  Similar results are investigated for continuous time and state multitype branching processes in \cite{Penisson2010Conditional} and \cite{Penisson2011Conditional}.  Asmussen and Hering \cite{AH} studied the limit behavior of subcritical branching %Markov processes, in which each particle lives for exponential time, then give birth to random number of particles, and particles move as independent Markov processes in between branching times and it is assume that  the life times, reproduction of different individuals are independent. 
-  Markov processes.
-% The studies on  the Yaglom distributions,  the quasi-stationary distributions, and the $Q$-processes  for more models  we refer to the thesis
-For studies on  the Yaglom distributions,  the quasi-stationary distributions, and the $Q$-processes of other branching models, we refer the reader to
- \cite{SP}, \cite{SM} and the references therein.
-
-
-
-
-In this paper, we are interested in the corresponding conditional limits for superprocesses. In our  previous paper \cite{LiuRenSongSun2020}, the Yaglom distribution and  quasi-stationary distributions for superprocesses are investigated.  \cite[Proposition $1$]{RoellyRouault1989Processus} and \cite{Evans1993Two} considered  superprocesses conditioned to  stay alive forever.  \cite{Evans1993Two} obtained a representation of such a process in terms of an immortal particle that moves around according to the underlying Markov process and throws off pieces of mass, which then proceed to evolve 
-%in the same way that mass evolves for the unconditioned superprocess 
-according to the law of the unconditioned superprocess
-(see also \cite{EW} and \cite{EP} for the study of various aspects of conditioned superprocesses). Now this representation is developed as ``spine decomposition" for superprocesses, see .  %RS: which reference do you want to refer here?
+In this paper, we are interested in the corresponding conditional limits for superprocesses. In our  previous paper \cite{LiuRenSongSun2020}, the Yaglom distribution and  quasi-stationary distributions for superprocesses are investigated.  \cite[Proposition $1$]{RoellyRouault1989Processus} and \cite{Evans1993Two} considered  superprocesses conditioned to  stay alive forever.  \cite{Evans1993Two} obtained a representation of such a process in terms of an immortal particle that moves around according to the underlying Markov process and throws off pieces of mass, which then proceed to evolve according to the law of the unconditioned superprocess
+(see also \cite{EW} and \cite{EP} for the study of various aspects of conditioned superprocesses). Now this representation is developed as ``spine decomposition" for superprocesses, see .  
+%RS: which reference do you want to refer here?
 We will introduce this spine decomposition, which is the main tool in this paper.
 
-Other related literatures are   \cite{ChampagnatRoelly2008Limit}, \cite{Li20} and \cite{Sta}. \cite{ChampagnatRoelly2008Limit} studied the conditioned multitype  superprocesses, and  \cite{Li20} and \cite{Sta} gave some criterions for the existence of stationary distributions of superprocesses 
-%without or with immigration.
-with or without immigration.
+Other related literatures are   \cite{ChampagnatRoelly2008Limit}, \cite{Li20} and \cite{Sta}. \cite{ChampagnatRoelly2008Limit} studied the conditioned multitype  superprocesses, and  \cite{Li20} and \cite{Sta} gave some criterions for the existence of stationary distributions of superprocesses with or without immigration.
 
 \subsection{Main Result}\label{sec:M}
-	 We first recall the definition of a superprocess.
-	Let $E$ be a locally compact separable metric space, and $E_\partial := E \cup \{\partial\}$ be the one-point compactification of $E$.
+	We first recall the definition of a superprocess.
+%{	
+% Let $E$ be a locally compact separable metric space, and $E_\partial := E \cup \{\partial\}$ be the one-point compactification of $E$.
+	Let $E$ be a Polish space.
+%}
 	Denote by $\mathcal B(E, D)$ the collection of Borel maps  from $E$ to some metric space $D$.
 	If $D$ is a subset of $\mathbb R$, we denote by $\mathcal B_b(E,D)$ the bounded measurable functions from $E$ to $D$.
-	Let \emph{the underlying process}
-	$\xi = \{(\xi_t)_{t\ge0}; (\Pi_x)_{x\in E_\partial}\}$
-	 be an $E_\partial$-valued Hunt process with $\partial$ as an absorbing state.
-	Denote by $\zeta:=\inf\{t>0: \xi_t=\partial\}$ the lifetime of $\xi$.
-	Let \emph{the branching mechanism} $\psi$ be a function on $E \times \mathbb R_+$ given by
+%{	Let \emph{the underlying process}
+	%$\xi = \{(\xi_t)_{t\ge0}; (\Pi_x)_{x\in E_\partial}\}$ be an $E_\partial$-valued Hunt process with $\partial$ as an absorbing state.
+	%Denote by $\zeta:=\inf\{t>0: \xi_t=\partial\}$ the lifetime of $\xi$.
+	Let the \emph{spatial motion} \[\xi= \big(\Omega^\xi, \mathscr F^\xi, (\mathscr F^\xi_t)_{t\geq 0}, (\xi_t)_{0\leq t< \zeta}, (\theta^\xi_t)_{t\geq 0}, (\Pi_x)_{x\in E}\big)\] be an $E$-valued general Borel right process with life time $\zeta$ and subMarkov transition semigroup $(P_t)_{t\geq 0}$.
+%}
+	Let the \emph{branching mechanism} $\psi$ be a function on $E \times \mathbb R_+$ given by
 \begin{align}
 	\psi(x,z)
 	= -\beta(x) z + \sigma(x)^2 z^2 + \int_0^\infty (e^{-zu} -1 + zu) \pi(x,{\mathrm d}u),
@@ -222,57 +200,93 @@ with or without immigration.
 \end{equation}
 	Here and in the rest of this paper, for any $-\infty \leq a \leq b \leq \infty$, we write $\int_a^b$ for the integration on the open interval $(a,b)$.
 	We also write $\int_b^a$ for $- \int_a^b$.
-	Let $\mathcal M$ denote the space of all finite Borel measures on $E$ equipped with the topology of weak convergence.
-		For any measure $\mu$ and function $f$, we use $\mu(f)$ to denote the integral of $f$ with respect to $\mu$ whenever the integral is well-defined.
-		For any $f \in \mathcal B_b(E,\mathbb R_+)$, according to \cite[Proposition 2.20]{Li2011Measure-valued}, there is a unique locally bounded non-negative map $(t,x)\mapsto V_tf(x)$ on $\mathbb R_+\times E$ such that
-\begin{equation} \label{eq:M.1}
-	V_tf(x) + \Pi_x\Big[\int_0^{t\wedge \zeta} \psi\big(\xi_s, V_{t-s} f(\xi_s)\big) {\mathrm d}s\Big] = \Pi_x[f(\xi_t) \mathbf 1_{\{t< \zeta\}}], \quad t\geq 0, x\in E.
-\end{equation}
+	Let $\mathcal M(E)$ denote the space of all finite Borel measures on $E$ equipped with the topology of weak convergence. 
+% ZS: I changed all \mathcal M as \mathcal M(E)
+	For any measure $\mu$ and function $f$, we use $\mu(f)$ to denote the integral of $f$ with respect to $\mu$ whenever the integral is well-defined.
+	For any $f \in \mathcal B_b(E,\mathbb R_+)$, according to \cite[Proposition 2.20]{Li2011Measure-valued}, there is a unique locally bounded non-negative map $(t,x)\mapsto V_tf(x)$ on $\mathbb R_+\times E$ such that
+%{
+%\begin{equation} \label{eq:M.1}
+%	V_tf(x) + \Pi_x\Big[\int_0^{t\wedge \zeta} \psi\big(\xi_s, V_{t-s} f(\xi_s)\big) {\mathrm d}s\Big] = \Pi_x[f(\xi_t) \mathbf 1_{\{t< \zeta\}}], \quad t\geq 0, x\in E.
+%\end{equation}
+	\begin{equation} \label{eq:M.1}
+		V_tf(x) + \int_0^t  \mathrm ds \int_E  \psi\big(y, V_{t-s} f(y)\big) P_s(x, \mathrm dy)  = P_tf(x), \quad t\geq 0, x\in E.
+	\end{equation}
+%}
 	Here,  local boundedness of the map $(t,x) \mapsto V_tf(x)$ means that for any $T>0$,
 \[
 	\sup_{0\leq t\leq T, x\in E} V_tf(x) < \infty.
 \]
+%{	
+	%According to \cite[Proposition 2.21 and Theorem 5.12]{Li2011Measure-valued}, there exists
+	%an $\mathcal M(E)$-valued
+	%Borel right process
+	%$X =\{(X_t)_{t\geq 0}; (\mathrm P_\mu)_{\mu \in \mathcal M(E)}\}$ such that
+	%\begin{equation} \label{eq:M.13}
+	%\mathrm P_\mu[e^{- X_t(f)}]
+	%= e^{- \mu(V_tf)},
+	%\quad \mu\in \mathcal M(E), t\geq 0, f \in \mathcal B_b(E,\mathbb R_+).
+%\end{equation}
+	%This process $X$ is known as a $(\xi, \psi)$-superprocess.
 	According to \cite[Proposition 2.21 and Theorem 5.12]{Li2011Measure-valued}, there exists
-	an $\mathcal M$-valued
-	Borel right process
-		  $X =\{(X_t)_{t\geq 0}; (\mathrm P_\mu)_{\mu \in \mathcal M}\}$ such that
+	an $\mathcal M(E)$-valued conservative right process $X$ with transition semigroup $(Q_t)_{t\geq 0}$ satisfying that
 	\begin{equation} \label{eq:M.13}
-	\mathrm P_\mu[e^{- X_t(f)}]
+	\int_{\mathcal M(E)} e^{- \eta (f)} Q_t(\mu, \mathrm d\eta) 
 	= e^{- \mu(V_tf)},
-	\quad \mu\in \mathcal M, t\geq 0, f \in \mathcal B_b(E,\mathbb R_+).
-\end{equation}
+	\quad \mu\in \mathcal M(E), t\geq 0, f \in \mathcal B_b(E,\mathbb R_+).
+	\end{equation}
 	This process $X$ is known as a $(\xi, \psi)$-superprocess.
+%}
 	
-	Let us now give some basic assumptions on our superprocess.
-	Since we are only concerned with distributional properties of the superprocess $X$, we will assume, without loss of generality, that $X$ is \emph{canonical},  i.e.,
-	(1) $(X_t)_{t\geq 0}$ is the coordinate process of
-		$\mathbb W$,
-		the space of $\mathcal M$-valued right continuous paths on 
-%		$\mathbb R_+$ {\color{red}having $\mathbf 0$ as a trap}; and
-%RS better delete ``having $\mathbf 0$ as a trap'', in light of excursion measure
-$\mathbb R_+$; and 
-	(2) $\mathrm P_\mu(\mathrm dw)$ is a probability transition kernel from $\mathcal M$ to $\mathbb W$.
-	We will use $(\mathscr F_t)_{t\geq 0}$ to denote the natural filtration on $\mathbb W$.
-%	Define a Feynman-Kac semigroup of $\xi$ by
-%\begin{align}\label{eq:M.15}
-%	P_t^\beta f(x)
-%	:= \Pi_x[e^{\int_0^t \beta(\xi_r) {\mathrm d}r }f(\xi_t) \mathbf 1_{{\color{red}\{t < \zeta\}}}],
-%	\quad f\in \mathcal B_b(E,\mathbb R), t\geq 0, x\in E.
-%\end{align}
-	It is known (see \cite[Proposition 2.27]{Li2011Measure-valued}) that
+%{
+	%Let us now give some basic assumptions on our superprocess.
+	%Since we are only concerned with distributional properties of the superprocess $X$, we will assume, without loss of generality, that $X$ is \emph{canonical},  i.e.,
+	%(1) $(X_t)_{t\geq 0}$ is the coordinate process of $\mathbb W$,
+	%the space of $\mathcal M(E)$-valued right continuous paths on $\mathbb R_+$; and 
+	%(2) $\mathrm P_\mu(\mathrm dw)$ is a probability transition kernel from $\mathcal M(E)$ to $\mathbb W$.
+\begin{lem} \label{thm:B}
+	$(Q_t)_{t\geq 0}$ is a Borel right transition semigroup on $\mathcal M(E)$.
+\end{lem}
+\begin{proof}
+	Denote $\overline E:= E\cup \{\partial\}$ where $\partial$ is an isolated point not contained in $E$. 
+	Define conservative Borel right transition semigroup $(\overline P_t)_{t\geq 0}$ on $(\overline E,\mathscr B(\overline E))$ using \cite[(A.20)]{Li2011Measure-valued}.
+	Let $\overline \xi$ be a Borel right process with transition semigroup $(\overline P_t)_{t\geq 0}$. 
+	Define $\overline \psi$ as the extension of $\psi$ on $\overline E \times \mathbb R_+$ such that $\overline \psi(\partial,\cdot) \equiv 0$.
+	Let $\overline X$ be a $(\overline \xi, \overline \psi)$-superprocess whose transition semigroup is denoted by $(\overline Q_t)_{t\geq 0}$. 
+	According to \cite[Theorem 5.11]{Li2011Measure-valued}, $(\overline Q_t)_{t\geq 0}$ is Borel right transition semigroup on $\mathcal M(\overline E)$.
+	Define map $\Gamma: \mathcal M(\overline E) \to \mathcal M(E)$ so that for any $\mu\in \mathcal M(\overline E)$, $\Gamma \mu$ is the restriction of $\mu$ on $\mathscr B(E)$. 
+	Define map $\Lambda: \mathcal M(E) \to \mathcal M(\bar E)$ so that for any $\mu \in \mathcal M(E)$, $\Lambda \mu$ is the unique extension of $\mu$ on $\mathscr B(\overline E)$ so that $\Lambda \mu (\{\partial\}) = 0$.
+	Obviously we have $\Gamma \circ \Lambda$ is the identical map on $\mathcal M(E)$; and from the fact that $\partial$ is an isolated point in $\overline E$ we know $\Gamma$ and $\Lambda$ are continuous maps.
+	Fix an arbitrary $t\geq 0$ and $F\in b\mathcal B(\mathcal M(E),\mathbb R)$. 
+	It can be verified (see the proof of \cite[Theorem 5.12]{Li2011Measure-valued}) that $\overline Q_t(F\circ \Gamma) (\mu) = (Q_t F) \circ \Gamma(\overline \mu)$ for each $\overline \mu \in \mathcal M(\overline E)$.
+	From this we can verify that $Q_t F= (\overline Q_t(F\circ \Gamma) ) \circ \Lambda$ is a real valued bounded Borel function on $\mathcal M(E)$. 
+	Therefore semigroup $(Q_t)_{t\geq 0}$ preserves $b\mathcal B(\mathcal M(E),\mathbb R)$ as desired. 
+\end{proof}
+%}
+%{
+	%Since we are only concerned with distributional properties of the superprocess $X$, we will assume, without loss of generality, that $X$ is \emph{canonical},  i.e.,
+	%(1) $(X_t)_{t\geq 0}$ is the coordinate process of $\mathbb W$,
+	%the space of $\mathcal M(E)$-valued right continuous paths on $\mathbb R_+$; and 
+	%(2) $\mathrm P_\mu(\mathrm dw)$ is a probability transition kernel from $\mathcal M(E)$ to $\mathbb W$. 
+	Lemma \ref{thm:B} and \cite[Lemma A.33]{Li2011Measure-valued} allows us to realize the superprocess on the space of $\mathcal M(E)$-valued right continuous paths on $\mathbb R_+$. 
+	More precisely we assume without loss of generality that our Borel right superprocess \[X=(\Omega, \mathscr F^X, (\mathscr F^X_t)_{t\geq 0}, (X_t)_{t\geq 0}, (\theta_t)_{t\geq 0}, (\mathrm P_\mu)_{\mu\in \mathcal M(E)} )\] satisfies the following additional conditions: (1) $\Omega$ is the space of $\mathcal M(E)$-valued right continuous paths on $\mathbb R_+$; (2) $(X_t)_{t\geq 0}$ is the coordinator process of $\Omega$; (3) $(\theta_t)_{t\geq 0}$ is the shift operators of $\Omega$ defined in an obvious way; and (4) $(\mathscr F^X, (\mathscr F^X_t)_{t\geq 0})$ is argumented from the natural filtration $(\mathscr F, (\mathscr F_t)_{t\geq 0})$. 
+%}
+%{
+	%It is known (see \cite[Proposition 2.27]{Li2011Measure-valued}) that
+	It is known (see \cite[Propositions 2.27, A.41]{Li2011Measure-valued}) that
 \begin{equation} \label{eq:M.2}
 	\mathrm P_\mu[X_t(f)] = \mu (P_t^\beta f),
 	\quad t\geq 0, f \in \mathcal B_b(E,\mathbb R),
 \end{equation}
-where $(P_t^\beta)_{t\geq 0}$ is the Feynman-Kac semigroup of $\xi$ by
+	%where $(P_t^\beta)_{t\geq 0}$ is the Feynman-Kac semigroup of $\xi$ by
+	where $(P_t^\beta)_{t\geq 0}$ is a Borel transition semigroup on $E$ given by
 \begin{align}\label{eq:M.15}
 	P_t^\beta f(x)
 	:= \Pi_x[e^{\int_0^t \beta(\xi_r) {\mathrm d}r }f(\xi_t) \mathbf 1_{\{t < \zeta\}}],
 	\quad f\in \mathcal B_b(E,\mathbb R), t\geq 0, x\in E.
 \end{align}
+%}
 	Thus $(P_t^\beta)_{t\geq 0}$ is called the \emph{mean semigroup}  of $X$.
-%	For this mean semigroup, we will always assume that
-We will always assume that
+	We will always assume that
 \begin{equation}\label{asp:H1} \tag{H1}
 \begin{minipage}{0.9\textwidth}
 	there exist a constant $\lambda < 0$, a function $\phi \in \mathcal B_b(E,(0,\infty))$ and a probability measure $\nu$ with full support on $E$ such that for each $t\geq 0$, $P_t^\beta \phi = e^{\lambda t} \phi$, $\nu P_t^\beta = e^{\lambda t} \nu$ and $\nu(\phi) =1$.
@@ -280,7 +294,7 @@ We will always assume that
 \end{equation}
 	Denote by $L_1^+(\nu)$ the collection of non-negative Borel functions on $E$ which are integrable with respect to the measure $\nu$.
 	Denote by $\mathbf 0$ the null measure on $E$.
-	Write $\mathcal M^o = \mathcal M\setminus \{\mathbf 0\}$.
+	Write $\mathcal M(E)^o = \mathcal M(E)\setminus \{\mathbf 0\}$.
 	We further assume that the following two conditions hold:
 \begin{equation} \label{asp:H2} \tag{H2}
 \begin{minipage}{0.9\textwidth}
@@ -299,54 +313,75 @@ We will always assume that
 	\mathrm P_\nu(X_t = \mathbf 0)>0, \quad t> 0.
 \end{equation}
 
-	To present our first result, we need to introduce a measure transformation.
-	Under Assumption \eqref{asp:H1}, one can verify that, for any $\mu \in \mathcal M$, $(e^{-\lambda t}  X_t(\phi))_{t\geq 0}$ is a non-negative martingale under $\mathrm P_\mu$.
-	In fact, for each $0\leq s\leq t< \infty$,
-\begin{equation} \label{eq:M.25}
-	\mathrm P_\mu[e^{-\lambda t}X_t(\phi)|\mathscr F_s]
-	\overset{\text{Markov}} = e^{-\lambda t} \mathrm P_{X_s}[X_{t-s}(\phi)]
-	\overset{\eqref{eq:M.2}}= e^{-\lambda t}X_s(P_{t-s}^\beta \phi)
-	\overset{\eqref{asp:H1}}=e^{-\lambda s}X_s(\phi).
-\end{equation}
-	\begin{prop} \label{thm:T}
-	Suppose that \eqref{asp:H1} holds. Then for each $\mu \in \mathcal M^o$, there exists a unique probability measure $\widetilde {\mathrm P_\mu}$ on $\mathbb W$ such that
-\begin{equation} \label{eq:M.3}
-	\frac{{\mathrm d}\widetilde{\mathrm P_\mu}|_{\mathscr F_t}}
-	{{\mathrm d}\mathrm P_\mu|_{\mathscr F_t}}
-	=\frac{e^{-\lambda t}X_t(\phi)}{\mu(\phi) },
-	\quad t\geq 0.
-\end{equation}
-\end{prop}
+%{
+%To present our first result, we need to introduce a measure transformation.
+%Under Assumption \eqref{asp:H1}, one can verify that, for any $\mu \in \mathcal M(E)$, $(e^{-\lambda t}  X_t(\phi))_{t\geq 0}$ is a non-negative martingale under $\mathrm P_\mu$.
+%In fact, for each $0\leq s\leq t< \infty$,
+%\begin{equation} \label{eq:M.25}
+	%\mathrm P_\mu[e^{-\lambda t}X_t(\phi)|\mathscr F_s]
+	%\overset{\text{Markov}} = e^{-\lambda t} \mathrm P_{X_s}[X_{t-s}(\phi)]
+	%\overset{\eqref{eq:M.2}}= e^{-\lambda t}X_s(P_{t-s}^\beta \phi)
+	%\overset{\eqref{asp:H1}}=e^{-\lambda s}X_s(\phi).
+%\end{equation}
+%\begin{prop} \label{thm:T}
+	%Suppose that \eqref{asp:H1} holds. Then for each $\mu \in \mathcal M(E)^o$, there exists a unique probability measure $\widetilde {\mathrm P_\mu}$ on $\mathbb W$ such that
+	%\begin{equation} \label{eq:M.3}
+		%\frac{{\mathrm d}\widetilde{\mathrm P_\mu}|_{\mathscr F_t}}{{\mathrm d}\mathrm P_\mu|_{\mathscr F_t}}
+		%=\frac{e^{-\lambda t}X_t(\phi)}{\mu(\phi) },
+		%\quad t\geq 0.
+	%\end{equation}
+%\end{prop}
+	Before we present our main results, we need to introduce a change of measure transformation.
+\begin{lem} 
+	Suppose that Assumption \eqref{asp:H1} holds.
+	For each $\mu \in \mathcal M(E)^o$ there exists a unique probability measure $\widetilde{\mathrm P_\mu}$ on $(\Omega, \mathscr F)$ such that \[\frac{\mathrm d\widetilde{\mathrm P_\mu}|_{\mathscr F_t}}{\mathrm d \mathrm P_\mu |_{\mathscr F_t}} = \frac{X_t(\phi)}{e^{\lambda t}\mu(\phi)}, \quad t\geq 0.\]
+\end{lem}
+\begin{proof}
+	The uniqueness is due to Carath\'eodory's extension theorem and the fact that $\cup_{t\geq 0}\mathscr F_t$ is a ring generating $\mathscr F$.
+	The existence is due to the theory of subprocesses generated by supermartingale multplicative functionals (\cite[Section 62]{Sharpe1988General}). 
+	More precisely, let us denote by $\tau:= \inf \{t\geq 0: X_t = \mathbf 0\}$ and by $\widetilde X$ the killed process of $X$ upon hitting $\{\mathbf 0\}$. 
+	Then according to \cite[Theorem 61.5]{Sharpe1988General}, $\widetilde X$ is an $\mathcal M(E)^o$-valued general Borel right process with lifetime $\tau$.
+	Under Assumption \eqref{asp:H1}, one can verify that, \[m_t(\omega):=\frac{\omega_t(\phi)}{e^{\lambda t}\omega_0(\phi)}\mathbf 1_{\{t<\tau(\omega)\}}, \quad t\geq 0\] satisfies the \cite[Hypothesis 62.9]{Sharpe1988General} for $\widetilde X$. 
+	Also observe that $\widetilde X$ is projective in the sense of \cite[Definition 62.4]{Sharpe1988General}.  
+	Now we can apply \cite[Theorem 62.19]{Sharpe1988General} and get that for each $\mu \in \mathcal M(E)^o$ there exists a probability $\widetilde{\mathrm P_\mu}$ on $(\Omega, \mathscr F)$ such that \[\widetilde {\mathrm P_\mu}  (A, \{t< \tau\}) = \mathrm P_\mu [m_t;A], \quad A\in \mathscr F_t,t\geq 0. \]
+	To see $\widetilde {\mathrm P_\mu}$ satisfies the required property, we only need to take $A = \Omega$ above and observe that $\tau = \infty$ almost surely with respect to $\widetilde {\mathrm P_\mu}$.
+\end{proof}
+%}
 
+%{
+\begin{comment}
 \begin{remark}
 	Denote by $E_\partial^*$ as a topological space with exactly the same elements as $E_\partial$, but with a different topology assuming that $\partial$ is an isolated point not contained in $E$.
-	If one change the setting by assuming that $\xi$ is an $E_\partial^*$-valued Hunt process (instead of being an $E_\partial$-valued Hunt process), then the corresponding $(\xi,\psi)$-superprocess $X$ has an $\mathcal M$-valued Hunt version (See \cite[Theorem 5.12]{Li2011Measure-valued}).
-	In this case, since $X$ has c\`adl\`ag sample paths, the existence of a measure $\widetilde {\mathrm P_\mu}$ on space of $\mathcal M$-valued c\`adl\`ag sample paths so that \eqref{eq:M.3} holds follows directly from the standard martingale change of measure theory (See \cite[Lemma 18.18]{Kallenberg2002Foundations}).
+	If one change the setting by assuming that $\xi$ is an $E_\partial^*$-valued Hunt process (instead of being an $E_\partial$-valued Hunt process), then the corresponding $(\xi,\psi)$-superprocess $X$ has an $\mathcal M(E)$-valued Hunt version (See \cite[Theorem 5.12]{Li2011Measure-valued}).
+	In this case, since $X$ has c\`adl\`ag sample paths, the existence of a measure $\widetilde {\mathrm P_\mu}$ on space of $\mathcal M(E)$-valued c\`adl\`ag sample paths so that \eqref{eq:M.3} holds follows directly from the standard martingale change of measure theory (See \cite[Lemma 18.18]{Kallenberg2002Foundations}).
 	However, this setting will exclude some interesting cases. For example, if $E$ is a standard ball in the Euclidean space, and $\xi$ is a Brownian motion killed (i.e. forced to take value $\partial$) upon leaving the ball, then $\xi$ is a $E_\partial$-valued Hunt process, but not a $E_\partial^*$-Hunt process.
 \end{remark}
+\end{comment}
+%}
 
-
-	
-	This kind of martingale measure transformation for branching processes and measure-valued branching processes have been widely studied.
-	We refer to the earlier papers {\color{red}\cite{EnglanderKyprianou2004Local,Evans1993Two,Penisson2010Conditional,RoellyRouault1989Processus}}
-and the references therein.
+%{
+	%This kind of martingale measure 
+	Similar change of measure
+	transformation for branching processes and measure-valued branching processes have been widely studied.
+	We refer to the earlier papers \cite{EnglanderKyprianou2004Local,Evans1993Two,Penisson2010Conditional,RoellyRouault1989Processus} and the references therein.
 	For recent developments, we refer to \cite{ChampagnatRoelly2008Limit,RenSongSun2020Spine,RenSongZhang2018Williams}.
-	It is known that the process $\{(X_t)_{t\geq 0}; \widetilde{\mathrm P_\mu}\}$ can be characterized by the so called spine decomposition theorem.
-	
-
+	%It is known that the process $\{(X_t)_{t\geq 0}; \widetilde{\mathrm P_\mu}\}$ can be characterized by the so called spine decomposition theorem. 
+	Our first result says that $\widetilde {\mathrm P_\mu}$ can be understood as the conditional probability for the superprocess never hitting $\{\mathbf 0\}$. 
+%}
 
 	\begin{thm} \label{thm:Q}
 	Suppose that \eqref{asp:H1}, \eqref{asp:H2} and \eqref{asp:H3} hold, then
-	for any $\mu \in \mathcal M^o$,
+	for any $\mu \in \mathcal M(E)^o$,
 \[
 	\lim_{s \rightarrow \infty} \mathrm P_\mu(A |X_s\neq \mathbf 0)=
 	\widetilde{\mathrm P_\mu}(A),
 	\qquad 
-	%\mu \in \mathcal M^o, 
 	A\in \bigcup_{t\geq 0}\mathscr F_t.
 \]
 \end{thm}
-The process  $\{(X_t)_{t\geq 0}; \widetilde{\mathrm P_\mu}\}$  is called the  Q-process of our superprocess $X$.
+%{
+	%The process  $\{(X_t)_{t\geq 0}; \widetilde{\mathrm P_\mu}\}$  is called the  Q-process of our superprocess $X$.
+%}
 
 	Our second result is about the asymptotic behavior of the extinction probability.
 	Define
@@ -358,7 +393,7 @@ The process  $\{(X_t)_{t\geq 0}; \widetilde{\mathrm P_\mu}\}$  is called the  Q-
 
 \begin{thm} \label{thm:E}
 	Suppose that \eqref{asp:H1}, \eqref{asp:H2} and \eqref{asp:H3} hold.	
-	Then there exists $k\in [0,\infty)$ such that for any $\mu \in \mathcal M^o$,
+	Then there exists $k\in [0,\infty)$ such that for any $\mu \in \mathcal M(E)^o$,
 \begin{equation}\label{eq:M.4}
 	\lim_{t\rightarrow\infty} e^{-\lambda t}\mathrm P_\mu(X_t \neq \mathbf 0)
 	=k\mu(\phi).
@@ -367,49 +402,45 @@ The process  $\{(X_t)_{t\geq 0}; \widetilde{\mathrm P_\mu}\}$  is called the  Q-
 \end{thm}
 
 	Our third result is about the moment property of the Yaglom limit and the quasi-stationary distribution of $X$.
-	For any probability measure $\mathbf P$ on $\mathcal M$, define
+	For any probability measure $\mathbf P$ on $\mathcal M(E)$, define
 \[
 	(\mathbf P\mathrm P)(\cdot)
-	:= \int_{\mathcal M} \mathrm P_\mu(\cdot)\mathbf P({\mathrm d}\mu).
+	:= \int_{\mathcal M(E)} \mathrm P_\mu(\cdot)\mathbf P({\mathrm d}\mu).
 \]
-	Any probability measure $\mathbf P$ on $\mathcal M^o$ will also be understood as its unique extension on $\mathcal M$ with  $\mathbf P(\{\mathbf 0\}) = 0$.
- We say a probability measure $\mathbf Q$ on $\mathcal M^o$ is a \emph{quasi-stationary distribution} (QSD) of $X$, if
+	Any probability measure $\mathbf P$ on $\mathcal M(E)^o$ will also be understood as its unique extension on $\mathcal M(E)$ with  $\mathbf P(\{\mathbf 0\}) = 0$.
+ We say a probability measure $\mathbf Q$ on $\mathcal M(E)^o$ is a \emph{quasi-stationary distribution} (QSD) of $X$, if
 \[
 	(\mathbf Q \mathrm P) \left( X_t \in B \middle | X_t \neq \mathbf 0 \right)
 	= \mathbf Q(B),
-	\quad t\geq 0, B \in \mathscr B(\mathcal M).
+	\quad t\geq 0, B \in \mathscr B(\mathcal M(E)).
 \]
-%	According to \cite[(1.5)]{LiuRenSongSun2020}, 
 	According to \cite[(1.4)]{LiuRenSongSun2020}, 
-	if a probability measure $\mathbf Q$ on $\mathcal M^o$ is a QSD of $X$, then there exists an $r\in (-\infty, 0)$ such that $(\mathbf Q\mathrm P)(X_t \neq \mathbf 0) = e^{rt}$ for all $t\geq 0$; and in this case, we call $r$ the \emph{mass decay rate} of $\mathbf Q$.
+	if a probability measure $\mathbf Q$ on $\mathcal M(E)^o$ is a QSD of $X$, then there exists an $r\in (-\infty, 0)$ such that $(\mathbf Q\mathrm P)(X_t \neq \mathbf 0) = e^{rt}$ for all $t\geq 0$; and in this case, we call $r$ the \emph{mass decay rate} of $\mathbf Q$.
 	It is proved in \cite[Theorem 1.2]{LiuRenSongSun2020} that, under Assumption \eqref{asp:H1}, \eqref{asp:H2} and \eqref{asp:H3},
 	(1) for each $r\in [\lambda, 0)$, there exists a unique QSD $\mathbf Q_r$ of $X$ with mass decay rate $r$;
 	and (2) for each $r\in (-\infty, \lambda)$, there is no QSD for $X$ with mass decay rate $r$.
-	In particular, 
-	%by \cite[Theorem 1.1, Proposition 1.7]{LiuRenSongSun2020}, 
-	by \cite[Theorem 1.1, Proposition 2.5]{LiuRenSongSun2020}, 
+	In particular, by \cite[Theorem 1.1, Proposition 2.5]{LiuRenSongSun2020}, 
 	$\mathbf Q_\lambda$ is the \emph{Yaglom limit} of $X$, in the sense that
 \begin{equation}
 	\mathrm P_\mu(X_t \in \cdot | X_t \neq \mathbf 0)
 	\xrightarrow[t\to \infty]{\text{weakly}} \mathbf Q_\lambda,
-	\quad \mu \in \mathcal M^o.
+	\quad \mu \in \mathcal M(E)^o.
 \end{equation}
 
 \begin{thm}\label{thm:L}
 	Suppose that Assumptions \eqref{asp:H1}, \eqref{asp:H2} and \eqref{asp:H3} hold.
 	Then (1)
-	for any $r\in [\lambda, 0)$ and $\gamma \in (0, \frac{r}{\lambda})$, it holds that $\int_{{\mathcal M}_f(E)}\mu(\phi)^\gamma\mathbf Q_r({\mathrm d}\mu)<\infty$;
+	for any $r\in [\lambda, 0)$ and $\gamma \in (0, \frac{r}{\lambda})$, it holds that $\int_{{\mathcal M(E)}_f(E)}\mu(\phi)^\gamma\mathbf Q_r({\mathrm d}\mu)<\infty$;
 	(2) 
-%	If $r=\lambda$ (which is equivalent to $\frac{r}{\lambda}=1$), 
 	If $r=\lambda$,
-	then $\int_{{\mathcal M}_f(E)}\mu(\phi)\mathbf Q_\lambda({\mathrm d}\mu) = k^{-1}$, where $k$ is  the constant in Theorem \ref{thm:E};
+	then $\int_{{\mathcal M(E)}_f(E)}\mu(\phi)\mathbf Q_\lambda({\mathrm d}\mu) = k^{-1}$, where $k$ is  the constant in Theorem \ref{thm:E};
 	(3) 
-	If $r\in (\lambda, 0)$ %(which implies that $\frac{r}{\lambda}\in(0,1)$) 
-	and $U^{(r)}$ is an $\mathcal M$-valued random variable with distribution $ \mathbf Q_r$, then $ \mathbf Q_r(\langle\phi, U^{(r)}\rangle^{r/\lambda})=\infty.$
+	If $r\in (\lambda, 0)$
+	and $U^{(r)}$ is an $\mathcal M(E)$-valued random variable with distribution $ \mathbf Q_r$, then $ \mathbf Q_r(\langle\phi, U^{(r)}\rangle^{r/\lambda})=\infty.$
 \end{thm}
 
 	Our fourth result characterizes the invariant distribution for the Q-process of $X$.
-	A probability $\mathbf Q$ on $\mathcal M$ is called an \emph{invariant distribution} of the Q-process of $X$ if
+	A probability $\mathbf Q$ on $\mathcal M(E)$ is called an \emph{invariant distribution} of the Q-process of $X$ if
 \[
 	(\mathbf Q\widetilde{\mathrm P})(X_t \in \cdot )
 	=\mathbf Q(\cdot),	\quad t\geq 0.
@@ -421,16 +452,16 @@ The process  $\{(X_t)_{t\geq 0}; \widetilde{\mathrm P_\mu}\}$  is called the  Q-
 \item
 	If $\nu(l)<\infty$, then the Q-process of $X$ has an invariant distribution $\mathbf Q$ given by
 \[
-	\int_{{\color{red}{\mathcal M}}} e^{-\mu(f)}\mathbf Q(\mathrm d\mu)
-	=\frac{\int_{{\color{red}{\mathcal M}}}\mu(\phi)e^{-\mu(f)}\mathbf Q_\lambda({\mathrm d}\mu)} {\int_{{\color{red}{\mathcal M}}}\mu(\phi)\mathbf Q_\lambda({\mathrm d}\mu)}, \quad f\in \mathcal B_b(E, \mathbb R_+).
+	\int_{\mathcal M(E)} e^{-\mu(f)}\mathbf Q(\mathrm d\mu)
+	=\frac{\int_{\mathcal M(E)}\mu(\phi)e^{-\mu(f)}\mathbf Q_\lambda({\mathrm d}\mu)} {\int_{\mathcal M(E)}\mu(\phi)\mathbf Q_\lambda({\mathrm d}\mu)}, \quad f\in \mathcal B_b(E, \mathbb R_+).
 \]	
-Moreover, for each $\mu\in\mathcal M^o$, we have
+Moreover, for each $\mu\in\mathcal M(E)^o$, we have
 \[
 	\widetilde{\mathrm P_\mu}(X_t \in \cdot )
 	\xrightarrow[t\to \infty]{weakly} {\mathbf Q}(\cdot).
 \]
 \item
-	If $\nu(l) = \infty$, then for each $\mu \in \mathcal M^o$, we have
+	If $\nu(l) = \infty$, then for each $\mu \in \mathcal M(E)^o$, we have
 \begin{align}
 	& \widetilde{\mathrm P_\mu}\big(X_t(\phi) > C\big)
 	\xrightarrow[t\to \infty]{} 1, \quad C\geq 0.
@@ -438,7 +469,8 @@ Moreover, for each $\mu\in\mathcal M^o$, we have
 \end{enumerate}
 \end{thm}
 
-%RS Did not make changes in this section since we are probably going to delete it. 
+%{
+\begin{comment}
 \section{Proof of Proposition \ref{thm:T}} \label{sec:T}
 	Extend $\psi$ to a function $ \psi^\partial$ on $E_\partial \times \mathbb R_+$ by
 \[
@@ -457,44 +489,44 @@ Moreover, for each $\mu\in\mathcal M^o$, we have
 \[
 	\sup_{0\leq t\leq T, x\in E_\partial} V^\partial_tf(x) < \infty.
 \]
-	Let $\mathcal M_\partial$ denote the space of all finite Borel measures on $E_\partial$ equipped with the topology of weak convergence.
-	According to \cite[Proposition 2.21 and Theorem 5.11]{Li2011Measure-valued}, there exists an $\mathcal M_\partial$-valued Hunt process $X^\partial =\{(X^\partial_t)_{t\geq 0}; (\mathrm P^\partial_\mu)_{\mu \in \mathcal M_\partial}\}$ such that
+	Let $\mathcal M(E)_\partial$ denote the space of all finite Borel measures on $E_\partial$ equipped with the topology of weak convergence.
+	According to \cite[Proposition 2.21 and Theorem 5.11]{Li2011Measure-valued}, there exists an $\mathcal M(E)_\partial$-valued Hunt process $X^\partial =\{(X^\partial_t)_{t\geq 0}; (\mathrm P^\partial_\mu)_{\mu \in \mathcal M(E)_\partial}\}$ such that
 \begin{equation}\label{eq:T.005}
 	\mathrm P^\partial_\mu[e^{- X^\partial_t(f)}]
 	= e^{- \mu(V^\partial_tf)},
-	\quad \mu\in \mathcal M_\partial, t\geq 0, f \in \mathcal B_b(E_\partial,\mathbb R_+).
+	\quad \mu\in \mathcal M(E)_\partial, t\geq 0, f \in \mathcal B_b(E_\partial,\mathbb R_+).
 \end{equation}
 	This process $X^\partial$ is known as a $(\xi, \psi^\partial)$-superprocess.
 
 	We can and will assume that $X^\partial$ is \emph{canonical}  i.e.
-	(1) $(X^\partial_t)_{t\geq 0}$ is the coordinate process of $\mathbb D(\mathcal M_\partial)$, the space of $\mathcal M_\partial$-valued c\`adl\`ag paths on $\mathbb R_+$; and
-	(2) $\mathrm P^\partial_\mu(\mathrm dw)$ is a probability transition kernel from $\mathcal M_\partial$ to $\mathbb D(\mathcal M_\partial)$.
-	We will use $(\mathscr F^\partial_t)_{t\geq 0}$ to denote the natural filtration on $\mathbb D(\mathcal M_\partial)$.
+	(1) $(X^\partial_t)_{t\geq 0}$ is the coordinate process of $\mathbb D(\mathcal M(E)_\partial)$, the space of $\mathcal M(E)_\partial$-valued c\`adl\`ag paths on $\mathbb R_+$; and
+	(2) $\mathrm P^\partial_\mu(\mathrm dw)$ is a probability transition kernel from $\mathcal M(E)_\partial$ to $\mathbb D(\mathcal M(E)_\partial)$.
+	We will use $(\mathscr F^\partial_t)_{t\geq 0}$ to denote the natural filtration on $\mathbb D(\mathcal M(E)_\partial)$.
 	Define a Feynman-Kac semigroup of $\xi$ by
 \begin{align} \label{eq:T.01}
 	P_t^{\beta,\partial} f(x)
-	:= \Pi_x\Big[\exp\Big\{\int_0^t \beta(\xi_r) \mathbf 1_{{\color{red}\{\xi_r\in E\}}} {\mathrm d}r \Big\} f(\xi_t) \Big],
+	:= \Pi_x\Big[\exp\Big\{\int_0^t \beta(\xi_r) \mathbf 1_{\{\xi_r\in E\}} {\mathrm d}r \Big\} f(\xi_t) \Big],
 	\quad f\in \mathcal B_b(E_\partial,\mathbb R), t\geq 0, x\in E_\partial.
 \end{align}
 	It is known (see \cite[Proposition 2.27]{Li2011Measure-valued}) that
 \begin{equation} \label{eq:T.02}
 	\mathrm P_\mu^\partial [X^\partial_t(f)] = \mu (P_t^{\beta,\partial} f),
-	\quad t\geq 0, f \in \mathcal B_b(E_\partial,\mathbb R), \mu \in \mathcal M_\partial.
+	\quad t\geq 0, f \in \mathcal B_b(E_\partial,\mathbb R), \mu \in \mathcal M(E)_\partial.
 \end{equation}
 	Note that for each $t\geq 0$ and $x\in E_\partial$,
 \begin{align}
 	& P_t^{\beta,\partial} (\phi \mathbf 1_E) (x)
-	\overset{\eqref{eq:T.01}}= \Pi_x\Big[\exp\Big\{\int_0^t \beta(\xi_r) \mathbf 1_{{\color{red}\{\xi_r\in E\}}} {\mathrm d}r \Big\} \phi(\xi_t) \mathbf 1_{{\color{red}\{\xi_t \in E\}}} \Big]
-	\\\label{eq:T.03}&\overset{\eqref{eq:M.15}} = \mathbf 1_{{\color{red}\{x\in E\}}}P_t^\beta \phi (x)
-	\overset{\eqref{asp:H1}} = e^{\lambda t} \phi (x)\mathbf 1_{{\color{red}\{x\in E\}}}.
+	\overset{\eqref{eq:T.01}}= \Pi_x\Big[\exp\Big\{\int_0^t \beta(\xi_r) \mathbf 1_{\{\xi_r\in E\}} {\mathrm d}r \Big\} \phi(\xi_t) \mathbf 1_{\{\xi_t \in E\}} \Big]
+	\\\label{eq:T.03}&\overset{\eqref{eq:M.15}} = \mathbf 1_{\{x\in E\}}P_t^\beta \phi (x)
+	\overset{\eqref{asp:H1}} = e^{\lambda t} \phi (x)\mathbf 1_{\{x\in E\}}.
 \end{align}
-	Define a map $\Gamma: \mu \mapsto \Gamma \mu$ from $\mathcal M_\partial$ to $\mathcal M$ by taking
+	Define a map $\Gamma: \mu \mapsto \Gamma \mu$ from $\mathcal M(E)_\partial$ to $\mathcal M(E)$ by taking
 \[
 	(\Gamma \mu)(B) = \mu(B), \quad B\in \mathscr B(E).
 \]
 	
 \begin{lem} \label{thm:T.1}
-	For each $\mu \in \mathcal M_\partial$,
+	For each $\mu \in \mathcal M(E)_\partial$,
 $
 	\{(\Gamma X^\partial_t)_{t\geq 0}; \mathrm P_\mu^\partial\} \overset{\text{f.d.d.}}= \{(X_t)_{t\geq 0}; \mathrm P_{\Gamma\mu}\}.
 $
@@ -503,7 +535,7 @@ $
 
 \begin{proof}
 \emph{Step 1.}
-	We note that for any $t\geq 0$, $x\in E_\partial$ and $f\in \mathcal B_b(E,\mathbb R_+)$, it holds that $V_t^\partial f^\partial (x) = V_tf(x) \mathbf 1_{{\color{red}\{x\in E\}}}$ where for each $y\in E_\partial$, $f^\partial(y) := f(y) \mathbf 1_{{\color{red}\{y\in E\}}}$.
+	We note that for any $t\geq 0$, $x\in E_\partial$ and $f\in \mathcal B_b(E,\mathbb R_+)$, it holds that $V_t^\partial f^\partial (x) = V_tf(x) \mathbf 1_{\{x\in E\}}$ where for each $y\in E_\partial$, $f^\partial(y) := f(y) \mathbf 1_{\{y\in E\}}$.
 	This is elementary to verify using \eqref{eq:T.004}.
 
 \emph{Step 2.}
@@ -551,12 +583,12 @@ $
 
 
 \begin{lem} \label{thm:T.2}
-	For each $\mu \in \mathcal M_\partial$, $\mathrm P_\mu^\partial$-almost surely, $(\Gamma X^\partial_t)_{t\geq 0}$ is an $\mathcal M$-valued right continuous process.
+	For each $\mu \in \mathcal M(E)_\partial$, $\mathrm P_\mu^\partial$-almost surely, $(\Gamma X^\partial_t)_{t\geq 0}$ is an $\mathcal M(E)$-valued right continuous process.
 \end{lem}
 \begin{proof}
 	Since $X^\partial$ is a Hunt process, we have $\mathrm P_\mu^\partial(\Omega_0) = 1$ where
 \[
-	\Omega_0 := \{t\mapsto X_t^\partial \text{ is an $\mathcal M_\partial$-valued right continuous process on $[0,\infty)$}\}.
+	\Omega_0 := \{t\mapsto X_t^\partial \text{ is an $\mathcal M(E)_\partial$-valued right continuous process on $[0,\infty)$}\}.
 \]
 	According to \cite[Theorem A.20]{Li2011Measure-valued}, we know that $\mathbf 1_E$ is finely continuous relative to $\xi$.
 	According to \cite[Proposition 5.9]{Li2011Measure-valued}, we know that
@@ -570,7 +602,7 @@ $
 	To finish the proof, we only have to show
 \begin{equation} \label{eq:T.2}
 	\Omega_0\cap \Omega_1
-	\subset \{t\mapsto \Gamma X_t^\partial \text{ is an $\mathcal M$-valued right continuous process on $[0,\infty)$}\}.
+	\subset \{t\mapsto \Gamma X_t^\partial \text{ is an $\mathcal M(E)$-valued right continuous process on $[0,\infty)$}\}.
 \end{equation}
 	In fact it is clear that in $\Omega_0$ for each $t\geq 0$ and compactly supported continuous function $f$ on $E$,
 \begin{equation}\label{eq:T.21}
@@ -587,8 +619,8 @@ $
 \end{proof}
 
 \begin{lem} \label{thm:T.3}
-	For each $\mu \in \mathcal M_\partial$ with $\mu(\phi\mathbf 1_E)>0$, there exists
-	a unique measure $\widetilde {\mathrm P_{\mu}^\partial}$ on $\mathbb D(\mathcal M_\partial)$ such that
+	For each $\mu \in \mathcal M(E)_\partial$ with $\mu(\phi\mathbf 1_E)>0$, there exists
+	a unique measure $\widetilde {\mathrm P_{\mu}^\partial}$ on $\mathbb D(\mathcal M(E)_\partial)$ such that
 \[
 	\frac{\mathrm d \widetilde {\mathrm P_\mu^\partial} |_{\mathscr F_t^\partial}}{\mathrm d \mathrm P^\partial_\mu|_{\mathscr F_t^\partial}} = \frac{e^{-\lambda t}(\Gamma X^\partial_t)(\phi)}{\mu(\phi\mathbf 1_E)}, \quad t\geq 0.
 \]
@@ -613,13 +645,13 @@ $
 
 \begin{proof}[Proof of Proposition \ref{thm:T}]
 	The uniqueness is due to Carath\'eodory's extension theorem and the fact that $\cup_{t\geq 0}\mathscr F_t$ is a ring generating the $\sigma$-field of $\mathbb W$.
-	For the existence, first note that there exists a unique $\mu^\partial \in \mathcal M_\partial$ such that $\Gamma \mu^\partial = \mu$ and $\mu^{\partial}(\{\partial\}) = 0$.
-	According to Lemma \ref{thm:T.2} and \ref{thm:T.3} we know that $\widetilde {\mathrm P_{\mu^\partial}^\partial}$-almost surely, $(\Gamma X^\partial_t)_{t\geq 0}$ has $\mathcal M$-valued right continuous sample path.
+	For the existence, first note that there exists a unique $\mu^\partial \in \mathcal M(E)_\partial$ such that $\Gamma \mu^\partial = \mu$ and $\mu^{\partial}(\{\partial\}) = 0$.
+	According to Lemma \ref{thm:T.2} and \ref{thm:T.3} we know that $\widetilde {\mathrm P_{\mu^\partial}^\partial}$-almost surely, $(\Gamma X^\partial_t)_{t\geq 0}$ has $\mathcal M(E)$-valued right continuous sample path.
 	Therefore, there exists a probability measure $\widetilde{\mathrm P_\mu}$ on $\mathbb W$ such that
 $
 	\{(\Gamma X^\partial_t)_{t\geq 0}; \widetilde {\mathrm P^\partial_{\mu^\partial}}\} \overset{\text{d}}\sim \widetilde {\mathrm P_\mu}.
 $
-	Now for any $n\in \mathbb N, t\geq 0$, $(t_i)_{i=1}^n \subset [0,t]$ and $(A_i)_{i=1}^n\subset \mathscr B(\mathcal M)$, we have
+	Now for any $n\in \mathbb N, t\geq 0$, $(t_i)_{i=1}^n \subset [0,t]$ and $(A_i)_{i=1}^n\subset \mathscr B(\mathcal M(E))$, we have
 \begin{align}
 	&\widetilde {\mathrm P_\mu}(\forall i\in \mathbb N\cap [1,n]: X_{t_i}\in A_i)
 	= \widetilde {\mathrm P_{\mu^\partial}^\partial} (\forall i\in \mathbb N\cap [1,n]: \Gamma X^\partial_{t_i}\in A_i)
@@ -632,7 +664,7 @@ $
 \end{equation}
 	is a $\lambda$-system and that
 \begin{equation}
-	\Big\{ \bigcap_{i=1}^n\{X_{t_i}\in A_i\}: n\in \mathbb N, (t_i)_{i=1}^n \subset [0,t], (A_i)_{i=1}^n\subset \mathscr B(\mathcal M) \Big\}
+	\Big\{ \bigcap_{i=1}^n\{X_{t_i}\in A_i\}: n\in \mathbb N, (t_i)_{i=1}^n \subset [0,t], (A_i)_{i=1}^n\subset \mathscr B(\mathcal M(E)) \Big\}
 \end{equation}
 	is a $\pi$-system.
 	From this and the $\pi$-$\lambda$ theorem, we can verify that for each $t\geq 0$ and $B \in \mathscr F_t$, we have
@@ -642,6 +674,8 @@ $
 	\qedhere
 \]
 \end{proof}
+\end{comment}
+%}
 
 
 \section{Proof of Theorem \ref{thm:Q}} \label{sec:Q}
@@ -654,32 +688,27 @@ $
 	\begin{equation} \label{eq:Q.04}
 	\mathrm P_\mu (X_t = \mathbf 0)
 	= e^{- \mu (v_t)},
-	\quad \mu \in \mathcal M, t\geq 0.
+	\quad \mu \in \mathcal M(E), t\geq 0.
 	\end{equation}
-%	According to \cite[(1.10)]{LiuRenSongSun2020}) we have
-By \cite[(2.5)]{LiuRenSongSun2020}) we have
+	By \cite[(2.5)]{LiuRenSongSun2020}) we have
 \begin{equation}\label{eq:Q.05}
-	\mu(v_t) > 0, \quad \mu \in \mathcal M^o, t \geq 0.
+	\mu(v_t) > 0, \quad \mu \in \mathcal M(E)^o, t \geq 0.
 \end{equation}
-%	According to \cite[Proposition 1.3]{LiuRenSongSun2020}, for each $\mu\in \mathcal M$ we have
-It follows from \cite[Proposition 2.1]{LiuRenSongSun2020} that for any $\mu\in \mathcal M$ we have
+	It follows from \cite[Proposition 2.1]{LiuRenSongSun2020} that for any $\mu\in \mathcal M(E)$ we have
 \begin{equation} \label{eq:Q.055}
 	\mu(v_t) \xrightarrow[t\to \infty]{} 0.
 \end{equation}
-%	According to \cite[(1.17)]{LiuRenSongSun2020}, for each 
 According to \cite[(2.12)]{LiuRenSongSun2020}, for any
-$t>0$ and $\mu \in \mathcal M^o$ we have
+$t>0$ and $\mu \in \mathcal M(E)^o$ we have
 \begin{equation} \label{eq:Q.056}
 	\text{$\mu(v_t) = \nu(v_t)\mu(\phi) (1+C_{\mu,t}^{\eqref{eq:Q.056}})$ for some $C_{\mu,t}^{\eqref{eq:Q.056}}\in \mathbb R$ with $\lim_{t\to \infty}|C_{\mu,t}^{\eqref{eq:Q.056}}| = 0$.}
 \end{equation}
-%	According to \cite[(2.14)]{LiuRenSongSun2020}, for each 
 By \cite[(3.14)]{LiuRenSongSun2020}, for any 
 $t>0$ and $x\in E$ we have
 \begin{equation}  \label{eq:Q.0565}
 	\text{$v_t(x) = \phi(x) \nu(v_t) C_{t,x}^{\eqref{eq:Q.0565}}$ for some $C_{t,x}^{\eqref{eq:Q.0565}}\geq 0$ with $\varlimsup_{t\to \infty}\sup_{x\in E}C_{t,x}^{\eqref{eq:Q.0565}}<\infty$.}
 \end{equation}
-%	According to \cite[(2.20)]{LiuRenSongSun2020}, for each 
-It follows from 	\cite[(3.20)]{LiuRenSongSun2020} that for any
+	It follows from \cite[(3.20)]{LiuRenSongSun2020} that for any
 	$t\geq 0$, we have
 \begin{equation}\label{eq:Q.057}
 	\lim_{s\to \infty} \frac{\nu(v_s)}{\nu(v_{s-t})} = e^{\lambda t}.
@@ -687,7 +716,7 @@ It follows from 	\cite[(3.20)]{LiuRenSongSun2020} that for any
 
 
 \begin{proof}[Proof of Theorem \ref{thm:Q}]
-	Fix  $\mu\in \mathcal M^o$, $t\ge 0$ and $A\in\mathscr F_t$.
+	Fix  $\mu\in \mathcal M(E)^o$, $t\ge 0$ and $A\in\mathscr F_t$.
 	
 \emph{Step 1.} We show that
 	\begin{equation} \label{eq:Q.1}
@@ -695,7 +724,7 @@ It follows from 	\cite[(3.20)]{LiuRenSongSun2020} that for any
 		\xrightarrow[s\to \infty]{} \frac{e^{-\lambda t}X_t(\phi)}{\mu(\phi) },
 		\quad \mathrm P_\mu\text{-a.s.}
 \end{equation}
-	Notice that for any $\bar \mu\in \mathcal M$,
+	Notice that for any $\bar \mu\in \mathcal M(E)$,
 	\begin{align}
 		&\lim_{s\rightarrow\infty}\dfrac{ \bar \mu(v_{s-t}) }{ \mu(v_s) }
 		\overset{\eqref{eq:Q.056}}=\lim_{s\to \infty} \frac{\nu(v_{s-t})\bar \mu (\phi) (1+C_{\bar \mu,s-t}^{\eqref{eq:Q.056}})}{\nu(v_s)\mu(\phi)(1+C_{\mu,s}^{\eqref{eq:Q.056}})}
@@ -722,15 +751,14 @@ It follows from 	\cite[(3.20)]{LiuRenSongSun2020} that for any
 		& \frac{\mathrm P_{X_t}(X_{s-t}\neq \mathbf 0)}{\mathrm P_\mu(X_s\neq \mathbf 0)}
 		\overset{\eqref{eq:Q.04}}= \frac{1-e^{- X_t(v_{s-t}) }}{1-e^{- \mu(v_s) }}
 		\leq \frac{X_t(v_{s-t}) }{1-e^{- \mu(v_s) }}
-		\\\label{eq:Q.3}&\overset{\eqref{eq:Q.05},\eqref{eq:Q.055}}= \frac{X_t(v_{s-t}) }{ \mu(v_s)} C_{{\color{red}\mu} ,s}^{\eqref{eq:Q.3}},
-		\\& \quad \text{for some deterministic $C_{{\color{red}\mu} ,s}^{\eqref{eq:Q.3}}>0$ with $\lim_{s\to \infty} C_{{\color{red}\mu},s}^{\eqref{eq:Q.3}} = 1$,}
-		\\\label{eq:Q.4}&\overset{\eqref{eq:Q.0565}}\leq \frac{X_t(\phi) \nu(v_{s-t}) \sup_{x\in E} C_{s-t,x}^{\eqref{eq:Q.0565}}}{ \mu(v_s)} C_{{\color{red}\mu},s}^{\eqref{eq:Q.3}}.
+		\\\label{eq:Q.3}&\overset{\eqref{eq:Q.05},\eqref{eq:Q.055}}= \frac{X_t(v_{s-t}) }{ \mu(v_s)} C_{\mu ,s}^{\eqref{eq:Q.3}},
+		\\& \quad \text{for some deterministic $C_{\mu ,s}^{\eqref{eq:Q.3}}>0$ with $\lim_{s\to \infty} C_{\mu,s}^{\eqref{eq:Q.3}} = 1$,}
+		\\\label{eq:Q.4}&\overset{\eqref{eq:Q.0565}}\leq \frac{X_t(\phi) \nu(v_{s-t}) \sup_{x\in E} C_{s-t,x}^{\eqref{eq:Q.0565}}}{ \mu(v_s)} C_{\mu,s}^{\eqref{eq:Q.3}}.
 	\end{align}
-%	Then notice that
-Since
+	Since
 	\begin{align}
-		&  \varlimsup_{s\to \infty}\frac{\nu(v_{s-t}) \sup_{x\in E} C_{s-t,x}^{\eqref{eq:Q.0565}}}{ \mu(v_s)} C_{{\color{red}\mu} ,s}^{\eqref{eq:Q.3}}
-		\overset{\eqref{eq:Q.25}} = \frac{e^{-\lambda t} \nu(\phi)}{\mu(\phi)} \varlimsup_{s\to \infty}C_{{\color{red}\mu} ,s}^{\eqref{eq:Q.3}} \sup_{x\in E}C_{s-t,x}^{\eqref{eq:Q.0565}}
+		&  \varlimsup_{s\to \infty}\frac{\nu(v_{s-t}) \sup_{x\in E} C_{s-t,x}^{\eqref{eq:Q.0565}}}{ \mu(v_s)} C_{\mu ,s}^{\eqref{eq:Q.3}}
+		\overset{\eqref{eq:Q.25}} = \frac{e^{-\lambda t} \nu(\phi)}{\mu(\phi)} \varlimsup_{s\to \infty}C_{\mu ,s}^{\eqref{eq:Q.3}} \sup_{x\in E}C_{s-t,x}^{\eqref{eq:Q.0565}}
 		\\\label{eq:Q.5}&\overset{\eqref{eq:Q.3}} = \frac{e^{-\lambda t} \nu(\phi)}{\mu(\phi)} \varlimsup_{s\to \infty} \sup_{x\in E}C_{s-t,x}^{\eqref{eq:Q.0565}}
 		\overset{\eqref{eq:Q.0565}}< \infty.
 	\end{align}
@@ -742,7 +770,10 @@ Since
 	=\frac{\mathrm P_\mu(A, X_s \neq \mathbf 0)}{\mathrm P_\mu(X_s\neq \mathbf 0)}
 	\overset{\text{Markov}}=\frac{\mathrm P_\mu\big(\mathrm P_{X_t}(X_{s-t} \neq \mathbf 0);A\big)}{\mathrm P_\mu(X_s\neq \mathbf 0)}.
 	\\&\xrightarrow[s\to \infty]{\text{DCT}} \mathrm P_\mu\Big[\frac{e^{-\lambda t}X_t(\phi)}{\mu(\phi) }; A\Big]
-	\overset{\eqref{eq:M.3}} = \widetilde{\mathrm P_\mu}[A].
+%{	
+	%\overset{\eqref{eq:M.3}} = \widetilde{\mathrm P_\mu}[A].
+	\overset{\text{Lemma \ref{thm:B}}} = \widetilde{\mathrm P_\mu}[A].
+%}
 	\qedhere
 \end{align}
 \end{proof}
@@ -751,32 +782,128 @@ Since
 	In order to prove Theorem \ref{thm:E}, we will need 
 the spine decomposition theorem for superprocess $X$ in a special case, see Lemma \ref{thm:E.2} below.	
 	To present this result, we first recall the \emph{Kuznetsov  measures} of the superprocess $X$.
-	According to \cite[Proposition 1.3]{LiuRenSongSun2020} we have $v_t(x)<\infty$ for any $t>0, x\in E$.
+%{
+	%According to \cite[Proposition 1.3]{LiuRenSongSun2020}
+	According to \cite[Proposition 2.1]{LiuRenSongSun2020}  
+	we have 
+\begin{equation} \label{eq:E.05}
+	v_t(x)<\infty, \quad t>0, x\in E.
+\end{equation}
 	Therefore
 \begin{align}
 	\mathrm P_{\delta_x}(X_t = \mathbf 0) \overset{\eqref{eq:Q.04}}
 	= e^{-v_t(x)} > 0, \quad t>0, x\in E.
 \end{align}
-	Now according to \cite[Section 8.4]{Li2011Measure-valued}, there is a unique family of $\sigma$-finite measures
-	$(\mathrm N_x)_{x\in E}$
-	on $\mathbb W$ such that
-	(1) $\mathrm N_x(w_0 \neq \mathbf 0) = 0$ for any $x\in E$;\\
-{\color{red}\bf RL: I only find Kuznetsov measure should satisfy: $w_t\to 0$, and $w_t/w_t(1)\to \delta_x$ as $t\to 0+$, $\mathrm N_x$ a.e.? And only defined on the space of paths on $(0,\infty)$?\\
-YX: Since $w_t\to 0$, we may extend to the path space on  $(0,\infty)$.\\
-RS: Better delete with 0 as a trap.}\\
-	(2) $\mathrm N_x (\forall t > 0, w_t =\mathbf 0) =0$ for any $x\in E$;
-	and (3) for any $\mu \in \mathcal M$, if $\mathcal N$ is a Poisson random measure on $\mathbb W$ with intensity
-	\[
+%}
+% ZS: I will replace all $\mathbb W$ by $\Omega$ below without further noticing.
+% RL: I only find Kuznetsov measure should satisfy: $w_t\to 0$, and $w_t/w_t(1)\to \delta_x$ as $t\to 0+$, $\mathrm N_x$ a.e.? And only defined on the space of paths on $(0,\infty)$? 
+% YX: Since $w_t\to 0$, we may extend to the path space on  $(0,\infty)$.
+% RS: Better delete with 0 as a trap.
+%{
+	%Now according to \cite[Section 8.4]{Li2011Measure-valued}, there is a unique family of $\sigma$-finite measures $(\mathrm N_x)_{x\in E}$ on $\Omega$ such that 
+	%(1) $\mathrm N_x(w_0 \neq \mathbf 0) = 0$ for any $x\in E$;
+	%(2) $\mathrm N_x (\forall t > 0, w_t =\mathbf 0) =0$ for any $x\in E$;
+	%and (3) for any $\mu \in \mathcal M(E)$, if $\mathcal N$ is a Poisson random measure on $\Omega$ with intensity
+%\[
+	%(\mu\mathrm N)(\mathrm dw):=
+	%\int_{x\in E} \mathrm N_x(\mathrm dw)\mu(\mathrm dx), 
+	%\quad w\in \Omega,
+%\]
+	%then
+	%\begin{equation}
+	%\{(X_t)_{t> 0};\mathrm P_\mu\}
+	%\overset{\text{f.d.d.}}= \Big(\int_{\Omega} w_t\mathcal N(\mathrm dw)\Big)_{t> 0}.
+	%\end{equation}
+\begin{lem}
+	There exists a unique $\sigma$-finite kernel $\mathrm N_x(\mathrm dw)$ from $(E,\mathscr B(E))$ to $(\Omega, \mathscr F)$ such that 
+	(1) $\mathrm N_x(X_0 \neq \mathbf 0) = 0$ for any $x\in E$;
+	(2) $\mathrm N_x (\forall t \geq 0, X_t =\mathbf 0) =0$ for any $x\in E$;
+	and (3) for any $\mu \in \mathcal M(E)$, if $\mathcal N$ is a Poisson random measure on $\Omega$ with intensity
+\[
 	(\mu\mathrm N)(\mathrm dw):=
-	\int_{x\in E} \mathrm N_x(\mathrm dw)\mu(\mathrm dx), \quad w\in \mathbb W,
-	\]
+	\int_{x\in E} \mathrm N_x(\mathrm dw)\mu(\mathrm dx), 
+	\quad w\in \Omega,
+\]
 	then
-	\begin{equation}
+\begin{equation}
 	\{(X_t)_{t> 0};\mathrm P_\mu\}
-	\overset{\text{f.d.d.}}= \Big(\int_{\mathbb W} w_t\mathcal N(\mathrm dw)\Big)_{t> 0}.
-	\end{equation}
+	\overset{\text{f.d.d.}}= \Big(\int_{\Omega} w_t\mathcal N(\mathrm dw)\Big)_{t> 0}.
+\end{equation}
+\end{lem}
+\begin{proof}
+\emph{Existence.}
+	Denote by $\Omega^0$ the space of right continuous paths from $(0,\infty)$ to $\mathcal M(E)$ having zero as a trap. 
+	Denote by $(\mathscr F^0, \mathscr F_t^0)$ the natural $\sigma$-algebras of $\Omega^0$ generated by its coordinate process.
+	According to \cite[Theorem 1.36]{Li2011Measure-valued}, the cumulant semigroup $(V_t)_{t\geq 0}$ for our superprocess $X$ has a canonical representation: for each $t\geq 0$ and $x\in E$, \[V_tf(x) = \lambda_t(x,f) + \int_{\mathcal M(E)^o} (1-e^{-\nu(f)}) L_t(x,\mathrm d\nu), \quad f\in \mathrm p\mathscr B_E\] where $\lambda_t(x,\mathrm dy)$ is a bounded kernel on $(E, \mathscr B_E)$ and $(1\wedge \nu(1)) L_t(x, \mathrm d\nu)$ is a bounded kernel from $(E, \mathscr B_E)$ to $(\mathcal M(E)^o, \mathscr B_{\mathcal M(E)^o})$. 
+	Observe that for any $t>0$ and $x\in E$, $\lambda_t(x, E) = 0$ (if not, we can take $f \uparrow \infty$ above and get that $v_t(x) = \infty$ which contradicts \eqref{eq:E.05}).
+	Using this and \cite[Section 8.4]{Li2011Measure-valued}, we can define a unique family of measure $(\mathrm N^0_x)_{x\in E}$ 
+	on $(\Omega^0, \mathscr F^0)$ such that for each $x\in E$, $\mathrm N^0_x(\{w\in \Omega^0:\forall t>0, w_t=\mathbf 0\}) = 0$ and
+\[
+\begin{multlined}
+	\mathrm N^0_x\Big[\prod_{k=1}^n\mathbf 1_{\{w\in \Omega^0: w_{t_k}\in A_k\}} \Big]
+	\\=\int_{(\mathcal M(E)^o)^n} \Big(\prod_{k=1}^n \mathbf 1_{\{\nu_{k}\in A_k\}}\Big)L_{t_1}(x,\mathrm d\nu_1) Q_{t_2-t_1}(\nu_1,\mathrm d\nu_2) \dots Q_{t_n-t_{n-1}}(\nu_{n-1},\mathrm d\nu_n)
+\end{multlined}
+\]
+	for every strictly increasing $(t_k)_{k=1}^n \subset (0,\infty)$ and $(A_k)_{k=1}^n \subset \mathscr B_{\mathcal M(E)^o}$.
+	Observe that 
+\[
+	\Omega^{0+}:=\{w\in \Omega^0: w_t \xrightarrow[t\downarrow 0 ]{} \mathbf 0\}
+	= \bigcap_{n\in \mathbb N} \bigcup_{m\in \mathbb N} \bigcap_{t\in \mathbb Q \cap (0, 1/m)} \{w\in \Omega^0:w_t(\mathbf 1_E) \leq 1/n\}\in \mathscr F^0.
+\]
+	Thus, we can define a measurable map $W$ from $(\Omega^0, \mathscr A^0)$ to $(\Omega, \mathscr F)$ so that
+\[
+	W(\omega)_t = \begin{cases}
+		w_t, &\quad w\in \Omega^{0+}, t>0;
+		\\ \mathbf 0, &\quad \text{otherwise}.
+	\end{cases}
+\]
+	Using \cite[Theorems 8.22 and 8.24]{Li2011Measure-valued}, it is then routine to verify that
+\[
+	\mathrm N_x(B) := \mathrm N_x^0(W\in B), \quad x\in E,B\in \mathscr F
+\]
+	defines a kernel satisfying all the requirements.
+
+\emph{Uniqueness.}
+	Fix an arbitrary $x\in E$. 
+	Suppose that both $\mathrm N_x(\mathrm dw)$ and $ \mathrm N'_x(\mathrm dw)$ are $\sigma$-finite measures on $(\Omega, \mathscr F)$ satisfying the conditions of this lemma. 
+	We say $\mathrm N_x(\mathrm dw)$ and $ \mathrm N'_x(\mathrm dw)$ agree with each other on a given set $B_0\in \mathscr F$ if for any $B\in \mathscr F$ it holds that $\mathrm N_x(B\cap B_0) = \mathrm N'_x(B\cap B_0)$.
+
+	(a) We show that for any $t_0\geq 0$, two measures $\mathrm N_x$ and $\mathrm N_x'$ agrees on $\{X_{t_0}\neq \mathbf 0\}$.
+	To see this let us first fix arbitrary $n\in \mathbb N$, $(t_k)_{k=0}^n \subset [0,\infty)$ and $(f_k)_{k=0}^n \subset \mathcal B(E,[0,\infty])$.
+	From conditions (1), (3) of the  and Campbell's formula we get
+\begin{equation}
+	\mathrm N_x [1 - e^{- \sum_{k=0}^n X_{t_k}(f_k) }]
+	= \mathrm P_{\delta_x}[e^{-\sum_{k=0}^n X_{t_k}(f_k)\mathbf 1_{\{t_k >0\}}}]
+	= \mathrm N'_x [1 - e^{- \sum_{k=0}^n X_{t_k}(f_k) }].
+\end{equation}
+	If we take $f_0\equiv 0$ above we get 
+$
+\mathrm N_x [1 - e^{- \sum_{k=1}^n X_{t_k}(f_k) }] = \mathrm N'_x [1 - e^{- \sum_{k=1}^n X_{t_k}(f_k) }].
+$
+	Subtract this from above we get
+$
+	\mathrm N_x [(1-e^{- X_{t_0}(f_0) }) e^{- \sum_{k=1}^n X_{t_k}(f_k) }]
+	= \mathrm N'_x [(1-e^{- X_{t_0}(f_0) }) e^{- \sum_{k=1}^n X_{t_k}(f_k) }].
+$ 
+	Now taking $f_0 \uparrow \infty$, we get from monotone convergence theorem that
+\[
+	\mathrm N_x [\mathbf 1_{\{X_{t_0}\neq \mathbf 0\}} e^{- \sum_{k=1}^n X_{t_k}(f_k) }]
+	= \mathrm N'_x [\mathbf 1_{\{X_{t_0}\neq \mathbf 0\}} e^{- \sum_{k=1}^n X_{t_k}(f_k) }].
+\]
+	From this and \cite[Theorem 1.17]{Li2011Measure-valued} we know that for any $(B_k)_{k=1}^n \subset \mathscr B_{\mathcal M}$,
+\[
+	\mathrm N_x \Big[\mathbf 1_{\{X_{t_0}\neq \mathbf 0\}} \prod_{k=1}^n \mathbf 1_{\{X_{t_k}\in B_k\}}\Big]
+	= \mathrm N'_x \Big[\mathbf 1_{\{X_{t_0}\neq \mathbf 0\}} \prod_{k=1}^n \mathbf 1_{\{X_{t_k}\in B_k\}}\Big].
+\]
+	Now from \cite[Theorem A.06]{Sharpe1988General}, we have $\mathrm N_x [\mathbf 1_{\{X_{t_0}\neq \mathbf 0\}} F]= \mathrm N'_x [\mathbf 1_{\{X_{t_0}\neq \mathbf 0\}} F]$ for all $F\in \mathrm b\mathscr F$.
+	
+	(b) It is easy to see that if $\mathrm N_x$ and $\mathrm N_x$ agree with each other on both $B_0\in \mathscr F$ and $B_1\in \mathscr F$ then they agree on $B_0\cup B_1$. Using this, (a), and monotone convergence theorem, we can verify that $\mathrm N_x$ and $\mathrm N_x'$ agree with each other on the event \[A:=\bigcup_{t\in \mathbb Q\cap \mathbb R_+}\{X_t \neq \mathbf 0\}.\]
+	Note from condition (2), $\mathrm N_x$ and $\mathrm N_x'$ also agree on $\{\forall t\geq 0, X_t = \mathbf 0\}=A^c$.
+	Therefore they agree with each other on $\Omega$.
+\end{proof}
+%}
 	This family of measures $(\mathrm N_x)_{x\in E}$ is known as the Kuznetsov measures of $X$.
-	It can be verified using Campbell's formula for Poisson random measures that for any $\mu\in \mathcal M$ and $t>0$,
+	It can be verified using Campbell's formula for Poisson random measures that for any $\mu\in \mathcal M(E)$ and $t>0$,
 \begin{equation} \label{eq:E.13}
 	\mu(P_t^\beta f)
 	\overset{\eqref{eq:M.2}}= \mathrm P_\mu[X_t(f)]
@@ -788,13 +915,13 @@ RS: Better delete with 0 as a trap.}\\
 	(\mu\mathrm N) (w_t\neq \mathbf 0)
 	= - \log \mathrm P_{\mu}(X_t = \mathbf 0).
 \end{equation}
-	It follows from \eqref{asp:H1} that for any $\mu\in \mathcal M^o$ there exists a probability measure $\widetilde {\mu \mathrm N}^{(t)}$ on $\mathbb W$ such that
+	It follows from \eqref{asp:H1} that for any $\mu\in \mathcal M(E)^o$ there exists a probability measure $\widetilde {\mu \mathrm N}^{(t)}$ on $(\Omega, \mathscr F)$ such that
 	\begin{align}\label{eq:E.15}
 	& \frac{\widetilde {\mu \mathrm N}^{(t)}(\mathrm dw) }{(\mu \mathrm N)(\mathrm dw)}
-	= \frac{e^{-\lambda t}w_t(\phi)}{\mu(\phi)}, \quad w\in \mathbb W.
+	= \frac{e^{-\lambda t}w_t(\phi)}{\mu(\phi)}, \quad w\in \Omega.
 	\end{align}
 
-	{\bf RS: The following paragraph will need to be changed if we get rid of the Hunt assumption.}
+	%RS: The following paragraph will need to be changed if we get rid of the Hunt assumption.
 	Another ingredient for the spine decomposition theorem is the so-called spine process whose distribution will be given now.
 	Recall that the spatial motion of the superprocess $\{(\xi_t)_{t\geq 0}; (\Pi_x)_{x\in E_\partial}\}$ is an $E_\partial$-valued Hunt process.
 	We will assume, without loss of generality, that $\xi$ is canonical,  i.e., (1) $(\xi_t)_{t\geq 0}$ is the coordinate process of
@@ -846,20 +973,17 @@ Note that
   	$\big\{X, \xi, N, (s_k, y_k,w^{(k)})_{k\in \mathbb N}; \mathrm Q\big\}$ so that:
 \begin{enumerate}[label=(Q\arabic*),ref=Q\arabic*]
 \item \label{asp:Q1}
-	$\{X;\mathrm Q\}$ is a $\mathbb W$-valued random element with distribution $\mathrm P_\nu$;
-{\\\color{red} YX: I suggest put the above term to the end of the item, and say that $X$ is independent of $(\xi, N, (s_k, y_k,w^{(k)})_{k\in \mathbb N}$. Then we do not need to condition on $X$.\\
-RS: Agree. We should also assume that $N$ and $M$ are independent given $\xi$,
-and that $\{(w^{(k)})_{k\in \mathbb N}\}$ is also independent of $N$. We should also make the formulation of the this spine decomposition and the spine decomposition in Section 5 as parallel as possible.}
+	$\{X;\mathrm Q\}$ is a $\Omega$-valued random element with distribution $\mathrm P_\nu$;
+ %YX: I suggest put the above term to the end of the item, and say that $X$ is independent of $(\xi, N, (s_k, y_k,w^{(k)})_{k\in \mathbb N}$. Then we do not need to condition on $X$.
+% RS: Agree. We should also assume that $N$ and $M$ are independent given $\xi$, and that $\{(w^{(k)})_{k\in \mathbb N}\}$ is also independent of $N$. We should also make the formulation of the this spine decomposition and the spine decomposition in Section 5 as parallel as possible.
 \item \label{asp:Q2}
-		$\{\xi = (\xi_t)_{t\in \mathbb R}; \mathrm Q(\cdot | X)\}$
-%	 	 is a two-sided stationary process with
-is a two-sided right continuous stationary Markov process on $E$ with
+		$\{\xi = (\xi_t)_{t\in \mathbb R}; \mathrm Q(\cdot | X)\}$ is a two-sided right continuous stationary Markov process on $E$ with
 		 \[\{(\xi_t)_{t \geq 0}; \mathrm Q(\cdot | X)\} \overset{\text{d}} = \{(\xi_t)_{t \geq 0}; \widetilde{\nu\Pi}\};\]
 \item \label{asp:Q3}
-	$\{N; \mathrm Q(\cdot |X,\xi)\}$ is a Poisson random measure on $\mathbb R\times \mathbb W$ with intensity
+	$\{N; \mathrm Q(\cdot |X,\xi)\}$ is a Poisson random measure on $\mathbb R\times \Omega$ with intensity
 \[
 	2 \sigma(\xi_s)^2 {\mathrm d}s \cdot \mathrm N_{\xi_s}({\mathrm d}w),
-	\quad (s,w)\in \mathbb R\times \mathbb W;
+	\quad (s,w)\in \mathbb R\times \Omega;
 \]
 \item \label{asp:Q4}
 	$(s_k, y_k)_{k\in \mathbb N}$ is a sequence of $\mathbb R \times \mathbb R_+$-valued random elements
@@ -873,7 +997,7 @@ is a Poisson random measure on $\mathbb R \times \mathbb R_+$ with intensity
 	\mathrm ds \cdot y \pi(\xi_s, \mathrm dy), \quad (s,y)\in \mathbb R \times \mathbb R_+;
 \]
 \item \label{asp:Q5}
-	$\{(w^{(k)})_{k\in \mathbb N}; \mathrm Q(\cdot|\mathscr G)\}$ is a sequence of independent $\mathbb W$-valued random elements such that
+	$\{(w^{(k)})_{k\in \mathbb N}; \mathrm Q(\cdot|\mathscr G)\}$ is a sequence of independent $\Omega$-valued random elements such that
 \[
 	\{w^{(k)}; \mathrm Q(\cdot| \mathscr G)\}
 	\overset{\text{d}}\sim \mathrm P_{y_k\delta_{\xi_{s_k}}},
@@ -890,7 +1014,7 @@ is a Poisson random measure on $\mathbb R \times \mathbb R_+$ with intensity
 	For $-\infty \leq a < b \leq t<\infty$, define
 \begin{equation} \label{eq:E.4}
 	Z_t^{(a,b]}
-	:= \int_{(a,b]\times \mathbb W} w_{t-s} N(\mathrm ds,\mathrm dw) + \sum_{k\in \mathbb N} w^{(k)}_{t-s_k} \mathbf 1_{\{s_k \in (a,b]\}}.
+	:= \int_{(a,b]\times \Omega} w_{t-s} N(\mathrm ds,\mathrm dw) + \sum_{k\in \mathbb N} w^{(k)}_{t-s_k} \mathbf 1_{\{s_k \in (a,b]\}}.
 \end{equation}
 	From \eqref{asp:Q4}, \eqref{asp:Q5} and \cite[Theorem 3.2(i)]{Kallenberg2017Random} we know that
 \begin{equation}\label{eq:E.45}
@@ -899,9 +1023,9 @@ is a Poisson random measure on $\mathbb R \times \mathbb R_+$ with intensity
 \[
 	R(\mathrm ds,\mathrm dw)
 	:=\sum_{k\in \mathbb N} \delta_{(s_k, w^{(k)})}(\mathrm ds,\mathrm dw),
-	\quad (s,w)\in \mathbb R\times \mathbb W
+	\quad (s,w)\in \mathbb R\times \Omega
 \]
-	is a Poisson random measure on $\mathbb R \times \mathbb W$ with intensity
+	is a Poisson random measure on $\mathbb R \times \Omega$ with intensity
 	\[
 	\mathrm ds \cdot \int_{y\in (0,\infty)} y \pi(\xi_s, \mathrm dy)\cdot \mathrm P_{y\delta_{\xi_s}}(\mathrm dw).
 	\]
@@ -915,7 +1039,7 @@ is a Poisson random measure on $\mathbb R \times \mathbb R_+$ with intensity
 	\]
 	and for each $T\geq 0$,
 \[
-	\{(Z_t^{(0,t]})_{t\in [0,T]}; \mathrm Q\} \overset{\text{f.d.d.}} \sim \{ (X_t)_{t\in [0,T]}; \widetilde{{\color{red}\nu}\mathrm N}^{(T)}\}.
+	\{(Z_t^{(0,t]})_{t\in [0,T]}; \mathrm Q\} \overset{\text{f.d.d.}} \sim \{ (X_t)_{t\in [0,T]}; \widetilde{\nu \mathrm N}^{(T)}\}.
 \]
 \end{lem}
 	We will also need the following two propositions whose proofs are postponed later.
@@ -994,8 +1118,8 @@ Note also that
 	\end{equation}
 
 \emph{Step 3.}
-	Let $k$ be given by Step 2, we show that \eqref{eq:M.4} holds for all $\mu\in \mathcal M^o$.
-	In fact, note that for any $\mu\in \mathcal M^o$,
+	Let $k$ be given by Step 2, we show that \eqref{eq:M.4} holds for all $\mu\in \mathcal M(E)^o$.
+	In fact, note that for any $\mu\in \mathcal M(E)^o$,
 \begin{align}
 	\lim_{t\to \infty}\frac{\mathrm P_\mu(X_t \neq \mathbf 0)}{\mathrm P_\nu(X_t \neq \mathbf 0)}
 	\overset{\eqref{eq:Q.04}} = \lim_{t\to \infty}\frac{1- e^{-\mu(v_t)}}{1- e^{-\nu(v_t)}}
@@ -1009,9 +1133,9 @@ Note also that
 	Assume that $\nu(l)<\infty$.
 	Notice that
 \begin{align}
-	&\mathrm Q\Big[\int_{(-\infty,0]\times \mathbb W}w_{-s}(\phi) N({\mathrm d}s, {\mathrm d}w) \Big]
-	= \mathrm Q\bigg[\mathrm Q\Big[\int_{(-\infty,0]\times \mathbb W}w_{-s}(\phi) N({\mathrm d}s, {\mathrm d}w) \Big | X, \xi \Big]\bigg]
-	\\& \overset{\text{\eqref{asp:Q3},Campbell}}= \mathrm Q\Big[\int_{(-\infty,0]\times \mathbb W}w_{-s}(\phi) 2 \sigma(\xi_s)^2 {\mathrm d}s \cdot \mathrm N_{\xi_s}({\mathrm d}w) \Big]
+	&\mathrm Q\Big[\int_{(-\infty,0]\times \Omega}w_{-s}(\phi) N({\mathrm d}s, {\mathrm d}w) \Big]
+	= \mathrm Q\bigg[\mathrm Q\Big[\int_{(-\infty,0]\times \Omega}w_{-s}(\phi) N({\mathrm d}s, {\mathrm d}w) \Big | X, \xi \Big]\bigg]
+	\\& \overset{\text{\eqref{asp:Q3},Campbell}}= \mathrm Q\Big[\int_{(-\infty,0]\times \Omega}w_{-s}(\phi) 2 \sigma(\xi_s)^2 {\mathrm d}s \cdot \mathrm N_{\xi_s}({\mathrm d}w) \Big]
 	\\& \overset{\eqref{eq:E.13}, \eqref{asp:H1}}=\mathrm Q \Big[\int^0_{-\infty} e^{-\lambda s} 2\sigma(\xi_s)^2 \phi(\xi_s) \mathrm ds\Big]
 	\\&\label{eq:E.64}\overset{\text{\eqref{asp:Q2}, Proposition \ref{thm:E.15}}}= 2\int^0_{-\infty} e^{-\lambda s} \widetilde\nu(\sigma^2 \phi) \mathrm ds
 	<\infty,
@@ -1033,7 +1157,7 @@ Note also that
 \end{equation}
 	Now, we have
 \begin{equation}
-	Z_0^{(-\infty, 0]}(\phi) \overset{\eqref{eq:E.4}}= \int_{(-\infty,0]\times \mathbb W}w_{-s}(\phi) N({\mathrm d}s, {\mathrm d}w) + \sum_{k\in \mathbb N} w^{(k)}_{-s_k}(\phi) \mathbf 1_{s_k \leq 0}
+	Z_0^{(-\infty, 0]}(\phi) \overset{\eqref{eq:E.4}}= \int_{(-\infty,0]\times \Omega}w_{-s}(\phi) N({\mathrm d}s, {\mathrm d}w) + \sum_{k\in \mathbb N} w^{(k)}_{-s_k}(\phi) \mathbf 1_{s_k \leq 0}
 	\overset{\eqref{eq:E.64}} < \infty.
 \end{equation}
 	Therefore
@@ -1044,14 +1168,14 @@ Note also that
 \emph{Final Step.} We show that $\nu(l)<\infty$ is a necessary condition for $k>0$.
 	We claim that if $\nu(l) = \infty$, then there exists an $\theta>0$ such that,
 \begin{equation} \label{eq:E.7}
-	\int_{\mathbb R\times \mathbb W}\mathbf 1_{\{s\leq 0, w_{-s}(\phi)>\theta\}} R(\mathrm ds,\mathrm dw)
+	\int_{\mathbb R\times \Omega}\mathbf 1_{\{s\leq 0, w_{-s}(\phi)>\theta\}} R(\mathrm ds,\mathrm dw)
 	= \infty,
 	\quad \mathrm Q\text{-a.s.}
 \end{equation}
 	Using this claim, we have
 \begin{equation}
 	Z_0^{(-\infty, 0]}(\phi)
-	\overset{\eqref{eq:E.4}} \geq \int_{\mathbb R\times \mathbb W} \mathbf 1_{\{s\leq 0, w_{-s}(\phi)>\theta\}} w_{-s}(\phi) R(\mathrm ds,\mathrm dw)
+	\overset{\eqref{eq:E.4}} \geq \int_{\mathbb R\times \Omega} \mathbf 1_{\{s\leq 0, w_{-s}(\phi)>\theta\}} w_{-s}(\phi) R(\mathrm ds,\mathrm dw)
 	= \infty,
 	\quad \mathrm Q\text{-a.s.}
 \end{equation}
@@ -1063,9 +1187,7 @@ Note also that
 	Let $s_0, \epsilon, \theta, \delta > 0$ be given as in Proposition \ref{thm:E.5}.
 	We have $\mathrm Q$-almost surely,
 \begin{align}
-	  & \int_{(s,w)\in \mathbb R\times \mathbb W} 
-%	  (1 \wedge \mathbf 1_{{\color{red}\{s\leq 0, w_{-s}(\phi)> \theta\}}}) 
-\mathbf 1_{\{s\leq 0, w_{-s}(\phi)> \theta\}}
+	  & \int_{(s,w)\in \mathbb R\times \Omega} \mathbf 1_{\{s\leq 0, w_{-s}(\phi)> \theta\}}
 	  \mathrm ds  \int_{y\in (0,\infty)} y \pi(\xi_s, \mathrm dy) \mathrm P_{y\delta_{\xi_s}}(\mathrm dw)
 	\\&= \int_{-\infty}^0 \mathrm ds \int_0^\infty  y \pi(\xi_s, \mathrm dy) \mathrm P_{y \sigma_{\xi_s}}\big(w_{-s}(\phi)>\theta\big)
 	\\&\overset{\text{Proposition \ref{thm:E.5}}}\geq \delta \int_{-\infty}^{-s_0} \mathrm ds
@@ -1074,7 +1196,7 @@ Note also that
 \end{align}
 	Now from \eqref{eq:E.45} and \cite[Theorem 2.7(i)]{Kyprianou2014Fluctuations} we know that $\mathrm Q$-almost surely
 \begin{equation}
-	\mathrm Q \Big(\int_{\mathbb R\times \mathbb W}\mathbf 1_{\{s\leq 0, w_{-s}(\phi)>\theta\}} R(\mathrm ds,\mathrm dw)
+	\mathrm Q \Big(\int_{\mathbb R\times \Omega}\mathbf 1_{\{s\leq 0, w_{-s}(\phi)>\theta\}} R(\mathrm ds,\mathrm dw)
 	= \infty\Big| X, \xi, N\Big)  = 1.
 \end{equation}
 	This implies the desired claim.
@@ -1093,10 +1215,13 @@ Note also that
 	Also, using \eqref{asp:H1}, it can be verified that
 \begin{itemize}
 	\item
+%{	
 	$\widetilde \nu$ is 
-%	{\color{red}the invariant probability measure} corresponding to 
-the invariant distribution of the
+% {\color{red}the invariant probability measure} corresponding to 
+% the invariant distribution of the
+	an invariant measure of the
 	semigroup $(S_t)_{t\geq 0}$.
+%}
 \end{itemize}
 	Now we claim that for any $\varphi \in L^2(\widetilde \nu)$ satisfying $S_t \varphi = \varphi$ in $L^2(E,\widetilde \nu)$ for all $t\geq 0$, it holds that $\varphi$ is a constant $\widetilde \nu$-a.e.
 	In fact for $\widetilde \nu$-almost every $x\in E$, we have
@@ -1123,12 +1248,11 @@ Let $\delta\in (0,\epsilon)$ be arbitrary.
 	where
 \begin{align}
 	&\text{I}
-	:=\int_{\mathbb R\times \mathbb W} \mathbf 1_{\{y\leq \frac{e^{-\delta s}}{\phi(\xi_{s})},s\leq 0\}}e^{\epsilon s}y\phi(\xi_{s}) M(\mathrm ds,\mathrm dw),
+	:=\int_{\mathbb R\times \Omega} \mathbf 1_{\{y\leq \frac{e^{-\delta s}}{\phi(\xi_{s})},s\leq 0\}}e^{\epsilon s}y\phi(\xi_{s}) M(\mathrm ds,\mathrm dw),
 	\\ & \text{II}
-	:= \int_{\mathbb R\times \mathbb W} \mathbf 1_{\{y> \frac{e^{-\delta s}}{\phi(\xi_{s})},s\leq 0\}}e^{\epsilon s}y\phi(\xi_{s}) M(\mathrm ds,\mathrm dw).
+	:= \int_{\mathbb R\times \Omega} \mathbf 1_{\{y> \frac{e^{-\delta s}}{\phi(\xi_{s})},s\leq 0\}}e^{\epsilon s}y\phi(\xi_{s}) M(\mathrm ds,\mathrm dw).
 \end{align}
 
-%\emph{Step 1.} We show that $\text{II}< \infty$, $\mathrm Q$-a.s.
 We first show that $\text{II}< \infty$, $\mathrm Q$-a.s.
 	Note that
 \begin{align}
@@ -1141,14 +1265,12 @@ We first show that $\text{II}< \infty$, $\mathrm Q$-a.s.
 \end{align}
 	Therefore, we have $\mathrm Q$-almost surely
 \begin{align}
-&\int_{(s,y)\in \mathbb R\times (0,\infty)} \mathbf 1_{\{y> \frac{e^{-\delta s}}{\phi(\xi_{s})},s\leq 0\}} \Big(1\wedge (e^{\epsilon s}y\phi(\xi_{s}))\Big) \mathrm ds \cdot y \pi(\xi_s, \mathrm dy)
+&\int_{(s,y)\in \mathbb R\times (0,\infty)} \mathbf 1_{\{y> \frac{e^{-\delta s}}{\phi(\xi_{s})},s\leq 0\}} \Big(1\wedge \big(e^{\epsilon s}y\phi(\xi_{s})\big)\Big) \mathrm ds \cdot y \pi(\xi_s, \mathrm dy)
 	\\&\leq   \int_{(s,y)\in \mathbb R\times (0,\infty)}  \mathbf 1_{\{y> \frac{e^{-\delta s}}{\phi(\xi_{s})},s\leq 0\}} \mathrm ds\cdot y \pi(\xi_s, \mathrm dy)
 	< \infty.
 \end{align}
 	Now from \eqref{asp:Q4} and \cite[Theorem 2.7(i)]{Kyprianou2014Fluctuations} we have $\mathrm Q(\text{II} < \infty | X, \xi, N) = 1$.
-	
-%\emph{Step 2.}
-%	We show that $\text{I} < \infty$, $\mathrm Q$-a.s.
+
 We now show that $\text{I} < \infty$, $\mathrm Q$-a.s.
 	In fact,
 \begin{align}
@@ -1163,7 +1285,6 @@ We now show that $\text{I} < \infty$, $\mathrm Q$-a.s.
 	\end{multlined}
 	\\&\overset{\eqref{eq:M.01}}<\infty.
 \end{align}
-	
 	
 	(2) Suppose that $\nu(l)=\infty$.
 	Take
@@ -1255,8 +1376,6 @@ We now show that $\text{I} < \infty$, $\mathrm Q$-a.s.
 	:= 2\mathrm Q\Big[\int_{-T}^0\mathrm dt \int_{\frac{Ke^{-\epsilon t}}{\phi(\xi_t)}}^\infty r \pi(\xi_t, \mathrm dr) \int_{(t+t_0)\wedge 0}^0\mathrm ds\int_{\frac{Ke^{-\epsilon s}}{\phi(\xi_s)}}^\infty u \pi(\xi_s, \mathrm du) \Big].
 \end{align}
 	
-%\emph{Substep 4.1.}
-%	We show that 
  We first show that
 	there exists a constant $C'>0$ such that for all $T>t_0$, it holds that
 $
@@ -1274,8 +1393,6 @@ $
 	\frac{2 t_0}{\mathrm Q[\eta_{t_0}]} \Big( \sup_{x\in E} \int_{1}^\infty u \pi(x,\mathrm du)\Big) < \infty.
 \]
 
-%\emph{Substep 4.2.}
-%	We show that 
 We now show that
 	for any $T>t_0$, $\text{IV} \leq 4 \mathrm Q[\eta_T]^2$.
 	Let us fix $T>t_0$ and verify that
@@ -1297,7 +1414,6 @@ We now show that
 	\overset{\eqref{eq:M.01}}<\infty.
 \end{equation}
 	Note for any $t\in (-T,-t_0)$ and $s\in (t+t_0,0)$, we have $s-t\geq t_0$, 
-	%which with Step 2, 
 	which, together with Step 3, 
 	implies that for any $y\in E$, $S_{s-t}h_s(y) \leq 2 \widetilde\nu(h_s)$.
 	Therefore,
@@ -1318,7 +1434,6 @@ We now show that
 	\geq \mathrm Q[\eta_T] - \mathrm Q\Big[\frac{1}{2}\mathrm Q[\eta_T]\mathbf 1_{\eta_T< \frac{1}{2}\mathrm Q[\eta_T]}\Big]
 	\geq \frac{1}{2}\mathrm Q[\eta_T].
 \end{align}
-%	Let $t_0$ be given in Step 2.
 	Let $t_0$ be as in Step 3.
 	Then, there exists a $\widetilde C>0$ such that for any $T\geq t_0$,
 \begin{align}\label{eq:E.94}
@@ -1348,10 +1463,7 @@ We now show that
 	:= \Big\{\int_{-\infty}^{0} \mathrm ds \int_{\frac{Ke^{-\epsilon s}}{\phi(\xi_{s+t})}}^\infty y\pi(\xi_{s+t},\mathrm dy) = \infty\Big\}, \quad t\in \mathbb R.
 \]
 	
-%\emph{Substep 6.1.}
-%	We show that 
-(a) We first show that
-	for $r\in \mathbb R$ and $t> 0$, $A_r \subset A_{r-t}$.
+	(a) We first show that for $r\in \mathbb R$ and $t> 0$, $A_r \subset A_{r-t}$.
 	In fact,  on the event $A_r$ we have
 \begin{align}
 	&\int_{-\infty}^0 \mathrm ds \int_{\frac{Ke^{-\epsilon s}}{\phi(\xi_{s+r-t})}}^\infty y\pi(\xi_{s+r-t},\mathrm dy)
@@ -1362,8 +1474,6 @@ We now show that
 	\overset{\eqref{eq:M.01}}= \infty.
 \end{align}
 
-%\emph{Substep 6.2.}
-%	We show that 
 (b) We show that
 	for any $r\in \mathbb R$ and $t\geq 0$, $\mathrm Q$-almost surely,
 \begin{align}
@@ -1377,12 +1487,10 @@ We now show that
 	\\&\overset{\text{\eqref{asp:Q2},Proposition \ref{thm:E.15}}} = \int_{-\infty}^0 \mathrm ds \int_E \widetilde \nu(\mathrm dx) \int^{\frac{Ke^{-\epsilon s}}{\phi(x)}}_\frac{Ke^{-\epsilon (s+t)}}{\phi(x)} y\pi(x,\mathrm dy)
 	\\&= \int_E \widetilde \nu(\mathrm dx) \int^\infty_\frac{Ke^{-\epsilon t}}{\phi(x)} y\pi(x,\mathrm dy) \int_{-\frac{1}{\epsilon}\ln \frac{y\phi(x) e^{\epsilon t}}{K}}^{-\frac{1}{\epsilon}\ln\frac{y\phi(x)}{K}} \mathrm ds
 	\\&= t\int_E \widetilde \nu(\mathrm dx) \int^\infty_\frac{Ke^{-\epsilon t}}{\phi(x)} y\pi(x,\mathrm dy)
-	\overset{\eqref{eq:E.934}}\leq t \cdot \sup_{x\in E} \int^\infty_{\color{red}{e^{-\epsilon t}}} y\pi(x,\mathrm dy)
+	\overset{\eqref{eq:E.934}}\leq t \cdot \sup_{x\in E} \int^\infty_{e^{-\epsilon t}} y\pi(x,\mathrm dy)
 	\overset{\eqref{eq:M.01}}< \infty.
 \end{align}
 
-%\emph{Substep 6.3.}
-%	We show that 
 (c) We now show that
 	for $r\in \mathbb R$ and $t> 0$, $A_r \cap \Omega_{r,t} \subset A_{r+t}$ where $\Omega_{r,t}$ is the event so that \eqref{eq:E.95} holds.
 	In fact,  on event $A_r\cap \Omega_{r,t}$ we have
@@ -1394,19 +1502,15 @@ We now show that
 	= \infty.
 \end{align}
 
-%\emph{Substep 6.4.}
 (d) 
 	For any $r<t$ in $\mathbb R$, 
-	%from Substep 6.1, 
 	from (a) above,
 	we know that $\mathrm Q(A_t\setminus A_r) = 0$.
-	%From Substeps 6.2 and 6.3, 
 	From (b) and (c) above 
 	we know that $\mathrm Q(A_r\setminus A_t) = 0$.
 	Therefore, the desired result in Step 6 follows.
 
 \emph{Final Step.}
-%	From Step 5, Step 6 
 From steps 5, 6
 	and \cite[Theorem 1.2.4.(i)]{DaPratoZabczyk1996Ergodicity}, we get that
 \begin{equation} \label{eq:E.96}
@@ -1430,7 +1534,7 @@ From steps 5, 6
 \begin{proof}[Proof of Proposition \ref{thm:E.5}]
 	From \cite[(3.20)]{LiuRenSongSun2020} we know that there exists $t_0,a,\epsilon>0$ such that for all $s\geq t_0$, we have $\nu(V_{s}\phi) \geq a \exp(-\epsilon s)$.
 	According to \cite[Proposition 2.2]{LiuRenSongSun2020} we know that there exist $s_0'>0$, such that for all $s\geq s_0'$ and $x\in E$ we have $V_{s}\phi(x)\ge\frac{1}{2}\phi(x)\nu(V_{s}\phi)$.
-	Now take $s_0:= t_0 \vee s_0'$, we have for all $s\geq s_0$ and $x\in E$, $V_{s}\phi(x)\geq {\color{red}\dfrac{a}{2}}\phi(x)e^{-\epsilon s}$.
+	Now take $s_0:= t_0 \vee s_0'$, we have for all $s\geq s_0$ and $x\in E$, $V_{s}\phi(x)\geq \dfrac{a}{2}\phi(x)e^{-\epsilon s}$.
 	Let $\theta \in (0,a/2)$.
 	We have for any $s>s_0$, $x\in E$ and $y\geq \frac{e^{\epsilon s}}{\phi(x)}$ that
 \begin{align}
@@ -1495,8 +1599,8 @@ The following lemma is \cite[Proposition 2.2]{LiuRenSongSun2020}.
 	Suppose that  \eqref{asp:H1}, \eqref{asp:H2} and \eqref{asp:H3} hold.
 	\begin{enumerate}
 		\item	
-		For any  $ t>0$ and $ \mu \in \mathcal M_f(E)$, $\langle v(t,\cdot),\mu\rangle <\infty.$
-		\item	For any $\mu \in \mathcal M_f(E)$,
+		For any  $ t>0$ and $ \mu \in \mathcal M(E)_f(E)$, $\langle v(t,\cdot),\mu\rangle <\infty.$
+		\item	For any $\mu \in \mathcal M(E)_f(E)$,
 		\[
 		\lim_{t\rightarrow\infty}\langle v(t,\cdot),\mu\rangle=0.
 		\]
@@ -1586,7 +1690,7 @@ Therefore, for $r\in[\lambda, 0)$,
 where $\alpha=\lambda/r.$
 Thus for any $0<\gamma<\alpha$,
 \[
-{\mathbf Q}_r\left(\mu(\phi)^{\gamma}\right)=\int_{{\mathcal M}_f(E)}\mu(\phi)^\gamma\mathbf Q_r(d\mu)<\infty.
+{\mathbf Q}_r\left(\mu(\phi)^{\gamma}\right)=\int_{{\mathcal M(E)}_f(E)}\mu(\phi)^\gamma\mathbf Q_r(d\mu)<\infty.
 \]
 
 (2)
@@ -1607,7 +1711,7 @@ using  \eqref{eq:E.53} and  \eqref{eq:E.54}, we have
 %Note that for the continuum immigration part,
 Note that
 \[
-\mathrm Q\left(\int_{(-\infty, 0]\times \mathbb W}w_{-s}(f)N(\mathrm ds, \mathrm dw)\right)=
+\mathrm Q\left(\int_{(-\infty, 0]\times \Omega}w_{-s}(f)N(\mathrm ds, \mathrm dw)\right)=
 \int^0_{-\infty}2\langle \sigma^2 P^{\beta}_{-s}f,\phi\nu\rangle \mathrm ds
 \leq 2\|\sigma^2\phi\|_\infty\dfrac{\langle f,\nu\rangle }{-\lambda}<\infty.
 \]
@@ -1625,7 +1729,7 @@ e^{-\lambda s_k}\phi(\xi_{s_k})\nu(f)\\
 e^{-\lambda s_k}\phi(\xi_{s_k})<\infty, \quad \mathrm Q-\text{a.s.}
 \end{eqnarray*}
  Thus in this case, the limit measure
-$Z_0^{(-\infty, 0]}\in \mathcal M$.
+$Z_0^{(-\infty, 0]}\in \mathcal M(E)$.
  Denote the distribution of $Z_0^{(-\infty, 0]}$ under
   ${\mathrm Q}$ by $\mathbf Q$,
   which is also the limit distribution of $X_t$ under $\widetilde{\mathrm P}_\nu$ as $t\to\infty$.  
@@ -1634,33 +1738,33 @@ $Z_0^{(-\infty, 0]}\in \mathcal M$.
 \[
 \lim_{t\rightarrow\infty}e^{-\lambda t}\mathrm P_\nu\left(\exp\{-\langle f, X_t\rangle \};
 X_t\neq \mathbf 0\right)=
-%\int_{{\mathcal M}_f(E)}\frac{1}{\mu(\phi)}e^{-\mu(f)}\mathbf Q(d\mu).
-\int_{{\mathcal M}}\frac{1}{\mu(\phi)}e^{-\mu(f)}\mathbf Q(d\mu).
+%\int_{{\mathcal M(E)}_f(E)}\frac{1}{\mu(\phi)}e^{-\mu(f)}\mathbf Q(d\mu).
+\int_{{\mathcal M(E)}}\frac{1}{\mu(\phi)}e^{-\mu(f)}\mathbf Q(d\mu).
 \]
 In Theorem \ref{thm:E} we have shown that
 \[
 \lim_{t\rightarrow\infty}e^{-\lambda t}\mathrm P_\nu(X_t\neq \mathbf 0)=k
-%=\int_{{\mathcal M}_f(E)}\frac{1}{\mu(\phi)}\mathbf Q(d\mu)<\infty.
-=\int_{{\mathcal M}}\frac{1}{\mu(\phi)}\mathbf Q(d\mu)<\infty.
+%=\int_{{\mathcal M(E)}_f(E)}\frac{1}{\mu(\phi)}\mathbf Q(d\mu)<\infty.
+=\int_{{\mathcal M(E)}}\frac{1}{\mu(\phi)}\mathbf Q(d\mu)<\infty.
 \]
 Thus by the definition of the Yaglom distribution ${\mathbf Q}_\lambda $,
 \begin{align*}
-&\int_{\mathcal M}\exp\{-\langle f, \mu\rangle \}\mathbf Q_\lambda(\mathrm d\mu)
+&\int_{\mathcal M(E)}\exp\{-\langle f, \mu\rangle \}\mathbf Q_\lambda(\mathrm d\mu)
 =\lim_{t\rightarrow\infty}\mathrm P_\nu\left(\exp\{-\langle f, X_t\rangle \}\Big|X_t\neq \mathbf 0\right)\\
 &=\lim_{t\rightarrow\infty}\dfrac{\mathrm P_\nu\left(\exp\{-\langle f, X_t\rangle \};X_t\neq \mathbf 0\right)}{\mathrm P_\nu(X_t\neq \mathbf 0)}\\
 &=\dfrac{\lim_{t\rightarrow\infty}e^{-\lambda t}\mathrm P_\nu\left(\exp\{-\langle f, X_t\rangle \};X_t\neq \mathbf 0\right)}{\lim_{t\rightarrow\infty}e^{-\lambda t}\mathrm P_\nu(X_t\neq \mathbf 0)}\\
-&=\dfrac{\int_{{\mathcal M}_f(E)}\mu(\phi)^{-1}e^{-\mu(f)}\mathbf Q(d\mu)}{\int_{{\mathcal M}_f(E)}\mu(\phi)^{-1}\mathbf Q(d\mu)},
+&=\dfrac{\int_{{\mathcal M(E)}_f(E)}\mu(\phi)^{-1}e^{-\mu(f)}\mathbf Q(d\mu)}{\int_{{\mathcal M(E)}_f(E)}\mu(\phi)^{-1}\mathbf Q(d\mu)},
 \end{align*}
 which says that the Yaglom distribution ${\mathbf Q}_\lambda$ can be written as
 \begin{equation}\label{rep: yaglom}
 \mathbf Q_\lambda(\cdot)=\dfrac{1}{k}{\mathbf Q}\left(\dfrac{1}{\mu(\phi)}; \mu\in\cdot\right).
-%\int_{\mathcal M}\mu(f)\mathbf Q_\lambda(\mathrm d\mu)=\dfrac{1}{k}\int_{\mathcal M}\frac{\mu(f)}{\mu(\phi)}\mathbf Q(\mathrm d\mu).
+%\int_{\mathcal M(E)}\mu(f)\mathbf Q_\lambda(\mathrm d\mu)=\dfrac{1}{k}\int_{\mathcal M(E)}\frac{\mu(f)}{\mu(\phi)}\mathbf Q(\mathrm d\mu).
 % YX: I changed back to the previous version, because they are not equavalent.
 \end{equation}
 Consequently
 \begin{equation}\label{ident: k}
 \mathbf Q_\lambda(\mu(\phi))=\dfrac{1}{k}{\mathbf Q}\left(\dfrac{\mu(\phi)}{\mu(\phi) }\right)=\dfrac{1}{k}<\infty.
-%YX \int_{\mathcal M}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)=1.
+%YX \int_{\mathcal M(E)}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)=1.
 \end{equation}
 
 
@@ -1671,26 +1775,26 @@ which implies that
  $\lim_{t\to\infty}e^{-\lambda t}\langle v(t),\nu\rangle=0$.  Since for any $s>0$,  $1-e^{-s}\leq s$, we have
 $$G(\langle v(t),\nu\rangle\phi)\geq 1-e^{-G(\langle v(t),\nu\rangle\phi)}.$$
 Also note that $\langle v(t),\nu\rangle
-\int_{\mathcal M}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)=G(\langle v(t),\nu\rangle\phi).$
+\int_{\mathcal M(E)}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)=G(\langle v(t),\nu\rangle\phi).$
 Thus  for $t>T_0$,
 \[
-\int_{\mathcal M}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)
+\int_{\mathcal M(E)}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)
 \geq \dfrac{1-e^{-G(\langle v(t),\nu\rangle\phi)}}{\langle v(t),\nu\rangle}.
 \]
  By \eqref{one point ratio limit} with $s=1$,
  there is some $T_0>0$ such that for $t>T_0$, $v(t+1,x)\leq 2\langle v(t),\nu\rangle\phi(x)$, $x\in E$.
  Therefore, as $t\to\infty$,
  \[
-\int_{\mathcal M}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)
+\int_{\mathcal M(E)}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)
 \geq \dfrac{1-e^{-G(\frac{1}{2}v(t+1,x))}}{\langle v(t),\nu\rangle}\overset{\text{monotonicity}}\geq
 \dfrac{1-e^{-G(v(t+1,x))}}{2\langle v(t),\nu\rangle}
 =\dfrac{e^{\lambda(t+1)}}{2\langle v(t),\nu\rangle}\to\infty,
 \]
 which implies that
-$\int_{\mathcal M}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)=\infty$.
+$\int_{\mathcal M(E)}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)=\infty$.
 
 (3)
-Recall that $U^{(r)}$ stands for an $\mathcal M$-valued random element with distribution $\mathbf Q_r$. Let $Y_r=\langle\phi, U^{(r)}\rangle$, then $Y_r\geq 0$.
+Recall that $U^{(r)}$ stands for an $\mathcal M(E)$-valued random element with distribution $\mathbf Q_r$. Let $Y_r=\langle\phi, U^{(r)}\rangle$, then $Y_r\geq 0$.
 Define $g(u)=\mathbf Q_\lambda\left(e^{-uY_\lambda}\right),\, u\geq 0$.
 It follows from Lemma \ref{prop:G} (2) that
 $$
@@ -1760,21 +1864,21 @@ Combining this with \eqref{e:3} we immediately get the desired result.
  \[\{(\xi_t)_{t \geq 0}; \mathrm Q_\mu\} \overset{\text{d}} = \{(\xi_t)_{t \geq 0}; \widetilde{\mu\Pi}\};\]
  }
 
-In spirit of \cite{RenSongSun2020Spine}, for any $\mu\in \mathcal M^0$, let
+In spirit of \cite{RenSongSun2020Spine}, for any $\mu\in \mathcal M(E)^0$, let
 $\{(\xi_t)_{t\geq 0}, \mathbf N^\xi; \mathrm Q_\mu\}$ be a spine decomposition of $\{(w_t)_{t\geq 0}; \widetilde {\mathrm N}_\mu\}$, i.e.
 (i) $\{(\xi_t)_{t\geq 0}; \mathrm Q_\mu\} \overset{d}= \{(\xi_t)_{t\geq 0}; \widetilde \Pi_{\mu} \}$, and $\{(\xi_t)_{t\geq 0}; \mathrm Q_\mu\}$ is called the {\it spine process};
 (ii) given the path of the spine
 $\{(\xi_t)_{t\geq 0}; \mathrm Q_\mu\}$,
-$\{\mathbf N^\xi; \mathrm Q_\mu\}$ is a Poisson random measure on $[0,\infty) \times \mathbb W$ with intensity
+$\{\mathbf N^\xi; \mathrm Q_\mu\}$ is a Poisson random measure on $[0,\infty) \times \Omega$ with intensity
 $$
 2 \sigma(\xi_s)^2 \mathrm ds \cdot \mathrm N_{\xi_s}(\mathrm dw)+ \mathrm ds \cdot \int_{(0,\infty)} y \mathrm P_{y\delta_{\xi_s}}(X\in \mathrm dw) \pi(\xi_s, \mathrm dy).
 $$
 Then according to \cite{RenSongSun2020Spine}, we have that
 \begin{align}
-	& \{(w_t)_{t\geq 0}; \widetilde{\mathrm N}_\mu \} \overset{{f.d.d.}} = \Big\{ \Big( \int_{[0,t)\times \mathbb W} w_{t-s} \mathbf N^\xi(\mathrm ds, \mathrm dw) \Big)_{t\geq 0} ; \mathrm Q_\mu\Big\}.
+	& \{(w_t)_{t\geq 0}; \widetilde{\mathrm N}_\mu \} \overset{{f.d.d.}} = \Big\{ \Big( \int_{[0,t)\times \Omega} w_{t-s} \mathbf N^\xi(\mathrm ds, \mathrm dw) \Big)_{t\geq 0} ; \mathrm Q_\mu\Big\}.
 \end{align}
 Define\begin{align}
-	& Z_t:= \int_{[0,t)\times \mathbb W} w_{t-s} \mathbf N^\xi(\mathrm ds, \mathrm dw), \quad t\geq 0.
+	& Z_t:= \int_{[0,t)\times \Omega} w_{t-s} \mathbf N^\xi(\mathrm ds, \mathrm dw), \quad t\geq 0.
 \end{align}
 According to \cite{RenSongSun2020Spine} and \cite{RenSongYang2016Spine},  we have
 \begin{equation}\label{spine-decom1}
@@ -1793,20 +1897,20 @@ We say $\{(\xi_t)_{t\geq 0}, (X^{\mathrm n, \sigma})_{\sigma\in \mathcal D^\math
 	\item
 	The \emph{spine process} $\{(\xi_t)_{t\geq 0}; \mathrm Q_\mu\}$ is a copy of $\{(Y_t)_{t\geq 0}; \widetilde \Pi_{\phi\cdot\mu}\}$.
 	\item
-	Given $\{(\xi_t)_{t\geq 0}; \mathrm Q_\mu\}$, \emph{the continuum immigration} $\{ (X^{\mathrm n,\sigma})_{\sigma \in \mathcal D^\mathrm n}; \mathrm Q_\mu(\cdot |\xi)\}$ is a $\mathbb W$-valued point process such that
+	Given $\{(\xi_t)_{t\geq 0}; \mathrm Q_\mu\}$, \emph{the continuum immigration} $\{ (X^{\mathrm n,\sigma})_{\sigma \in \mathcal D^\mathrm n}; \mathrm Q_\mu(\cdot |\xi)\}$ is a $\Omega$-valued point process such that
 	\[
 	\mathrm n(\mathrm ds, \mathrm dw) := \sum_{\sigma\in \mathcal D^{\mathrm n}} \delta_{(\sigma, X^{\mathrm n,\sigma})}(\mathrm ds, \mathrm dw)
 	\]
-	is a Poisson random measure on $[0,T]\times \mathbb W$ with intensity
+	is a Poisson random measure on $[0,T]\times \Omega$ with intensity
 	\[
 	\mathbf n(\mathrm ds, \mathrm dw):= 2 \sigma(\xi_s)^2 \mathrm ds \cdot \mathrm N_{\xi_s}(\mathrm dw).
 	\]
 	\item
-	Given $\{(\xi_t)_{t\geq 0}; \mathrm Q_\mu\}$, \emph{the discrete immigration} $\{(X^{\mathrm m,\sigma})_{\sigma\in \mathcal D^{\mathrm m}}; \mathrm Q_\mu(\cdot |\xi)\}$ is a $\mathbb W$-valued point process such that
+	Given $\{(\xi_t)_{t\geq 0}; \mathrm Q_\mu\}$, \emph{the discrete immigration} $\{(X^{\mathrm m,\sigma})_{\sigma\in \mathcal D^{\mathrm m}}; \mathrm Q_\mu(\cdot |\xi)\}$ is a $\Omega$-valued point process such that
 	\[
 	\mathrm m(\mathrm ds, \mathrm dw) := \sum_{\sigma\in \mathcal D^{\mathrm n}} \delta_{(\sigma, X^{\mathrm n,\sigma})}(\mathrm ds, \mathrm dw)
 	\]
-	is a Poisson random measure on $[0,\infty ) \times \mathbb W$ with intensity
+	is a Poisson random measure on $[0,\infty ) \times \Omega$ with intensity
 	\begin{align}
 		\mathbf m(\mathrm ds, \mathrm dw):= \mathrm ds \cdot \int_{(0,\infty)} y \mathrm P_{y\delta_{\xi_s}}(X\in dw) \pi(\xi_s,dy);
 	\end{align}
@@ -1816,13 +1920,13 @@ We say $\{(\xi_t)_{t\geq 0}, (X^{\mathrm n, \sigma})_{\sigma\in \mathcal D^\math
 	$\{(X_t)_{t\geq 0}; \mathrm Q_\mu\}$ is a copy of the superprocess $\{(X_t)_{t\geq 0}; \mathrm P_\mu\}$, and is independent of the spine process $(\xi_t)_{t\geq 0}$, the continuum immigration $(X^{\mathrm n,\sigma})_{\sigma \in \mathcal D^\mathrm n}$ and the discrete immigration $(X^{\mathrm m,\sigma})_{\sigma\in \mathcal D^{\mathrm m}}$.
 \end{itemize}
 
-To simplify notations, for any $\mu \in \mathcal M^0_f(E)$ and	$t\geq 0$,  we define the following random measures:
+To simplify notations, for any $\mu \in \mathcal M(E)^0_f(E)$ and	$t\geq 0$,  we define the following random measures:
 \begin{align}
 	Z^{\mathrm n}_t
-	&:= \int_{(0, t]\times \mathbb W} w_{t-s} ~\mathrm n (\mathrm ds, \mathrm dw)
+	&:= \int_{(0, t]\times \Omega} w_{t-s} ~\mathrm n (\mathrm ds, \mathrm dw)
 	= \sum_{\sigma \in \mathcal D^\mathrm n \cap (0, t]} X^{\mathrm n,\sigma}_{t-\sigma},
 	\\ Z^{\mathrm m}_t
-	&:= \int_{(0, t]\times \mathbb W} w_{t-s} ~\mathrm m (\mathrm ds, \mathrm dw)
+	&:= \int_{(0, t]\times \Omega} w_{t-s} ~\mathrm m (\mathrm ds, \mathrm dw)
 	= \sum_{\sigma \in \mathcal D^\mathrm m \cap (0, t]} X^{\mathrm m,\sigma}_{t-\sigma}.
 \end{align}
 Then \begin{equation}\label{def-Zt}
@@ -1853,9 +1957,9 @@ Note that $k=[\mathbf Q_\lambda(\mu(\phi))]^{-1}$.
 \eqref{rep: yaglom} can be rewritten as
 \begin{equation}\label{eq size bias}
 {\mathbf Q}\left(\mu\in\cdot\right)=
-\dfrac{\int_{\mathcal M}\mu(\phi)\mathbf 1_{\mu\in \cdot} \mathbf Q_\lambda(\mathrm d\mu)}{\int_{\mathcal M}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)}.
+\dfrac{\int_{\mathcal M(E)}\mu(\phi)\mathbf 1_{\mu\in \cdot} \mathbf Q_\lambda(\mathrm d\mu)}{\int_{\mathcal M(E)}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)}.
 \end{equation}
-We now prove that for all $\mu\in\mathcal M^o$, the distribution of $X_t$ under $\widetilde {\mathrm P}_{\mu}$ converges weakly to $\mathbf Q$.  We do this in three steps.
+We now prove that for all $\mu\in\mathcal M(E)^o$, the distribution of $X_t$ under $\widetilde {\mathrm P}_{\mu}$ converges weakly to $\mathbf Q$.  We do this in three steps.
 
 {\bf Step 1}\quad For $f\in\mathcal B_b(E,[0,\infty))$, define
 \begin{equation}\label{def: H}
@@ -2016,19 +2120,19 @@ q(f)
 =\lim_{t\rightarrow\infty}\widetilde{\mathrm P}_{\nu}\left(e^{-\langle f, X_t\rangle }\right)
 =\mathbf Q(e^{-\mu(f)}).
 \end{equation*}
-Therefore for any $\mu\in\mathcal M^o$, and $f\in\mathcal B_b(E,[0,\infty))$,
+Therefore for any $\mu\in\mathcal M(E)^o$, and $f\in\mathcal B_b(E,[0,\infty))$,
 \begin{eqnarray*}
 \lim_{t\rightarrow\infty}\widetilde{\mathrm P_\mu}\left(e^{-\langle f, X_t\rangle}\right)&=&\lim_{t\rightarrow\infty}\mathrm P_\mu\left(e^{-\langle f, X_t\rangle}\right)
 \lim_{t\to\infty}\dfrac{1}{\mu(\phi)}\int_E\phi(x)H(x, t)\mu(\mathrm dx)\\
 &=&q(f)=\mathbf Q(e^{-\mu(f)}).
 \end{eqnarray*}
-This says $\mathbf Q$, the distribution limit of $X_t$ under $\widetilde{\mathrm P}_{\nu}$, is the  limit distribution of  $X_t$ under $\widetilde{\mathrm P_\mu}$ for any $\mu\in{\mathcal M}^o$. Thus $\mathbf Q$ is the
-equilibrium distribution of the $Q$-process, and is a size-biased distribution of the Yaglom probability $\mathbf Q_\lambda$ with weight function $\dfrac{\mu(\phi)}{\int_{{\mathcal M}}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)}$.  The proof of $(1)$ is complete.
+This says $\mathbf Q$, the distribution limit of $X_t$ under $\widetilde{\mathrm P}_{\nu}$, is the  limit distribution of  $X_t$ under $\widetilde{\mathrm P_\mu}$ for any $\mu\in{\mathcal M(E)}^o$. Thus $\mathbf Q$ is the
+equilibrium distribution of the $Q$-process, and is a size-biased distribution of the Yaglom probability $\mathbf Q_\lambda$ with weight function $\dfrac{\mu(\phi)}{\int_{{\mathcal M(E)}}\mu(\phi)\mathbf Q_\lambda(\mathrm d\mu)}$.  The proof of $(1)$ is complete.
 
 
 
 (2) When $\int_El(x)\nu(dx)=\infty$,
-by Theorem \ref{thm:E}, for any $\mu\in \mathcal M^0$, we have
+by Theorem \ref{thm:E}, for any $\mu\in \mathcal M(E)^0$, we have
 $$
 \lim_{to\infty}e^{-\lambda t}\mathrm P_\mu(X_t\neq\mathbf 0)=0.
 $$
@@ -2146,7 +2250,7 @@ Electron. J. Probab. \textbf{13} (2008), no. 25, 777C810.
 Champagnat, N. and Villemonais, D.:
 \emph{Convergence of the Fleming-Viot process toward
 theminimal quasi-stationary distribution.}
-https://urldefense.com/v3/__https://arxiv.org/pdf/1810.06849.pdf__;!!DZ3fjg!v9ktLEV6VKS8zoP9oP0VQ6ru7ocUg33iWCZqsEQDmR9BPy-Hf63327ONEcuGz1qx$ 
+%{https://urldefense.com/v3/__https://arxiv.org/pdf/1810.06849.pdf__;!!DZ3fjg!v9ktLEV6VKS8zoP9oP0VQ6ru7ocUg33iWCZqsEQDmR9BPy-Hf63327ONEcuGz1qx$ %} 
 
 \bibitem{ChenRenYang2017Skeleton}
 Chen, Z.-Q., Ren, Y.-X. and Yang, T.:
@@ -2203,7 +2307,7 @@ Proc. Roy. Soc. Edinburgh Sect. A \textbf{123} (1993), no. 5, 959--971.
 \bibitem{Fitz}
 Fitzsimmons, P. J.:
 \emph{Construction and regularity of measure-valued Markov branching processes.}
-Israel J. Math. \textbf{64} (1988), no. 3, 337¨C-361.
+%{Israel J. Math. \textbf{64} (1988), no. 3, 337¨C-361.%}
 
 \bibitem{Grey1974Asymptotic}
 Grey, D. R.:
@@ -2257,7 +2361,7 @@ Forum Math. \textbf{21} (2009), no. 1, 43C66.
 
 \bibitem{Kyprianou2014Fluctuations}
 	Kyprianou, A. E.:
-	\emph{Fluctuations of L¨¦vy processes with applications: Introductory Lectures.}
+%{	\emph{Fluctuations of L¨¦vy processes with applications: Introductory Lectures.} %}
 	Springer Science \& Business Media, 2014.
 
 \bibitem{Lambert2001Arbres}
@@ -2298,7 +2402,7 @@ Probability and its Applications (New York). Springer, Heidelberg, 2011. xii+350
 \bibitem{Li20}
 Li, Z.-H.:
 \emph{Ergodicities and exponential ergodicities of Dawson-Watanabe type processes.} 
-https://urldefense.com/v3/__https://arxiv.org/pdf/2002.09111.pdf__;!!DZ3fjg!v9ktLEV6VKS8zoP9oP0VQ6ru7ocUg33iWCZqsEQDmR9BPy-Hf63327ONETyoEWFY$ 
+%{https://urldefense.com/v3/__https://arxiv.org/pdf/2002.09111.pdf__;!!DZ3fjg!v9ktLEV6VKS8zoP9oP0VQ6ru7ocUg33iWCZqsEQDmR9BPy-Hf63327ONETyoEWFY$ %}
 %end new
 
 \bibitem{LiuRenSong2009Llog}
@@ -2310,7 +2414,7 @@ J. Appl. Probab. \textbf{46} (2009), no. 2, 479--496.
 \bibitem{LiuRenSongSun2020}
 Liu, R.-L., Ren, Y.-X., Song, R. and Sun, Z.
 \emph{Quasi-stationary distributions for subcritical superprocesses.}
-Stoch. Proc. Appl. \textbf{132} (2021), 108¨C-134.
+%{Stoch. Proc. Appl. \textbf{132} (2021), 108¨C-134.%}
 
 
 
@@ -2387,7 +2491,7 @@ processes and illustration in epidemiological risk analysis. Mathematics [math].
 XI. English. <tel-00570458>
 
 %new
-\bibitem{Sharpe} M. Sharpe (1988): General theory of Markov processes. Academic Press, Boston, MA.
+\bibitem{Sharpe1988General} M. Sharpe (1988): General theory of Markov processes. Academic Press, Boston, MA.
 %end new
 
 \bibitem{Sta}Stannat, W.: \emph{On transition semigroups of $(A,\Psi)$-superprocesses with immigration.} Ann. Probab. \textbf{31} (2003),1377--1412.
