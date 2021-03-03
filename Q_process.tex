@@ -968,47 +968,65 @@ Note that
 \end{remark}
 
 
-
-	Let us now construct random elements
-  	$\big\{X, \xi, N, (s_k, y_k,w^{(k)})_{k\in \mathbb N}; \mathrm Q\big\}$ so that:
+  	%YX: I suggest put the above term to the end of the item, and say that $X$ is independent of $(\xi, N, (s_k, y_k,w^{(k)})_{k\in \mathbb N}$. Then we do not need to condition on $X$.
+  	% RS: Agree. We should also assume that $N$ and $M$ are independent given $\xi$, and that $\{(w^{(k)})_{k\in \mathbb N}\}$ is also independent of $N$. We should also make the formulation of the this spine decomposition and the spine decomposition in Section 5 as parallel as possible.
+%{
+%	Let us now construct random elements $\big\{X, \xi, N, (s_k, y_k,w^{(k)})_{k\in \mathbb N}; \mathrm Q\big\}$ so that: 	
+%\begin{enumerate}[label=(Q\arabic*),ref=Q\arabic*]
+%\item \label{asp:Q1}
+%	$\{X;\mathrm Q\}$ is a $\Omega$-valued random element with distribution $\mathrm P_\nu$;
+%\item \label{asp:Q2}
+%		$\{\xi = (\xi_t)_{t\in \mathbb R}; \mathrm Q(\cdot | X)\}$ is a two-sided right continuous stationary Markov process on $E$ with
+%		 \[\{(\xi_t)_{t \geq 0}; \mathrm Q(\cdot | X)\} \overset{\text{d}} = \{(\xi_t)_{t \geq 0}; \widetilde{\nu\Pi}\};\]
+%\item \label{asp:Q3}
+%	$\{N; \mathrm Q(\cdot |X,\xi)\}$ is a Poisson random measure on $\mathbb R\times \Omega$ with intensity
+%\[
+%	2 \sigma(\xi_s)^2 {\mathrm d}s \cdot \mathrm N_{\xi_s}({\mathrm d}w),
+%	\quad (s,w)\in \mathbb R\times \Omega;
+%\]
+%\item \label{asp:Q4}
+%	$(s_k, y_k)_{k\in \mathbb N}$ is a sequence of $\mathbb R \times \mathbb R_+$-valued random elements such that, under $\mathrm Q(\cdot | X, \xi, N)$,
+%\[
+%	M(\mathrm ds,\mathrm dy)
+%	:= \sum_{k\in \mathbb N} \delta_{(s_k, y_k)}(\mathrm ds,\mathrm dy), \quad (s,y)\in \mathbb R \times \mathbb R_+;
+%\]	
+%	is a Poisson random measure on $\mathbb R \times \mathbb R_+$ with intensity
+%\[
+%	\mathrm ds \cdot y \pi(\xi_s, \mathrm dy), \quad (s,y)\in \mathbb R \times \mathbb R_+;
+%\]
+%\item \label{asp:Q5}
+%	$\{(w^{(k)})_{k\in \mathbb N}; \mathrm Q(\cdot|\mathscr G)\}$ is a sequence of independent $\Omega$-valued random elements such that
+%\[
+%	\{w^{(k)}; \mathrm Q(\cdot| \mathscr G)\}
+%	\overset{\text{d}}\sim \mathrm P_{y_k\delta_{\xi_{s_k}}},
+%	\quad k\in \mathbb N,
+%\]
+%	where
+%\[
+%	\mathscr G
+%	:= \sigma(X, \xi, N, (s_k, y_k)_{k\in \mathbb N}).
+%\]
+%\end{enumerate}
+	Let us now construct random elements $\big\{X, \xi, N, (s_k, y_k,w^{(k)})_{k\in \mathbb N}\big\}$ on a probability space with probability measure denoted as $\mathrm Q$ so that: 	
 \begin{enumerate}[label=(Q\arabic*),ref=Q\arabic*]
-\item \label{asp:Q1}
-	$\{X;\mathrm Q\}$ is a $\Omega$-valued random element with distribution $\mathrm P_\nu$;
- %YX: I suggest put the above term to the end of the item, and say that $X$ is independent of $(\xi, N, (s_k, y_k,w^{(k)})_{k\in \mathbb N}$. Then we do not need to condition on $X$.
-% RS: Agree. We should also assume that $N$ and $M$ are independent given $\xi$, and that $\{(w^{(k)})_{k\in \mathbb N}\}$ is also independent of $N$. We should also make the formulation of the this spine decomposition and the spine decomposition in Section 5 as parallel as possible.
 \item \label{asp:Q2}
-		$\{\xi = (\xi_t)_{t\in \mathbb R}; \mathrm Q(\cdot | X)\}$ is a two-sided right continuous stationary Markov process on $E$ with
-		 \[\{(\xi_t)_{t \geq 0}; \mathrm Q(\cdot | X)\} \overset{\text{d}} = \{(\xi_t)_{t \geq 0}; \widetilde{\nu\Pi}\};\]
-\item \label{asp:Q3}
-	$\{N; \mathrm Q(\cdot |X,\xi)\}$ is a Poisson random measure on $\mathbb R\times \Omega$ with intensity
-\[
-	2 \sigma(\xi_s)^2 {\mathrm d}s \cdot \mathrm N_{\xi_s}({\mathrm d}w),
-	\quad (s,w)\in \mathbb R\times \Omega;
-\]
+	$\xi = (\xi_t)_{t\in \mathbb R}$ under $\mathrm Q$ is a two-sided right continuous stationary Markov process on $E$ with transition semigroup $(S_t)_{t\geq 0}$ and one-dimensional distribution $\widetilde \nu$;
 \item \label{asp:Q4}
-	$(s_k, y_k)_{k\in \mathbb N}$ is a sequence of $\mathbb R \times \mathbb R_+$-valued random elements
-	such that, under $\mathrm Q(\cdot | X, \xi, N)$,
-\[
+	Conditioned on $\xi$, $(s_k, y_k)_{k\in \mathbb N}$ is a sequence of $\mathbb R \times \mathbb R_+$-valued random elements
+	such that
+	\[
 	M(\mathrm ds,\mathrm dy)
 	:= \sum_{k\in \mathbb N} \delta_{(s_k, y_k)}(\mathrm ds,\mathrm dy), \quad (s,y)\in \mathbb R \times \mathbb R_+;
-\]	
-is a Poisson random measure on $\mathbb R \times \mathbb R_+$ with intensity
-\[
-	\mathrm ds \cdot y \pi(\xi_s, \mathrm dy), \quad (s,y)\in \mathbb R \times \mathbb R_+;
-\]
+	\]	
+	is a Poisson random measure on $\mathbb R \times \mathbb R_+$ with intensity $\mathrm ds \cdot y \pi(\xi_s, \mathrm dy)$;
 \item \label{asp:Q5}
-	$\{(w^{(k)})_{k\in \mathbb N}; \mathrm Q(\cdot|\mathscr G)\}$ is a sequence of independent $\Omega$-valued random elements such that
-\[
-	\{w^{(k)}; \mathrm Q(\cdot| \mathscr G)\}
-	\overset{\text{d}}\sim \mathrm P_{y_k\delta_{\xi_{s_k}}},
-	\quad k\in \mathbb N,
-\]
-	where
-\[
-	\mathscr G
-	:= \sigma(X, \xi, N, (s_k, y_k)_{k\in \mathbb N}).
-\]
+	Conditioned on $\xi$ and $(s_k, y_k)_{k\in \mathbb N}$, $(w^{(k)})_{k\in \mathbb N}$ is a sequence of independent $\Omega$-valued random elements such that for each $k\in \mathbb N$, $w^{(k)}$ has distribution $\mathrm P_{y_k\delta_{\xi_{s_k}}}$.
+\item \label{asp:Q3}
+	Conditioned on $\xi$, $N$ is a Poisson random measure on $\mathbb R\times \Omega$ with intensity $2 \sigma(\xi_s)^2 {\mathrm d}s \cdot \mathrm N_{\xi_s}({\mathrm d}w)$, and is independent of $(s_k, y_k, w^{(k)})_{k\in \mathbb N}$.
+\item \label{asp:Q1}
+	$X$ is a $\Omega$-valued random element with distribution $\mathrm P_\nu$, and is independent of $\{\xi, N, (s_k, y_k, w^{(k)})_{k\in \mathbb N}\}$.
 \end{enumerate}
+%}
 	For the existence of Poisson random measures with given intensity, see \cite[Theorem 2.4]{Kyprianou2014Fluctuations} for example.
 	
 	For $-\infty \leq a < b \leq t<\infty$, define
